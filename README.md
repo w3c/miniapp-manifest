@@ -1,0 +1,2 @@
+# miniapp-manifest
+MiniApp Manifest
