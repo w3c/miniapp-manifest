@@ -1102,6 +1102,11 @@
       <div class="issue" data-number='117'></div>
     </section>
 
+    <section id="Internationalization">
+      <h2 id="x6-Internationalization">
+          <span its-locale-filter-list="en" lang="en"><dfn id="dfn-Internationalization">Internationalization</dfn></span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans"><dfn id="dfn-generatedID">国际化方案</dfn></span>
+      <a class="self-link" aria-label="§" href="#Internationalization"></a></h2>
     <section>
       <h2>
           <span its-locale-filter-list="en" lang="en"><dfn>Localizable members</dfn></span>
@@ -1120,6 +1125,92 @@
           <li><a>MiniAppWindowResource.navigationBarTitleText</a></li>
           <li><a>MiniAppWidgetResource.name</a></li>
       </ul>
+    </section>
+    <section>
+      <h2>
+          <span its-locale-filter-list="en" lang="en"><dfn>I18n Solution</dfn></span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans"><dfn>I18n方案</dfn></span>
+      </h2>	  
+      <p its-locale-filter-list="en" lang="en">
+          To support the multiple languages, attributes such as name, short_name, and description can be set as a reference to a string resource. Typically, string resources are stored in the corresponding multi-language JSON file in the MiniApp package's i18n directory. The multi-language file’s name complies with IETF BCP 47.</p>
+      <p its-locale-filter-list="zh-hans" lang="zh-hans">
+          为了支持多语言能力name, short_name, description等参数可以被设置为字符串资源的索引。通常情况下字符串资源被保存在MiniApp包i18n目录下相应的多语言文件中。多语言文件命名规范符合IETF BCP 47。
+      </p>
+	  
+	  <p its-locale-filter-list="en" lang="en"> 
+	   The following example describes two simple multi-language files:
+	  </p>
+	  <p its-locale-filter-list="zh-hans" lang="zh-hans">
+	  以下例子描述2个简单的多语言文：
+	  </p>
+	  
+	  <p>i18n/en-US.json</p>
+	  </div> <pre aria-busy="false"><code class="hljs json">{
+  <span class="hljs-attr">"strings"</span>: { 
+    <span class="hljs-attr">"name"</span>:<span class="hljs-string">"miniapp demo"</span>,
+    <span class="hljs-attr">"short_name"</span>:<span class="hljs-string">"MD"</span>,
+    <span class="hljs-attr">"description_application"</span>:<span class="hljs-string">"MiniApp Demo"</span>,
+  },
+  <span class="hljs-attr">"files"</span>: {
+    <span class="hljs-attr">"images"</span>:<span class="hljs-string">"image/en_picture.PNG"</span>,
+  },  
+} 
+  </code></pre>  
+
+	  <p>i18n/zh-Hans.json</p>
+	  </div> <pre aria-busy="false"><code class="hljs json">{
+  <span class="hljs-attr">"strings"</span>: { 
+    <span class="hljs-attr">"name"</span>:<span class="hljs-string">"小程序试用版"</span>,
+    <span class="hljs-attr">"short_name"</span>:<span class="hljs-string">"小程序"</span>,
+    <span class="hljs-attr">"description_application"</span>:<span class="hljs-string">"迷你程序试用版本"</span>,
+  },
+  <span class="hljs-attr">"files"</span>: {
+    <span class="hljs-attr">"images"</span>:<span class="hljs-string">"image/zh_picture.PNG"</span>,
+  },  
+} 
+  </code></pre>
+
+	  <p its-locale-filter-list="en" lang="en"> 
+	   Developers can refer to a resource using the syntax $string:&lsaquo;resource-name&rsaquo;, for example, "decscription": "$string:description_application".
+	  </p>
+	  <p its-locale-filter-list="zh-hans" lang="zh-hans">
+	  用户可以使用$string:&lsaquo;resource-name&rsaquo;的方式引用字符串资源，例如："decscription": "$string:description_application".
+	  </p>	  
+	  
+	  <p its-locale-filter-list="en" lang="en"> 
+	   The following example describes a simple manifest fragment that supports multiple languages capability:
+	  </p>
+	  <p its-locale-filter-list="zh-hans" lang="zh-hans">
+	  以下例子描述一个简单的支持多语言的manifest片段：
+	  </p>	  
+
+<pre aria-busy="false"><code class="hljs json">{
+  <span class="hljs-attr">"dir"</span>:<span class="hljs-string">"ltr"</span>,
+  <span class="hljs-attr">"lang"</span>:<span class="hljs-string">"en-US"</span>,
+  <span class="hljs-attr">"appID"</span>:<span class="hljs-string">"org.w3c.miniapp"</span>,
+  <span class="hljs-attr">"name"</span>:<span class="hljs-string">"$string:name"</span>,
+  <span class="hljs-attr">"short_name"</span>:<span class="hljs-string">"$string:short_name"</span>,
+  <span class="hljs-attr">"versionName"</span>:<span class="hljs-string">"1.0.0"</span>,
+  <span class="hljs-attr">"versionCode"</span>:<span class="hljs-string">"1"</span>,
+  <span class="hljs-attr">"description"</span>:<span class="hljs-string">"$string:description_application"</span>,
+  <span class="hljs-attr">"icons"[
+    {
+      <span class="hljs-attr">"src"</span>:<span class="hljs-string">"common/icons/icon.png"</span>,
+      <span class="hljs-attr">"sizes"</span>:<span class="hljs-string">"48x48"</span>,	  
+	} 
+  ],
+  ...  
+} 
+  </code></pre>  
+  
+ 	  <p its-locale-filter-list="en" lang="en"> 
+	   In this way, when reading the MiniApp Manifest, the MiniApp processor, such as marketplace, can extract the string resource information from the corresponding language file in the MiniApp package's i18n directory according to the configuration information of itself and generates the localized description. For example, if the configuration information of the marketplace is simplified Chinese, the marketplace parses the "name": "$string: name" statement in the manifest and extracts sting: name information from the zh-Hans.json file in the MiniApp package's i18n directory. And then it generates the localized name of the MiniApp: 小程序试用版。
+	  </p>
+	  <p its-locale-filter-list="zh-hans" lang="zh-hans">
+	  通过上述方式，应用市场在读取应用manifest时，会根据自身的配置信息，从i18n目录下相应的语言文件，提取字符串信息，生成本地描述。例如 应用市场配置信息为汉语简体，则应用市场会解析manifest中"name": "$string:name"语句，从i18n目录的zh-Hans.json文件，提取sting:name信息：小程序试用版，并在应用市场生成该应用的本地化名称：小程序试用版。
+	  </p>	  
+     
+	     </section>
     </section>
 
   <section>
