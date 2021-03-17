@@ -1145,30 +1145,34 @@
 	  </p>
 	  
 	  <p>i18n/en-US.json</p>
-	  </div> <pre aria-busy="false"><code class="hljs json">{
-  <span class="hljs-attr">"strings"</span>: { 
-    <span class="hljs-attr">"name"</span>:<span class="hljs-string">"miniapp demo"</span>,
-    <span class="hljs-attr">"short_name"</span>:<span class="hljs-string">"MD"</span>,
-    <span class="hljs-attr">"description_application"</span>:<span class="hljs-string">"MiniApp Demo"</span>,
-  },
-  <span class="hljs-attr">"files"</span>: {
-    <span class="hljs-attr">"images"</span>:<span class="hljs-string">"image/en_picture.PNG"</span>,
-  },  
-} 
-  </code></pre>  
+	  </div> 
+	  <pre class="example json">
+	  {
+	   "strings": { 
+       "name":"miniapp demo",
+       "short_name":"MD",
+       "description_application":"MiniApp Demo",
+       },
+       "files": {
+       "images":"image/en_picture.PNG",
+       },  
+      } 
+	  </pre>
 
 	  <p>i18n/zh-Hans.json</p>
-	  </div> <pre aria-busy="false"><code class="hljs json">{
-  <span class="hljs-attr">"strings"</span>: { 
-    <span class="hljs-attr">"name"</span>:<span class="hljs-string">"小程序试用版"</span>,
-    <span class="hljs-attr">"short_name"</span>:<span class="hljs-string">"小程序"</span>,
-    <span class="hljs-attr">"description_application"</span>:<span class="hljs-string">"迷你程序试用版本"</span>,
+	  </div> 
+	  <pre class="example json">
+{
+  "strings": { 
+    "name":"小程序试用版",
+    "short_name":"小程序",
+    "description_application":"迷你程序试用版本",
   },
-  <span class="hljs-attr">"files"</span>: {
-    <span class="hljs-attr">"images"</span>:<span class="hljs-string">"image/zh_picture.PNG"</span>,
+  "files": {
+    "images":"image/zh_picture.PNG",
   },  
 } 
-  </code></pre>
+</pre>
 
 	  <p its-locale-filter-list="en" lang="en"> 
 	   Developers can refer to a resource using the syntax $string:&lsaquo;resource-name&rsaquo;, for example, "decscription": "$string:description_application".
@@ -1184,24 +1188,25 @@
 	  以下例子描述一个简单的支持多语言的manifest片段：
 	  </p>	  
 
-<pre aria-busy="false"><code class="hljs json">{
-  <span class="hljs-attr">"dir"</span>:<span class="hljs-string">"ltr"</span>,
-  <span class="hljs-attr">"lang"</span>:<span class="hljs-string">"en-US"</span>,
-  <span class="hljs-attr">"appID"</span>:<span class="hljs-string">"org.w3c.miniapp"</span>,
-  <span class="hljs-attr">"name"</span>:<span class="hljs-string">"$string:name"</span>,
-  <span class="hljs-attr">"short_name"</span>:<span class="hljs-string">"$string:short_name"</span>,
-  <span class="hljs-attr">"versionName"</span>:<span class="hljs-string">"1.0.0"</span>,
-  <span class="hljs-attr">"versionCode"</span>:<span class="hljs-string">"1"</span>,
-  <span class="hljs-attr">"description"</span>:<span class="hljs-string">"$string:description_application"</span>,
-  <span class="hljs-attr">"icons"[
+	  <pre class="example json">
+{
+  "dir":"ltr",
+  "lang":"en-US",
+  "appID":"org.w3c.miniapp",
+  "name":"$string:name",
+  "short_name":"$string:short_name",
+  "versionName":"1.0.0",
+  "versionCode":"1",
+  "description":"$string:description_application",
+  "icons"[
     {
-      <span class="hljs-attr">"src"</span>:<span class="hljs-string">"common/icons/icon.png"</span>,
-      <span class="hljs-attr">"sizes"</span>:<span class="hljs-string">"48x48"</span>,	  
+      "src":"common/icons/icon.png",
+      "sizes":"48x48",	  
 	} 
   ],
   ...  
 } 
-  </code></pre>  
+</pre>  
   
  	  <p its-locale-filter-list="en" lang="en"> 
 	   In this way, when reading the MiniApp Manifest, the MiniApp processor, such as marketplace, can extract the string resource information from the corresponding language file in the MiniApp package's i18n directory according to the configuration information of itself and generates the localized description. For example, if the configuration information of the marketplace is simplified Chinese, the marketplace parses the "name": "$string: name" statement in the manifest and extracts sting: name information from the zh-Hans.json file in the MiniApp package's i18n directory. And then it generates the localized name of the MiniApp: 小程序试用版。
