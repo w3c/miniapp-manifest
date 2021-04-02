@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>MiniApp Manifest</title>
-    <link rel="stylesheet" href="https://w3c.github.io/miniapp/specs/local.css" />
+    <link rel="stylesheet" href="./local.css" />
 
     <style>
     .two-cols {
@@ -32,11 +32,21 @@
         var respecConfig = {
             specStatus: "ED",
             copyrightStart: "2020",
-            edDraftURI: "https://w3c.github.io/miniapp/specs/manifest/",
+            edDraftURI: "https://w3c.github.io/miniapp-manifest/",
 
             shortName: "miniapp-manifest",
 
             editors: [{
+                name: "Martin Alvarez-Espinar",
+                companyURL: "http://www.huawei.com/",
+                company: "Huawei"
+              }, {
+               name: "Yongjing Zhang",
+                companyURL: "http://www.huawei.com/",
+                company: "Huawei"
+              }],
+
+             formerEditors: [{
                 name: "Shouren Lan",
                 companyURL: "http://www.huawei.com/",
                 company: "Huawei"
@@ -45,14 +55,11 @@
                 companyURL: "http://www.huawei.com/",
                 company: "Huawei"
               }, {
-            name: "Xiaofeng Zhang",
-                  companyURL: "http://www.huawei.com/",
-                  company: "Huawei"
-              }, {
-            name: "Yongjing Zhang",
+                name: "Xiaofeng Zhang",
                 companyURL: "http://www.huawei.com/",
                 company: "Huawei"
-             }],
+              }],
+
             group: "wg/miniapps",
             github: {
               repoURL: "https://github.com/w3c/miniapp-manifest",
@@ -613,12 +620,12 @@
       </table>
 
       <p class="note">
-      Other {{WebAppManifest}} members
-        ({{WebAppManifest/scope}},
-        {{WebAppManifest/theme_color}},
-        {{WebAppManifest/related_applications}},
-        {{WebAppManifest/prefer_related_applications}}, and
-        {{WebAppManifest/shortcuts}}) are not currently supported by MiniApp user agents.
+      Other Web Application Manifest members
+        (<a href="https://www.w3.org/TR/appmanifest/#scope-member"><code>scope</code></a>,
+        <a href="https://www.w3.org/TR/appmanifest/#theme_color-member"><code>theme_color</code></a>,
+        <a href="https://www.w3.org/TR/appmanifest/#related_applications-member"><code>related_applications</code></a>,
+        <a href="https://www.w3.org/TR/appmanifest/#prefer_related_applications-member"><code>prefer_related_applications</code></a>, and
+        <a href="https://www.w3.org/TR/appmanifest/#shortcuts-member"><code>shortcuts</code></a>) are not currently supported by MiniApp user agents.
       </p>
     </section>
   </section>
@@ -630,10 +637,10 @@
     <p>
       As the [=application manifest=] is JSON, the members for this
       specification are of the types <dfn>number</dfn>, <dfn>true | false</dfn> literals, <dfn>object</dfn>,
-      <dfn>array</dfn>, and <dfn>string</dfn> as defined in [[[ECMA-404]]]. <dfn data>hexcolor</dfn> is a [=string=] expressing RGB color values [[css-color-3]] in hexadecimal notation: ‘#’ immediately followed by six hexadecimal characters (#rrggbb).
+      <dfn>array</dfn>, and <dfn>string</dfn> as defined in [[[ECMA-404]]]. <dfn>hexcolor</dfn> is a [=string=] expressing RGB color values [[css-color-3]] in hexadecimal notation: ‘#’ immediately followed by six hexadecimal characters (#rrggbb).
     </p>
-    <section id='WebAppManifest-members'>
-      <h2>Members inherited from the {{WebAppManifest}} dictionary</h2>      
+    <section id='webappmanifest-members'>
+      <h2>Members inherited from the Web Application Manifest</h2>          
       <section>
         <h3>
           <span its-locale-filter-list="en" lang="en"><code>dir</code> member</span>
@@ -687,7 +694,7 @@
       <section>
         <h3>
           <span its-locale-filter-list="en" lang="en"><code>name</code> member</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans" class="retranslateme">名称</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans">名称</span>
         </h3>
         <p its-locale-filter-list="en" lang="en">
           The <dfn>name</dfn> member is the descriptive name of the application. This is the name directly displayed to the user. It is used as the display name of MiniApp along with the desktop icon and in the context of MiniApp management. 
@@ -699,7 +706,7 @@
       <section>
         <h3>
           <span its-locale-filter-list="en" lang="en"><code>short_name</code> member</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans" class="retranslateme">简称</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans">简称</span>
         </h3>
         <p its-locale-filter-list="en" lang="en">
           The <dfn>short_name</dfn> member provides a concise and easy-to-read name for MiniApp. It can be used when there is insufficient space to display the full MiniApp name provided in <code>name</code>.
@@ -727,7 +734,7 @@
         </p>
       </section>
     </section>
-    <section id='WebAppManifest-app-info-members' data-cite='manifest-app-info'>
+    <section id='supplementary-manifest-members'>
       <h2>Supplementary manifest members</h2>
       <section>
         <h3>
@@ -779,7 +786,6 @@
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           <code>version_code</code>是一个number类型的数值，主要用作提高MiniApp的可维护性和安全性，比如：低版本不能覆盖高版本。此版本号不向用户显示，根据版本迭代过程进行递增。取值是非负整数。默认值：<code>1</code>。
         </p>
-          <p class="issue" data-number="137"></p>
       </section>
       <section>
         <h3>
@@ -805,7 +811,7 @@
           <code>pages</code>数组用于指定MiniApp都包含哪些页面，数组中每一项代表一个页面路由，页面路由 = <code>[路径 + 文件名]</code>。MiniApp开发时新增或删除页面需在数组中进行配置，配置页面路由时文件名不需加后缀名，MiniApp平台会自动解析。备注：<code>pages</code>数组中第一项代表MiniApp首页。
         </p>
         <p class="note">
-          For compatibility with the Web platform, it is RECOMMENDED to use both <a>pages</a> and {{WebAppManifest/start_url}} and use the value <code>"."</code> for <code>scope</code> in the manifest file. The value of {{WebAppManifest/start_url}} MUST be the same as the first entry in <a>pages</a>.
+          For compatibility with the Web platform, it is RECOMMENDED to use both <a>pages</a> and <a href="https://www.w3.org/TR/appmanifest/#start_url-member"><code>start_url</code></a>  and use the value <code>"."</code> for <code>scope</code> in the manifest file. The value of <a href="https://www.w3.org/TR/appmanifest/#start_url-member"><code>start_url</code></a>  MUST be the same as the first entry in <a>pages</a>.
           If <code>scope</code>.
         </p>
         <p class="issue">
@@ -921,7 +927,7 @@
     <section>
       <h3><code>background_color</code> member</h3>
       <p>
-        <span its-locale-filter-list="en" lang="en">The <dfn>MiniAppWindowRersource.background_color</dfn> member specifies the background color of the window. This member is equivalent to {{WebAppManifest/background_color}}.</span>
+        <span its-locale-filter-list="en" lang="en">The <dfn>MiniAppWindowResource.background_color</dfn> member specifies the background color of the window. This member is equivalent to  <a href="https://www.w3.org/TR/appmanifest/#background_color-member"><code>background_color</code></a>.</span>
         <span its-locale-filter-list="zh-hans" lang="zh-hans">窗口的背景颜色</span>
       </p>
       <p class="note">
@@ -981,7 +987,7 @@
     <section>
       <h3><code>orientation</code> member</h3>
       <p>
-        <span its-locale-filter-list="en" lang="en">The <dfn>MiniAppWindowRersource.orientation</dfn> member specifies the screen orientation settings to which a screen can be locked. The two supported values are <code>portrait</code> and <code>landscape</code>, defined in {{OrientationLockType}} [[screen-orientation]]. This member is equivalent to {{WebAppManifest/orientation}}.</span>
+        <span its-locale-filter-list="en" lang="en">The <dfn>MiniAppWindowResource.orientation</dfn> member specifies the screen orientation settings to which a screen can be locked. The two supported values are <code>portrait</code> and <code>landscape</code>, defined in {{OrientationLockType}} [[screen-orientation]]. This member is equivalent to <a href="https://www.w3.org/TR/appmanifest/#orientation-member"><code>orientation</code></a>.</span>
         <span its-locale-filter-list="zh-hans" lang="zh-hans">屏幕方向设置</span>
       </p>
       <p class="note">
@@ -992,13 +998,13 @@
           Value by default: <code>portrait</code>.
         </span>
       </p>
-      <div class="issue" data-number="69"></div>
+      <div class="issue" data-number="8"></div>
     </section>
       <section>
         <h3><code>fullscreen</code> member</h3>
         <p>
-          <span its-locale-filter-list="en" lang="en">The <dfn>MiniAppWindowRersource.fullscreen</dfn> member indicates the full screen display. <code>true</code> is equivalent to the
-            {{WebAppManifest/display}} <code>fullscreen</code>, and <code>false</code> to <code>minimal-ui</code>.</span>
+          <span its-locale-filter-list="en" lang="en">The <dfn>MiniAppWindowResource.fullscreen</dfn> member indicates the full screen display. <code>true</code> is equivalent to the <code>fullscreen</code> value of
+            <a href="https://www.w3.org/TR/appmanifest/#display-member"><code>display</code></a>, and <code>false</code> to <code>minimal-ui</code>.</span>
         </p>
         <p class="note">
           <span its-locale-filter-list="en" lang="en">
@@ -1099,7 +1105,7 @@
         预定义权限、权限扩展、权限分组和保护等级是否需要定义有待进一步研究。
         </p>
       </div>
-      <div class="issue" data-number='117'></div>
+      <!-- <div class="issue" data-number='117'></div> -->
     </section>
 
     <section>
@@ -1129,10 +1135,10 @@
     </h2>
 
     <p its-locale-filter-list="en" lang="en">
-        As a key part of a MiniApp package, the <code>manifest.json</code> file describes several important aspects of the MiniApp by referring to the resources inside the MiniApp package in different forms of files, such as the page files in the <code>pages</code> directory and the icon images in the <code>common</code> directory. Details are specified in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>.
+        As a key part of a MiniApp package, the <code>manifest.json</code> file describes several important aspects of the MiniApp by referring to the resources inside the MiniApp package in different forms of files, such as the page files in the <code>pages</code> directory and the icon images in the <code>common</code> directory. Details are specified in the <a href="https://w3c.github.io/miniapp-packaging/">MiniApp Packaging specification</a>.
     </p>
     <p its-locale-filter-list="zh-hans" lang="zh-hans">
-      作为MiniApp包中的关键部分，<code>manifest.json</code>文件通过引用MiniApp包中的多个不同形式的资源文件描述了MiniApp应用的多个重要方面，比如引用<code>pages</code>目录中的页面相关文件和<code>common</code>目录中的图标文件。详细情况在<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging规范</a>中定义。
+      作为MiniApp包中的关键部分，<code>manifest.json</code>文件通过引用MiniApp包中的多个不同形式的资源文件描述了MiniApp应用的多个重要方面，比如引用<code>pages</code>目录中的页面相关文件和<code>common</code>目录中的图标文件。详细情况在<a href="https://w3c.github.io/miniapp-packaging/">MiniApp Packaging规范</a>中定义。
     </p>
 
     <p its-locale-filter-list="en" lang="en">
@@ -1189,7 +1195,7 @@
             As the manifest is a JSON file and will commonly be encoded using [[UNICODE]], the security considerations described in [[ECMA-404]] and [[UTR36]] apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#json-schema-json">JSON Schema</a> to impose their own implementation-specific limits on the member names, types and value ranges, e.g. to guard against memory overflow, or to meet platform-specific limitations.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-            Manifest作为一个JSON文件，通常以[[UNICODE]]</a>方式编码，因此[[ECMA-404]]和[[UTR36]]中所定义的安全措施同样适用。为了防止开发者在manifest中添加任意不受限的数据，开发者可在其具体实现中采用比<a href="#json-schema-json">JSON Schema</a>中所定义的更加严格的schema来约束文件中的成员元素名称、类型和取值范围等，从而防止内存耗尽或满足平台特有的限制。
+            Manifest作为一个JSON文件，通常以[[UNICODE]]方式编码，因此[[ECMA-404]]和[[UTR36]]中所定义的安全措施同样适用。为了防止开发者在manifest中添加任意不受限的数据，开发者可在其具体实现中采用比<a href="#json-schema-json">JSON Schema</a>中所定义的更加严格的schema来约束文件中的成员元素名称、类型和取值范围等，从而防止内存耗尽或满足平台特有的限制。
         </p>
     </section>
 
@@ -1198,9 +1204,9 @@
             <span its-locale-filter-list="en" lang="en">Local resource access</span>
             <span its-locale-filter-list="zh-hans" lang="zh-hans">本地资源访问</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en"> Members like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external resources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.</p>
+        <p its-locale-filter-list="en" lang="en"> Members like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp-packaging/">MiniApp package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external resources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.</p>
 
-        <p its-locale-filter-list="zh-hans" lang="zh-hans"> <code>icons</code>, <code>pages</code>, <code>widgets</code>等属性包含了宿主平台上的本地资源引用路径，开发者和宿主平台应该检查这些路径的合法性以确保没有<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>之外的非法访问。另一方面，MiniApp自身（如JS代码中）可能提供跳转到其他外部资源的方式，包括宿主平台或远程网站上的外部资源（比如通过uri)。此时，宿主平台应该负责向用户提供明确的上下文切换的指示信息。</p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"> <code>icons</code>, <code>pages</code>, <code>widgets</code>等属性包含了宿主平台上的本地资源引用路径，开发者和宿主平台应该检查这些路径的合法性以确保没有<a href="https://w3c.github.io/miniapp-packaging/">MiniApp package</a>之外的非法访问。另一方面，MiniApp自身（如JS代码中）可能提供跳转到其他外部资源的方式，包括宿主平台或远程网站上的外部资源（比如通过uri)。此时，宿主平台应该负责向用户提供明确的上下文切换的指示信息。</p>
 
 	<p its-locale-filter-list="en" lang="en">
             In addition, the <code>req_permissions</code> member provides a specific means to control the access to the local software, hardware and data resources on the user's device. User's consent should be asked when it comes to privacy-related or high-level privileged resources.
@@ -1216,8 +1222,8 @@
             <span its-locale-filter-list="en" lang="en">Integrity</span>
             <span its-locale-filter-list="zh-hans" lang="zh-hans">完整性</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en"> The integrity of the manifest document is protected by a cryptographic hash mechanism as part of the whole MiniApp package. Details are specified in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>. </p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans"> Manifest文档的完整性作为MiniApp package的一部分被密码哈希机制所保护。详细定义见<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>。 </p>
+        <p its-locale-filter-list="en" lang="en"> The integrity of the manifest document is protected by a cryptographic hash mechanism as part of the whole MiniApp package. Details are specified in the <a href="https://w3c.github.io/miniapp-packaging/">MiniApp Packaging specification</a>. </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"> Manifest文档的完整性作为MiniApp package的一部分被密码哈希机制所保护。详细定义见<a href="https://w3c.github.io/miniapp-packaging/">MiniApp Packaging specification</a>。 </p>
     </section>
 
     <section>
@@ -1333,7 +1339,7 @@
     <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
       We encourage implementors to add proprietary extensions to the Extensions Registry. This allows the community to track what extensions vendors and/or the web community have defined and documented.
     </p>
-    <p class="issue" data-number="67">
+    <p class="issue" data-number="9">
     </p>
     <p its-locale-filter-list="en" lang="en">
       The following is an example of three hypothetical vendor extensions.
