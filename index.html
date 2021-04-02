@@ -637,7 +637,7 @@
     <p>
       As the [=application manifest=] is JSON, the members for this
       specification are of the types <dfn>number</dfn>, <dfn>true | false</dfn> literals, <dfn>object</dfn>,
-      <dfn>array</dfn>, and <dfn>string</dfn> as defined in [[[ECMA-404]]]. <dfn data>hexcolor</dfn> is a [=string=] expressing RGB color values [[css-color-3]] in hexadecimal notation: ‘#’ immediately followed by six hexadecimal characters (#rrggbb).
+      <dfn>array</dfn>, and <dfn>string</dfn> as defined in [[[ECMA-404]]]. <dfn>hexcolor</dfn> is a [=string=] expressing RGB color values [[css-color-3]] in hexadecimal notation: ‘#’ immediately followed by six hexadecimal characters (#rrggbb).
     </p>
     <section id='webappmanifest-members'>
       <h3 id="x2-1-members-inherited-from-the-webappmanifest-dictionary">Members inherited from the <a data-link-type="idl" data-type="dictionary" href="https://www.w3.org/TR/appmanifest/#dom-webappmanifest"><code>WebAppManifest</code></a> dictionary<a class="self-link" aria-label="§" href="#webappmanifest-members"></a></h3>          
@@ -694,7 +694,7 @@
       <section>
         <h3>
           <span its-locale-filter-list="en" lang="en"><code>name</code> member</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans" class="retranslateme">名称</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans">名称</span>
         </h3>
         <p its-locale-filter-list="en" lang="en">
           The <dfn>name</dfn> member is the descriptive name of the application. This is the name directly displayed to the user. It is used as the display name of MiniApp along with the desktop icon and in the context of MiniApp management. 
@@ -706,7 +706,7 @@
       <section>
         <h3>
           <span its-locale-filter-list="en" lang="en"><code>short_name</code> member</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans" class="retranslateme">简称</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans">简称</span>
         </h3>
         <p its-locale-filter-list="en" lang="en">
           The <dfn>short_name</dfn> member provides a concise and easy-to-read name for MiniApp. It can be used when there is insufficient space to display the full MiniApp name provided in <code>name</code>.
@@ -734,7 +734,7 @@
         </p>
       </section>
     </section>
-    <section id='webappmanifest-app-info-members' data-cite='manifest-app-info'>
+    <section id='supplementary-manifest-members'>
       <h2>Supplementary manifest members</h2>
       <section>
         <h3>
@@ -786,7 +786,6 @@
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           <code>versionCode</code>是一个number类型的数值，主要用作提高MiniApp的可维护性和安全性，比如：低版本不能覆盖高版本。此版本号不向用户显示，根据版本迭代过程进行递增。取值是非负整数。默认值：<code>1</code>。
         </p>
-          <p class="issue" data-number="137"></p>
       </section>
       <section>
         <h3>
@@ -999,7 +998,7 @@
           Value by default: <code>portrait</code>.
         </span>
       </p>
-      <div class="issue" data-number="69"></div>
+      <div class="issue" data-number="8"></div>
     </section>
       <section>
         <h3><code>fullscreen</code> member</h3>
@@ -1106,7 +1105,7 @@
         预定义权限、权限扩展、权限分组和保护等级是否需要定义有待进一步研究。
         </p>
       </div>
-      <div class="issue" data-number='117'></div>
+      <!-- <div class="issue" data-number='117'></div> -->
     </section>
 
     <section>
@@ -1196,7 +1195,7 @@
             As the manifest is a JSON file and will commonly be encoded using [[UNICODE]], the security considerations described in [[ECMA-404]] and [[UTR36]] apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#json-schema-json">JSON Schema</a> to impose their own implementation-specific limits on the member names, types and value ranges, e.g. to guard against memory overflow, or to meet platform-specific limitations.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-            Manifest作为一个JSON文件，通常以[[UNICODE]]</a>方式编码，因此[[ECMA-404]]和[[UTR36]]中所定义的安全措施同样适用。为了防止开发者在manifest中添加任意不受限的数据，开发者可在其具体实现中采用比<a href="#json-schema-json">JSON Schema</a>中所定义的更加严格的schema来约束文件中的成员元素名称、类型和取值范围等，从而防止内存耗尽或满足平台特有的限制。
+            Manifest作为一个JSON文件，通常以[[UNICODE]]方式编码，因此[[ECMA-404]]和[[UTR36]]中所定义的安全措施同样适用。为了防止开发者在manifest中添加任意不受限的数据，开发者可在其具体实现中采用比<a href="#json-schema-json">JSON Schema</a>中所定义的更加严格的schema来约束文件中的成员元素名称、类型和取值范围等，从而防止内存耗尽或满足平台特有的限制。
         </p>
     </section>
 
@@ -1340,7 +1339,7 @@
     <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
       We encourage implementors to add proprietary extensions to the Extensions Registry. This allows the community to track what extensions vendors and/or the web community have defined and documented.
     </p>
-    <p class="issue" data-number="67">
+    <p class="issue" data-number="9">
     </p>
     <p its-locale-filter-list="en" lang="en">
       The following is an example of three hypothetical vendor extensions.
