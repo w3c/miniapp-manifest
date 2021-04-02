@@ -32,7 +32,7 @@
         var respecConfig = {
             specStatus: "ED",
             copyrightStart: "2020",
-            edDraftURI: "https://w3c.github.io/miniapp/specs/manifest/",
+            edDraftURI: "https://w3c.github.io/miniapp-manifest/",
 
             shortName: "miniapp-manifest",
 
@@ -1135,10 +1135,10 @@
     </h2>
 
     <p its-locale-filter-list="en" lang="en">
-        As a key part of a MiniApp package, the <code>manifest.json</code> file describes several important aspects of the MiniApp by referring to the resources inside the MiniApp package in different forms of files, such as the page files in the <code>pages</code> directory and the icon images in the <code>common</code> directory. Details are specified in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>.
+        As a key part of a MiniApp package, the <code>manifest.json</code> file describes several important aspects of the MiniApp by referring to the resources inside the MiniApp package in different forms of files, such as the page files in the <code>pages</code> directory and the icon images in the <code>common</code> directory. Details are specified in the <a href="https://w3c.github.io/miniapp-packaging/">MiniApp Packaging specification</a>.
     </p>
     <p its-locale-filter-list="zh-hans" lang="zh-hans">
-      作为MiniApp包中的关键部分，<code>manifest.json</code>文件通过引用MiniApp包中的多个不同形式的资源文件描述了MiniApp应用的多个重要方面，比如引用<code>pages</code>目录中的页面相关文件和<code>common</code>目录中的图标文件。详细情况在<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging规范</a>中定义。
+      作为MiniApp包中的关键部分，<code>manifest.json</code>文件通过引用MiniApp包中的多个不同形式的资源文件描述了MiniApp应用的多个重要方面，比如引用<code>pages</code>目录中的页面相关文件和<code>common</code>目录中的图标文件。详细情况在<a href="https://w3c.github.io/miniapp-packaging/">MiniApp Packaging规范</a>中定义。
     </p>
 
     <p its-locale-filter-list="en" lang="en">
@@ -1204,9 +1204,9 @@
             <span its-locale-filter-list="en" lang="en">Local resource access</span>
             <span its-locale-filter-list="zh-hans" lang="zh-hans">本地资源访问</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en"> Members like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external resources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.</p>
+        <p its-locale-filter-list="en" lang="en"> Members like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp-packaging/">MiniApp package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external resources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.</p>
 
-        <p its-locale-filter-list="zh-hans" lang="zh-hans"> <code>icons</code>, <code>pages</code>, <code>widgets</code>等属性包含了宿主平台上的本地资源引用路径，开发者和宿主平台应该检查这些路径的合法性以确保没有<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>之外的非法访问。另一方面，MiniApp自身（如JS代码中）可能提供跳转到其他外部资源的方式，包括宿主平台或远程网站上的外部资源（比如通过uri)。此时，宿主平台应该负责向用户提供明确的上下文切换的指示信息。</p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"> <code>icons</code>, <code>pages</code>, <code>widgets</code>等属性包含了宿主平台上的本地资源引用路径，开发者和宿主平台应该检查这些路径的合法性以确保没有<a href="https://w3c.github.io/miniapp-packaging/">MiniApp package</a>之外的非法访问。另一方面，MiniApp自身（如JS代码中）可能提供跳转到其他外部资源的方式，包括宿主平台或远程网站上的外部资源（比如通过uri)。此时，宿主平台应该负责向用户提供明确的上下文切换的指示信息。</p>
 
 	<p its-locale-filter-list="en" lang="en">
             In addition, the <code>reqPermissions</code> member provides a specific means to control the access to the local software, hardware and data resources on the user's device. User's consent should be asked when it comes to privacy-related or high-level privileged resources.
@@ -1222,8 +1222,8 @@
             <span its-locale-filter-list="en" lang="en">Integrity</span>
             <span its-locale-filter-list="zh-hans" lang="zh-hans">完整性</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en"> The integrity of the manifest document is protected by a cryptographic hash mechanism as part of the whole MiniApp package. Details are specified in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>. </p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans"> Manifest文档的完整性作为MiniApp package的一部分被密码哈希机制所保护。详细定义见<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>。 </p>
+        <p its-locale-filter-list="en" lang="en"> The integrity of the manifest document is protected by a cryptographic hash mechanism as part of the whole MiniApp package. Details are specified in the <a href="https://w3c.github.io/miniapp-packaging/">MiniApp Packaging specification</a>. </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"> Manifest文档的完整性作为MiniApp package的一部分被密码哈希机制所保护。详细定义见<a href="https://w3c.github.io/miniapp-packaging/">MiniApp Packaging specification</a>。 </p>
     </section>
 
     <section>
