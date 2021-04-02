@@ -619,14 +619,14 @@
         </tfoot>
       </table>
 
-      <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"></div><p class="">
-      Other <a data-link-type="idl" data-type="dictionary" href="https://www.w3.org/TR/appmanifest/#dom-webappmanifest"><code>WebAppManifest</code></a> members
-        (<a data-link-type="idl" data-type="dict-member" href="https://www.w3.org/TR/appmanifest/#dom-webappmanifest-scope"><code>scope</code></a>,
-        <a data-link-type="idl" data-type="dict-member" href="https://www.w3.org/TR/appmanifest/#dom-webappmanifest-theme_color"><code>theme_color</code></a>,
-        <a data-link-type="idl" data-type="dict-member" href="https://www.w3.org/TR/appmanifest/#dom-webappmanifest-related_applications"><code>related_applications</code></a>,
-        <a data-link-type="idl" data-type="dict-member" href="https://www.w3.org/TR/appmanifest/#dom-webappmanifest-prefer_related_applications"><code>prefer_related_applications</code></a>, and
-        <a data-link-type="idl" data-type="dict-member" href="https://www.w3.org/TR/appmanifest/#dom-webappmanifest-shortcuts"><code>shortcuts</code></a>) are not currently supported by MiniApp user agents.
-      </p></div>
+      <p class="note">
+      Other Web Application Manifest members
+        (<a href="https://www.w3.org/TR/appmanifest/#scope-member"><code>scope</code></a>,
+        <a href="https://www.w3.org/TR/appmanifest/#theme_color-member"><code>theme_color</code></a>,
+        <a href="https://www.w3.org/TR/appmanifest/#related_applications-member"><code>related_applications</code></a>,
+        <a href="https://www.w3.org/TR/appmanifest/#prefer_related_applications-member"><code>prefer_related_applications</code></a>, and
+        <a href="https://www.w3.org/TR/appmanifest/#shortcuts-member"><code>shortcuts</code></a>) are not currently supported by MiniApp user agents.
+      </p>
     </section>
   </section>
   <section id="manifest-members">
@@ -640,7 +640,7 @@
       <dfn>array</dfn>, and <dfn>string</dfn> as defined in [[[ECMA-404]]]. <dfn>hexcolor</dfn> is a [=string=] expressing RGB color values [[css-color-3]] in hexadecimal notation: ‘#’ immediately followed by six hexadecimal characters (#rrggbb).
     </p>
     <section id='webappmanifest-members'>
-      <h3 id="x2-1-members-inherited-from-the-webappmanifest-dictionary">Members inherited from the <a data-link-type="idl" data-type="dictionary" href="https://www.w3.org/TR/appmanifest/#dom-webappmanifest"><code>WebAppManifest</code></a> dictionary<a class="self-link" aria-label="§" href="#webappmanifest-members"></a></h3>          
+      <h2>Members inherited from the Web Application Manifest</h2>          
       <section>
         <h3>
           <span its-locale-filter-list="en" lang="en"><code>dir</code> member</span>
@@ -811,7 +811,7 @@
           <code>pages</code>数组用于指定MiniApp都包含哪些页面，数组中每一项代表一个页面路由，页面路由 = <code>[路径 + 文件名]</code>。MiniApp开发时新增或删除页面需在数组中进行配置，配置页面路由时文件名不需加后缀名，MiniApp平台会自动解析。备注：<code>pages</code>数组中第一项代表MiniApp首页。
         </p>
         <p class="note">
-          For compatibility with the Web platform, it is RECOMMENDED to use both <a>pages</a> and <a data-link-type="idl" data-type="dict-member" href="https://www.w3.org/TR/appmanifest/#dom-webappmanifest-start_url"><code>start_url</code></a>  and use the value <code>"."</code> for <code>scope</code> in the manifest file. The value of <a data-link-type="idl" data-type="dict-member" href="https://www.w3.org/TR/appmanifest/#dom-webappmanifest-start_url"><code>start_url</code></a>  MUST be the same as the first entry in <a>pages</a>.
+          For compatibility with the Web platform, it is RECOMMENDED to use both <a>pages</a> and <a href="https://www.w3.org/TR/appmanifest/#start_url-member"><code>start_url</code></a>  and use the value <code>"."</code> for <code>scope</code> in the manifest file. The value of <a href="https://www.w3.org/TR/appmanifest/#start_url-member"><code>start_url</code></a>  MUST be the same as the first entry in <a>pages</a>.
           If <code>scope</code>.
         </p>
         <p class="issue">
@@ -927,7 +927,7 @@
     <section>
       <h3><code>backgroundColor</code> member</h3>
       <p>
-        <span its-locale-filter-list="en" lang="en">The <dfn>MiniAppWindowResource.backgroundColor</dfn> member specifies the background color of the window. This member is equivalent to  <a data-link-type="idl" data-type="dict-member" href="https://www.w3.org/TR/appmanifest/#dom-webappmanifest-background_color"><code>background_color</code></a>.</span>
+        <span its-locale-filter-list="en" lang="en">The <dfn>MiniAppWindowResource.backgroundColor</dfn> member specifies the background color of the window. This member is equivalent to  <a href="https://www.w3.org/TR/appmanifest/#background_color-member"><code>background_color</code></a>.</span>
         <span its-locale-filter-list="zh-hans" lang="zh-hans">窗口的背景颜色</span>
       </p>
       <p class="note">
@@ -987,7 +987,7 @@
     <section>
       <h3><code>orientation</code> member</h3>
       <p>
-        <span its-locale-filter-list="en" lang="en">The <dfn>MiniAppWindowResource.orientation</dfn> member specifies the screen orientation settings to which a screen can be locked. The two supported values are <code>portrait</code> and <code>landscape</code>, defined in {{OrientationLockType}} [[screen-orientation]]. This member is equivalent to <a data-link-type="idl" data-type="dict-member" href="https://www.w3.org/TR/appmanifest/#dom-webappmanifest-orientation"><code>orientation</code></a>.</span>
+        <span its-locale-filter-list="en" lang="en">The <dfn>MiniAppWindowResource.orientation</dfn> member specifies the screen orientation settings to which a screen can be locked. The two supported values are <code>portrait</code> and <code>landscape</code>, defined in {{OrientationLockType}} [[screen-orientation]]. This member is equivalent to <a href="https://www.w3.org/TR/appmanifest/#orientation-member"><code>orientation</code></a>.</span>
         <span its-locale-filter-list="zh-hans" lang="zh-hans">屏幕方向设置</span>
       </p>
       <p class="note">
@@ -1003,8 +1003,8 @@
       <section>
         <h3><code>fullscreen</code> member</h3>
         <p>
-          <span its-locale-filter-list="en" lang="en">The <dfn>MiniAppWindowResource.fullscreen</dfn> member indicates the full screen display. <code>true</code> is equivalent to the
-            <a data-link-type="idl" data-type="dict-member" href="https://www.w3.org/TR/appmanifest/#dom-webappmanifest-display"><code>display</code></a> <code>fullscreen</code> <code>fullscreen</code>, and <code>false</code> to <code>minimal-ui</code>.</span>
+          <span its-locale-filter-list="en" lang="en">The <dfn>MiniAppWindowResource.fullscreen</dfn> member indicates the full screen display. <code>true</code> is equivalent to the <code>fullscreen</code> value of
+            <a href="https://www.w3.org/TR/appmanifest/#display-member"><code>display</code></a>, and <code>false</code> to <code>minimal-ui</code>.</span>
         </p>
         <p class="note">
           <span its-locale-filter-list="en" lang="en">
