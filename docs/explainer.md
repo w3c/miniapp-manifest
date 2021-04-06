@@ -26,8 +26,8 @@ To ensure the overall design requirements of [MiniApp Packaging](https://w3c.git
 
 * Home screen display: Show the name and icon of the application to users by `name` and `icon`.
 * Locales: Set different languages ​​and text directions to meet the localization requirement by `lang` and `dir`.
-* Version management: Show version information of MiniApp, control application and device compatibility to users by `versionName`.
-* Version upgrade: Provide maintainability and security of MiniApp by `versionCode`.
+* Version management: Show version information of MiniApp, control application and device compatibility to users by `version_name`.
+* Version upgrade: Provide maintainability and security of MiniApp by `version_code`.
 * Permission statement: Declare the necessary permissions required for running MiniApp, such as geolocation, storage, camera, etc.
 
 #### Why are `pages` and `window` needed?
@@ -47,11 +47,11 @@ So far only a basic subset of MiniApp Manifest is specified. It will be graduall
 {
   "dir": "ltr",
   "lang": "en-US",
-  "appID": "org.example.miniApp1",
+  "app_id": "org.example.miniApp1",
   "name": "My MiniApp Demo",
   "short_name": "Demo X",
-  "versionName": "1.0.0",
-  "versionCode": 1,
+  "version_name": "1.0.0",
+  "version_code": 1,
   "description": "A Simple MiniApp Demo",
   "icons": [
     {
@@ -59,23 +59,23 @@ So far only a basic subset of MiniApp Manifest is specified. It will be graduall
       "sizes": "48x48"
     }
   ],
-  "minPlatformVersion": "1.0.0",
+  "min_platform_version": "1.0.0",
   "pages": [
     "pages/index/index",
     "pages/detail/detail"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Demo",
-    "navigationBarBackgroundColor": "#f8f8f8",
-    "backgroundColor": "#ffffff",
+    "navigation_bar_text_style": "black",
+    "navigation_bar_title_text": "Demo",
+    "navigation_bar_background_color": "#f8f8f8",
+    "background_color": "#ffffff",
     "fullscreen": false
   },
   "widgets": [
     {
       "name": "widget",
       "path": "widgets/index/index",
-      "minPlatformVersion": "1.0.0"
+      "min_platform_version": "1.0.0"
     }
   ]
 }
@@ -86,7 +86,7 @@ The MiniApp manifest is developed in the way that it covers the most common prac
 
 On the other hand, MiniApp manifest has different assumptions on the hosting platforms and the form of application from those of Web App Manifest, so there are aspects that are not matched:
 
-1. **Platform difference:** MiniApp needs to cover the cases that the application hosting platforms are not based on the web/browser, such as a native OS or a hosting application running on top of the OS. The software architecture is more like a native application rather than a web application (although it leverages some web technologies). Therefore, a MiniApp manifest needs to manage the compatibility more strictly between its application version and the platform version than that in the web environment. Member attributes such as `versionName`, `versionCode` and `minPlatformVersion` are specified for that purpose, but are not necessary for a web application. And strict permission management by the `reqPermissions` attribute is also needed to control the access to local resources (sensitive data and functions) via the hosting platform.
+1. **Platform difference:** MiniApp needs to cover the cases that the application hosting platforms are not based on the web/browser, such as a native OS or a hosting application running on top of the OS. The software architecture is more like a native application rather than a web application (although it leverages some web technologies). Therefore, a MiniApp manifest needs to manage the compatibility more strictly between its application version and the platform version than that in the web environment. Member attributes such as `version_name`, `version_code` and `min_platform_version` are specified for that purpose, but are not necessary for a web application. And strict permission management by the `req_permissions` attribute is also needed to control the access to local resources (sensitive data and functions) via the hosting platform.
 2. **Application form difference:** A MiniApp typically consists of a set of pages and/or widgets. A MiniApp page/widget is similar to a web page in the sense of developing techniques (e.g. JS, CSS), but is different in many other ways like the life-cycle, the layout, components and system APIs. More importantly, these pages/widgets are organically composed views/activities of the MiniApp rather than independent web pages. The MiniApp manifest needs to provide means to organize and configure them into a common look and feel (e.g. navigation bar, scrolling behavior, width adaptation) by the attributes like `window`, `pages` and `widgets`. Moreover, web app manifests are deployed in an HTML page using a `link` element, but MiniApp manifests are a part of the MiniApp [package](https://w3c.github.io/miniapp/specs/packaging/), and does not depend on HTML.
 
 As both work are still under development, it worths further evaluating the possibilities of alignment from each side. From MiniApp perspective, further study could be investigating the usability of some unmapped member attributes (such as `categories`, `screenshots`) of Web App Manifest in the context of MiniApp.
@@ -105,17 +105,17 @@ name	|name       |	Same
 short_name	|short_name|	Same
 description	|description|	Same
 icons	|icons	| Same
-versionName	|-	| MiniApp only
-versionCode	|-	| MiniApp only
-minPlatformVersion	|-	|MiniApp only
+version_name	|-	| MiniApp only
+version_code	|-	| MiniApp only
+min_platform_version	|-	|MiniApp only
 pages	|scope	| Similar. `pages` lists the local URIs to the app pages of a MiniApp while the `scope` in Web App can vary from a local URL to a remote URL.  
 pages.[0]	|start_url	| Different but comparable. The first element of `pages` represents the starting page in MiniApp instead of an explicit URL.
 window  |-  | MiniApp only. `window` contains a set of attributes for the default configuration of MiniApp pages and widgets. Most of them are unique to MiniApp except for a few that are mappable to Web App Manifest.(See below.)
-window.backgroundColor	|background_color	|Similar. MiniApp accepts only RGB hex value for now.
+window.background_color	|background_color	|Similar. MiniApp accepts only RGB hex value for now.
 window.orientation	|orientation	|Same
 window.fullscreen	|display=fullscreen	|Same but in different formation (boolean vs enum). 
 widgets	|-	|MiniApp only
-reqPermissions	|-	|MiniApp only
+req_permissions	|-	|MiniApp only
 \-	|theme_color	|Web App only.  (For further study in MiniApp)
 \-	|iarc_rating_id	| Web App only. (For further study in MiniApp)
 \-	|related_applications	| Web App only (For further study in MiniApp)
