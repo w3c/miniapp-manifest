@@ -20,12 +20,12 @@
   },
   "type": "object",
   "required": [
-    "appID",
-    "appName",
+    "app_id",
+    "name",
     "icons",
-    "versionName",
-    "versionCode",
-    "minPlatformVersion",
+    "version_name",
+    "version_code",
+    "min_platform_version",
     "pages"
   ],
   "properties": {
@@ -37,18 +37,18 @@
       "type": "string",
       "description": "The value of lang here takes the value of Language-Tag defined in the [BCP47]"
     },
-    "appID": {
+    "app_id": {
       "type": "string",
       "format": "idn-hostname",
-      "description": "The naming convention of appID adopts the reverse domain naming rule and uses all lowercases",
+      "description": "The naming convention of app ID adopts the reverse domain naming rule and uses all lowercases",
       "example": "com.company.miniapp"
     },
-    "appName": {
+    "name": {
       "type": "string",
       "minLength": 4,
       "maxLength": 30
     },
-    "shortName": {
+    "short_name": {
       "type": "string",
       "minLength": 4,
       "maxLength": 30
@@ -80,16 +80,16 @@
       },
       "description": "It consists of icons with different resolutions, and displays different icons based on the type of display equipment."
     },
-    "versionName": {
+    "version_name": {
       "type": "string",
       "example": "1.0.0"
     },
-    "versonCode": {
+    "version_code": {
       "type": "integer",
       "default": 1,
       "min": 1
     },
-    "minPlatformVersion": {
+    "min_platform_version": {
       "$ref": "#/definitions/TypeVersionString",
       "description": "It is the minimum supported version of the required platform that can ensure normal operation of MiniApp."
     },
@@ -103,34 +103,34 @@
     "window": {
       "type": "object",
       "properties": {
-        "navigationBarBackgroundColor": {
+        "navigation_bar_background_color": {
           "$ref": "#/definitions/TypeHexColor",
           "default": "#000000"
         },
-        "navigationBarTextStyle": {
+        "navigation_bar_text_style": {
           "enum": ["white", "black"],
           "default": "white"
         },
-        "navigationBarTitleText": {
+        "navigation_bar_title_text": {
           "type": "string"
         },
-        "navigationStyle": {
+        "navigation_style": {
           "enum": ["default", "custom"],
           "default": "default"
         },
-        "backgroundColor": {
+        "background_color": {
           "$ref": "#/definitions/TypeHexColor",
           "default": "#ffffff"
         },
-        "backgroundTextStyle": {
+        "background_text_style": {
           "enum": ["dark", "light"],
           "default": "dark"
         },
-        "enablePullDownRefresh": {
+        "enable_pull_down_refresh": {
           "type": "boolean",
           "default": false
         },
-        "onReachBottomDistance": {
+        "on_reach_bottom_distance": {
           "type": "integer",
           "default": 50,
           "min": 0
@@ -143,12 +143,12 @@
           "type": "boolean",
           "default": false
         },
-        "designWidth": {
+        "design_width": {
           "type": "integer",
           "default": 750,
           "min": 0
         },
-        "autoDesignWidth": {
+        "auto_design_width": {
           "type": "boolean",
           "default": false
         }
@@ -166,14 +166,14 @@
           "path": {
             "$ref": "#/definitions/TypePathString"
           },
-          "minPlatformVersion": {
+          "min_platform_version": {
             "$ref": "#/definitions/TypeVersionString",
             "description": "If not set, it's identical to the MiniApp platform version by default."
           }
         }
       }
     },
-    "req-permissions": {
+    "req_permissions": {
       "type": "array",
       "items": {
         "type": "object",
@@ -190,3 +190,4 @@
     }
   }
 }
+
