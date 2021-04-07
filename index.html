@@ -160,14 +160,14 @@
         </li>
       </ul>
       <p its-locale-filter-list="en" lang="en">
-        The following members MUST be set in a <a>MiniApp widget resource</a>.
+        The following members MUST be set in a <a>MiniApp Widget resource</a>.
       </p>
       <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
-        The following members MUST be set in a <a>MiniApp widget resource</a>.
+        The following members MUST be set in a <a>MiniApp Widget resource</a>.
       </p>
       <ul>
         <li>
-         <a data-link-for="MiniApp widget resource" data-link-type="dfn">name</a>
+         <a data-link-for="MiniApp Widget resource" data-link-type="dfn">name</a>
         </li>
         <li>
          <a>path</a>
@@ -375,7 +375,7 @@
           </tr>
           <tr>
             <td colspan="2"><a>widgets</a></td>
-            <td> <a>MiniApp widget resource</a> [=array=] </td>
+            <td> <a>MiniApp Widget resource</a> [=array=] </td>
             <td>
               <span its-locale-filter-list="en" lang="en">No</span>
               <span its-locale-filter-list="zh-hans" lang="zh-hans">否</span>
@@ -386,7 +386,7 @@
           </tr>
           <tr>
             <th rowspan="3">widgets</th>
-            <td><a data-link-for="MiniApp widget resource" data-link-type="dfn">name</a></td>
+            <td><a data-link-for="MiniApp Widget resource" data-link-type="dfn">name</a></td>
             <td> [=string=] </td>
             <td>
               <span its-locale-filter-list="en" lang="en">Yes</span>
@@ -410,7 +410,7 @@
             </td>
           </tr>
           <tr>
-            <td><a data-link-for="MiniApp widget resource" data-link-type="dfn">min_platform_version</a></td>
+            <td><a data-link-for="MiniApp Widget resource" data-link-type="dfn">min_platform_version</a></td>
             <td> [=string=] </td>
             <td>
               <span its-locale-filter-list="en" lang="en">No</span>
@@ -845,7 +845,7 @@
             The <dfn>widgets</dfn> member defines a set of widgets that are a part of a MiniApp.
             Specifically, a MiniApp package can include MiniApp Pages and Widgets concurrently.
             As a part of the MiniApp application, widgets share some of the Manifest fields with the
-            MiniApp main program, e.g. <code>dir</code>, <code>lang</code>, <code>app_id</code>, <code>name</code>, <code>short_name</code>, <code>icons</code>, <code>version_name</code>, and <code>version_code</code>. However, a widget also has its private fields, defined in <a>MiniApp widget resource</a>.
+            MiniApp main program, e.g. <code>dir</code>, <code>lang</code>, <code>app_id</code>, <code>name</code>, <code>short_name</code>, <code>icons</code>, <code>version_name</code>, and <code>version_code</code>. However, a widget also has its private fields, defined in <a>MiniApp Widget resource</a>.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
             Widget是MiniApp的一部分。具体来说，MiniApp包中可同时包含 MiniApp Page和Widget。Widget作为MiniApp应用程序的一部分，Widget和MiniApp主体程序共用部分Manifest字段，比如：<code>dir</code>、<code>lang</code>、<code>app_id</code>、<code>name</code>、<code>short_name</code>、<code>icons</code>、<code>version_name</code>和<code>version_code</code>。但是Widget也有自己的私有字段，如下表所示：
@@ -1051,11 +1051,11 @@
     </section>
 
     <section>
-      <h2><dfn>MiniApp widget resource</dfn> members</h2>
+      <h2><dfn>MiniApp Widget resource</dfn> members</h2>
       <section>
         <h2><code>name</code> member</h2>
         <p>
-          <span its-locale-filter-list="en" lang="en">The <dfn data-dfn-for="MiniApp widget resource">name</dfn> member describes the Widget name</span>
+          <span its-locale-filter-list="en" lang="en">The <dfn data-dfn-for="MiniApp Widget resource">name</dfn> member describes the name of the Widget</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">Widget名字</span>
         </p>
       </section>
@@ -1069,7 +1069,7 @@
       <section>
         <h3><code>min_platform_version</code> member</h3>
         <p>
-          <span its-locale-filter-list="en" lang="en">The <dfn data-dfn-for="MiniApp widget resource">min_platform_version</dfn> member indicates the minimum platform version supported</span>
+          <span its-locale-filter-list="en" lang="en">The <dfn data-dfn-for="MiniApp Widget resource">min_platform_version</dfn> member indicates the minimum platform version supported</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">支持最小平台版本</span>
         </p>
         <p its-locale-filter-list="en" lang="en">There are certain differences between the Widget-related APIs and the MiniApp APIs, hence, the declaration of the minimum platform version may be different. If the <code>min_platform_version</code> field of a widget is not set explicitly, it is then identical to the <code>min_platform_version</code> of the MiniApp by default.
@@ -1124,7 +1124,7 @@
           <li><a>short_name</a></li>
           <li><a>description</a></li>
           <li>MiniApp window resource's <a>navigation_bar_title_text</a></li>
-          <li>MiniApp widget resource's <a data-link-for="MiniApp widget resource" data-link-type="dfn">name</a></li>
+          <li>MiniApp Widget resource's <a data-link-for="MiniApp Widget resource" data-link-type="dfn">name</a></li>
       </ul>
     </section>
 
