@@ -1,6 +1,6 @@
 # MiniApp Manifest explainer
 
-> Note: This document serves as a supplementary explanation of the [MiniApp Manifest](https://github.com/w3c/miniapp/tree/gh-pages/specs/manifest/) spec. If there is any inconsistency with the spec, you should consider the spec to be authoritative.
+> Note: This document serves as a supplementary explanation of the [MiniApp Manifest](https://w3c.github.io/miniapp-manifest/) spec. If there is any inconsistency with the spec, you should consider the spec to be authoritative.
 
 ## Authors
 
@@ -18,7 +18,7 @@ Manifest, as the manifest file of MiniApp, includes configuration information th
 
 ## 2. Manifest Design
 
-To ensure the overall design requirements of [MiniApp Packaging](https://w3c.github.io/miniapp/specs/packaging/), [MiniApp Widget](https://w3c.github.io/miniapp/specs/widget-req/), and [MiniApp Addressing](https://w3c.github.io/miniapp/specs/uri/) are met, the manifest file of MiniApp should contain basic information of the application, page routing scope, window configuration information and widget configuration information, etc.
+To ensure the overall design requirements of [MiniApp Packaging](https://w3c.github.io/miniapp/specs/packaging/), [MiniApp Widget](https://w3c.github.io/miniapp-widget/), and [MiniApp Addressing](https://w3c.github.io/miniapp-addressing/) are met, the manifest file of MiniApp should contain basic information of the application, page routing scope, window configuration information and widget configuration information, etc.
 
 ### Key Considerations
 
@@ -32,8 +32,8 @@ To ensure the overall design requirements of [MiniApp Packaging](https://w3c.git
 
 #### Why are `pages` and `window` needed?
 
-* The [pages](https://w3c.github.io/miniapp/specs/manifest/#pages) array needs to cover all the pages included in the MiniApp and specify a reasonable page jump range and home page settings.
-* The [window](https://w3c.github.io/miniapp/specs/manifest/#window) object needs to cover the basic elements of the MiniApp window, such as the status bar, navigation bar, title and window style, etc.
+* The [pages](https://w3c.github.io/miniapp-manifest/#pages-member) array needs to cover all the pages included in the MiniApp and specify a reasonable page jump range and home page settings.
+* The [window](https://w3c.github.io/miniapp-manifest/#window-member) object needs to cover the basic elements of the MiniApp window, such as the status bar, navigation bar, title and window style, etc.
 
 #### Why is `widgets` needed?
 
@@ -87,7 +87,7 @@ The MiniApp manifest is developed in the way that it covers the most common prac
 On the other hand, MiniApp manifest has different assumptions on the hosting platforms and the form of application from those of Web App Manifest, so there are aspects that are not matched:
 
 1. **Platform difference:** MiniApp needs to cover the cases that the application hosting platforms are not based on the web/browser, such as a native OS or a hosting application running on top of the OS. The software architecture is more like a native application rather than a web application (although it leverages some web technologies). Therefore, a MiniApp manifest needs to manage the compatibility more strictly between its application version and the platform version than that in the web environment. Member attributes such as `version_name`, `version_code` and `min_platform_version` are specified for that purpose, but are not necessary for a web application. And strict permission management by the `req_permissions` attribute is also needed to control the access to local resources (sensitive data and functions) via the hosting platform.
-2. **Application form difference:** A MiniApp typically consists of a set of pages and/or widgets. A MiniApp page/widget is similar to a web page in the sense of developing techniques (e.g. JS, CSS), but is different in many other ways like the life-cycle, the layout, components and system APIs. More importantly, these pages/widgets are organically composed views/activities of the MiniApp rather than independent web pages. The MiniApp manifest needs to provide means to organize and configure them into a common look and feel (e.g. navigation bar, scrolling behavior, width adaptation) by the attributes like `window`, `pages` and `widgets`. Moreover, web app manifests are deployed in an HTML page using a `link` element, but MiniApp manifests are a part of the MiniApp [package](https://w3c.github.io/miniapp/specs/packaging/), and does not depend on HTML.
+2. **Application form difference:** A MiniApp typically consists of a set of pages and/or widgets. A MiniApp page/widget is similar to a web page in the sense of developing techniques (e.g. JS, CSS), but is different in many other ways like the life-cycle, the layout, components and system APIs. More importantly, these pages/widgets are organically composed views/activities of the MiniApp rather than independent web pages. The MiniApp manifest needs to provide means to organize and configure them into a common look and feel (e.g. navigation bar, scrolling behavior, width adaptation) by the attributes like `window`, `pages` and `widgets`. Moreover, web app manifests are deployed in an HTML page using a `link` element, but MiniApp manifests are a part of the MiniApp [package](https://w3c.github.io/miniapp-packaging/), and does not depend on HTML.
 
 As both work are still under development, it worths further evaluating the possibilities of alignment from each side. From MiniApp perspective, further study could be investigating the usability of some unmapped member attributes (such as `categories`, `screenshots`) of Web App Manifest in the context of MiniApp.
 
@@ -96,7 +96,7 @@ As both work are still under development, it worths further evaluating the possi
 ## A. MiniApp Manifest comparison with Web App Manifest
 The following table mainly describes the comparison between the manifest attributes in Mini App and Web App. "-" in the table means that there is no such attribute in the corresponding manifest.
 
-[Mini App Manifest](https://w3c.github.io/miniapp/specs/manifest/)| [Web App Manifest](https://www.w3.org/TR/appmanifest/) |	Comparison 
+[Mini App Manifest](https://w3c.github.io/miniapp-manifest/)| [Web App Manifest](https://www.w3.org/TR/appmanifest/) |	Comparison 
 :---    |:--        |:---
 dir	    |   dir     |	Same
 lang    |	lang    |	Same
