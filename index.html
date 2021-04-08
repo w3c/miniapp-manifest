@@ -78,17 +78,19 @@
 <body data-cite="APPMANIFEST MANIFEST-APP-INFO INFRA">
   <section id='abstract'>
     <p its-locale-filter-list="en" lang="en">
-      This specification is a registry of supplementary members for the [[APPMANIFEST]] and [[MANIFEST-APP-INFO]] specifications that provide additional metadata to an <a>application manifest</a> to describe MiniApps. This JSON-based manifest file enables developers to set up basic information, window style, page route, and other information of a MiniApp. The basic metadata of a MiniApp manifest includes descriptive information about the MiniApp identifier, such as app name, version name, version code, and minimum platform version, among others. The manifest also includes information about the window style like the navigation bar, title, and window background color. The <code>pages</code> member is used to specify page route information, and the <code>widgets</code> member describes a specific type of page.
+      This specification is a registry of supplementary members for the Web Application Manifest [[APPMANIFEST]] and the Web App Manifest - Application Information [[MANIFEST-APP-INFO]] specifications that provide additional metadata to an [=application manifest=] to describe MiniApps. This JSON-based manifest file enables developers to set up basic information, window style, page route, and other information of a MiniApp. A MiniApp manifest includes descriptive metadata about the MiniApp, such as identifier, app name, version name, version code, and minimum platform version, among others. The manifest also includes information about the window style like the navigation bar, title, and window background color. The <code>pages</code> member is used to specify page route information, and the <code>widgets</code> member describes a specific type of page.
     </p>
     <p its-locale-filter-list="zh-hans" lang="zh-hans" class="retranslateme">
       本规范定义了基于JSON格式的Manifest文件，使开发者可通过Manifest文件设置MiniApp的基本信息、窗口样式和页面路由等信息。这里，MiniApp基本信息包括但不限于MiniApp ID、名称、版本名称、版本号以及最小平台版本等；窗口样式window包括但不限于导航栏、标题和窗口背景等；pages用于指定页面路由信息；widgets用于描述卡片信息。
     </p>
-    <p its-locale-filter-list="en" lang="en">
-      Note: At present, only an essential subset of MiniApp Manifest is specified, and it will be gradually updated and supplemented based on different scenario requirements.
-    </p>
-    <p its-locale-filter-list="zh-hans" lang="zh-hans">
-      备注：目前只是列出MiniApp Manifest的一个基础子集，后续会根据不同的场景需求进行渐进式更新和补充。
-    </p>
+    <div class="note">
+      <p its-locale-filter-list="en" lang="en">
+        At present, only an essential subset of MiniApp Manifest is specified, and it will be gradually updated and supplemented based on different scenario requirements.
+      </p>
+      <p its-locale-filter-list="zh-hans" lang="zh-hans">
+        目前只是列出MiniApp Manifest的一个基础子集，后续会根据不同的场景需求进行渐进式更新和补充。
+      </p>
+    </div>
   </section>
 
   <section id='sotd'>
@@ -99,21 +101,24 @@
     </p>
   </section>
 
+  <section id='conformance'>
+  </section>
+  
   <section>
     <h2>MiniApp Manifest</h2>
     <p its-locale-filter-list="en" lang="en">
-      A <dfn data-export="" data-dfn-for="" data-lt="MiniApp manifests|manifest">MiniApp manifest</dfn> is a [[JSON]] document that extends and profiles the Web App Manifest format [[APPMANIFEST]] and contains metadata associated with a MiniApp.
+      A <dfn data-export="" data-dfn-for="" data-lt="MiniApp Manifest's|manifest">MiniApp Manifest</dfn> is a [[JSON]] document that extends and profiles the Web App Manifest format [[APPMANIFEST]] and contains metadata associated with a MiniApp.
     </p>
     <p its-locale-filter-list="zh-hans" lang="zh-hans">
       MiniApp Manifest 是一个JSON文档，其中包含与该MiniApp关联的元数据。
     </p>
-    <section id="manifest-requirements" data-cite="image-resource">
-      <h3>Requirements</h3>
+    <section id="manifest-conformance" data-cite="IMAGE-RESOURCE">
+      <h3>Conformance</h3>
       <p its-locale-filter-list="en" lang="en">
-        The following members MUST be set in the <a>MiniApp Manifest</a>.
+        A [=MiniApp Manifest=] MUST contain the following members at its root:
       </p>
       <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
-        The following members MUST be set in the <a>MiniApp Manifest</a>.
+        A [=MiniApp Manifest=] MUST contain the following members at its root:
       </p>
       <ul>
         <li>
@@ -139,10 +144,10 @@
         </li>
       </ul>
       <p its-locale-filter-list="en" lang="en">
-          The following members MUST be set in an {{ImageResource}}.
+          Each [=image resource=] object within the [=MiniApp Manifest's=] <a>icons</a> member MUST contain the following members:
       </p>
       <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
-        The following members MUST be set in an {{ImageResource}}.
+          Each [=image resource=] object within the [=MiniApp Manifest's=] <a>icons</a> member MUST contain the following members:
       </p>
       <ul>
         <li>
@@ -153,10 +158,10 @@
         </li>
       </ul>
       <p its-locale-filter-list="en" lang="en">
-        The following members MUST be set in a <a>MiniApp Widget resource</a>.
+        A [=MiniApp Manifest=] MAY contain a <a>widgets</a> member at its root. This member MUST contain an [=array=] of <a>MiniApp Widget resources</a>. Each [=MiniApp Widget resource=] object MUST contain the following members:
       </p>
       <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
-        The following members MUST be set in a <a>MiniApp Widget resource</a>.
+        A [=MiniApp Manifest=] MAY contain a <a>widgets</a> member at its root. This member MUST contain an [=array=] of <a>MiniApp Widget resources</a>. Each [=MiniApp Widget resource=] object MUST contain the following members:
       </p>
       <ul>
         <li>
@@ -167,20 +172,20 @@
         </li>
       </ul>
       <p its-locale-filter-list="en" lang="en">
-        The following member MUST be set in a <a>MiniApp permission resource</a>.
+        A [=MiniApp Manifest=] MAY contain a [=req_permissions=] member at its root. This member MUST contain an [=array=] of <a>MiniApp permission resources</a>. Each [=MiniApp permission resource=] object MUST contain the following member:
       </p>
       <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
-        The following member MUST be set in a <a>MiniApp permission resource</a>.
+        A [=MiniApp Manifest=] MAY contain a [=req_permissions=] member at its root. This member MUST contain an [=array=] of <a>MiniApp permission resources</a>. Each [=MiniApp permission resource=] object MUST contain the following member:
       </p>
       <ul>
         <li>
          <a data-link-for="MiniApp permission resource" data-link-type="dfn">name</a>
         </li>
       </ul>    
-      <p>The priority of all other <a href="#manifest-members">members</a> is OPTIONAL, but MAY be modified by implementations of the manifest format in the case of specific MiniApp extensions.</p>
+      <p>The presence of other <a href="#manifest-members">members</a> in a [=MiniApp Manifest=] is optional, but this MAY be modified by vendor-specific extensions.</p>
     </section>
 
-    <section data-cite="image-resource">
+    <section data-cite="IMAGE-RESOURCE">
       <h3>Summary of Members</h3>
       <p its-locale-filter-list="en" lang="en">
         The following table is a summary of each member:
@@ -624,7 +629,7 @@
   </section>
   <section id="manifest-members">
     <h2>
-      <span its-locale-filter-list="en" lang="en"><dfn>MiniApp Manifest</dfn> members</span>
+      <span its-locale-filter-list="en" lang="en">MiniApp Manifest members</span>
       <span its-locale-filter-list="zh-hans" lang="zh-hans">字段</span>
     </h2>
     <p>
@@ -653,7 +658,7 @@
         </p>        
 
       </section>
-      <section data-cite="image-resource">
+      <section data-cite="IMAGE-RESOURCE">
         <h3>
           <span its-locale-filter-list="en" lang="en"><code>icons</code> member</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">图标</span>
@@ -1044,7 +1049,7 @@
     </section>
 
     <section>
-      <h2><dfn>MiniApp Widget resource</dfn> members</h2>
+      <h2><dfn data-lt="MiniApp Widget resources">MiniApp Widget resource</dfn> members</h2>
       <section>
         <h2><code>name</code> member</h2>
         <p>
@@ -1073,7 +1078,7 @@
     </section>
 
     <section>
-      <h2><dfn>MiniApp permission resource</dfn> members</h2>
+      <h2><dfn data-lt="MiniApp permission resource">MiniApp permission resource</dfn> members</h2>
       <section>
         <h3><code>name</code> member</h3>
         <p>
