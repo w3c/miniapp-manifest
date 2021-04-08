@@ -75,10 +75,10 @@
     </script>
 </head>
 
-<body data-cite="appmanifest manifest-app-info INFRA">
+<body data-cite="APPMANIFEST MANIFEST-APP-INFO INFRA">
   <section id='abstract'>
     <p its-locale-filter-list="en" lang="en">
-      This specification is a registry of supplementary members for the [[[appmanifest]]] and [[[manifest-app-info]]] specifications that provide additional metadata to an <a>application manifest</a> to describe MiniApps. This JSON-based manifest file enables developers to set up basic information, window style, page route, and other information of a MiniApp. The basic metadata of a MiniApp manifest includes descriptive information about the MiniApp ID, such as app name, version name, version code, and minimum platform version, among others. The manifest also includes information about the window style like the navigation bar, title, and window background color. The "pages" member is used to specify page route information, and the "widgets" member describes a specific type of page.
+      This specification is a registry of supplementary members for the [[APPMANIFEST]] and [[MANIFEST-APP-INFO]] specifications that provide additional metadata to an <a>application manifest</a> to describe MiniApps. This JSON-based manifest file enables developers to set up basic information, window style, page route, and other information of a MiniApp. The basic metadata of a MiniApp manifest includes descriptive information about the MiniApp identifier, such as app name, version name, version code, and minimum platform version, among others. The manifest also includes information about the window style like the navigation bar, title, and window background color. The <code>pages</code> member is used to specify page route information, and the <code>widgets</code> member describes a specific type of page.
     </p>
     <p its-locale-filter-list="zh-hans" lang="zh-hans" class="retranslateme">
       本规范定义了基于JSON格式的Manifest文件，使开发者可通过Manifest文件设置MiniApp的基本信息、窗口样式和页面路由等信息。这里，MiniApp基本信息包括但不限于MiniApp ID、名称、版本名称、版本号以及最小平台版本等；窗口样式window包括但不限于导航栏、标题和窗口背景等；pages用于指定页面路由信息；widgets用于描述卡片信息。
@@ -102,8 +102,7 @@
   <section>
     <h2>MiniApp Manifest</h2>
     <p its-locale-filter-list="en" lang="en">
-      A MiniApp manifest extends and profiles the Web App Manifest format [[appManifest]] and
-      contains metadata associated with a MiniApp.
+      A <dfn data-export="" data-dfn-for="" data-lt="MiniApp manifests|manifest">MiniApp manifest</dfn> is a [[JSON]] document that extends and profiles the Web App Manifest format [[APPMANIFEST]] and contains metadata associated with a MiniApp.
     </p>
     <p its-locale-filter-list="zh-hans" lang="zh-hans">
       MiniApp Manifest 是一个JSON文档，其中包含与该MiniApp关联的元数据。
@@ -644,13 +643,13 @@
           <dfn>dir</dfn> member, while
           specifying the base direction of the <a>localizable members</a> of the manifest, also specifies
           the default base text direction of the whole MiniApp. The <a>dir</a>
-          member's value can be set to one of the <a href="https://www.w3.org/TR/appmanifest/#dfn-text-direction-value">text-direction values</a> as specified in [[appManifest]].
+          member's value can be set to one of the <a href="https://www.w3.org/TR/appmanifest/#dfn-text-direction-value">text-direction values</a> as specified in [[APPMANIFEST]].
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
           dir member, while
           specifying the base direction of the <a>localizable members</a> of the manifest, also specifies
           the default base text direction of the whole MiniApp. The <a>dir</a>
-          member's value can be set to one of the <a href="https://www.w3.org/TR/appmanifest/#dfn-text-direction-value">text-direction values</a> as specified in [[appManifest]].
+          member's value can be set to one of the <a href="https://www.w3.org/TR/appmanifest/#dfn-text-direction-value">text-direction values</a> as specified in [[APPMANIFEST]].
         </p>        
 
       </section>
@@ -710,10 +709,10 @@
         </p>
       </section>
     </section>
-    <section id='WebAppManifest-app-info-members' data-cite='manifest-app-info'>
+    <section id='WebAppManifest-app-info-members' data-cite='MANIFEST-APP-INFO'>
         <h2>Members supplemented from the Application Information</h2>
         <p>
-          The members listed in this section are defined in <cite>Web App Manifest - Application Information</cite> [[manifest-app-info]].
+          The members listed in this section are defined in <cite>Web App Manifest - Application Information</cite> [[MANIFEST-APP-INFO]].
         </p>
       <section>
         <h3>
