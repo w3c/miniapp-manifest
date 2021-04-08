@@ -78,13 +78,13 @@
 <body data-cite="appmanifest manifest-app-info INFRA">
   <section id='abstract'>
     <p its-locale-filter-list="en" lang="en">
-      This specification is a registry of supplementary members for the [[[appmanifest]]] and [[[manifest-app-info]]] specifications that provide additional metadata to an <a>application manifest</a> to describe MiniApps. This JSON-based manifest file enables developers to set up basic information, window style, page route, and other information of a MiniApp. The basic information of a MiniApp includes but is not limited to MiniApp ID, app name, version name, version code, minimum platform version, etc.; window style includes but is not limited to the navigation bar, title, window background, etc.; "pages" are used to specify page route information; and "widgets" are used to describe card information.
+      This specification is a registry of supplementary members for the [[[appmanifest]]] and [[[manifest-app-info]]] specifications that provide additional metadata to an <a>application manifest</a> to describe MiniApps. This JSON-based manifest file enables developers to set up basic information, window style, page route, and other information of a MiniApp. The basic metadata of a MiniApp manifest includes descriptive information about the MiniApp ID, such as app name, version name, version code, and minimum platform version, among others. The manifest also includes information about the window style like the navigation bar, title, and window background color. The "pages" member is used to specify page route information, and the "widgets" member describes a specific type of page.
     </p>
-    <p its-locale-filter-list="zh-hans" lang="zh-hans">
+    <p its-locale-filter-list="zh-hans" lang="zh-hans" class="retranslateme">
       本规范定义了基于JSON格式的Manifest文件，使开发者可通过Manifest文件设置MiniApp的基本信息、窗口样式和页面路由等信息。这里，MiniApp基本信息包括但不限于MiniApp ID、名称、版本名称、版本号以及最小平台版本等；窗口样式window包括但不限于导航栏、标题和窗口背景等；pages用于指定页面路由信息；widgets用于描述卡片信息。
     </p>
     <p its-locale-filter-list="en" lang="en">
-      Note: At present, only a basic subset of MiniApp Manifest is specified, and it will be gradually updated and supplemented based on different scenario requirements.
+      Note: At present, only an essential subset of MiniApp Manifest is specified, and it will be gradually updated and supplemented based on different scenario requirements.
     </p>
     <p its-locale-filter-list="zh-hans" lang="zh-hans">
       备注：目前只是列出MiniApp Manifest的一个基础子集，后续会根据不同的场景需求进行渐进式更新和补充。
@@ -92,12 +92,6 @@
   </section>
 
   <section id='sotd'>
-    <!-- <p its-locale-filter-list="en" lang="en">
-      This is still a work in progress. The proposal is being incubated in the <a href="https://www.w3.org/community/miniapps/">W3C MiniApps Ecosystem Community Group</a>.
-    </p>
-    <p its-locale-filter-list="zh-hans" lang="zh-hans">
-      本文档由 <a href="https://www.w3.org/community/miniapps/">W3C MiniApps 生态社区组</a>孵化，目前尚在编辑草稿阶段。
-    </p> -->
     <p id="langSwitch">
       <button onclick="switchLang('zh-hans')" lang="zh-hans">简体中文</button>
       <button onclick="switchLang('en')" lang="en">English</button>
