@@ -77,11 +77,11 @@
 
 <body data-cite="APPMANIFEST MANIFEST-APP-INFO INFRA">
   <section id='abstract'>
-    <p its-locale-filter-list="en" lang="en">
+    <p>
       This specification is a registry of supplementary members for the Web Application Manifest [[APPMANIFEST]] and the Web App Manifest - Application Information [[MANIFEST-APP-INFO]] specifications that provide additional metadata to an [=application manifest=] to describe MiniApps. This JSON-based manifest file enables developers to set up basic information, window style, page route, and other information of a MiniApp. A MiniApp manifest includes descriptive metadata about the MiniApp, such as identifier, app name, version name, version code, and minimum platform version, among others. The manifest also includes information about the window style like the navigation bar, title, and window background color. The <code>pages</code> member is used to specify page route information, and the <code>widgets</code> member describes a specific type of page.
     </p>
     <div class="note">
-      <p its-locale-filter-list="en" lang="en">
+      <p>
         At present, only an essential subset of MiniApp Manifest is specified, and it will be gradually updated and supplemented based on different scenario requirements.
       </p>
     </div>
@@ -103,12 +103,12 @@
   
   <section>
     <h2>MiniApp Manifest</h2>
-    <p its-locale-filter-list="en" lang="en">
+    <p>
       A <dfn data-lt="MiniApp Manifest's|manifest">MiniApp Manifest</dfn> is a [[JSON]] document that extends and profiles the Web App Manifest [[APPMANIFEST]] and the Web App Manifest - Application Information [[MANIFEST-APP-INFO]], to describe metadata associated with a MiniApp.
     </p>
     <section id="manifest-conformance" data-cite="IMAGE-RESOURCE">
       <h3>Conformance</h3>
-      <p its-locale-filter-list="en" lang="en">
+      <p>
         A [=MiniApp Manifest=] MUST contain the following members at its root:
       </p>
       <ul>
@@ -134,7 +134,7 @@
           <a>pages</a>
         </li>
       </ul>
-      <p its-locale-filter-list="en" lang="en">
+      <p>
           Each [=image resource=] object within the [=MiniApp Manifest's=] <a>icons</a> member MUST contain the following members:
       </p>
       <ul>
@@ -145,7 +145,7 @@
           {{ImageResource/sizes}}
         </li>
       </ul>
-      <p its-locale-filter-list="en" lang="en">
+      <p>
         A [=MiniApp Manifest=] MAY contain a <a>widgets</a> member at its root. This member MUST contain an [=array=] of <a>MiniApp Widget resources</a>. Each [=MiniApp Widget resource=] object MUST contain the following members:
       </p>
       <ul>
@@ -156,7 +156,7 @@
          <a>path</a>
         </li>
       </ul>
-      <p its-locale-filter-list="en" lang="en">
+      <p>
         A [=MiniApp Manifest=] MAY contain a [=req_permissions=] member at its root. This member MUST contain an [=array=] of <a>MiniApp permission resources</a>. Each [=MiniApp permission resource=] object MUST contain the following member:
       </p>
       <ul>
@@ -174,22 +174,22 @@
 
     <section data-cite="IMAGE-RESOURCE">
       <h3>Summary of Members</h3>
-      <p its-locale-filter-list="en" lang="en">
+      <p>
         The following table shows a summary of the [=MiniApp Manifest's=] members:
       </p>
       <table>
         <thead><tr>
           <th colspan="2">
-            <span its-locale-filter-list="en" lang="en">Member</span>
+            <span>Member</span>
           </th>         
           <th>
-            <span its-locale-filter-list="en" lang="en">Type</span>
+            <span>Type</span>
           </th>
           <th>
-            <span its-locale-filter-list="en" lang="en">Required</span>
+            <span>Required</span>
           </th>
           <th>
-            <span its-locale-filter-list="en" lang="en">Description</span>
+            <span>Description</span>
           </th>
           </tr>
         </thead>
@@ -198,10 +198,10 @@
             <td colspan="2"><a>app_id</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Yes</span>
+              <span>Yes</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">ID of the MiniApp</span>
+              <span>ID of the MiniApp</span>
   
             </td>
           </tr>
@@ -209,30 +209,30 @@
             <td colspan="2"><a>description</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Description</span>
+              <span>Description</span>
             </td>
           </tr>
           <tr>
             <td colspan="2"><a>dir</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Text direction</span>
+              <span>Text direction</span>
             </td>
           </tr>
           <tr>
             <td colspan="2"><a>icons</a></td>
             <td> {{ImageResource/src}} [=array=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Yes</span>
+              <span>Yes</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Application icons</span>
+              <span>Application icons</span>
             </td>
           </tr>
           <tr>
@@ -240,117 +240,99 @@
             <td>{{ImageResource/src}}</td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Yes</span>
+              <span>Yes</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Source of the icon</span>
+              <span>Source of the icon</span>
             </td>
           </tr>
           <tr>
             <td>{{ImageResource/sizes}}</td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Yes</span>
-  
+              <span>Yes</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Resolution sizes of the icon</span>
-  
+              <span>Resolution sizes of the icon</span>
             </td>
           </tr>
           <tr>
             <td colspan="2"><a>lang</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
-  
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Language tag</span>
-  
+              <span>Language tag</span>
             </td>
           </tr>
           <tr>
             <td colspan="2"><a data-link-for="MiniApp Manifest" data-link-type="dfn">min_platform_version</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Yes</span>
-  
+              <span>Yes</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Minimum platform version supported</span>
-  
+              <span>Minimum platform version supported</span>
             </td>
           </tr>
           <tr>
             <td colspan="2"><a data-link-for="MiniApp Manifest" data-link-type="dfn">name</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Yes</span>
-  
+              <span>Yes</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">App name</span>
-  
+              <span>App name</span>
             </td>
           </tr>          
           <tr>
             <td colspan="2"><a>pages</a></td>
             <td> [=array=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Yes</span>
-  
+              <span>Yes</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Page routing information</span>
-  
+              <span>Page routing information</span>
             </td>
           </tr>          
           <tr>
             <td colspan="2"><a>short_name</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
-  
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">MiniApp short name</span>
-  
+              <span>MiniApp short name</span>
             </td>
           </tr>
           <tr>
             <td colspan="2"><a>version_code</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Yes</span>
-  
+              <span>Yes</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Version code</span>
-  
+              <span>Version code</span>
             </td>
           </tr>          
           <tr>
             <td colspan="2"><a>version_name</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Yes</span>
-  
+              <span>Yes</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Version name</span>
-  
+              <span>Version name</span>
             </td>
           </tr>
           <tr>
             <td colspan="2"><a>widgets</a></td>
             <td> <a>MiniApp Widget resource</a> [=array=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
-  
+              <span>No</span>
             </td>
-            <td> <span its-locale-filter-list="en" lang="en">Widgets</span>
-  
+            <td> <span>Widgets</span>
             </td>
           </tr>
           <tr>
@@ -358,48 +340,40 @@
             <td><a data-link-for="MiniApp Widget resource" data-link-type="dfn">name</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Yes</span>
-  
+              <span>Yes</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Widget name</span>
-  
+              <span>Widget name</span>
             </td>
           </tr>
           <tr>
             <td><a>path</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Yes</span>
-  
+              <span>Yes</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Widget path</span>
-  
+              <span>Widget path</span>
             </td>
           </tr>
           <tr>
             <td><a data-link-for="MiniApp Widget resource" data-link-type="dfn">min_platform_version</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
-  
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Minimum platform version supported</span>
-  
+              <span>Minimum platform version supported</span>
             </td>
           </tr>
           <tr>
             <td colspan="2"><a>window</a></td>
             <td> <a>MiniApp window resource</a> </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
-  
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Window style</span>
-  
+              <span>Window style</span>
             </td>
           </tr>
           <tr>
@@ -407,133 +381,129 @@
             <td><a>navigation_bar_background_color</a></td>
             <td> [=hexColor=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
-  
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Navigation bar Background color</span>
-  
+              <span>Navigation bar Background color</span>
             </td>
           </tr>
           <tr>
             <td><a>navigation_bar_text_style</a></td>
             <td> [=string=]  </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
-  
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Color style of the navigation bar text</span>
+              <span>Color style of the navigation bar text</span>
             </td>
           </tr>
           <tr>
             <td><a>navigation_bar_title_text</a></td>
             <td> [=string=]  </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
-  
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Navigation bar title</span>
+              <span>Navigation bar title</span>
             </td>
           </tr>
           <tr>
             <td><a>navigation_style</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>  
+              <span>No</span>  
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Navigation bar style</span>
+              <span>Navigation bar style</span>
             </td>
           </tr>
           <tr>
             <td><a>background_color</a></td>
             <td> [=hexColor=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Window background color</span>
+              <span>Window background color</span>
             </td>
           </tr>
           <tr>
             <td><a>background_text_style</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Background text style</span>
+              <span>Background text style</span>
             </td>
           </tr>
           <tr>
             <td><a>enable_pull_down_refresh</a></td>
             <td> [=boolean=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Enable pull-to-refresh event</span>
+              <span>Enable pull-to-refresh event</span>
             </td>
           </tr>
           <tr>
             <td><a>on_reach_bottom_distance</a></td>
             <td> [=number=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Distance for pull-up bottom event triggering</span>
+              <span>Distance for pull-up bottom event triggering</span>
             </td>
           </tr>
           <tr>
             <td><a>orientation</a></td>
             <td> [=string=]  </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Screen orientation settings</span>
+              <span>Screen orientation settings</span>
             </td>
           </tr>
           <tr>
             <td><a>fullscreen</a></td>
             <td> [=boolean=]  </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
+              <span>No</span>
             </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Full screen display</span>
+              <span>Full screen display</span>
             </td>
           </tr>          
           <tr>
             <td><a>design_width</a></td>
             <td> [=number=]  </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
+              <span>No</span>
             </td>
             <td>
-                <span its-locale-filter-list="en" lang="en">The baseline page design width</span>
+                <span>The baseline page design width</span>
             </td>
           </tr> 
           <tr>
             <td><a>auto_design_width</a></td>
             <td> [=boolean=]  </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">No</span>
+              <span>No</span>
             </td>
             <td>
-                <span its-locale-filter-list="en" lang="en">Enables/disables auto-calculation of page [=design width=] </span>
+                <span>Enables/disables auto-calculation of page [=design width=] </span>
             </td>
           </tr> 
           <tr>
               <td colspan="2"><a>req_permissions</a></td>
               <td> <a>MiniApp permission resource</a> [=array=] </td>
               <td>
-                <span its-locale-filter-list="en" lang="en">No</span>
+                <span>No</span>
               </td>
-              <td> <span its-locale-filter-list="en" lang="en">Required permissions</span>
+              <td> <span>Required permissions</span>
               </td>
           </tr>
           <tr>
@@ -541,20 +511,20 @@
             <td><a data-link-for="MiniApp permission resource" data-link-type="dfn">name</a></td>
             <td> [=string=] </td>
             <td>
-              <span its-locale-filter-list="en" lang="en">Yes</span>
+              <span>Yes</span>
             </td>
             <td>
-                <span its-locale-filter-list="en" lang="en">Permission name</span>
+                <span>Permission name</span>
             </td>
           </tr>
           <tr>
             <td><a>reason</a></td>
             <td> [=string=] </td>
             <td>
-                <span its-locale-filter-list="en" lang="en">No</span>
+                <span>No</span>
             </td>
             <td>
-                <span its-locale-filter-list="en" lang="en">Reason to request the permission</span>
+                <span>Reason to request the permission</span>
             </td>
           </tr>          
         </tbody>
@@ -574,15 +544,15 @@
   </section>
   <section id="manifest-members">
     <h2>
-      <span its-locale-filter-list="en" lang="en">MiniApp Manifest members</span>
+      <span>MiniApp Manifest members</span>
     </h2>
     <section id='webappmanifest-members'>
       <h2>Members inherited from the Web Application Manifest</h2>          
       <section>
         <h3>
-          <span its-locale-filter-list="en" lang="en"><code>dir</code> member</span>
+          <span><code>dir</code> member</span>
         </h3>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
           <dfn>dir</dfn> member, while
           specifying the base direction of the <a>localizable members</a> of the manifest, also specifies
           the default base text direction of the whole MiniApp. The <a>dir</a>
@@ -591,17 +561,17 @@
       </section>
       <section data-cite="IMAGE-RESOURCE">
         <h3>
-          <span its-locale-filter-list="en" lang="en"><code>icons</code> member</span>
+          <span><code>icons</code> member</span>
         </h3>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
           The <dfn>icons</dfn> member describes images that serve as iconic representations of MiniApps in various contexts. This member is an [=image resource=] [=array=]. Each [=image resource=] representing an icon MUST describe both {{ImageResource/src}} and {{ImageResource/sizes}}.     {{ImageResource/src}} MUST be a <a data-cite='url'>relative-url string</a>.
         </p>
       </section>      
       <section>
         <h3>
-          <span its-locale-filter-list="en" lang="en"><code>lang</code> member</span>
+          <span><code>lang</code> member</span>
         </h3>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
           The <dfn>lang</dfn> member, while
           specifying the primary language of the <a>localizable members</a>, also specifies
           the primary language of the whole MiniApp. This member is a [=string=] in the form of a <a href="https://w3c.github.io/manifest/#dfn-language-tag">language tag</a> as defined in [[APPMANIFEST]].
@@ -612,18 +582,17 @@
       </section>
       <section>
         <h3>
-          <span its-locale-filter-list="en" lang="en"><code>name</code> member</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">名称</span>
+          <span><code>name</code> member</span>
         </h3>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
           The <dfn data-dfn-for="MiniApp Manifest">name</dfn> member is the descriptive name of the application. This is the name directly displayed to the user. It is used as the display name of MiniApp along with the desktop icon and in the context of MiniApp management. 
         </p>
       </section>
       <section>
         <h3>
-          <span its-locale-filter-list="en" lang="en"><code>short_name</code> member</span>
+          <span><code>short_name</code> member</span>
         </h3>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
           The <dfn>short_name</dfn> member provides a concise and easy-to-read name for MiniApp. It can be used when there is insufficient space to display the full MiniApp name provided in <code>name</code>.
         </p>
       </section>
@@ -635,9 +604,9 @@
         </p>
       <section>
         <h3>
-          <span its-locale-filter-list="en" lang="en"><code>description</code> member</span>
+          <span><code>description</code> member</span>
         </h3>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
           The <dfn>description</dfn> member provides a textual description for the MiniApp.
         </p>
       </section>
@@ -646,9 +615,9 @@
       <h2>Supplementary manifest members</h2>
       <section>
         <h3>
-          <span its-locale-filter-list="en" lang="en"><code>app_id</code> member</span>
+          <span><code>app_id</code> member</span>
         </h3>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
           The <dfn>app_id</dfn> member identifies the MiniApp univocally. This member is mainly used for the package management.
           It supports the update and release of MiniApp versions.
           The format of <code>app_id</code> SHALL be a <a data-cite="rfc8259#section-7">string</a> defined by the rule below:
@@ -657,7 +626,7 @@
           app_idrule = ALPHA 1*( ALPHA / DIGIT / "_" / "." )
         </pre>
         <p class="note" title='Naming convention'>
-           <span its-locale-filter-list="en" lang="en">
+           <span>
              One common practice is to use the reverse-domain-name-like convention,
              e.g. <code>org.example.miniapp</code>.
            </span>
@@ -665,21 +634,21 @@
       </section>
       <section>
         <h3>
-          <span its-locale-filter-list="en" lang="en"><code>version_name</code> member</span>
+          <span><code>version_name</code> member</span>
         </h3>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
           The <dfn>version_name</dfn> member is a [=string=] that is mainly used for describing the version information. It is also the version name that is displayed to the user. The general format is <samp>1.0.0</samp> as specified in <cite>Semantic Versioning</cite> [[SEMANTIC-VERSIONING]]. It plays an important role in version control, MiniApp application, and equipment compatibility.
         </p>
       </section>
       <section>
         <h3>
-          <span its-locale-filter-list="en" lang="en"><code>version_code</code> member</span>
+          <span><code>version_code</code> member</span>
         </h3>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
           The <dfn>version_code</dfn> member is a [=number=] that is mainly used for enhancing the maintainability and security of MiniApp (e.g., a lower version is not compatible with a higher version). <code>version_code</code> is not displayed to the user and is incrementing according to the version iteration process.
         </p>
         <p class="note">
-          <span its-locale-filter-list="en" lang="en">
+          <span>
             Value by default: <code>1</code>.
           </span>
         </p>
@@ -688,17 +657,17 @@
       </section>
       <section>
         <h3>
-          <span its-locale-filter-list="en" lang="en"><code>min_platform_version</code> member</span>
+          <span><code>min_platform_version</code> member</span>
         </h3>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
           The <dfn data-dfn-for="MiniApp Manifest">min_platform_version</dfn> member is a string-type character string that indicates the minimum supported version of the required platform to ensure the normal operation of MiniApp (e.g. <code>"1.0.0"</code>).
         </p>
       </section>
       <section>
         <h3>
-          <span its-locale-filter-list="en" lang="en"><code>pages</code> member</span>
+          <span><code>pages</code> member</span>
         </h3>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
             The <dfn>pages</dfn> member is an [=array=] of <a data-cite='url'>relative-url string</a> used for specifying which pages are included in a MiniApp. Each item in the array represents a page route. Page route = <code>[path + filename]</code>. During the MiniApp development process, adding or deleting pages is done by configuring the array. When configuring the page route, there is no need to add the file name extension, since the MiniApp platform will automatically parse it. Note: the first item in the <code>pages</code> array stands for the homepage of a MiniApp.
         </p>
         <p class="note">
@@ -711,21 +680,20 @@
       </section>
       <section>
         <h3>
-          <span its-locale-filter-list="en" lang="en"><code>window</code> member</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">窗口</span>
+          <span><code>window</code> member</span>
         </h3>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
           The <dfn>window</dfn> member contains sub-attributes, defined in <a>MiniApp window resource</a>, used for styling the status bar, navigation bar, title, window background color, etc.
         </p>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
             <code>window</code> inherits the text direction and language configuration from <code>dir</code> and <code>lang</code>.
         </p>
       </section>
       <section>
         <h3>
-          <span its-locale-filter-list="en" lang="en"><code>widgets</code> member</span>
+          <span><code>widgets</code> member</span>
         </h3>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
             The <dfn>widgets</dfn> member defines a set of widgets that are a part of a MiniApp.
             Specifically, a MiniApp package can include MiniApp Pages and Widgets concurrently.
             As a part of the MiniApp application, widgets share some of the Manifest fields with the
@@ -741,17 +709,17 @@
           <li><code>version_name</code>; and</li>
           <li><code>version_code</code></li>
         </ul>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
           However, a widget also has its exclusive fields, defined in <a>MiniApp Widget resource</a>.</p>
         </p>
-        <p its-locale-filter-list="en" lang="en">There are certain differences between the Widget-related APIs and the MiniApp APIs, hence, the declaration of the minimum platform version may be different. If the <code>min_platform_version</code> field of a widget is not set explicitly, it is then identical to the <code>min_platform_version</code> of the MiniApp by default.
+        <p>There are certain differences between the Widget-related APIs and the MiniApp APIs, hence, the declaration of the minimum platform version may be different. If the <code>min_platform_version</code> field of a widget is not set explicitly, it is then identical to the <code>min_platform_version</code> of the MiniApp by default.
         </p>
       </section>
       <section>
         <h3>
-          <span its-locale-filter-list="en" lang="en"><code>req_permissions</code> member</span>
+          <span><code>req_permissions</code> member</span>
         </h3>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
             The <dfn>req_permissions</dfn> member is an [=array=] of [=MiniApp permission resources=]. Each <a>MiniApp permission resource</a> object declares permission (such as the access to the location information, user contacts, and hardware features like camera) required for the proper running of the MiniApp. User's consent may be asked to protect the user's privacy related to such permissions. Such information can also be used by an app store or a hosting platform to filter a MiniApp according to user's policy or device capabilities. 
         </p>
       </section>
@@ -764,10 +732,10 @@
     <section>
       <h3><code>navigation_bar_background_color</code> member</h3>
       <p>
-        <span its-locale-filter-list="en" lang="en">The <dfn>navigation_bar_background_color</dfn> member specifies the color of the navigation bar background.</span>
+        <span>The <dfn>navigation_bar_background_color</dfn> member specifies the color of the navigation bar background.</span>
       </p>
       <p class="note">
-        <span its-locale-filter-list="en" lang="en">
+        <span>
           Value by default: <code>#000000</code>.
           </span>
       </p>
@@ -775,10 +743,10 @@
     <section>
       <h3><code>navigation_bar_text_style</code> member</h3>
       <p>
-        <span its-locale-filter-list="en" lang="en">The <dfn>navigation_bar_text_style</dfn> member specifies the text color of the navigation bar title.</span>
+        <span>The <dfn>navigation_bar_text_style</dfn> member specifies the text color of the navigation bar title.</span>
       </p>
       <p class="note">
-        <span its-locale-filter-list="en" lang="en">
+        <span>
          Value by default: <code>white</code>.
         </span>
         </p>
@@ -786,16 +754,16 @@
     <section>
       <h3><code>navigation_bar_title_text</code> member</h3>
       <p>
-        <span its-locale-filter-list="en" lang="en">The <dfn>navigation_bar_title_text</dfn> member specifies the title text of the navigation bar</span>
+        <span>The <dfn>navigation_bar_title_text</dfn> member specifies the title text of the navigation bar</span>
       </p>
     </section>
     <section>
       <h3><code>navigation_style</code> member</h3>
       <p>
-        <span its-locale-filter-list="en" lang="en">The <dfn>navigation_style</dfn> member specifies the style of the navigation bar: <code>default</code> (default style) and <code>custom</code> (customized navigation bar). Note: The capsule button at the right corner is not customizable.</span>
+        <span>The <dfn>navigation_style</dfn> member specifies the style of the navigation bar: <code>default</code> (default style) and <code>custom</code> (customized navigation bar). Note: The capsule button at the right corner is not customizable.</span>
       </p>
       <p class="note">
-        <span its-locale-filter-list="en" lang="en">
+        <span>
           Value by default: <code>default</code>.
         </span>
       </p>
@@ -803,10 +771,10 @@
     <section>
       <h3><code>background_color</code> member</h3>
       <p>
-        <span its-locale-filter-list="en" lang="en">The <dfn>background_color</dfn> member specifies the background color of the window. This member is equivalent to  <a href="https://www.w3.org/TR/appmanifest/#background_color-member"><code>background_color</code></a>.</span>
+        <span>The <dfn>background_color</dfn> member specifies the background color of the window. This member is equivalent to  <a href="https://www.w3.org/TR/appmanifest/#background_color-member"><code>background_color</code></a>.</span>
       </p>
       <p class="note">
-        <span its-locale-filter-list="en" lang="en">
+        <span>
           Value by default: <code>#ffffff</code>.
         </span>
       </p>
@@ -814,10 +782,10 @@
     <section>
       <h3><code>background_text_style</code> member</h3>
       <p>
-        <span its-locale-filter-list="en" lang="en">The <dfn>background_text_style</dfn> member specifies the background text style.</span>
+        <span>The <dfn>background_text_style</dfn> member specifies the background text style.</span>
       </p>
       <p class="note">
-        <span its-locale-filter-list="en" lang="en">
+        <span>
           Value by default: <code>dark</code>.
         </span>
       </p>
@@ -825,10 +793,10 @@
     <section>
       <h3><code>enable_pull_down_refresh</code> member</h3>
       <p>
-        <span its-locale-filter-list="en" lang="en">The <dfn>enable_pull_down_refresh</dfn> member specifies if the pull-to-refresh event is enabled.</span>
+        <span>The <dfn>enable_pull_down_refresh</dfn> member specifies if the pull-to-refresh event is enabled.</span>
       </p>
       <p class="note">
-        <span its-locale-filter-list="en" lang="en">
+        <span>
           Value by default: <code>false</code>.
         </span>
       </p>
@@ -836,10 +804,10 @@
     <section>
       <h3><code>on_reach_bottom_distance</code> member</h3>
       <p>
-        <span its-locale-filter-list="en" lang="en">The <dfn>on_reach_bottom_distance</dfn> member specifies the distance from the bottom when page pull-up bottom event is triggered. The value is a non-negative integer and the unit is in <a data-cite="css-values">pixel unit</a>.</span>
+        <span>The <dfn>on_reach_bottom_distance</dfn> member specifies the distance from the bottom when page pull-up bottom event is triggered. The value is a non-negative integer and the unit is in <a data-cite="css-values">pixel unit</a>.</span>
       </p>
       <p class="note">
-        <span its-locale-filter-list="en" lang="en">
+        <span>
           Value by default: <code>50</code>.
         </span>
       </p>
@@ -847,10 +815,10 @@
     <section>
       <h3><code>orientation</code> member</h3>
       <p>
-        <span its-locale-filter-list="en" lang="en">The <dfn>orientation</dfn> member specifies the screen orientation settings to which a screen can be locked. The two supported values are <code>portrait</code> and <code>landscape</code>, defined in {{OrientationLockType}} [[screen-orientation]]. This member is equivalent to <a href="https://www.w3.org/TR/appmanifest/#orientation-member"><code>orientation</code></a>.</span>
+        <span>The <dfn>orientation</dfn> member specifies the screen orientation settings to which a screen can be locked. The two supported values are <code>portrait</code> and <code>landscape</code>, defined in {{OrientationLockType}} [[screen-orientation]]. This member is equivalent to <a href="https://www.w3.org/TR/appmanifest/#orientation-member"><code>orientation</code></a>.</span>
       </p>
       <p class="note">
-        <span its-locale-filter-list="en" lang="en">
+        <span>
           Value by default: <code>portrait</code>.
         </span>
       </p>
@@ -859,11 +827,11 @@
       <section>
         <h3><code>fullscreen</code> member</h3>
         <p>
-          <span its-locale-filter-list="en" lang="en">The <dfn>fullscreen</dfn> member indicates the full screen display. <code>true</code> is equivalent to the <code>fullscreen</code> value of
+          <span>The <dfn>fullscreen</dfn> member indicates the full screen display. <code>true</code> is equivalent to the <code>fullscreen</code> value of
             <a href="https://www.w3.org/TR/appmanifest/#display-member"><code>display</code></a>, and <code>false</code> to <code>minimal-ui</code>.</span>
         </p>
         <p class="note">
-          <span its-locale-filter-list="en" lang="en">
+          <span>
             Value by default: <code>false</code>.
           </span>
         </p>
@@ -874,11 +842,11 @@
       <section>
         <h3><code>design_width</code> member</h3>
         <p>
-            <span its-locale-filter-list="en" lang="en">The <dfn>design_width</dfn> member indicates the baseline width of the page design in <a data-cite="css-values">pixel unit</a>, based on which the size of the components on the page would be adjusted accordingly. The value is a non-negative integer.</span>
+            <span>The <dfn>design_width</dfn> member indicates the baseline width of the page design in <a data-cite="css-values">pixel unit</a>, based on which the size of the components on the page would be adjusted accordingly. The value is a non-negative integer.</span>
 
         </p>
         <p class="note">
-          <span its-locale-filter-list="en" lang="en">
+          <span>
             Value by default: <code>750</code>.
           </span>
         </p>
@@ -886,11 +854,11 @@
       <section>
         <h3><code>auto_design_width</code> member</h3>
         <p>
-            <span its-locale-filter-list="en" lang="en">The <dfn>auto_design_width</dfn> member indicates whether the design_width of the page is auto-calculated. When it's <i>true</i>, the value of the <code>design_width</code> is ignored, and the baseline width is determined by the system automatically according to the pixel density of the screen.</span>
+            <span>The <dfn>auto_design_width</dfn> member indicates whether the design_width of the page is auto-calculated. When it's <i>true</i>, the value of the <code>design_width</code> is ignored, and the baseline width is determined by the system automatically according to the pixel density of the screen.</span>
 
         </p>
         <p class="note">
-          <span its-locale-filter-list="en" lang="en">
+          <span>
             Value by default: <code>false</code>.
           </span>
         </p>
@@ -902,21 +870,21 @@
       <section>
         <h2><code>name</code> member</h2>
         <p>
-          <span its-locale-filter-list="en" lang="en">The <dfn data-dfn-for="MiniApp Widget resource">name</dfn> member describes the name of the Widget</span>
+          <span>The <dfn data-dfn-for="MiniApp Widget resource">name</dfn> member describes the name of the Widget</span>
         </p>
       </section>
       <section>
         <h3><code>path</code> member</h3>
         <p>
-          <span its-locale-filter-list="en" lang="en">The <dfn>path</dfn> member indicates the corresponding page path of a Widget. It follows the same path route format as defined in <a>pages</a>.</span>
+          <span>The <dfn>path</dfn> member indicates the corresponding page path of a Widget. It follows the same path route format as defined in <a>pages</a>.</span>
         </p>
       </section>
       <section>
         <h3><code>min_platform_version</code> member</h3>
         <p>
-          <span its-locale-filter-list="en" lang="en">The <dfn data-dfn-for="MiniApp Widget resource">min_platform_version</dfn> member indicates the minimum platform version supported</span>
+          <span>The <dfn data-dfn-for="MiniApp Widget resource">min_platform_version</dfn> member indicates the minimum platform version supported</span>
         </p>
-        <p its-locale-filter-list="en" lang="en">There are certain differences between the Widget-related APIs and the MiniApp APIs, hence, the declaration of the minimum platform version may be different. If the <code>min_platform_version</code> field of a widget is not set explicitly, it is then identical to the <code>min_platform_version</code> of the MiniApp by default.
+        <p>There are certain differences between the Widget-related APIs and the MiniApp APIs, hence, the declaration of the minimum platform version may be different. If the <code>min_platform_version</code> field of a widget is not set explicitly, it is then identical to the <code>min_platform_version</code> of the MiniApp by default.
         </p>
       </section>
     </section>
@@ -926,19 +894,18 @@
       <section>
         <h3><code>name</code> member</h3>
         <p>
-          <span its-locale-filter-list="en" lang="en">The <dfn data-dfn-for="MiniApp permission resource">name</dfn> member indicates the permission name</span>
+          <span>The <dfn data-dfn-for="MiniApp permission resource">name</dfn> member indicates the permission name</span>
         </p>
       </section>
       <section>
         <h3><code>reason</code> member</h3>
         <p>
-          <span its-locale-filter-list="en" lang="en">The <dfn>reason</dfn> member indicates the reason to use this permission</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">该权限的使用目的</span>
+          <span>The <dfn>reason</dfn> member indicates the reason to use this permission</span>
         </p>
       </section>
 
       <div class="ednote">
-        <p its-locale-filter-list="en" lang="en">
+        <p>
         It's for further study whether the predefined permissions, permission extension, permission groups, and protection levels need to be specified.
         </p>
       </div>
@@ -947,9 +914,9 @@
 
     <section>
       <h2>
-          <span its-locale-filter-list="en" lang="en"><dfn>Localizable members</dfn></span>
+          <span><dfn>Localizable members</dfn></span>
       </h2>
-      <p its-locale-filter-list="en" lang="en">
+      <p>
           The following members are localizable and share the same default configuration of <code>dir</code> and <code>lang</code> if not otherwise specified.
       </p>
       <ul>
@@ -963,14 +930,14 @@
 
   <section>
     <h2>
-      <span its-locale-filter-list="en" lang="en">Dependencies</span>
+      <span>Dependencies</span>
     </h2>
 
-    <p its-locale-filter-list="en" lang="en">
+    <p>
         As a key part of a MiniApp package, the <code>manifest.json</code> file describes several important aspects of the MiniApp by referring to the resources inside the MiniApp package in different forms of files, such as the page files in the <code>pages</code> directory and the icon images in the <code>common</code> directory. Details are specified in the <a href="https://w3c.github.io/miniapp-packaging/">MiniApp Packaging specification</a>.
     </p>
 
-    <p its-locale-filter-list="en" lang="en">
+    <p>
         The normal operation of a MiniApp relies on the proper configuration of the manifest file according to this specification and the availability of the dependent resources in the MiniApp package. Such dependency needs to be checked during both the development phase and deployment phase.
     </p>
 
@@ -978,61 +945,61 @@
 
   <section>
     <h2>
-        <span its-locale-filter-list="en" lang="en">Security and Privacy Considerations</span>
+        <span>Security and Privacy Considerations</span>
     </h2>
     <section>
         <h2>
-            <span its-locale-filter-list="en" lang="en">Content constraint</span>
+            <span>Content constraint</span>
 
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
             As the manifest is a JSON file and will commonly be encoded using [[UNICODE]], the security considerations described in [[ECMA-404]] and [[UTR36]] apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#json-schema-json">JSON Schema</a> to impose their own implementation-specific limits on the member names, types and value ranges, e.g. to guard against memory overflow, or to meet platform-specific limitations.
         </p>
     </section>
 
     <section>
         <h2>
-            <span its-locale-filter-list="en" lang="en">Local resource access</span>
+            <span>Local resource access</span>
 
         </h2>
-        <p its-locale-filter-list="en" lang="en"> Members like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp-packaging/">MiniApp package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external resources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.</p>
+        <p> Members like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp-packaging/">MiniApp package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external resources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.</p>
 
 
-	      <p its-locale-filter-list="en" lang="en">
+	      <p>
             In addition, the <code>req_permissions</code> member provides a specific means to control the access to the local software, hardware and data resources on the user's device. User's consent should be asked when it comes to privacy-related or high-level privileged resources.
         </p>
     </section>
 
     <section>
         <h2>
-            <span its-locale-filter-list="en" lang="en">Integrity</span>
+            <span>Integrity</span>
 
         </h2>
-        <p its-locale-filter-list="en" lang="en"> The integrity of the manifest document is protected by a cryptographic hash mechanism as part of the whole MiniApp package. Details are specified in the <a href="https://w3c.github.io/miniapp-packaging/">MiniApp Packaging specification</a>. </p>
+        <p> The integrity of the manifest document is protected by a cryptographic hash mechanism as part of the whole MiniApp package. Details are specified in the <a href="https://w3c.github.io/miniapp-packaging/">MiniApp Packaging specification</a>. </p>
     </section>
 
     <section>
         <h2>
-            <span its-locale-filter-list="en" lang="en">Transparency</span>
+            <span>Transparency</span>
 
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p>
             It is RECOMMENDED that the hosting platform makes the necessary meta information in the manifest available to the end-user, such as <code>app_id</code>, <code>name</code>, <code>short_name</code>, <code>icons</code>, <code>version_name</code>, <code>description</code>. This is to give an end-user an opportunity to make a conscious decision to approve the installation and use of the MiniApp. This could also help to identify a spoofing MiniApp.</p>
     </section>
 </section>
 
 <section>
     <h2>
-        <span its-locale-filter-list="en" lang="en">JSON Schema</span>
+        <span>JSON Schema</span>
     </h2>
-    <p its-locale-filter-list="en" lang="en">
+    <p>
         Developers interested in validating the MiniApp manifest document can use the JSON Schema defined <a href="./manifest_schema.json">here</a>.
     </p>
 </section>
 
   <section class='informative'>
     <h2>
-      <span its-locale-filter-list="en" lang="en"> Example</span>
+      <span> Example</span>
     </h2>
             <pre class="example json">
               {
@@ -1085,30 +1052,30 @@
 
   <section class="appendix">
            <h2>
-             <span its-locale-filter-list="en" lang="en">Acknowledgments</span>
+             <span>Acknowledgments</span>
  
     </h2>
-    <p its-locale-filter-list="en" lang="en">
+    <p>
       This document refers to <a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>, <a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/">Baidu MiniApp</a>, <a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">WeChat MiniApp</a>, <a href="https://opendocs.alipay.com/mini/framework/app-json">Alipay MiniApp</a>, <a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">ByteDance MiniApp</a>, <a href="https://doc.quickapp.cn/framework/manifest.html">Quick App Specification</a>, <a href="https://w3c.github.io/miniapp-widget/req/">MiniApp Widget Requirements</a>, <a href="https://w3c.github.io/miniapp-lifecycle/">MiniApp Lifecycle Specification</a>, <a href="https://w3c.github.io/miniapp-addressing/">MiniApp Addressing</a>, and <a href="https://semver.org/">Semantic Versioning</a>. We appreciate the open source efforts of these documents.
     </p>
 
   </section>
   <section class="appendix informative">
     <h2>
-      <span its-locale-filter-list="en" lang="en">Extensibility</span>
+      <span>Extensibility</span>
     </h2>
-    <p its-locale-filter-list="en" lang="en">
+    <p>
       This specification is based on the Web App Manifest <a href="https://www.w3.org/TR/appmanifest/#extensibility">extensibility principle</a>. 
     </p>
-    <p its-locale-filter-list="en" lang="en">
+    <p>
       Although proprietary extensions are undesirable, they may be included as a manifest extension. In this case, it is RECOMMENDED to use vendor prefixes for the new members.
     </p>
-    <p its-locale-filter-list="en" lang="en">
+    <p>
       We encourage implementors to add proprietary extensions to the Extensions Registry. This allows the community to track what extensions vendors and/or the web community have defined and documented.
     </p>
     <p class="issue" data-number="9">
     </p>
-    <p its-locale-filter-list="en" lang="en">
+    <p>
       The following is an example of three hypothetical vendor extensions.
     </p>
     <pre class="example json" title="Proprietary extensions">
