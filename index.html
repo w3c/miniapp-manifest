@@ -688,7 +688,13 @@
           <span><code>req_permissions</code> member</span>
         </h3>
         <p>
-            The <dfn>req_permissions</dfn> member is an [=array=] of [=MiniApp permission resources=]. Each <a>MiniApp permission resource</a> object declares permission (such as the access to the location information, user contacts, and hardware features like camera) required for the proper running of the MiniApp. User's consent may be asked to protect the user's privacy related to such permissions. Such information can also be used by an app store or a hosting platform to filter a MiniApp according to user's policy or device capabilities. 
+            The [=MiniApp manifest's=] <dfn>req_permissions</dfn> member is an [=array=] of [=MiniApp permission resources=] objects.
+        </p> 
+        <p> 
+          Each <a>MiniApp permission resource</a> declares a request for using a concrete system feature (e.g., access to device's location, user contacts, sensors, and camera) required for the proper execution of the MiniApp.
+        </p>
+        <p>
+          User agents will ask for the user's consent to protect their privacy during the access to these specific features. This information in the <a>req_permissions</a> member may be used by app stores or hosting platforms to filter MiniApps according to the user's preferences, privacy policy or the device capabilities. 
         </p>
       </section>      
       <section>

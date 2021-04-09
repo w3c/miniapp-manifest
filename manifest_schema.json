@@ -108,6 +108,21 @@
       },
       "description": "An array of path strings used for specifying which pages are included in MiniApp. Each item in the array represents a page route."
     },
+    "req_permissions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "window": {
       "type": "object",
       "properties": {
@@ -177,21 +192,6 @@
           "min_platform_version": {
             "$ref": "#/definitions/TypeVersionString",
             "description": "If not set, it's identical to the MiniApp platform version by default."
-          }
-        }
-      }
-    },
-    "req_permissions": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["name"],
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
           }
         }
       }
