@@ -29,6 +29,7 @@
     "pages"
   ],
   "properties": {
+    // Inherited from [[APPMANIFEST]]
     "dir": {
       "description": "The base direction of the manifest.",
       "type": "string",
@@ -63,13 +64,7 @@
     },
     "lang": {
       "type": "string",
-      "description": "The value of lang here takes the value of Language-Tag defined in the [BCP47]"
-    },
-    "app_id": {
-      "type": "string",
-      "format": "idn-hostname",
-      "description": "The naming convention of app ID adopts the reverse domain naming rule and uses all lowercases",
-      "example": "com.company.miniapp"
+      "description": "The value of lang here takes the value of Language-Tag defined in the [BCP47]."
     },
     "name": {
       "description": "The name of the MiniApp.",
@@ -79,8 +74,17 @@
       "description": "A short version of the name of the MiniApp.",
       "type": "string"
     },
+    // Inherited from MANIFEST-APP-INFO
     "description": {
+      "description": "A textual description for the MiniApp representing the purpose of the web application in natural language.",
       "type": "string"
+    },
+    // Exclusive for MiniApps
+    "app_id": {
+      "type": "string",
+      "format": "idn-hostname",
+      "description": "The naming convention of app ID adopts the reverse domain naming rule and uses all lowercases.",
+      "example": "com.company.miniapp"
     },
     "version_name": {
       "type": "string",
