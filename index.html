@@ -154,11 +154,11 @@
         </li>
       </ul>
       <p>
-        A [=MiniApp manifest=] MAY contain a <a>widgets</a> member at its root. This member MUST contain an [=array=] of <a>MiniApp Widget resources</a>. Each [=MiniApp Widget resource=] object MUST contain the following members:
+        A [=MiniApp manifest=] MAY contain a <a>widgets</a> member at its root. This member MUST contain an [=array=] of <a>MiniApp widget resources</a>. Each [=MiniApp widget resource=] object MUST contain the following members:
       </p>
       <ul>
         <li>
-         <a data-link-for="MiniApp Widget resource" data-link-type="dfn">name</a>
+         <a data-link-for="MiniApp widget resource" data-link-type="dfn">name</a>
         </li>
         <li>
          <a>path</a>
@@ -380,7 +380,7 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row"><a data-link-for="MiniApp Widget resource" data-link-type="dfn">name</a></th>
+            <th scope="row"><a data-link-for="MiniApp widget resource" data-link-type="dfn">name</a></th>
             <td> [=string=] </td>
             <td>Yes</td>
             <td>
@@ -396,7 +396,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a data-link-for="MiniApp Widget resource" data-link-type="dfn">min_platform_version</a></th>
+            <th scope="row"><a data-link-for="MiniApp widget resource" data-link-type="dfn">min_platform_version</a></th>
             <td> [=string=] </td>
             <td>No</td>
             <td>
@@ -740,10 +740,13 @@
           <span><code>widgets</code> member</span>
         </h3>
         <p>
-            The <dfn>widgets</dfn> member defines a set of widgets that are a part of a MiniApp.
-            Specifically, a MiniApp package can include MiniApp Pages and Widgets concurrently.
-            As a part of the MiniApp application, widgets share some of the Manifest fields with the
-            MiniApp main program, including:
+            The [=MiniApp manifest's=] <dfn>widgets</dfn> member defines a set of widgets that are a part of a MiniApp.
+        </p>
+        <p>
+            A [=MiniApp Package=] MAY include [=MiniApp Pages=] and Widgets concurrently.
+        </p> 
+        <p>
+           A widget, as part of a [=MiniApp=], share some of the members of the [=MiniApp manifest=], including:
         </p> 
         <ul>
           <li><code>dir</code>;</li>
@@ -756,9 +759,7 @@
           <li><code>version_code</code></li>
         </ul>
         <p>
-          However, a widget also has its exclusive fields, defined in <a>MiniApp Widget resource</a>.</p>
-        </p>
-        <p>There are certain differences between the Widget-related APIs and the MiniApp APIs, hence, the declaration of the minimum platform version may be different. If the <code>min_platform_version</code> field of a widget is not set explicitly, it is then identical to the <code>min_platform_version</code> of the MiniApp by default.
+          However, a widget also has its exclusive fields as defined in <a>MiniApp widget resource</a>.</p>
         </p>
       </section>
     </section>
@@ -904,11 +905,11 @@
     </section>
 
     <section>
-      <h2><dfn data-lt="widget resources|MiniApp Widget resources|MiniApp Widget resource's">MiniApp Widget resource</dfn> members</h2>
+      <h2><dfn data-lt="widget resources|MiniApp widget resources|MiniApp widget resource's">MiniApp widget resource</dfn> members</h2>
       <section>
         <h2><code>name</code> member</h2>
         <p>
-          <span>The <dfn data-dfn-for="MiniApp Widget resource">name</dfn> member describes the name of the Widget</span>
+          <span>The <dfn data-dfn-for="MiniApp widget resource">name</dfn> member describes the name of the Widget</span>
         </p>
       </section>
       <section>
@@ -920,10 +921,13 @@
       <section>
         <h3><code>min_platform_version</code> member</h3>
         <p>
-          <span>The <dfn data-dfn-for="MiniApp Widget resource">min_platform_version</dfn> member indicates the minimum platform version supported</span>
+          <span>The <dfn data-dfn-for="MiniApp widget resource">min_platform_version</dfn> member indicates the minimum platform version supported</span>
         </p>
-        <p>There are certain differences between the Widget-related APIs and the MiniApp APIs, hence, the declaration of the minimum platform version may be different. If the <code>min_platform_version</code> field of a widget is not set explicitly, it is then identical to the <code>min_platform_version</code> of the MiniApp by default.
-        </p>
+        <div class="note" title='Usage'>
+          <p>
+            Since Widget APIs and MiniApp APIs may be different, the declaration of the minimum version of the platform may be different. Thus, if the <a data-link-for="MiniApp widget resource" data-link-type="dfn">min_platform_version</a> member of a widget is not set explicitly, the user agent will consider the same as the specified in the <a data-link-for="MiniApp manifest" data-link-type="dfn">min_platform_version</a> member at the root of the [=manifest=].
+          </p>
+        </div>
       </section>
     </section>
 
@@ -962,7 +966,7 @@
           <li><a>short_name</a></li>
           <li><a>description</a></li>
           <li>[=MiniApp window resource's=] <a>navigation_bar_title_text</a></li>
-          <li>[=MiniApp Widget resource's=] <a data-link-for="MiniApp Widget resource" data-link-type="dfn">name</a></li>
+          <li>[=MiniApp widget resource's=] <a data-link-for="MiniApp widget resource" data-link-type="dfn">name</a></li>
       </ul>
     </section>
 
