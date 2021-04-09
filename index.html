@@ -66,11 +66,20 @@
               branch: "main",
             },
             localBiblio:  {
-             'SEMANTIC-VERSIONING': {
+              "SEMANTIC-VERSIONING": {
                 title: 'Semantic Versioning',
                 href: 'https://semver.org/'
               },
-            },            
+              "MINIAPP-LIFECYCLE": {
+                  title: "MiniApp Lifecycle",
+                  href: "https://w3c.github.io/miniapp-lifecycle/"
+              },
+              "MINIAPP-PACKAGING": {
+                  title: "MiniApp Manifest",
+                  href: "https://w3c.github.io/miniapp-packaging/"
+              },
+            },
+            a11y: true,            
         };
     </script>
 </head>
@@ -494,7 +503,7 @@
               <span>No</span>
             </td>
             <td>
-                <span>Enables/disables auto-calculation of page [=design width=] </span>
+                <span>Enables/disables auto-calculation of page [=design_width=] </span>
             </td>
           </tr> 
           <tr>
@@ -727,7 +736,7 @@
   </section> 
 
   <section>
-    <h2><dfn data-lt="MiniApp window resources">MiniApp window resource</dfn> members</h2>
+    <h2><dfn data-lt="MiniApp window resources|MiniApp window resource's">MiniApp window resource</dfn> members</h2>
     
     <section>
       <h3><code>navigation_bar_background_color</code> member</h3>
@@ -953,7 +962,7 @@
 
         </h2>
         <p>
-            As the manifest is a JSON file and will commonly be encoded using [[UNICODE]], the security considerations described in [[ECMA-404]] and [[UTR36]] apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#json-schema-json">JSON Schema</a> to impose their own implementation-specific limits on the member names, types and value ranges, e.g. to guard against memory overflow, or to meet platform-specific limitations.
+            As the manifest is a JSON file and will commonly be encoded using [[UNICODE]], the security considerations described in [[ECMA-404]] and [[UTR36]] apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#sec-json-schema">JSON Schema</a> to impose their own implementation-specific limits on the member names, types and value ranges, e.g. to guard against memory overflow, or to meet platform-specific limitations.
         </p>
     </section>
 
@@ -989,7 +998,7 @@
 </section>
 
 <section>
-    <h2>
+    <h2 id="sec-json-schema">
         <span>JSON Schema</span>
     </h2>
     <p>
