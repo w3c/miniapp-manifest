@@ -106,7 +106,7 @@
       "items": {
         "$ref": "#/definitions/TypePathString"
       },
-      "description": "An array of path strings used for specifying which pages are included in MiniApp. Each item in the array represents a page route. Page route = [path + filename]. "
+      "description": "An array of path strings used for specifying which pages are included in MiniApp. Each item in the array represents a page route."
     },
     "window": {
       "type": "object",

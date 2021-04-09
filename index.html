@@ -662,15 +662,26 @@
           <span><code>pages</code> member</span>
         </h3>
         <p>
-            The <dfn>pages</dfn> member is an [=array=] of <a>relative-url</a> [=string=] used for specifying which pages are included in a MiniApp. Each item in the array represents a page route. Page route = <code>[path + filename]</code>. During the MiniApp development process, adding or deleting pages is done by configuring the array. When configuring the page route, there is no need to add the file name extension, since the MiniApp platform will automatically parse it. Note: the first item in the <a>pages</a> array stands for the homepage of a MiniApp.
+            The [=MiniApp manifest's=] <dfn>pages</dfn> member is an [=array=] of <a>relative-url</a> [=string=] used for specifying the collection of pages that are part of a MiniApp. Each item in the array represents a [=page route=].
+        </p> 
+        <p>
+          A <dfn data-lt="page route|page routes">MiniApp page route</dfn> is the relative path and filename of a MiniApp Page.
+        </p> 
+        <p>
+          During the MiniApp development process, adding or deleting pages of a MiniApp is done by configuring the array. When configuring the [=page routes=], the file name extension MAY be omitted (e.g., <samp>/component/mypage</samp>).
         </p>
-        <p class="note">
-          For compatibility with the Web platform, it is RECOMMENDED to use both <a>pages</a> and <a href="https://www.w3.org/TR/appmanifest/#start_url-member"><code>start_url</code></a>  and use the value <code>"."</code> for <code>scope</code> in the manifest file. The value of <a href="https://www.w3.org/TR/appmanifest/#start_url-member"><code>start_url</code></a>  MUST be the same as the first entry in <a>pages</a>.
-          If <code>scope</code>.
-        </p>
-        <p class="issue">
-        Are <code>pages.[0]</code> and <code>start_url</code> aligned in all cases?
-        </p>
+        <div class="note" title="Usage">
+          <p>
+            The first item in the <a>pages</a> array defines the homepage of a MiniApp.
+          </p>
+          <p>
+            For compatibility with the Web platform, it is RECOMMENDED to use <a>pages</a> along with the Web application manifest's <a href="https://www.w3.org/TR/appmanifest/#start_url-member" data-link-type="dfn">start_url</a> and <a href="https://www.w3.org/TR/appmanifest/#scope-member" data-link-type="dfn">scope</a> members. These members will be set with the following values:
+          </p>
+          <ul>
+            <li><a href="https://www.w3.org/TR/appmanifest/#start_url-member" data-link-type="dfn">start_url</a> SHOULD be set with the same value of the first item in the <a>pages</a> member; and</li>
+            <li><a href="https://www.w3.org/TR/appmanifest/#scope-member" data-link-type="dfn">scope</a> SHOULD be set with the value <code>"."</code>.</li>
+          </ul>
+        </div>
       </section>      
       <section>
         <h3>
