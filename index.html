@@ -625,7 +625,7 @@
     <section id='supplementary-manifest-members'>
       <h2>Supplementary manifest members</h2>
       <p>
-        The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of [=MiniApps=].
+        The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of [=MiniApp=].
       </p>
       <section>
         <h3>
@@ -649,7 +649,10 @@
           <span><code>version_name</code> member</span>
         </h3>
         <p>
-          The <dfn>version_name</dfn> member is a [=string=] that is mainly used for describing the version information. It is also the version name that is displayed to the user. The general format is <samp>1.0.0</samp> as specified in <cite>Semantic Versioning</cite> [[SEMANTIC-VERSIONING]]. It plays an important role in version control, MiniApp application, and equipment compatibility.
+          The [=MiniApp manifest's=] <dfn>version_name</dfn> member is a [=string=] mainly used for describing information on the version of a MiniApp, playing an important role in version control, MiniApp application, and platform compatibility. It is usually considered as the version shown publicly and displayed to the user.
+        </p>
+        <p class="note" title='Naming convention'>
+          The RECOMMENDED format for this member is <code>X.Y.Z</code>, where <code>X</code>, <code>Y</code>, and <code>Z</code> are non-negative [=integer=] values (e.g., <samp>1.10.0</samp>), as specified in <cite>Semantic Versioning</cite> [[SEMANTIC-VERSIONING]].
         </p>
       </section>
       <section>
