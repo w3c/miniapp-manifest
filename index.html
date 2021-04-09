@@ -648,6 +648,40 @@
       </section>
       <section>
         <h3>
+          <span><code>min_platform_version</code> member</span>
+        </h3>
+        <p>
+          The [=MiniApp manifest's=] <dfn data-dfn-for="MiniApp manifest">min_platform_version</dfn> member is a [=string=] that indicates the minimum supported version of the MiniApp user agent's platform to ensure the normal operation of a MiniApp (e.g. <code>1.0.0</code>).
+        </p>
+        <p class="note" title='Usage'>
+          The RECOMMENDED format for this member is <code>X.Y.Z</code>, where <code>X</code>, <code>Y</code>, and <code>Z</code> are non-negative [=integer=] values (e.g., <samp>1.10.0</samp>), as specified in <cite>Semantic Versioning</cite> [[SEMANTIC-VERSIONING]].
+        </p>        
+      </section>
+      <section>
+        <h3>
+          <span><code>pages</code> member</span>
+        </h3>
+        <p>
+            The <dfn>pages</dfn> member is an [=array=] of <a>relative-url</a> [=string=] used for specifying which pages are included in a MiniApp. Each item in the array represents a page route. Page route = <code>[path + filename]</code>. During the MiniApp development process, adding or deleting pages is done by configuring the array. When configuring the page route, there is no need to add the file name extension, since the MiniApp platform will automatically parse it. Note: the first item in the <a>pages</a> array stands for the homepage of a MiniApp.
+        </p>
+        <p class="note">
+          For compatibility with the Web platform, it is RECOMMENDED to use both <a>pages</a> and <a href="https://www.w3.org/TR/appmanifest/#start_url-member"><code>start_url</code></a>  and use the value <code>"."</code> for <code>scope</code> in the manifest file. The value of <a href="https://www.w3.org/TR/appmanifest/#start_url-member"><code>start_url</code></a>  MUST be the same as the first entry in <a>pages</a>.
+          If <code>scope</code>.
+        </p>
+        <p class="issue">
+        Are <code>pages.[0]</code> and <code>start_url</code> aligned in all cases?
+        </p>
+      </section>      
+      <section>
+        <h3>
+          <span><code>req_permissions</code> member</span>
+        </h3>
+        <p>
+            The <dfn>req_permissions</dfn> member is an [=array=] of [=MiniApp permission resources=]. Each <a>MiniApp permission resource</a> object declares permission (such as the access to the location information, user contacts, and hardware features like camera) required for the proper running of the MiniApp. User's consent may be asked to protect the user's privacy related to such permissions. Such information can also be used by an app store or a hosting platform to filter a MiniApp according to user's policy or device capabilities. 
+        </p>
+      </section>      
+      <section>
+        <h3>
           <span><code>version_name</code> member</span>
         </h3>
         <p>
@@ -672,32 +706,6 @@
             Value by default: <code>1</code>.
           </p>
         </div>
-      </section>
-      <section>
-        <h3>
-          <span><code>min_platform_version</code> member</span>
-        </h3>
-        <p>
-          The [=MiniApp manifest's=] <dfn data-dfn-for="MiniApp manifest">min_platform_version</dfn> member is a [=string=] that indicates the minimum supported version of the MiniApp user agent's platform to ensure the normal operation of a MiniApp (e.g. <code>1.0.0</code>).
-        </p>
-        <p class="note" title='Usage'>
-          The RECOMMENDED format for this member is <code>X.Y.Z</code>, where <code>X</code>, <code>Y</code>, and <code>Z</code> are non-negative [=integer=] values (e.g., <samp>1.10.0</samp>), as specified in <cite>Semantic Versioning</cite> [[SEMANTIC-VERSIONING]].
-        </p>        
-      </section>
-      <section>
-        <h3>
-          <span><code>pages</code> member</span>
-        </h3>
-        <p>
-            The <dfn>pages</dfn> member is an [=array=] of <a>relative-url</a> [=string=] used for specifying which pages are included in a MiniApp. Each item in the array represents a page route. Page route = <code>[path + filename]</code>. During the MiniApp development process, adding or deleting pages is done by configuring the array. When configuring the page route, there is no need to add the file name extension, since the MiniApp platform will automatically parse it. Note: the first item in the <code>pages</code> array stands for the homepage of a MiniApp.
-        </p>
-        <p class="note">
-          For compatibility with the Web platform, it is RECOMMENDED to use both <a>pages</a> and <a href="https://www.w3.org/TR/appmanifest/#start_url-member"><code>start_url</code></a>  and use the value <code>"."</code> for <code>scope</code> in the manifest file. The value of <a href="https://www.w3.org/TR/appmanifest/#start_url-member"><code>start_url</code></a>  MUST be the same as the first entry in <a>pages</a>.
-          If <code>scope</code>.
-        </p>
-        <p class="issue">
-        Are <code>pages.[0]</code> and <code>start_url</code> aligned in all cases?
-        </p>
       </section>
       <section>
         <h3>
@@ -734,14 +742,6 @@
           However, a widget also has its exclusive fields, defined in <a>MiniApp Widget resource</a>.</p>
         </p>
         <p>There are certain differences between the Widget-related APIs and the MiniApp APIs, hence, the declaration of the minimum platform version may be different. If the <code>min_platform_version</code> field of a widget is not set explicitly, it is then identical to the <code>min_platform_version</code> of the MiniApp by default.
-        </p>
-      </section>
-      <section>
-        <h3>
-          <span><code>req_permissions</code> member</span>
-        </h3>
-        <p>
-            The <dfn>req_permissions</dfn> member is an [=array=] of [=MiniApp permission resources=]. Each <a>MiniApp permission resource</a> object declares permission (such as the access to the location information, user contacts, and hardware features like camera) required for the proper running of the MiniApp. User's consent may be asked to protect the user's privacy related to such permissions. Such information can also be used by an app store or a hosting platform to filter a MiniApp according to user's policy or device capabilities. 
         </p>
       </section>
     </section>
