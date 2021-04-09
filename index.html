@@ -547,7 +547,9 @@
           <dd>No explicit directionality.</dd>
         </dl>
         <p>This member will be processed according to the <a href="https://w3c.github.io/manifest/#dfn-process-the-dir-member" data-link-type="dfn">process the <code>dir</code> member</a> algorithm specified in [[APPMANIFEST]].</p>
-        <p class="note">Value by default: <code>"auto"</code>.</p>        
+        <p class="note" title='Usage'>
+          Value by default: <code>"auto"</code>.
+        </p>        
       </section>
       <section data-cite="IMAGE-RESOURCE">
         <h3>
@@ -640,7 +642,7 @@
         <pre class="abnf">
           app_idrule = ALPHA 1*( ALPHA / DIGIT / "_" / "." )
         </pre>
-        <p class="note" title='Naming convention'>
+        <p class="note" title='Usage'>
              One common practice is to use the reverse-domain-name-like convention (e.g., <code>org.example.miniapp</code>).
         </p>
       </section>
@@ -651,7 +653,7 @@
         <p>
           The [=MiniApp manifest's=] <dfn>version_name</dfn> member is a [=string=] mainly used for describing information on the version of a MiniApp, playing an important role in version control, MiniApp application, and platform compatibility. It is usually considered as the version shown publicly and displayed to the user.
         </p>
-        <p class="note" title='Naming convention'>
+        <p class="note" title='Usage'>
           The RECOMMENDED format for this member is <code>X.Y.Z</code>, where <code>X</code>, <code>Y</code>, and <code>Z</code> are non-negative [=integer=] values (e.g., <samp>1.10.0</samp>), as specified in <cite>Semantic Versioning</cite> [[SEMANTIC-VERSIONING]].
         </p>
       </section>
@@ -660,13 +662,16 @@
           <span><code>version_code</code> member</span>
         </h3>
         <p>
-          The <dfn>version_code</dfn> member is a [=number=] that is mainly used for enhancing the maintainability and security of MiniApp (e.g., a lower version is not compatible with a higher version). <code>version_code</code> is not displayed to the user and is incrementing according to the version iteration process.
+          The [=MiniApp manifest's=] <dfn>version_code</dfn> member is a non-negative [=integer=], mainly used for enhancing the maintainability and security of MiniApp (e.g., compatibility among incremental versions). The <a>version_code</a> member aims at supporting the development and deployment process, and it is not usually displayed to the end-user.
         </p>
-        <p class="note">
-          <span>
+        <div class="note" title='Usage'>
+          <p>
+            The value of this member is usually incrementing according to the version iteration process.
+          </p>
+          <p>
             Value by default: <code>1</code>.
-          </span>
-        </p>
+          </p>
+        </div>
     </section>
 
       </section>
@@ -749,7 +754,7 @@
       <p>
         <span>The <dfn>navigation_bar_background_color</dfn> member specifies the color of the navigation bar background.</span>
       </p>
-      <p class="note">
+      <p class="note" title='Usage'>
         <span>
           Value by default: <code>#000000</code>.
           </span>
@@ -760,7 +765,7 @@
       <p>
         <span>The <dfn>navigation_bar_text_style</dfn> member specifies the text color of the navigation bar title.</span>
       </p>
-      <p class="note">
+      <p class="note" title='Usage'>
         <span>
          Value by default: <code>white</code>.
         </span>
@@ -777,7 +782,7 @@
       <p>
         <span>The <dfn>navigation_style</dfn> member specifies the style of the navigation bar: <code>default</code> (default style) and <code>custom</code> (customized navigation bar). Note: The capsule button at the right corner is not customizable.</span>
       </p>
-      <p class="note">
+      <p class="note" title='Usage'>
         <span>
           Value by default: <code>default</code>.
         </span>
@@ -788,7 +793,7 @@
       <p>
         <span>The <dfn>background_color</dfn> member specifies the background color of the window. This member is equivalent to  <a href="https://www.w3.org/TR/appmanifest/#background_color-member"><code>background_color</code></a>.</span>
       </p>
-      <p class="note">
+      <p class="note" title='Usage'>
         <span>
           Value by default: <code>#ffffff</code>.
         </span>
@@ -799,7 +804,7 @@
       <p>
         <span>The <dfn>background_text_style</dfn> member specifies the background text style.</span>
       </p>
-      <p class="note">
+      <p class="note" title='Usage'>
         <span>
           Value by default: <code>dark</code>.
         </span>
@@ -810,7 +815,7 @@
       <p>
         <span>The <dfn>enable_pull_down_refresh</dfn> member specifies if the pull-to-refresh event is enabled.</span>
       </p>
-      <p class="note">
+      <p class="note" title='Usage'>
         <span>
           Value by default: <code>false</code>.
         </span>
@@ -832,7 +837,7 @@
       <p>
         <span>The <dfn>orientation</dfn> member specifies the screen orientation settings to which a screen can be locked. The two supported values are <code>portrait</code> and <code>landscape</code>, defined in {{OrientationLockType}} [[screen-orientation]]. This member is equivalent to <a href="https://www.w3.org/TR/appmanifest/#orientation-member"><code>orientation</code></a>.</span>
       </p>
-      <p class="note">
+      <p class="note" title='Usage'>
         <span>
           Value by default: <code>portrait</code>.
         </span>
@@ -845,7 +850,7 @@
           <span>The <dfn>fullscreen</dfn> member indicates the full screen display. <code>true</code> is equivalent to the <code>fullscreen</code> value of
             <a href="https://www.w3.org/TR/appmanifest/#display-member"><code>display</code></a>, and <code>false</code> to <code>minimal-ui</code>.</span>
         </p>
-        <p class="note">
+        <p class="note" title='Usage'>
           <span>
             Value by default: <code>false</code>.
           </span>
@@ -860,7 +865,7 @@
             <span>The <dfn>design_width</dfn> member indicates the baseline width of the page design in <a data-cite="css-values">pixel unit</a>, based on which the size of the components on the page would be adjusted accordingly. The value is a non-negative integer.</span>
 
         </p>
-        <p class="note">
+        <p class="note" title='Usage'>
           <span>
             Value by default: <code>750</code>.
           </span>
@@ -872,7 +877,7 @@
             <span>The <dfn>auto_design_width</dfn> member indicates whether the design_width of the page is auto-calculated. When it's <i>true</i>, the value of the <code>design_width</code> is ignored, and the baseline width is determined by the system automatically according to the pixel density of the screen.</span>
 
         </p>
-        <p class="note">
+        <p class="note" title='Usage'>
           <span>
             Value by default: <code>false</code>.
           </span>
