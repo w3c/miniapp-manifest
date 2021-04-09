@@ -86,17 +86,20 @@
       "example": "org.example.miniapp"
     },
     "version_name": {
+      "description": "A string that identifies the version of a MiniApp in a user-friendly way.",
       "type": "string",
       "example": "1.0.0"
     },
     "version_code": {
+      "description": "A non-negative integer that identifies the version of a MiniApp.",
       "type": "integer",
       "default": 1,
       "min": 1
     },
     "min_platform_version": {
       "$ref": "#/definitions/TypeVersionString",
-      "description": "It is the minimum supported version of the required platform that can ensure normal operation of MiniApp."
+      "description": "A string with the minimum supported version of the required platform that can ensure normal operation of MiniApp.",
+      "example": "1.0.0"
     },
     "pages": {
       "type": "array",
