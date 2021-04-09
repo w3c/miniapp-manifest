@@ -30,8 +30,36 @@
   ],
   "properties": {
     "dir": {
+      "description": "The base direction of the manifest.",
       "type": "string",
-      "enum": ["ltr", "rtl"]
+      "enum": [ "ltr", "rtl", "auto" ],
+      "default": "auto"
+    },      
+    "icons": {
+      "description": "An array of icon objects that can serve as iconic representations of MiniApps.",      
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["src"],
+        "properties": {
+          "sizes": {
+            "description": "A string consisting of an unordered set of unique space-separated tokens which are ASCII case-insensitive that represents the dimensions of an image for visual media.",
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^[0-9 x]+$"
+              },
+              {
+                "enum": [ "any" ]
+              }
+            ]
+          },
+          "src": {
+            "description": "An image is a URL from which a user agent can fetch the icon's data.",
+            "$ref": "#/definitions/TypePathString"
+          }          
+        }
+      }
     },
     "lang": {
       "type": "string",
@@ -53,30 +81,6 @@
     },
     "description": {
       "type": "string"
-    },
-    "icons": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["src", "sizes"],
-        "properties": {
-          "src": {
-            "$ref": "#/definitions/TypePathString"
-          },
-          "sizes": {
-            "oneOf": [
-              {
-                "type": "string",
-                "pattern": "^([1-9][0-9]*)(x|X)([1-9][0-9]*)( ([1-9][0-9]*)(x|X)([1-9][0-9]*))*$"
-              },
-              {
-                "enum": ["any"]
-              }
-            ]
-          }
-        }
-      },
-      "description": "It consists of icons with different resolutions, and displays different icons based on the type of display equipment."
     },
     "version_name": {
       "type": "string",
