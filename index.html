@@ -609,7 +609,8 @@
         <p>This member will be processed according to the <a href="https://w3c.github.io/manifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm specified in [[APPMANIFEST]].</p>
       </section>
     </section>
-    <section id='WebAppManifest-app-info-members' data-cite='MANIFEST-APP-INFO'>
+
+    <section id='webappmanifest-app-info-members' data-cite='MANIFEST-APP-INFO'>
       <h2>Member inherited from Application Information</h2>
       <p>
         The following member is defined in the Web App Manifest - Application Information specification [[MANIFEST-APP-INFO]].
@@ -624,6 +625,7 @@
         <p>This member will be processed according to the <a href="https://w3c.github.io/manifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm specified in [[APPMANIFEST]].</p>        
       </section>
     </section>
+    
     <section id='supplementary-manifest-members'>
       <h2>Supplementary manifest members</h2>
       <p>
@@ -765,6 +767,57 @@
     </section>
   </section> 
 
+  <section id="sec-permission-resource-members">
+    <h2>MiniApp permission resource members</h2>
+    <p>
+      A <dfn data-lt="permission resource|MiniApp permission resources|MiniApp permission resource's">MiniApp permission resource</dfn> is an [=object=] that describes a request for using a concrete system feature (e.g., access to device's location, user contacts, sensors, and camera) required for the proper execution of a MiniApp.
+    </p>
+    <p>
+      The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of a [=permission resource=].
+    </p>
+    <section>
+      <h3><code>name</code> member</h3>
+      <p>
+        The [=MiniApp permission resource's=] <dfn data-dfn-for="MiniApp permission resource">name</dfn> member is a [=string=] that indicates the name of the feature requested.</span>
+      </p>
+    </section>
+    <section>
+      <h3><code>reason</code> member</h3>
+      <p>
+        The optional [=MiniApp permission resource's=] <dfn>reason</dfn> member is a [=string=] that indicates the reason given to request the feature specified in <a data-link-type="dfn" data-link-for="MiniApp permission resource">name</a>.</span>
+      </p>
+      <div class="ednote">
+        to add example
+      </div>
+    </section>
+
+
+    <section>
+      <h2><dfn data-lt="widget resources|MiniApp widget resources|MiniApp widget resource's">MiniApp widget resource</dfn> members</h2>
+      <section>
+        <h2><code>name</code> member</h2>
+        <p>
+          <span>The <dfn data-dfn-for="MiniApp widget resource">name</dfn> member describes the name of the Widget</span>
+        </p>
+      </section>
+      <section>
+        <h3><code>path</code> member</h3>
+        <p>
+          <span>The <dfn>path</dfn> member indicates the corresponding page path of a Widget. It follows the same path route format as defined in <a>pages</a>.</span>
+        </p>
+      </section>
+      <section>
+        <h3><code>min_platform_version</code> member</h3>
+        <p>
+          <span>The <dfn data-dfn-for="MiniApp widget resource">min_platform_version</dfn> member indicates the minimum platform version supported</span>
+        </p>
+        <div class="note" title='Usage'>
+          <p>
+            Since Widget APIs and MiniApp APIs may be different, the declaration of the minimum version of the platform may be different. Thus, if the <a data-link-for="MiniApp widget resource" data-link-type="dfn">min_platform_version</a> member of a widget is not set explicitly, the user agent will consider the same as the specified in the <a data-link-for="MiniApp manifest" data-link-type="dfn">min_platform_version</a> member at the root of the [=manifest=].
+          </p>
+        </div>
+      </section>
+    </section>
   <section>
     <h2><dfn data-lt="window resource|MiniApp window resources|MiniApp window resource's">MiniApp window resource</dfn> members</h2>
     
@@ -904,47 +957,6 @@
       </section>
     </section>
 
-    <section>
-      <h2><dfn data-lt="widget resources|MiniApp widget resources|MiniApp widget resource's">MiniApp widget resource</dfn> members</h2>
-      <section>
-        <h2><code>name</code> member</h2>
-        <p>
-          <span>The <dfn data-dfn-for="MiniApp widget resource">name</dfn> member describes the name of the Widget</span>
-        </p>
-      </section>
-      <section>
-        <h3><code>path</code> member</h3>
-        <p>
-          <span>The <dfn>path</dfn> member indicates the corresponding page path of a Widget. It follows the same path route format as defined in <a>pages</a>.</span>
-        </p>
-      </section>
-      <section>
-        <h3><code>min_platform_version</code> member</h3>
-        <p>
-          <span>The <dfn data-dfn-for="MiniApp widget resource">min_platform_version</dfn> member indicates the minimum platform version supported</span>
-        </p>
-        <div class="note" title='Usage'>
-          <p>
-            Since Widget APIs and MiniApp APIs may be different, the declaration of the minimum version of the platform may be different. Thus, if the <a data-link-for="MiniApp widget resource" data-link-type="dfn">min_platform_version</a> member of a widget is not set explicitly, the user agent will consider the same as the specified in the <a data-link-for="MiniApp manifest" data-link-type="dfn">min_platform_version</a> member at the root of the [=manifest=].
-          </p>
-        </div>
-      </section>
-    </section>
-
-    <section>
-      <h2><dfn data-lt="permission resource|MiniApp permission resources|MiniApp permission resource's">MiniApp permission resource</dfn> members</h2>
-      <section>
-        <h3><code>name</code> member</h3>
-        <p>
-          <span>The <dfn data-dfn-for="MiniApp permission resource">name</dfn> member indicates the permission name</span>
-        </p>
-      </section>
-      <section>
-        <h3><code>reason</code> member</h3>
-        <p>
-          <span>The <dfn>reason</dfn> member indicates the reason to use this permission</span>
-        </p>
-      </section>
 
       <div class="ednote">
         <p>
