@@ -83,8 +83,8 @@
     "app_id": {
       "type": "string",
       "format": "idn-hostname",
-      "description": "The naming convention of app ID adopts the reverse domain naming rule and uses all lowercases.",
-      "example": "com.company.miniapp"
+      "description": "A string that identifies the MiniApp univocally.",
+      "example": "org.example.miniapp"
     },
     "version_name": {
       "type": "string",

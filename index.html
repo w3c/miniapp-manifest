@@ -608,7 +608,7 @@
       </section>
     </section>
     <section id='WebAppManifest-app-info-members' data-cite='MANIFEST-APP-INFO'>
-      <h2>Member supplemented from the Application Information</h2>
+      <h2>Member inherited from Application Information</h2>
       <p>
         The following member is defined in the Web App Manifest - Application Information specification [[MANIFEST-APP-INFO]].
       </p>
@@ -624,23 +624,24 @@
     </section>
     <section id='supplementary-manifest-members'>
       <h2>Supplementary manifest members</h2>
+      <p>
+        The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of [=MiniApps=].
+      </p>
       <section>
         <h3>
           <span><code>app_id</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn>app_id</dfn> member identifies the MiniApp univocally. This member is mainly used for the package management.
-          It supports the update and release of MiniApp versions.
-          The format of <code>app_id</code> SHALL be a <a data-cite="rfc8259#section-7">string</a> defined by the rule below:
+          The [=MiniApp manifest's=] <dfn>app_id</dfn> member is a [=string=] that identifies the MiniApp univocally. This member is mainly used for the package management and it supports the update and release process of MiniApp versioning.
         </p>
-        <pre>
+        <p>
+          The format of <a>app_id</a> MUST be a [=string=] defined by the following rule:
+        </p>
+        <pre class="abnf">
           app_idrule = ALPHA 1*( ALPHA / DIGIT / "_" / "." )
         </pre>
         <p class="note" title='Naming convention'>
-           <span>
-             One common practice is to use the reverse-domain-name-like convention,
-             e.g. <code>org.example.miniapp</code>.
-           </span>
+             One common practice is to use the reverse-domain-name-like convention (e.g., <code>org.example.miniapp</code>).
         </p>
       </section>
       <section>
