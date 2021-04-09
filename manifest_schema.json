@@ -123,6 +123,25 @@
         }
       }
     },
+    "widgets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "path"],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "path": {
+            "$ref": "#/definitions/TypePathString"
+          },
+          "min_platform_version": {
+            "$ref": "#/definitions/TypeVersionString",
+            "description": "If not set, it's identical to the MiniApp platform version by default."
+          }
+        }
+      }
+    },
     "window": {
       "type": "object",
       "properties": {
@@ -174,25 +193,6 @@
         "auto_design_width": {
           "type": "boolean",
           "default": false
-        }
-      }
-    },
-    "widgets": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["name", "path"],
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "path": {
-            "$ref": "#/definitions/TypePathString"
-          },
-          "min_platform_version": {
-            "$ref": "#/definitions/TypeVersionString",
-            "description": "If not set, it's identical to the MiniApp platform version by default."
-          }
         }
       }
     }
