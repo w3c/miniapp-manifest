@@ -94,7 +94,7 @@
     </script>
 </head>
 
-<body data-cite="APPMANIFEST MINIAPP-PACKAGING MANIFEST-APP-INFO INFRA">
+<body data-cite="APPMANIFEST MINIAPP-PACKAGING MANIFEST-APP-INFO INFRA URL">
   <section id='abstract'>
     <p>
       This specification is a registry of supplementary members for the <a href="https://www.w3.org/TR/appmanifest/">Web Application Manifest</a> and the <a href="https://www.w3.org/TR/manifest-app-info/">Web App Manifest - Application Information</a> specifications that provide additional metadata to an application manifest to describe <a href="https://w3c.github.io/miniapp-packaging/#dfn-miniapp" data-link-type="dfn">MiniApps</a>. This JSON-based manifest file enables developers to set up basic information, window style, page route, and other information of a MiniApp. A MiniApp manifest includes descriptive metadata about the MiniApp, such as identifier, app name, version name, version code, and minimum platform version, among others. The manifest also includes information about the window style like the navigation bar, title, and window background color, as well as page routing information, and the widgets that are part of a MiniApp.
@@ -626,10 +626,10 @@
       </section>
     </section>
     
-    <section id='supplementary-manifest-members'>
+    <section id='supplementary-manifest-members' data-cite="MINIAPP-PACKAGING">
       <h2>Supplementary manifest members</h2>
       <p>
-        The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of [=MiniApp=].
+        The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of MiniApp.
       </p>
       <section>
         <h3>
@@ -664,7 +664,7 @@
           <span><code>pages</code> member</span>
         </h3>
         <p>
-            The [=MiniApp manifest's=] <dfn>pages</dfn> member is an [=array=] of <a>relative-url</a> [=string=] used for specifying the collection of pages that are part of a MiniApp. Each item in the array represents a [=page route=].
+            The [=MiniApp manifest's=] <dfn>pages</dfn> member is an [=array=] of [=relative-url string=] used for specifying the collection of pages that are part of a MiniApp. Each item in the array represents a [=page route=].
         </p> 
         <p>
           A <dfn data-lt="page route|page routes">MiniApp page route</dfn> is the relative path and filename of a MiniApp Page.
@@ -734,10 +734,10 @@
             The [=MiniApp manifest's=] <dfn>widgets</dfn> member defines a set of widgets that are a part of a MiniApp.
         </p>
         <p>
-            A [=MiniApp Package=] MAY include [=MiniApp Pages=] and Widgets concurrently.
+            A <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> MAY include MiniApp Pages and Widgets concurrently.
         </p> 
         <p>
-           A widget, as part of a [=MiniApp=], share some of the members of the [=MiniApp manifest=], including:
+           A widget, as part of a MiniApp, share some of the members of the [=MiniApp manifest=], including:
         </p> 
         <ul>
           <li><code>dir</code>;</li>
@@ -808,7 +808,7 @@
     <section>
       <h3><code>path</code> member</h3>
       <p>
-        The [=MiniApp widget resource's=] <dfn>path</dfn> member is a <a>relative-url</a> [=string=] that defines the corresponding  [=page route=] of a widget, represented in as in the <a>pages</a> array.
+        The [=MiniApp widget resource's=] <dfn>path</dfn> member is a [=relative-url string=] that defines the corresponding  [=page route=] of a widget, represented in as in the <a>pages</a> array.
       </p>
     </section>
     <section>
@@ -1022,7 +1022,7 @@
             <span>Local resource access</span>
 
         </h2>
-        <p> Members like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp-packaging/">MiniApp package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external resources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.</p>
+        <p> Members like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external resources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.</p>
 
 
 	      <p>
