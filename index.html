@@ -991,10 +991,13 @@
     </section>
   </section>
 
-  <section>
+  <section id="sec-localizable-members">
     <h2>Localizable members</h2>
     <p>
-        The following members are localizable and share the same default configuration of <code>dir</code> and <code>lang</code> if not otherwise specified.
+        A <dfn data-lt="localizable members">localizable member</dfn> is a [=manifest=] member whose content may be adapted to specific linguistic, geographical and cultural aspects. The localizable members in the [=manifest=] share the <a href="https://w3c.github.io/manifest/#dfn-language-tag" data-link-type="dfn">language tag</a> ([=lang=]) and display direction ([=dir=]) defined at the root.
+    </p>
+    <p>
+      The following members are [=localizable members=]:
     </p>
     <ul>
         <li><a data-link-for="MiniApp manifest" data-link-type="dfn">name</a></li>
@@ -1006,62 +1009,44 @@
   </section>
 
   <section>
-    <h2>
-      <span>Dependencies</span>
-    </h2>
-
+    <h2>Dependencies</h2>
     <p>
-        As a key part of a MiniApp package, the <code>manifest.json</code> file describes several important aspects of the MiniApp by referring to the resources inside the MiniApp package in different forms of files, such as the page files in the <code>pages</code> directory and the icon images in the <code>common</code> directory. Details are specified in the <a href="https://w3c.github.io/miniapp-packaging/">MiniApp Packaging specification</a>.
+      As a key part of a MiniApp package, the <code>manifest.json</code> file describes several important aspects of the MiniApp by referring to the resources inside the MiniApp package in different forms of files, such as the page files in the <code>pages</code> directory and the icon images in the <code>common</code> directory. Details are specified in [[MINIAPP-PACKAGING=].
     </p>
-
     <p>
-        The normal operation of a MiniApp relies on the proper configuration of the manifest file according to this specification and the availability of the dependent resources in the MiniApp package. Such dependency needs to be checked during both the development phase and deployment phase.
+      The normal operation of a MiniApp relies on the proper configuration of the manifest file according to this specification and the availability of the dependent resources in the MiniApp package. Such dependency needs to be checked during both the development phase and deployment phase.
     </p>
-
   </section>
 
   <section>
-    <h2>
-        <span>Security and Privacy Considerations</span>
-    </h2>
+    <h2>Security and Privacy Considerations</h2>
     <section>
-        <h2>
-            <span>Content constraint</span>
-
-        </h2>
+        <h2>Content constraint</h2>
         <p>
-            As the manifest is a JSON file and will commonly be encoded using [[UNICODE]], the security considerations described in [[ECMA-404]] and [[UTR36]] apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#sec-json-schema">JSON Schema</a> to impose their own implementation-specific limits on the member names, types and value ranges, e.g. to guard against memory overflow, or to meet platform-specific limitations.
+            As the manifest is a JSON document and will commonly be encoded using [[UNICODE]], the security considerations described in [[JSON] and [[UNICODE-SECURITY]] apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#sec-json-schema">JSON Schema</a> to impose their own implementation-specific limits on the member names, types and value ranges (e.g., to guard against memory overflow, or to meet platform-specific limitations).
         </p>
     </section>
 
     <section>
-        <h2>
-            <span>Local resource access</span>
-
-        </h2>
-        <p> Members like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external resources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.</p>
-
-
+        <h2>Local resource access</h2>
+        <p>
+          Members like [=icons=], [=pages=] and [=widgets=] contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to prevent illegal access out of the scope of the <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a>. On the other hand, the MiniApp itself (e.g., using scripting code) may provide mechanisms to access to external resources either on the hosting platform, or on remote websites (e.g., through a URI). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.
+        </p>
 	      <p>
-            In addition, the <code>req_permissions</code> member provides a specific means to control the access to the local software, hardware and data resources on the user's device. User's consent should be asked when it comes to privacy-related or high-level privileged resources.
+         In addition, the [=req_permissions=] member provides a specific means to control the access to the local software, hardware and data resources on the user's device. User's consent should be asked when it comes to privacy-related or high-level privileged resources.
         </p>
     </section>
 
     <section>
-        <h2>
-            <span>Integrity</span>
-
-        </h2>
-        <p> The integrity of the manifest document is protected by a cryptographic hash mechanism as part of the whole MiniApp package. Details are specified in the <a href="https://w3c.github.io/miniapp-packaging/">MiniApp Packaging specification</a>. </p>
+        <h2>Integrity</h2>
+        <p> The integrity of the manifest document is protected by a cryptographic hash mechanism as part of the whole <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a>, as detailed in [[MINIAPP-PACKAGING]]. </p>
     </section>
 
     <section>
-        <h2>
-            <span>Transparency</span>
-
-        </h2>
+        <h2>Transparency</h2>
         <p>
-            It is RECOMMENDED that the hosting platform makes the necessary meta information in the manifest available to the end-user, such as <code>app_id</code>, <code>name</code>, <code>short_name</code>, <code>icons</code>, <code>version_name</code>, <code>description</code>. This is to give an end-user an opportunity to make a conscious decision to approve the installation and use of the MiniApp. This could also help to identify a spoofing MiniApp.</p>
+          The user agent SHOULD provide the end-user with transparent metadata about a MiniApp (i.e., <a>app_id</a>, <a>name</a>, <a>short_name</a>, <a>icons</a>, <a>version_name</a>, <a>description</a>), offering users enough information to make a conscious decisions about its usage. This practice could also help identifying spoofing MiniApps.
+        </p>
     </section>
 </section>
 
@@ -1077,7 +1062,7 @@
         <span>JSON Schema</span>
     </h2>
     <p>
-        Developers interested in validating the MiniApp manifest document can use the JSON Schema defined <a href="./manifest_schema.json">here</a>.
+      Developers interested in validating the MiniApp manifest document can use the JSON Schema defined at <a href="https://w3c.github.io/miniapp-manifest/manifest_schema.json">https://w3c.github.io/miniapp-manifest/manifest_schema.json</a>.
     </p>
 </section>
 
@@ -1087,7 +1072,7 @@
       {
         "dir": "ltr",
         "lang": "en-US",
-        "app_id": "org.w3c.miniapp",
+        "app_id": "org.example.miniapp",
         "name": "MiniApp Demo",
         "short_name": "MiniApp",
         "version_name": "1.0.0",
@@ -1125,7 +1110,7 @@
           },
           {
             "name": "system.permission.CAMERA",
-            "reason": "To scan the QR code"
+            "reason": "To scan a QR code"
           }
         ]
       }
@@ -1135,9 +1120,10 @@
   <section class="appendix">
     <h2>Acknowledgements</h2>
     <p>
-      This document refers to <a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>, <a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/">Baidu MiniApp</a>, <a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">WeChat MiniApp</a>, <a href="https://opendocs.alipay.com/mini/framework/app-json">Alipay MiniApp</a>, <a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">ByteDance MiniApp</a>, <a href="https://doc.quickapp.cn/framework/manifest.html">Quick App Specification</a>, <a href="https://w3c.github.io/miniapp-widget/req/">MiniApp Widget Requirements</a>, <a href="https://w3c.github.io/miniapp-lifecycle/">MiniApp Lifecycle Specification</a>, <a href="https://w3c.github.io/miniapp-addressing/">MiniApp Addressing</a>, and <a href="https://semver.org/">Semantic Versioning</a>. We appreciate the open source efforts of these documents.
+      This document refers to <a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>, <a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/">Baidu MiniApp</a>, <a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">WeChat MiniApp</a>, <a href="https://opendocs.alipay.com/mini/framework/app-json">Alipay MiniApp</a>, <a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">ByteDance MiniApp</a>, <a href="https://doc.quickapp.cn/framework/manifest.html">Quick App Specification</a>, <a href="https://w3c.github.io/miniapp-widget/req/">MiniApp Widget Requirements</a>, <a href="https://w3c.github.io/miniapp-lifecycle/">MiniApp Lifecycle Specification</a>, <a href="https://w3c.github.io/miniapp-addressing/">MiniApp Addressing</a>, and <a href="https://semver.org/">Semantic Versioning</a>.
     </p>
   </section>
+  
   <section class="appendix informative">
     <h2>
       <span>Extensibility</span>
