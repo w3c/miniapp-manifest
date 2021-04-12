@@ -121,52 +121,52 @@
       </p>
       <ul>
         <li>
-          <a>app_id</a>
+          <a><code>app_id</code></a>
         </li>
         <li>
-          <a>icons</a>
+          <a><code>icons</code></a>
         </li>
         <li>
-          <a data-link-for="MiniApp manifest" data-link-type="dfn">name</a>
+          <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a>
         </li>
         <li>
-          <a>version_name</a>
+          <a><code>version_name</code></a>
         </li>  
         <li>
-          <a>version_code</a>
+          <a><code>version_code</code></a>
         </li>
         <li>
-          <a data-link-for="MiniApp manifest" data-link-type="dfn">min_platform_version</a>
+          <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>min_platform_version</code></a>
         </li>
         <li>
-          <a>pages</a>
-        </li>
-      </ul>
-      <p>
-          Each [=image resource=] object within the [=MiniApp manifest's=] <a>icons</a> member MUST contain:
-      </p>
-      <ul>
-        <li>
-          <a href="https://www.w3.org/TR/image-resource/#dfn-src" data-type="dfn" data-link-type="dfn">src</a>
+          <a><code>pages</code></a>
         </li>
       </ul>
       <p>
-        A [=MiniApp manifest=] MAY contain a <a>widgets</a> member at its root. This member MUST contain an [=array=] of <a>MiniApp widget resources</a>. Each [=MiniApp widget resource=] object MUST contain the following members:
+          Each [=image resource=] object within the [=MiniApp manifest's=] <a><code>icons</code></a> member MUST contain:
       </p>
       <ul>
         <li>
-         <a data-link-for="MiniApp widget resource" data-link-type="dfn">name</a>
-        </li>
-        <li>
-         <a>path</a>
+          <a href="https://www.w3.org/TR/image-resource/#dfn-src" data-type="dfn" data-link-type="dfn"><code>src</code></a>
         </li>
       </ul>
       <p>
-        A [=MiniApp manifest=] MAY contain a [=req_permissions=] member at its root. This member MUST contain an [=array=] of <a>MiniApp permission resources</a>. Each [=MiniApp permission resource=] object MUST contain the following member:
+        A [=MiniApp manifest=] MAY contain a <a><code>widgets</code></a> member at its root. This member MUST contain an [=array=] of <a>MiniApp widget resources</a>. Each [=MiniApp widget resource=] object MUST contain the following members:
       </p>
       <ul>
         <li>
-         <a data-link-for="MiniApp permission resource" data-link-type="dfn">name</a>
+         <a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>name</code></a>
+        </li>
+        <li>
+         <a><code>path</code></a>
+        </li>
+      </ul>
+      <p>
+        A [=MiniApp manifest=] MAY contain a <a><code>req_permissions</code></a> member at its root. This member MUST contain an [=array=] of <a>MiniApp permission resources</a>. Each [=MiniApp permission resource=] object MUST contain the following member:
+      </p>
+      <ul>
+        <li>
+         <a data-link-for="MiniApp permission resource" data-link-type="dfn"><code>name</code></a>
         </li>
       </ul>
       <p>The presence of other <a href="#manifest-members">members</a> in a [=MiniApp manifest=] is optional, but this MAY be modified by vendor-specific extensions.</p>
@@ -194,7 +194,7 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row"><a>app_id</a></th>
+            <th scope="row"><a><code>app_id</code></a></th>
             <td> [=string=] </td>
             <td>Yes</td>
             <td>
@@ -202,7 +202,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>description</a></th>
+            <th scope="row"><a><code>description</code></a></th>
             <td> [=string=] </td>
             <td>No</td>
             <td>
@@ -210,7 +210,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>dir</a></th>
+            <th scope="row"><a><code>dir</code></a></th>
             <td> [=string=] </td>
             <td>No</td>
             <td>
@@ -218,7 +218,7 @@
             </td>
           </tr>
           <tr data-cite="IMAGE-RESOURCE">
-            <th scope="row"><a>icons</a></th>
+            <th scope="row"><a><code>icons</code></a></th>
             <td> [=image resource=] [=array=] </td>
             <td>Yes</td>
             <td>
@@ -226,7 +226,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>lang</a></th>
+            <th scope="row"><a><code>lang</code></a></th>
             <td> [=string=] </td>
             <td>No</td>
             <td>
@@ -234,7 +234,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a data-link-for="MiniApp manifest" data-link-type="dfn">min_platform_version</a></th>
+            <th scope="row"><a data-link-for="MiniApp manifest" data-link-type="dfn"><code>min_platform_version</code></a></th>
             <td> [=string=] </td>
             <td>Yes</td>
             <td>
@@ -242,7 +242,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a data-link-for="MiniApp manifest" data-link-type="dfn">name</a></th>
+            <th scope="row"><a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a></th>
             <td> [=string=] </td>
             <td>Yes</td>
             <td>
@@ -250,7 +250,7 @@
             </td>
           </tr>          
           <tr>
-            <th scope="row"><a>pages</a></th>
+            <th scope="row"><a><code>pages</code></a></th>
             <td> [=array=] </td>
             <td>Yes</td>
             <td>
@@ -258,13 +258,13 @@
             </td>
           </tr>
           <tr>
-              <th scope="row"><a>req_permissions</a></th>              
+              <th scope="row"><a><code>req_permissions</code></a></th>              
               <td> <a>permission resource</a> [=array=] </td>
               <td>No</td>
               <td> <span>Required permissions</span></td>
           </tr>          
           <tr>
-            <th scope="row"><a>short_name</a></th>
+            <th scope="row"><a><code>short_name</code></a></th>
             <td> [=string=] </td>
             <td>No</td>
             <td>
@@ -272,7 +272,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>version_code</a></th>
+            <th scope="row"><a><code>version_code</code></a></th>
             <td> [=string=] </td>
             <td>Yes</td>
             <td>
@@ -280,7 +280,7 @@
             </td>
           </tr>          
           <tr>
-            <th scope="row"><a>version_name</a></th>
+            <th scope="row"><a><code>version_name</code></a></th>
             <td> [=string=] </td>
             <td>Yes</td>
             <td>
@@ -288,14 +288,14 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>widgets</a></th>
+            <th scope="row"><a><code>widgets</code></a></th>
             <td> <a>widget resource</a> [=array=] </td>
             <td>No</td>
             <td> <span>Widgets</span>
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>window</a></th>
+            <th scope="row"><a><code>window</code></a></th>
             <td> <a>window resource</a> </td>
             <td>No</td>
             <td>
@@ -306,7 +306,7 @@
       </table>
 
       <table class="members">
-        <caption>Members of [=image resource=] objects<br/>(<code>icon</code> array)</caption>
+        <caption>Members of [=image resource=] objects<br/>(<a><code>icons</code></a> array)</caption>
         <thead>
           <tr>
             <th scope="col">Member</th>
@@ -317,7 +317,7 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row"><a href="https://www.w3.org/TR/image-resource/#dfn-src" data-type="dfn" data-link-type="dfn">src</a></th>
+            <th scope="row"><a href="https://www.w3.org/TR/image-resource/#dfn-src" data-type="dfn" data-link-type="dfn"><code>src</code></a></th>
             <td> [=string=] </td>
             <td>Yes</td>
             <td>
@@ -325,7 +325,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a href="https://www.w3.org/TR/image-resource/#dfn-sizes" data-type="dfn" data-link-type="dfn">sizes</a></th>
+            <th scope="row"><a href="https://www.w3.org/TR/image-resource/#dfn-sizes" data-type="dfn" data-link-type="dfn"><code>sizes</code></a></th>
             <td> [=string=] </td>
             <td>No</td>
             <td>
@@ -336,7 +336,7 @@
       </table>
 
       <table class="members">
-        <caption>Members of [=permission resource=] objects<br/>(<code>req_permissions</code> array)</caption>
+        <caption>Members of [=permission resource=] objects<br/>(<a><code>req_permissions</code></a> array)</caption>
         <thead>
           <tr>
             <th scope="col">Member</th>
@@ -347,7 +347,7 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row"><a data-link-for="MiniApp permission resource" data-link-type="dfn">name</a></th>
+            <th scope="row"><a data-link-for="MiniApp permission resource" data-link-type="dfn"><code>name</code></a></th>
             <td> [=string=] </td>
             <td>Yes</td>
             <td>
@@ -355,7 +355,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>reason</a></th>
+            <th scope="row"><a><code>reason</code></a></th>
             <td> [=string=] </td>
             <td>No</td>
             <td>
@@ -366,7 +366,7 @@
       </table>
 
       <table class="members">
-        <caption>Members of [=widget resource=] objects<br/>(<code>widgets</code> array)</caption>
+        <caption>Members of [=widget resource=] objects<br/>(<a><code>widgets</code></a> array)</caption>
         <thead>
           <tr>
             <th scope="col">Member</th>
@@ -377,7 +377,7 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row"><a data-link-for="MiniApp widget resource" data-link-type="dfn">name</a></th>
+            <th scope="row"><a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>name</code></a></th>
             <td> [=string=] </td>
             <td>Yes</td>
             <td>
@@ -385,7 +385,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>path</a></th>
+            <th scope="row"><a><code>path</code></a></th>
             <td> [=string=] </td>
             <td>Yes</td>
             <td>
@@ -393,7 +393,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a data-link-for="MiniApp widget resource" data-link-type="dfn">min_platform_version</a></th>
+            <th scope="row"><a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>min_platform_version</code></a></th>
             <td> [=string=] </td>
             <td>No</td>
             <td>
@@ -404,7 +404,7 @@
       </table>
 
       <table class="members">
-        <caption>Members of [=window resource=] objects<br/>(<code>window</code> object)</caption>
+        <caption>Members of [=window resource=] objects<br/>(<a><code>window</code></a> object)</caption>
         <thead>
           <tr>
             <th scope="col">Member</th>
@@ -415,15 +415,15 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row"><a>auto_design_width</a></th>
+            <th scope="row"><a><code>auto_design_width</code></a></th>
             <td> [=boolean=]  </td>
             <td>No</td>
             <td>
-                <span>Enables/disables auto-calculation of page's [=design_width=] </span>
+                <span>Enables/disables auto-calculation of page's <a><code>design_width</code></a> </span>
             </td>
           </tr>
           <tr>
-            <th scope="row"><a data-link-for="MiniApp window resource" data-link-type="dfn">background_color</a></th>
+            <th scope="row"><a data-link-for="MiniApp window resource" data-link-type="dfn"><code>background_color</code></a></th>
             <td> [=string=] </td>
             <td>No</td>
             <td>
@@ -431,7 +431,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>background_text_style</a></th>
+            <th scope="row"><a><code>background_text_style</code></a></th>
             <td> [=string=] </td>
             <td>No</td>
             <td>
@@ -439,7 +439,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>design_width</a></th>
+            <th scope="row"><a><code>design_width</code></a></th>
             <td> [=number=]  </td>
             <td>No</td>
             <td>
@@ -447,7 +447,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>enable_pull_down_refresh</a></th>
+            <th scope="row"><a><code>enable_pull_down_refresh</code></a></th>
             <td> [=boolean=] </td>
             <td>No</td>
             <td>
@@ -455,7 +455,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>fullscreen</a></th>
+            <th scope="row"><a><code>fullscreen</code></a></th>
             <td> [=boolean=]  </td>
             <td>No</td>
             <td>
@@ -463,7 +463,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>navigation_bar_background_color</a></th>
+            <th scope="row"><a><code>navigation_bar_background_color</code></a></th>
             <td> [=string=] </td>
             <td>No</td>
             <td>
@@ -471,7 +471,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>navigation_bar_text_style</a></th>
+            <th scope="row"><a><code>navigation_bar_text_style</code></a></th>
             <td> [=string=]  </td>
             <td>No</td>
             <td>
@@ -479,7 +479,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>navigation_bar_title_text</a></th>
+            <th scope="row"><a><code>navigation_bar_title_text</code></a></th>
             <td> [=string=]  </td>
             <td>No</td>
             <td>
@@ -487,7 +487,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>navigation_style</a></th>
+            <th scope="row"><a><code>navigation_style</code></a></th>
             <td> [=string=] </td>
             <td>No</td>
             <td>
@@ -495,7 +495,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>on_reach_bottom_distance</a></th>
+            <th scope="row"><a><code>on_reach_bottom_distance</code></a></th>
             <td> [=number=] </td>
             <td>No</td>
             <td>
@@ -503,7 +503,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>orientation</a></th>
+            <th scope="row"><a><code>orientation</code></a></th>
             <td> [=string=]  </td>
             <td>No</td>
             <td>
@@ -532,15 +532,15 @@
       <section>
         <h3><code>dir</code> member</h3>
         <p>
-          The [=MiniApp manifest's=] <dfn>dir</dfn> member, while specifying the base direction of the <a>localizable members</a> of the [=manifest=], also specifies
+          The [=MiniApp manifest's=] <dfn><code>dir</code></dfn> member, while specifying the base direction of the <a>localizable members</a> of the [=manifest=], also specifies
           the default base text direction of the whole MiniApp.</p> 
-        <p>The <a>dir</a> member's value can be set to one of the <a href="https://www.w3.org/TR/appmanifest/#dfn-text-direction-value">text-direction values</a> as specified in [[APPMANIFEST]]. The text-direction values are the following:</p>
+        <p>The <a><code>dir</code></a> member's value can be set to one of the <a href="https://www.w3.org/TR/appmanifest/#dfn-text-direction-value">text-direction values</a> as specified in [[APPMANIFEST]]. The text-direction values are the following:</p>
         <dl>
-          <dt><a href="https://w3c.github.io/miniapp-packaging/#dfn-ltr" data-type="dfn" data-link-type="dfn">"ltr"</a></dt>
+          <dt><a href="https://w3c.github.io/miniapp-packaging/#dfn-ltr" data-type="dfn" data-link-type="dfn"><code>"ltr"</code></a></dt>
           <dd>Left-to-right text.</dd>
-          <dt><a href="https://w3c.github.io/miniapp-packaging/#dfn-rtl" data-type="dfn" data-link-type="dfn">"rtl"</a></dt>
+          <dt><a href="https://w3c.github.io/miniapp-packaging/#dfn-rtl" data-type="dfn" data-link-type="dfn"><code>"rtl"</code></a></dt>
           <dd>Right-to-left text.</dd>
-          <dt><a href="https://w3c.github.io/miniapp-packaging/#dfn-auto" data-type="dfn" data-link-type="dfn">"auto"</a> (default)</dt>
+          <dt><a href="https://w3c.github.io/miniapp-packaging/#dfn-auto" data-type="dfn" data-link-type="dfn"><code>"auto"</code></a> (default)</dt>
           <dd>No explicit directionality.</dd>
         </dl>
         <p>This member will be processed according to the <a href="https://w3c.github.io/manifest/#dfn-process-the-dir-member" data-link-type="dfn">process the <code>dir</code> member</a> algorithm specified in [[APPMANIFEST]].</p>
@@ -553,14 +553,14 @@
           <span><code>icons</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn>icons</dfn> member describes images that serve as iconic representations of MiniApps. This member is an [=array=] of [=image resource=] objects.
+          The [=MiniApp manifest's=] <dfn><code>icons</code></dfn> member describes images that serve as iconic representations of MiniApps. This member is an [=array=] of [=image resource=] objects.
         </p>
         <p>As specified in [[IMAGE-RESOURCE]], an [=image resource=] consists of:</p>
         <dl>
         <dt>
-          <dt><a href="https://www.w3.org/TR/image-resource/#dfn-src" data-type="dfn" data-link-type="dfn">src</a></dt>
+          <dt><a href="https://www.w3.org/TR/image-resource/#dfn-src" data-type="dfn" data-link-type="dfn"><code>src</code></a></dt>
           <dd>A <a data-link-type="dfn" data-type="dfn" href="https://url.spec.whatwg.org/#concept-url">URL</a> from where to obtain the image data.</dd>
-          <dt><a href="https://www.w3.org/TR/image-resource/#dfn-sizes" data-type="dfn" data-link-type="dfn">sizes</a></dt>
+          <dt><a href="https://www.w3.org/TR/image-resource/#dfn-sizes" data-type="dfn" data-link-type="dfn"><code>sizes</code></a></dt>
           <dd>
             An optional [=string=] representing the sizes of the image, expressed using the same syntax as [^link^]'s [^link/sizes^] attribute.
           </dd>
@@ -582,7 +582,7 @@
           <span><code>lang</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn>lang</dfn> member, while specifying the primary language of the <a>localizable members</a>, also specifies
+          The [=MiniApp manifest's=] <dfn><code>lang</code></dfn> member, while specifying the primary language of the <a>localizable members</a>, also specifies
           the primary language of the whole MiniApp. This member is a [=string=] in the form of a <a href="https://w3c.github.io/manifest/#dfn-language-tag" data-link-type="dfn">language tag</a>, a string that matches the production of a Language-Tag [[BCP47]], as defined in [[APPMANIFEST]].
         </p>
         <p>This member will be processed according to the <a href="https://w3c.github.io/manifest/#dfn-process-the-lang-member" data-link-type="dfn">process the <code>lang</code> member</a> algorithm specified in [[APPMANIFEST]].</p>
@@ -592,7 +592,7 @@
           <span><code>name</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn data-dfn-for="MiniApp manifest">name</dfn> member is the descriptive name of the application. This is the name directly displayed to the user. It is used as the display name of MiniApp along with the desktop icon and in the context of MiniApp management. 
+          The [=MiniApp manifest's=] <dfn data-dfn-for="MiniApp manifest"><code>name</code></dfn> member is the descriptive name of the application. This is the name directly displayed to the user. It is used as the display name of MiniApp along with the desktop icon and in the context of MiniApp management. 
         </p>
         <p>This member will be processed according to the <a href="https://w3c.github.io/manifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm specified in [[APPMANIFEST]].</p>
       </section>
@@ -601,7 +601,7 @@
           <span><code>short_name</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn>short_name</dfn> member provides a concise and easy-to-read name for a MiniApp. It can be used when there is insufficient space to display the full MiniApp name provided in <a data-link-for="MiniApp manifest" data-link-type="dfn">name</a>.
+          The [=MiniApp manifest's=] <dfn><code>short_name</code></dfn> member provides a concise and easy-to-read name for a MiniApp. It can be used when there is insufficient space to display the full MiniApp name provided in <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a>.
         </p>
         <p>This member will be processed according to the <a href="https://w3c.github.io/manifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm specified in [[APPMANIFEST]].</p>
       </section>
@@ -617,7 +617,7 @@
           <span><code>description</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn>description</dfn> member provides a textual description for the MiniApp representing the purpose of the web application in natural language, as defined in [[MANIFEST-APP-INFO]]
+          The [=MiniApp manifest's=] <dfn><code>description</code></dfn> member provides a textual description for the MiniApp representing the purpose of the web application in natural language, as defined in [[MANIFEST-APP-INFO]]
         </p>
         <p>This member will be processed according to the <a href="https://w3c.github.io/manifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm specified in [[APPMANIFEST]].</p>        
       </section>
@@ -633,10 +633,10 @@
           <span><code>app_id</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn>app_id</dfn> member is a [=string=] that identifies the MiniApp univocally. This member is mainly used for the package management and it supports the update and release process of MiniApp versioning.
+          The [=MiniApp manifest's=] <dfn><code>app_id</code></dfn> member is a [=string=] that identifies the MiniApp univocally. This member is mainly used for the package management and it supports the update and release process of MiniApp versioning.
         </p>
         <p>
-          The format of <a>app_id</a> MUST be a [=string=] defined by the following rule:
+          The format of <a><code>app_id</code></a> MUST be a [=string=] defined by the following rule:
         </p>
         <pre class="abnf">
           app_idrule = ALPHA 1*( ALPHA / DIGIT / "_" / "." )
@@ -650,7 +650,7 @@
           <span><code>min_platform_version</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn data-dfn-for="MiniApp manifest">min_platform_version</dfn> member is a [=string=] that indicates the minimum supported version of the MiniApp user agent's platform to ensure the normal operation of a MiniApp (e.g. <code>1.0.0</code>).
+          The [=MiniApp manifest's=] <dfn data-dfn-for="MiniApp manifest"><code>min_platform_version</code></dfn> member is a [=string=] that indicates the minimum supported version of the MiniApp user agent's platform to ensure the normal operation of a MiniApp (e.g. <code>1.0.0</code>).
         </p>
         <p class="note" title='Usage'>
           The RECOMMENDED format for this member is <code>X.Y.Z</code>, where <code>X</code>, <code>Y</code>, and <code>Z</code> are non-negative integer values (e.g., <samp>1.10.0</samp>), as specified in <cite>Semantic Versioning</cite> [[SEMANTIC-VERSIONING]].
@@ -661,7 +661,7 @@
           <span><code>pages</code> member</span>
         </h3>
         <p>
-            The [=MiniApp manifest's=] <dfn>pages</dfn> member is an [=array=] of [=relative-url string=] used for specifying the collection of pages that are part of a MiniApp. Each item in the array represents a [=page route=].
+            The [=MiniApp manifest's=] <dfn><code>pages</code></dfn> member is an [=array=] of [=relative-url string=] used for specifying the collection of pages that are part of a MiniApp. Each item in the array represents a [=page route=].
         </p> 
         <p>
           A <dfn data-lt="page route|page routes">MiniApp page route</dfn> is the relative path and filename of a MiniApp Page.
@@ -671,13 +671,13 @@
         </p>
         <div class="note" title="Usage">
           <p>
-            The first item in the <a>pages</a> array defines the homepage of a MiniApp.
+            The first item in the <a><code>pages</code></a> array defines the homepage of a MiniApp.
           </p>
           <p>
-            For compatibility with the Web platform, it is RECOMMENDED to use <a>pages</a> along with the Web application manifest's <a href="https://www.w3.org/TR/appmanifest/#start_url-member" data-link-type="dfn">start_url</a> and <a href="https://www.w3.org/TR/appmanifest/#scope-member" data-link-type="dfn">scope</a> members. These members will be set with the following values:
+            For compatibility with the Web platform, it is RECOMMENDED to use <a><code>pages</code></a> along with the Web application manifest's <a href="https://www.w3.org/TR/appmanifest/#start_url-member" data-link-type="dfn"><code>start_url</code></a> and <a href="https://www.w3.org/TR/appmanifest/#scope-member" data-link-type="dfn"><code>scope</code></a> members. These members will be set with the following values:
           </p>
           <ul>
-            <li><a href="https://www.w3.org/TR/appmanifest/#start_url-member" data-link-type="dfn">start_url</a> SHOULD be set with the same value of the first item in the <a>pages</a> member; and</li>
+            <li><a href="https://www.w3.org/TR/appmanifest/#start_url-member" data-link-type="dfn">start_url</a> SHOULD be set with the same value of the first item in the <a><code>pages</code></a> member; and</li>
             <li><a href="https://www.w3.org/TR/appmanifest/#scope-member" data-link-type="dfn">scope</a> SHOULD be set with the value <code>"."</code>.</li>
           </ul>
         </div>
@@ -687,13 +687,13 @@
           <span><code>req_permissions</code> member</span>
         </h3>
         <p>
-            The [=MiniApp manifest's=] <dfn>req_permissions</dfn> member is an [=array=] of [=MiniApp permission resources=] objects.
+            The [=MiniApp manifest's=] <dfn><code>req_permissions</code></dfn> member is an [=array=] of [=MiniApp permission resources=] objects.
         </p> 
         <p> 
           Each <a>MiniApp permission resource</a> declares a request for using a concrete system feature (e.g., access to device's location, user contacts, sensors, and camera) required for the proper execution of the MiniApp.
         </p>
         <p>
-          User agents will ask for the user's consent to protect their privacy during the access to these specific features. This information in the <a>req_permissions</a> member may be used by app stores or hosting platforms to filter MiniApps according to the user's preferences, privacy policy or the device capabilities. 
+          User agents will ask for the user's consent to protect their privacy during the access to these specific features. This information in the <a><code>req_permissions</code></a> member may be used by app stores or hosting platforms to filter MiniApps according to the user's preferences, privacy policy or the device capabilities. 
         </p>
       </section>      
       <section>
@@ -701,7 +701,7 @@
           <span><code>version_name</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn>version_name</dfn> member is a [=string=] mainly used for describing information on the version of a MiniApp, playing an important role in version control, MiniApp application, and platform compatibility. It is usually considered as the version shown publicly and displayed to the user.
+          The [=MiniApp manifest's=] <dfn><code>version_name</code></dfn> member is a [=string=] mainly used for describing information on the version of a MiniApp, playing an important role in version control, MiniApp application, and platform compatibility. It is usually considered as the version shown publicly and displayed to the user.
         </p>
         <p class="note" title='Usage'>
           The RECOMMENDED format for this member is <code>X.Y.Z</code>, where <code>X</code>, <code>Y</code>, and <code>Z</code> are non-negative integer values (e.g., <samp>1.10.0</samp>), as specified in <cite>Semantic Versioning</cite> [[SEMANTIC-VERSIONING]].
@@ -712,7 +712,7 @@
           <span><code>version_code</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn>version_code</dfn> member is a non-negative integer [=number=] that represents the version of a MiniApp. It is mainly used for enhancing the maintainability and security of MiniApp (e.g., compatibility among incremental versions). The <a>version_code</a> member aims at supporting the development and deployment process, and it is not usually displayed to the end-user.
+          The [=MiniApp manifest's=] <dfn><code>version_code</code></dfn> member is a non-negative integer [=number=] that represents the version of a MiniApp. It is mainly used for enhancing the maintainability and security of MiniApp (e.g., compatibility among incremental versions). The <a><code>version_code</code></a> member aims at supporting the development and deployment process, and it is not usually displayed to the end-user.
         </p>
         <div class="note" title='Usage'>
           <p>
@@ -728,7 +728,7 @@
           <span><code>widgets</code> member</span>
         </h3>
         <p>
-            The [=MiniApp manifest's=] <dfn>widgets</dfn> member defines a set of widgets that are a part of a MiniApp.
+            The [=MiniApp manifest's=] <dfn><code>widgets</code></dfn> member defines a set of widgets that are a part of a MiniApp.
         </p>
         <p>
             A <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> MAY include MiniApp Pages and Widgets concurrently.
@@ -737,14 +737,14 @@
            A widget, as part of a MiniApp, share some of the members of the [=MiniApp manifest=], including:
         </p> 
         <ul>
-          <li><code>dir</code>;</li>
-          <li><code>lang</code>;</li>
-          <li><code>app_id</code>;</li>
-          <li><code>name</code>;</li>
-          <li><code>short_name</code>;</li>
-          <li><code>icons</code>;</li>
-          <li><code>version_name</code>; and</li>
-          <li><code>version_code</code></li>
+          <li><a><code>dir</code></a>;</li>
+          <li><a><code>lang</code></a>;</li>
+          <li><a><code>app_id</code></a>;</li>
+          <li><a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a>;</li>
+          <li><a><code>short_name</code></a>;</li>
+          <li><a><code>icons</code></a>;</li>
+          <li><a><code>version_name</code></a>; and</li>
+          <li><a><code>version_code</code></a></li>
         </ul>
         <p>
           However, a widget also has its exclusive fields as defined in <a>MiniApp widget resource</a>.</p>
@@ -755,10 +755,10 @@
           <span><code>window</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn>window</dfn> member contains a <a>MiniApp window resource</a> [=object=] to describe the look and feel of the MiniApp frame, including the styles of the status bar, navigation bar, title, background colors, etc.
+          The [=MiniApp manifest's=] <dfn><code>window</code></dfn> member contains a <a>MiniApp window resource</a> [=object=] to describe the look and feel of the MiniApp frame, including the styles of the status bar, navigation bar, title, background colors, etc.
         </p>
         <p>
-            The members of the <a>window</a> object inherit the text direction and language configuration from the <a>dir</a> and <a>lang</a> members at the root of the [=MiniApp manifest=].
+            The members of the <a><code>window</code></a> object inherit the text direction and language configuration from the <a><code>dir</code></a> and <a><code>lang</code></a> members at the root of the [=MiniApp manifest=].
         </p>
       </section>
     </section>
@@ -775,13 +775,13 @@
     <section>
       <h3><code>name</code> member</h3>
       <p>
-        The [=MiniApp permission resource's=] <dfn data-dfn-for="MiniApp permission resource">name</dfn> member is a [=string=] that indicates the name of the feature requested.</span>
+        The [=MiniApp permission resource's=] <dfn data-dfn-for="MiniApp permission resource"><code>name</code></dfn> member is a [=string=] that indicates the name of the feature requested.</span>
       </p>
     </section>
     <section>
       <h3><code>reason</code> member</h3>
       <p>
-        The optional [=MiniApp permission resource's=] <dfn>reason</dfn> member is a [=string=] that indicates the reason given to request the feature specified in <a data-link-type="dfn" data-link-for="MiniApp permission resource">name</a>.</span>
+        The optional [=MiniApp permission resource's=] <dfn><code>reason</code></dfn> member is a [=string=] that indicates the reason given to request the feature specified in <a data-link-type="dfn" data-link-for="MiniApp permission resource"><code>name</code></a>.</span>
       </p>
       <div class="ednote">
         To add example
@@ -800,23 +800,23 @@
     <section>
       <h2><code>name</code> member</h2>
       <p>
-        The [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource">name</dfn> member is a [=string=] that indicates the title of a Widget.
+        The [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource"><code>name</code></dfn> member is a [=string=] that indicates the title of a Widget.
       </p>
     </section>
     <section>
       <h3><code>path</code> member</h3>
       <p>
-        The [=MiniApp widget resource's=] <dfn>path</dfn> member is a [=relative-url string=] that defines the corresponding  [=page route=] of a widget, represented in as in the <a>pages</a> array.
+        The [=MiniApp widget resource's=] <dfn>path</dfn> member is a [=relative-url string=] that defines the corresponding  [=page route=] of a widget, represented in as in the <a><code>pages</code></a> array.
       </p>
     </section>
     <section>
       <h3><code>min_platform_version</code> member</h3>
       <p>
-        The optional [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource">min_platform_version</dfn> member indicates the minimum platform version supported for a MiniApp widget.
+        The optional [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource"><code>min_platform_version</code></dfn> member indicates the minimum platform version supported for a MiniApp widget.
       </p>
       <div class="note" title='Usage'>
         <p>
-          Since Widget APIs and MiniApp APIs may be different, the declaration of the minimum version of the platform may be different. Thus, if the <a data-link-for="MiniApp widget resource" data-link-type="dfn">min_platform_version</a> member of a widget is not set explicitly, the user agent will consider the same as the specified in the <a data-link-for="MiniApp manifest" data-link-type="dfn">min_platform_version</a> member at the root of the [=manifest=].
+          Since Widget APIs and MiniApp APIs may be different, the declaration of the minimum version of the platform may be different. Thus, if the <a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>min_platform_version</code></a> member of a widget is not set explicitly, the user agent will consider the same as the specified in the <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>min_platform_version</code></a> member at the root of the [=manifest=].
         </p>
       </div>
     </section>
@@ -833,7 +833,7 @@
     <section>
       <h3><code>auto_design_width</code> member</h3>
       <p>
-        The <dfn>auto_design_width</dfn> member is a [=boolean=] that indicates whether the [=design_width=] of the page is auto-calculated by the user agent. When [=auto_design_width=] is <code>true</code>, the value of [=design_width=] is ignored, and the baseline width is determined by the system automatically according to the pixel density of the screen.
+        The <dfn><code>auto_design_width</code></dfn> member is a [=boolean=] that indicates whether the <a><code>design_width</code></a> of the page is auto-calculated by the user agent. When <a><code>auto_design_width</code></a> is <code>true</code>, the value of <a><code>design_width</code></a> is ignored, and the baseline width is determined by the system automatically according to the pixel density of the screen.
       </p>
       <p class="note" title='Usage'>
         Value by default: <code>false</code>.
@@ -842,35 +842,35 @@
     <section data-cite="CSS-COLOR-4 CSS-SYNTAX-3 APPMANIFEST">
       <h3><code>background_color</code> member</h3>
       <p>
-        The <dfn data-dfn-for="MiniApp window resource">background_color</dfn> member is a [=string=] that specifies the background color of the window that contains a MiniApp.
+        The <dfn data-dfn-for="MiniApp window resource"><code>background_color</code></dfn> member is a [=string=] that specifies the background color of the window that contains a MiniApp.
       </p>
       <div class="note" title='Usage'>
         <p>
           This member supports [=sRGB=] colors and it is equivalent to the application manifest's <a href="https://www.w3.org/TR/appmanifest/#dfn-background_color" data-link-type="dfn"><code>background_color</code></a>.
         </p>
         <p>
-          Value by default: <code>#ffffff</code>.
+          Value by default: <code>"#ffffff"</code>.
         </p>
       </div>
     </section>
-    <section data-cite="CSS-COLOR-4">
+    <section data-cite="CSS-COLOR-4 MEDIAQUERIES">
       <h3><code>background_text_style</code> member</h3>
       <p>
-        <span>The <dfn>background_text_style</dfn> member is a [=string=] that specifies the background text style, indicating a light or dark color theme.</span>
+        <span>The <dfn><code>background_text_style</code></dfn> member is a [=string=] that specifies the background text style, indicating a light or dark color theme.</span>
       </p>
       <div class="note" title='Usage'>
         <p>
-          This member supports <a data-xref-type="css-descriptor" data-xref-for="@media">prefers-color-scheme</a> with the <code>light</code> or <code>dark</code> values.
+          This member supports <a data-xref-type="css-descriptor" data-xref-for="@media">prefers-color-scheme</a> with the <code>"light"</code> or <code>"dark"</code> values.
         </p>
         <p>
-          Value by default: <code>dark</code>.
+          Value by default: <code>"dark"</code>.
         </p>
       </div>
     </section>
     <section>
       <h3><code>design_width</code> member</h3>
       <p>
-        The <dfn>design_width</dfn> member is a [=number=] that indicates the baseline width of the page design in <a data-cite="css-values">pixel unit</a>. It is  used for adjusting visually the page components.
+        The <dfn><code>design_width</code></dfn> member is a [=number=] that indicates the baseline width of the page design in <a data-cite="CSS-VALUES-3">pixel unit</a>. It is  used for adjusting visually the page components.
       </p>
       <div class="note" title='Usage'>
         <p>
@@ -884,7 +884,7 @@
     <section>
       <h3><code>enable_pull_down_refresh</code> member</h3>
       <p>
-        The <dfn>enable_pull_down_refresh</dfn> member is a [=boolean=] that specifies if the <code>pull-to-refresh</code> event is enabled during the interaction with the MiniApp.
+        The <dfn><code>enable_pull_down_refresh</code></dfn> member is a [=boolean=] that specifies if the <code>pull-to-refresh</code> event is enabled during the interaction with the MiniApp.
       </p>
       <p class="note" title='Usage'>
         Value by default: <code>false</code>.
@@ -893,7 +893,7 @@
     <section>
       <h3><code>fullscreen</code> member</h3>
       <p>
-        The <dfn>fullscreen</dfn> member is a [=boolean=] that indicates if the MiniApp is shown in full screen display mode.
+        The <dfn><code>fullscreen</code></dfn> member is a [=boolean=] that indicates if the MiniApp is shown in full screen display mode.
       </p>
       <div class="note" title='Usage'>
         <p>When this member takes the <code>true</code> value, it is equivalent to the <a href="https://www.w3.org/TR/appmanifest/#dfn-fullscreen" data-link-type="dfn"><code>fullscreen</code> value on the application manifest's <a href="https://www.w3.org/TR/appmanifest/#dfn-display" data-link-type="dfn"><code>display</code></a> member. When it takes <code>false</code> as value, it is equivalent to <a href="https://www.w3.org/TR/appmanifest/#dfn-minimal-ui" data-link-type="dfn"><code>minimal-ui</code></a>.
@@ -906,49 +906,49 @@
     <section data-cite="CSS-COLOR-4 CSS-SYNTAX-3">
       <h3><code>navigation_bar_background_color</code> member</h3>
       <p>
-        <span>The <dfn>navigation_bar_background_color</dfn> member is a [=string=] that specifies the color of the background of the navigation bar of the MiniApp.</span>
+        <span>The <dfn><code>navigation_bar_background_color</code></dfn> member is a [=string=] that specifies the color of the background of the navigation bar of the MiniApp.</span>
       </p>
       <div class="note" title='Usage'>
         <p>This member supports [=sRGB=] colors.</p>
-        <p>Value by default: <code>#000000</code>.</p>
+        <p>Value by default: <code>"#000000"</code>.</p>
       </div>
     </section>
     <section>
       <h3><code>navigation_bar_text_style</code> member</h3>
       <p>
-        <span>The <dfn>navigation_bar_text_style</dfn> member is a [=string=] that indicates the text color of the navigation bar title.</span>
+        <span>The <dfn><code>navigation_bar_text_style</code></dfn> member is a [=string=] that indicates the text color of the navigation bar title.</span>
       </p>
       <p>
         This member MUST contain one of the following values: 
       </p>
       <dl>
-        <dt><dfn>white</dfn></dt>
+        <dt><dfn><code>"white"</code></dfn></dt>
         <dd>For white text color.</dd>
-        <dt><dfn>black</dfn></dt>
+        <dt><dfn><code>"black"</code></dfn></dt>
         <dd>For black text color.</dd>
       </dl>
       <p class="note" title='Usage'>
-       Value by default: [=white=].
+       Value by default: <a><code>"white"</code></a>.
       </p>
     </section>
     <section>
       <h3><code>navigation_bar_title_text</code> member</h3>
       <p>
-        The <dfn>navigation_bar_title_text</dfn> member is a [=string=] that specifies the title of the navigation bar of the MiniApp.
+        The <dfn><code>navigation_bar_title_text</code></dfn> member is a [=string=] that specifies the title of the navigation bar of the MiniApp.
       </p>
     </section>
     <section>
       <h3><code>navigation_style</code> member</h3>
       <p>
-        The <dfn>navigation_style</dfn> member is a [=string=] that specifies the style of the navigation bar.
+        The <dfn><code>navigation_style</code></dfn> member is a [=string=] that specifies the style of the navigation bar.
       </p>
       <p>
         This member MUST contain one of the following values: 
       </p>
       <dl>
-        <dt><dfn>default</dfn></dt>
+        <dt><dfn><code>default</code></dfn></dt>
         <dd>For applying the style by default.</dd>
-        <dt><dfn>custom</dfn></dt>
+        <dt><dfn><code>custom</code></dfn></dt>
         <dd>For applying a customized navigation bar.</dd>
       </dl>       
       <div class="note" title='Usage'>
@@ -956,14 +956,14 @@
           The capsule button at the right corner is not customizable.
         </p>
         <p>
-          Value by default: [=default=].
+          Value by default: <a><code>default</code></a>.
         </p>
       </div>
     </section>
     <section>
       <h3><code>on_reach_bottom_distance</code> member</h3>
       <p>
-        The <dfn>on_reach_bottom_distance</dfn> member is a [=number=] that defines the vertical offset from the bottom of the window required to trigger a page pull-up event. Values for this member are non-negative integers expressed in <a data-cite="css-values">pixel unit</a>.
+        The <dfn><code>on_reach_bottom_distance</code></dfn> member is a [=number=] that defines the vertical offset from the bottom of the window required to trigger a page pull-up event. Values for this member are non-negative integers expressed in <a data-cite="CSS-VALUES-3">pixel unit</a>.
       </p>
       <p class="note">
         <span>
@@ -974,17 +974,17 @@
     <section>
       <h3><code>orientation</code> member</h3>
       <p>
-        The <dfn>orientation</dfn> member is a [=string=] that specifies the configuration of the screen orientation for the MiniApp. 
+        The <dfn><code>orientation</code></dfn> member is a [=string=] that specifies the configuration of the screen orientation for the MiniApp. 
       </p>
       <p>
-        This member supports the values: <code>portrait</code>, and <code>landscape</code> defined in {{OrientationLockType}} [[SCREEN-ORIENTATION]].
+        This member supports the values: <code>"portrait"</code>, and <code>"landscape"</code> defined in {{OrientationLockType}} [[SCREEN-ORIENTATION]].
       </P>
       <div class="note" title='Usage'>
         <p>
           This member is equivalent to the application manifest's <a href="https://www.w3.org/TR/appmanifest/#dfn-orientation" data-link-type="dfn"><code>orientation</code></a>.
         </p>
         <p>
-          Value by default: <code>portrait</code>.
+          Value by default: <code>"portrait"</code>.
         </p>
       </div>
       <div class="issue" data-number="8"></div>
@@ -994,17 +994,17 @@
   <section id="sec-localizable-members">
     <h2>Localizable members</h2>
     <p>
-        A <dfn data-lt="localizable members">localizable member</dfn> is a [=manifest=] member whose content may be adapted to specific linguistic, geographical and cultural aspects. The localizable members in the [=manifest=] share the <a href="https://w3c.github.io/manifest/#dfn-language-tag" data-link-type="dfn">language tag</a> ([=lang=]) and display direction ([=dir=]) defined at the root.
+        A <dfn data-lt="localizable members">localizable member</dfn> is a [=manifest=] member whose content may be adapted to specific linguistic, geographical and cultural aspects. The localizable members in the [=manifest=] share the <a href="https://w3c.github.io/manifest/#dfn-language-tag" data-link-type="dfn">language tag</a> (<a><code>lang</code></a>) and display direction (<a><code>dir</code></a>) defined at the root.
     </p>
     <p>
       The following members are [=localizable members=]:
     </p>
     <ul>
-        <li><a data-link-for="MiniApp manifest" data-link-type="dfn">name</a></li>
-        <li><a>short_name</a></li>
-        <li><a>description</a></li>
-        <li>[=MiniApp window resource's=] <a>navigation_bar_title_text</a></li>
-        <li>[=MiniApp widget resource's=] <a data-link-for="MiniApp widget resource" data-link-type="dfn">name</a></li>
+        <li><a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a></li>
+        <li><a><code>short_name</code></a></li>
+        <li><a><code>description</code></a></li>
+        <li>[=MiniApp window resource's=] <a><code>navigation_bar_title_text</code></a></li>
+        <li>[=MiniApp widget resource's=] <a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>name</code></a></li>
     </ul>
   </section>
 
@@ -1030,10 +1030,10 @@
     <section>
         <h2>Local resource access</h2>
         <p>
-          Members like [=icons=], [=pages=] and [=widgets=] contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to prevent illegal access out of the scope of the <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a>. On the other hand, the MiniApp itself (e.g., using scripting code) may provide mechanisms to access to external resources either on the hosting platform, or on remote websites (e.g., through a URI). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.
+          Members like <a><code>icons</code></a>, <a><code>pages</code></a> and <a><code>widgets</code></a> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to prevent illegal access out of the scope of the <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a>. On the other hand, the MiniApp itself (e.g., using scripting code) may provide mechanisms to access to external resources either on the hosting platform, or on remote websites (e.g., through a URI). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.
         </p>
 	      <p>
-         In addition, the [=req_permissions=] member provides a specific means to control the access to the local software, hardware and data resources on the user's device. User's consent should be asked when it comes to privacy-related or high-level privileged resources.
+         In addition, the <a><code>req_permissions</code></a> member provides a specific means to control the access to the local software, hardware and data resources on the user's device. User's consent should be asked when it comes to privacy-related or high-level privileged resources.
         </p>
     </section>
 
@@ -1045,7 +1045,7 @@
     <section>
         <h2>Transparency</h2>
         <p>
-          The user agent SHOULD provide the end-user with transparent metadata about a MiniApp (i.e., <a>app_id</a>, <a>name</a>, <a>short_name</a>, <a>icons</a>, <a>version_name</a>, <a>description</a>), offering users enough information to make a conscious decisions about its usage. This practice could also help identifying spoofing MiniApps.
+          The user agent SHOULD provide the end-user with transparent metadata about a MiniApp (i.e., <a><code>app_id</code></a>, <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a>, <a><code>short_name</code></a>, <a>icons</a>, <a><code>version_name</code></a>, <a><code>description</code></a>), offering users enough information to make a conscious decisions about its usage. This practice could also help identifying spoofing MiniApps.
         </p>
     </section>
 </section>
@@ -1123,7 +1123,7 @@
       This document refers to <a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>, <a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/">Baidu MiniApp</a>, <a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">WeChat MiniApp</a>, <a href="https://opendocs.alipay.com/mini/framework/app-json">Alipay MiniApp</a>, <a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">ByteDance MiniApp</a>, <a href="https://doc.quickapp.cn/framework/manifest.html">Quick App Specification</a>, <a href="https://w3c.github.io/miniapp-widget/req/">MiniApp Widget Requirements</a>, <a href="https://w3c.github.io/miniapp-lifecycle/">MiniApp Lifecycle Specification</a>, <a href="https://w3c.github.io/miniapp-addressing/">MiniApp Addressing</a>, and <a href="https://semver.org/">Semantic Versioning</a>.
     </p>
   </section>
-  
+
   <section class="appendix informative">
     <h2>
       <span>Extensibility</span>
