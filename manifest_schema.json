@@ -4,10 +4,6 @@
   "$schema ": "http://json-schema.org/draft-07/schema#",
   "description": "JSON Schema for the valiation of MiniApp Manifest document",
   "definitions": {
-    "TypeHexColor": {
-      "type": "string",
-      "pattern": "^#[0-9a-fA-F]{6}$"
-    },
     "TypeVersionString": {
       "type": "string",
       "example": "1.0.0"
@@ -145,54 +141,64 @@
     "window": {
       "type": "object",
       "properties": {
+        "auto_design_width": {
+          "description": "Enables/disables auto-calculation of page's design_width",
+          "type": "boolean",
+          "default": false
+        },        
+        "background_color": {
+          "description": "String with the Window background color represented in sRGB format.",
+          "default": "#ffffff"
+        },
+        "background_text_style": {
+          "description": "Background text style (dark or light).",
+          "enum": ["dark", "light"],
+          "default": "dark"
+        },
+        "design_width": {
+          "description": "A non-negative integer specifying the width of the baseline page design (in pixels).",
+          "type": "integer",
+          "default": 750,
+          "min": 0
+        },        
+        "enable_pull_down_refresh": {
+          "description": "Enables/disables the pull-to-refresh event.",
+          "type": "boolean",
+          "default": false
+        },
+        "fullscreen": {
+          "description": "Enables/disables the full screen display.",
+          "type": "boolean",
+          "default": false
+        },
         "navigation_bar_background_color": {
-          "$ref": "#/definitions/TypeHexColor",
+          "description": "Navigation bar background color in sRGB format",
           "default": "#000000"
         },
         "navigation_bar_text_style": {
+          "description": "Text style of the navigation bar (white or black).",
           "enum": ["white", "black"],
           "default": "white"
         },
         "navigation_bar_title_text": {
+          "description": "String with the title of the navigation bar.",
           "type": "string"
         },
         "navigation_style": {
+          "description": "String with the style of the navigation bar.",
           "enum": ["default", "custom"],
           "default": "default"
         },
-        "background_color": {
-          "$ref": "#/definitions/TypeHexColor",
-          "default": "#ffffff"
-        },
-        "background_text_style": {
-          "enum": ["dark", "light"],
-          "default": "dark"
-        },
-        "enable_pull_down_refresh": {
-          "type": "boolean",
-          "default": false
-        },
         "on_reach_bottom_distance": {
+          "description": "Integer that indicates the distance for pull-up bottom event triggering (in pixels).",
           "type": "integer",
           "default": 50,
           "min": 0
         },
         "orientation": {
+          "description": "String that indicates the screen orientation configuration (portrait, landscape).",
           "enum": ["portrait", "landscape"],
           "default": "portrait"
-        },
-        "fullscreen": {
-          "type": "boolean",
-          "default": false
-        },
-        "design_width": {
-          "type": "integer",
-          "default": 750,
-          "min": 0
-        },
-        "auto_design_width": {
-          "type": "boolean",
-          "default": false
         }
       }
     }

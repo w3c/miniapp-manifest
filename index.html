@@ -173,7 +173,7 @@
       <p>
         As the [=application manifest=] is JSON, this specification relies on the [[JSON]] specification. The members of this
         specification are of the types <dfn>number</dfn>, <dfn>boolean</dfn> literals, <dfn>object</dfn>,
-        <dfn>array</dfn>, and <dfn>string</dfn>. <dfn>hexcolor</dfn> is a [=string=] expressing RGB color values [[CSS-COLOR-3]] in hexadecimal notation: <code>#</code> immediately followed by six hexadecimal characters (<code>#RRGGBB</code>).
+        <dfn>array</dfn>, and <dfn>string</dfn>.
       </p>      
     </section>
 
@@ -415,11 +415,59 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row"><a>navigation_bar_background_color</a></th>
-            <td> [=hexColor=] </td>
+            <th scope="row"><a>auto_design_width</a></th>
+            <td> [=boolean=]  </td>
             <td>No</td>
             <td>
-              <span>Navigation bar Background color</span>
+                <span>Enables/disables auto-calculation of page's [=design_width=] </span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><a data-link-for="MiniApp window resource" data-link-type="dfn">background_color</a></th>
+            <td> [=string=] </td>
+            <td>No</td>
+            <td>
+              <span>Window background color</span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><a>background_text_style</a></th>
+            <td> [=string=] </td>
+            <td>No</td>
+            <td>
+              <span>Background text style</span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><a>design_width</a></th>
+            <td> [=number=]  </td>
+            <td>No</td>
+            <td>
+                <span>The baseline page design width</span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><a>enable_pull_down_refresh</a></th>
+            <td> [=boolean=] </td>
+            <td>No</td>
+            <td>
+              <span>Enable pull-to-refresh event</span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><a>fullscreen</a></th>
+            <td> [=boolean=]  </td>
+            <td>No</td>
+            <td>
+              <span>Full screen display</span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><a>navigation_bar_background_color</a></th>
+            <td> [=string=] </td>
+            <td>No</td>
+            <td>
+              <span>Navigation bar background color</span>
             </td>
           </tr>
           <tr>
@@ -427,7 +475,7 @@
             <td> [=string=]  </td>
             <td>No</td>
             <td>
-              <span>Color style of the navigation bar text</span>
+              <span>Text style of the navigation bar</span>
             </td>
           </tr>
           <tr>
@@ -447,30 +495,6 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a>background_color</a></th>
-            <td> [=hexColor=] </td>
-            <td>No</td>
-            <td>
-              <span>Window background color</span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><a>background_text_style</a></th>
-            <td> [=string=] </td>
-            <td>No</td>
-            <td>
-              <span>Background text style</span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><a>enable_pull_down_refresh</a></th>
-            <td> [=boolean=] </td>
-            <td>No</td>
-            <td>
-              <span>Enable pull-to-refresh event</span>
-            </td>
-          </tr>
-          <tr>
             <th scope="row"><a>on_reach_bottom_distance</a></th>
             <td> [=number=] </td>
             <td>No</td>
@@ -486,30 +510,6 @@
               <span>Screen orientation settings</span>
             </td>
           </tr>
-          <tr>
-            <th scope="row"><a>fullscreen</a></th>
-            <td> [=boolean=]  </td>
-            <td>No</td>
-            <td>
-              <span>Full screen display</span>
-            </td>
-          </tr>          
-          <tr>
-            <th scope="row"><a>design_width</a></th>
-            <td> [=number=]  </td>
-            <td>No</td>
-            <td>
-                <span>The baseline page design width</span>
-            </td>
-          </tr> 
-          <tr>
-            <th scope="row"><a>auto_design_width</a></th>
-            <td> [=boolean=]  </td>
-            <td>No</td>
-            <td>
-                <span>Enables/disables auto-calculation of page [=design_width=] </span>
-            </td>
-          </tr> 
         </tbody>
       </table>
 
@@ -788,6 +788,7 @@
       </div>
     </section>
   </section>
+
   <section id="sec-widget-resource-members">
     <h2>MiniApp widget resource members</h2>
     <p>
@@ -821,85 +822,148 @@
     </section>
   </section>
 
-  <section>
-    <h2><dfn data-lt="window resource|MiniApp window resources|MiniApp window resource's">MiniApp window resource</dfn> members</h2>
-    
+  <section id="sec-window-resource-members">
+    <h2>MiniApp window resource members</h2>
+    <p>
+      A <dfn data-lt="window resource|MiniApp window resources|MiniApp window resource's">MiniApp window resource</dfn> is an [=object=] that defines and configures the window that contains a MiniApp.
+    </p>
+    <p>
+      The following members are defined under the scope of the [=MiniApp manifest=], enabling the description of the MiniApp [=window resource=].
+    </p>
     <section>
-      <h3><code>navigation_bar_background_color</code> member</h3>
+      <h3><code>auto_design_width</code> member</h3>
       <p>
-        <span>The <dfn>navigation_bar_background_color</dfn> member specifies the color of the navigation bar background.</span>
+        The <dfn>auto_design_width</dfn> member is a [=boolean=] that indicates whether the [=design_width=] of the page is auto-calculated by the user agent. When [=auto_design_width=] is <code>true</code>, the value of [=design_width=] is ignored, and the baseline width is determined by the system automatically according to the pixel density of the screen.
       </p>
       <p class="note" title='Usage'>
-        <span>
-          Value by default: <code>#000000</code>.
-          </span>
+        Value by default: <code>false</code>.
       </p>
+    </section>
+    <section data-cite="CSS-COLOR-4 CSS-SYNTAX-3 APPMANIFEST">
+      <h3><code>background_color</code> member</h3>
+      <p>
+        The <dfn data-dfn-for="MiniApp window resource">background_color</dfn> member is a [=string=] that specifies the background color of the window that contains a MiniApp.
+      </p>
+      <div class="note" title='Usage'>
+        <p>
+          This member supports [=sRGB=] colors and it is equivalent to the application manifest's <a href="https://www.w3.org/TR/appmanifest/#dfn-background_color" data-link-type="dfn"><code>background_color</code></a>.
+        </p>
+        <p>
+          Value by default: <code>#ffffff</code>.
+        </p>
+      </div>
+    </section>
+    <section data-cite="CSS-COLOR-4">
+      <h3><code>background_text_style</code> member</h3>
+      <p>
+        <span>The <dfn>background_text_style</dfn> member is a [=string=] that specifies the background text style, indicating a light or dark color theme.</span>
+      </p>
+      <div class="note" title='Usage'>
+        <p>
+          This member supports <a data-xref-type="css-descriptor" data-xref-for="@media">prefers-color-scheme</a> with the <code>light</code> or <code>dark</code> values.
+        </p>
+        <p>
+          Value by default: <code>dark</code>.
+        </p>
+      </div>
+    </section>
+    <section>
+      <h3><code>design_width</code> member</h3>
+      <p>
+        The <dfn>design_width</dfn> member is a [=number=] that indicates the baseline width of the page design in <a data-cite="css-values">pixel unit</a>. It is  used for adjusting visually the page components.
+      </p>
+      <div class="note" title='Usage'>
+        <p>
+          The value is a non-negative integer.
+        </p>           
+        <p>
+          Value by default: <code>750</code>.
+        </p>
+      </div>
+    </section>
+    <section>
+      <h3><code>enable_pull_down_refresh</code> member</h3>
+      <p>
+        The <dfn>enable_pull_down_refresh</dfn> member is a [=boolean=] that specifies if the <code>pull-to-refresh</code> event is enabled during the interaction with the MiniApp.
+      </p>
+      <p class="note" title='Usage'>
+        Value by default: <code>false</code>.
+      </p>
+    </section>    
+    <section>
+      <h3><code>fullscreen</code> member</h3>
+      <p>
+        The <dfn>fullscreen</dfn> member is a [=boolean=] that indicates if the MiniApp is shown in full screen display mode.
+      </p>
+      <div class="note" title='Usage'>
+        <p>When this member takes the <code>true</code> value, it is equivalent to the <a href="https://www.w3.org/TR/appmanifest/#dfn-fullscreen" data-link-type="dfn"><code>fullscreen</code> value on the application manifest's <a href="https://www.w3.org/TR/appmanifest/#dfn-display" data-link-type="dfn"><code>display</code></a> member. When it takes <code>false</code> as value, it is equivalent to <a href="https://www.w3.org/TR/appmanifest/#dfn-minimal-ui" data-link-type="dfn"><code>minimal-ui</code></a>.
+      </p>
+        <p>
+          Value by default: <code>false</code>.
+        </p>
+      </div>
+    </section>
+    <section data-cite="CSS-COLOR-4 CSS-SYNTAX-3">
+      <h3><code>navigation_bar_background_color</code> member</h3>
+      <p>
+        <span>The <dfn>navigation_bar_background_color</dfn> member is a [=string=] that specifies the color of the background of the navigation bar of the MiniApp.</span>
+      </p>
+      <div class="note" title='Usage'>
+        <p>This member supports [=sRGB=] colors.</p>
+        <p>Value by default: <code>#000000</code>.</p>
+      </div>
     </section>
     <section>
       <h3><code>navigation_bar_text_style</code> member</h3>
       <p>
-        <span>The <dfn>navigation_bar_text_style</dfn> member specifies the text color of the navigation bar title.</span>
+        <span>The <dfn>navigation_bar_text_style</dfn> member is a [=string=] that indicates the text color of the navigation bar title.</span>
       </p>
+      <p>
+        This member MUST contain one of the following values: 
+      </p>
+      <dl>
+        <dt><dfn>white</dfn></dt>
+        <dd>For white text color.</dd>
+        <dt><dfn>black</dfn></dt>
+        <dd>For black text color.</dd>
+      </dl>
       <p class="note" title='Usage'>
-        <span>
-         Value by default: <code>white</code>.
-        </span>
-        </p>
+       Value by default: [=white=].
+      </p>
     </section>
     <section>
       <h3><code>navigation_bar_title_text</code> member</h3>
       <p>
-        <span>The <dfn>navigation_bar_title_text</dfn> member specifies the title text of the navigation bar</span>
+        The <dfn>navigation_bar_title_text</dfn> member is a [=string=] that specifies the title of the navigation bar of the MiniApp.
       </p>
     </section>
     <section>
       <h3><code>navigation_style</code> member</h3>
       <p>
-        <span>The <dfn>navigation_style</dfn> member specifies the style of the navigation bar: <code>default</code> (default style) and <code>custom</code> (customized navigation bar). Note: The capsule button at the right corner is not customizable.</span>
+        The <dfn>navigation_style</dfn> member is a [=string=] that specifies the style of the navigation bar.
       </p>
-      <p class="note" title='Usage'>
-        <span>
-          Value by default: <code>default</code>.
-        </span>
-      </p>
-    </section>
-    <section>
-      <h3><code>background_color</code> member</h3>
       <p>
-        <span>The <dfn>background_color</dfn> member specifies the background color of the window. This member is equivalent to  <a href="https://www.w3.org/TR/appmanifest/#background_color-member"><code>background_color</code></a>.</span>
+        This member MUST contain one of the following values: 
       </p>
-      <p class="note" title='Usage'>
-        <span>
-          Value by default: <code>#ffffff</code>.
-        </span>
-      </p>
-    </section>
-    <section>
-      <h3><code>background_text_style</code> member</h3>
-      <p>
-        <span>The <dfn>background_text_style</dfn> member specifies the background text style.</span>
-      </p>
-      <p class="note" title='Usage'>
-        <span>
-          Value by default: <code>dark</code>.
-        </span>
-      </p>
-    </section>
-    <section>
-      <h3><code>enable_pull_down_refresh</code> member</h3>
-      <p>
-        <span>The <dfn>enable_pull_down_refresh</dfn> member specifies if the pull-to-refresh event is enabled.</span>
-      </p>
-      <p class="note" title='Usage'>
-        <span>
-          Value by default: <code>false</code>.
-        </span>
-      </p>
+      <dl>
+        <dt><dfn>default</dfn></dt>
+        <dd>For applying the style by default.</dd>
+        <dt><dfn>custom</dfn></dt>
+        <dd>For applying a customized navigation bar.</dd>
+      </dl>       
+      <div class="note" title='Usage'>
+        <p>
+          The capsule button at the right corner is not customizable.
+        </p>
+        <p>
+          Value by default: [=default=].
+        </p>
+      </div>
     </section>
     <section>
       <h3><code>on_reach_bottom_distance</code> member</h3>
       <p>
-        <span>The <dfn>on_reach_bottom_distance</dfn> member specifies the distance from the bottom when page pull-up bottom event is triggered. The value is a non-negative integer and the unit is in <a data-cite="css-values">pixel unit</a>.</span>
+        The <dfn>on_reach_bottom_distance</dfn> member is a [=number=] that defines the vertical offset from the bottom of the window required to trigger a page pull-up event. Values for this member are non-negative integers expressed in <a data-cite="css-values">pixel unit</a>.
       </p>
       <p class="note">
         <span>
@@ -910,80 +974,36 @@
     <section>
       <h3><code>orientation</code> member</h3>
       <p>
-        <span>The <dfn>orientation</dfn> member specifies the screen orientation settings to which a screen can be locked. The two supported values are <code>portrait</code> and <code>landscape</code>, defined in {{OrientationLockType}} [[screen-orientation]]. This member is equivalent to <a href="https://www.w3.org/TR/appmanifest/#orientation-member"><code>orientation</code></a>.</span>
+        The <dfn>orientation</dfn> member is a [=string=] that specifies the configuration of the screen orientation for the MiniApp. 
       </p>
-      <p class="note" title='Usage'>
-        <span>
+      <p>
+        This member supports the values: <code>portrait</code>, and <code>landscape</code> defined in {{OrientationLockType}} [[SCREEN-ORIENTATION]].
+      </P>
+      <div class="note" title='Usage'>
+        <p>
+          This member is equivalent to the application manifest's <a href="https://www.w3.org/TR/appmanifest/#dfn-orientation" data-link-type="dfn"><code>orientation</code></a>.
+        </p>
+        <p>
           Value by default: <code>portrait</code>.
-        </span>
-      </p>
-      <div class="issue" data-number="8"></div>
-    </section>
-      <section>
-        <h3><code>fullscreen</code> member</h3>
-        <p>
-          <span>The <dfn>fullscreen</dfn> member indicates the full screen display. <code>true</code> is equivalent to the <code>fullscreen</code> value of
-            <a href="https://www.w3.org/TR/appmanifest/#display-member"><code>display</code></a>, and <code>false</code> to <code>minimal-ui</code>.</span>
-        </p>
-        <p class="note" title='Usage'>
-          <span>
-            Value by default: <code>false</code>.
-          </span>
-        </p>
-        <p class="issue">
-          Should it be <code>standalone</code> instead of <code>minimal-ui</code>?
-        </p>
-      </section>
-      <section>
-        <h3><code>design_width</code> member</h3>
-        <p>
-            <span>The <dfn>design_width</dfn> member indicates the baseline width of the page design in <a data-cite="css-values">pixel unit</a>, based on which the size of the components on the page would be adjusted accordingly. The value is a non-negative integer.</span>
-
-        </p>
-        <p class="note" title='Usage'>
-          <span>
-            Value by default: <code>750</code>.
-          </span>
-        </p>
-      </section>
-      <section>
-        <h3><code>auto_design_width</code> member</h3>
-        <p>
-            <span>The <dfn>auto_design_width</dfn> member indicates whether the design_width of the page is auto-calculated. When it's <i>true</i>, the value of the <code>design_width</code> is ignored, and the baseline width is determined by the system automatically according to the pixel density of the screen.</span>
-
-        </p>
-        <p class="note" title='Usage'>
-          <span>
-            Value by default: <code>false</code>.
-          </span>
-        </p>
-      </section>
-    </section>
-
-
-      <div class="ednote">
-        <p>
-        It's for further study whether the predefined permissions, permission extension, permission groups, and protection levels need to be specified.
         </p>
       </div>
-      <!-- <div class="issue" data-number='117'></div> -->
+      <div class="issue" data-number="8"></div>
     </section>
+  </section>
 
-    <section>
-      <h2>
-          <span><dfn>Localizable members</dfn></span>
-      </h2>
-      <p>
-          The following members are localizable and share the same default configuration of <code>dir</code> and <code>lang</code> if not otherwise specified.
-      </p>
-      <ul>
-          <li><a data-link-for="MiniApp manifest" data-link-type="dfn">name</a></li>
-          <li><a>short_name</a></li>
-          <li><a>description</a></li>
-          <li>[=MiniApp window resource's=] <a>navigation_bar_title_text</a></li>
-          <li>[=MiniApp widget resource's=] <a data-link-for="MiniApp widget resource" data-link-type="dfn">name</a></li>
-      </ul>
-    </section>
+  <section>
+    <h2>Localizable members</h2>
+    <p>
+        The following members are localizable and share the same default configuration of <code>dir</code> and <code>lang</code> if not otherwise specified.
+    </p>
+    <ul>
+        <li><a data-link-for="MiniApp manifest" data-link-type="dfn">name</a></li>
+        <li><a>short_name</a></li>
+        <li><a>description</a></li>
+        <li>[=MiniApp window resource's=] <a>navigation_bar_title_text</a></li>
+        <li>[=MiniApp widget resource's=] <a data-link-for="MiniApp widget resource" data-link-type="dfn">name</a></li>
+    </ul>
+  </section>
 
   <section>
     <h2>
