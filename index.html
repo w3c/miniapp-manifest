@@ -669,7 +669,7 @@
           A <dfn data-lt="page route|page routes">MiniApp page route</dfn> is the relative path and filename of a MiniApp Page.
         </p> 
         <p>
-          During the MiniApp development process, adding or deleting MiniApp pages is done by configuring the array. When configuring the [=page routes=], the file name extension MAY be omitted (e.g., <samp>/component/mypage</samp>).
+          During the MiniApp development process, adding or deleting <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-page">MiniApp pages</a> is done by configuring the array. When configuring the [=page routes=], the file name extension MAY be omitted (e.g., <samp>/component/mypage</samp>).
         </p>
         <div class="note" title="Usage">
           <p>
@@ -733,7 +733,7 @@
             The [=MiniApp manifest's=] <dfn><code>widgets</code></dfn> member defines a set of widgets that are a part of a MiniApp.
         </p>
         <p>
-            A <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> MAY include MiniApp Pages and Widgets concurrently.
+            A <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> MAY include <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-page">MiniApp pages</a> and Widgets concurrently.
         </p> 
         <p>
            A widget, as part of a MiniApp, adopt some of the members of the [=MiniApp manifest=], including:
@@ -794,7 +794,7 @@
   <section id="sec-widget-resource-members">
     <h2>MiniApp widget resource members</h2>
     <p>
-      A <dfn data-lt="widget resources|MiniApp widget resources|MiniApp widget resource's">MiniApp widget resource</dfn> is an [=object=] that defines and configures a widget that is part of a MiniApp.
+      A <dfn data-lt="widget resources|MiniApp widget resources|MiniApp widget resource's">MiniApp widget resource</dfn> is an [=object=] that defines and configures a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-widget">widget</a> that is part of a MiniApp.
     </p>
     <p>
       The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of a [=widget resource=].
@@ -814,7 +814,7 @@
     <section>
       <h3><code>min_platform_version</code> member</h3>
       <p>
-        The optional [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource"><code>min_platform_version</code></dfn> member indicates the minimum platform version supported for a MiniApp widget.
+        The optional [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource"><code>min_platform_version</code></dfn> member indicates the minimum platform version supported for a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-widget">MiniApp widget</a>.
       </p>
       <div class="note" title='Usage'>
         <p>
@@ -1013,10 +1013,10 @@
   <section>
     <h2>Dependencies</h2>
     <p>
-      As a crucial part of a MiniApp package, the <code>manifest.json</code> file describes several important aspects of the MiniApp by referring to the MiniApp package resources in different file types, such as the page scripts and visual configuration files in the <code>pages</code> directory and the images in the <code>common</code> directory. Details are specified in [[MINIAPP-PACKAGING]].
+      As a crucial part of a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a>, the <code>manifest.json</code> file describes several important aspects of the MiniApp by referring to the <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> resources in different file types, such as the page scripts and visual configuration files in the <code>pages</code> directory and the images in the <code>common</code> directory. Details are specified in [[MINIAPP-PACKAGING]].
     </p>
     <p>
-      The regular operation of a MiniApp relies on the proper configuration in the [=manifest=] and the MiniApp package availability of resources. Such dependency needs to be checked during both the development phase and deployment phase.
+      The regular operation of a MiniApp relies on the proper configuration in the [=manifest=] and the <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> availability of resources. Such dependency needs to be checked during both the development phase and deployment phase.
     </p>
   </section>
 
