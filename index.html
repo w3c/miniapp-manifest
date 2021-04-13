@@ -635,10 +635,11 @@
           The [=MiniApp manifest's=] <dfn><code>app_id</code></dfn> member is a [=string=] that identifies the MiniApp univocally. This member is mainly used for package management, and it supports the update and release process of MiniApp versioning.
         </p>
         <p>
-          The format of <a><code>app_id</code></a> MUST be a [=string=] defined by the following rule:
+          The format of <a><code>app_id</code></a> is RECOMMENDED to be a [=string=] defined by the following rule:
         </p>
         <pre class="abnf">
-          app_idrule = ALPHA 1*( ALPHA / DIGIT / "_" / "." )
+          appid = name *("." name)
+          name = ALPHA [*( ALPHA / DIGIT / "-" ) ( ALPHA / DIGIT)]
         </pre>
         <p class="note" title='Usage'>
              One common practice is to use the reverse-domain-name-like convention (e.g., <code>org.example.miniapp</code>).

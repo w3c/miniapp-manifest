@@ -77,7 +77,6 @@
     // Exclusive for MiniApps
     "app_id": {
       "type": "string",
-      "format": "idn-hostname",
       "description": "A string that identifies the MiniApp univocally.",
       "example": "org.example.miniapp"
     },
