@@ -53,7 +53,11 @@
           "src": {
             "description": "An image is a URL from which a user agent can fetch the icon's data.",
             "$ref": "#/definitions/TypePathString"
-          }          
+          },
+          "label": {
+            "description": "The alternative textual descripion of the icon.",
+            "type": "string"
+          }
         }
       }
     },
