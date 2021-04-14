@@ -169,7 +169,7 @@
          <a data-link-for="MiniApp permission resource" data-link-type="dfn"><code>name</code></a>
         </li>
       </ul>
-      <p>The presence of other <a href="#manifest-members">members</a> in a [=MiniApp manifest=] is optional, but vendor-specific extensions MAY modify this.</p>
+      <p>The presence of other members in a [=MiniApp manifest=] is optional, but vendor-specific extensions MAY modify this.</p>
       <p>
         As the [=application manifest=] is JSON, this specification relies on the [[JSON]] specification. This specification includes members typed as <dfn>number</dfn>, <dfn>boolean</dfn> literals, <dfn>object</dfn>,
         <dfn>array</dfn>, and <dfn>string</dfn>.
@@ -528,13 +528,9 @@
         <a href="https://www.w3.org/TR/appmanifest/#shortcuts-member"><code>shortcuts</code></a> are not currently supported by MiniApp user agents.
       </p>
     </section>
-  </section>
-  <section id="manifest-members">
-    <h2>
-      <span>MiniApp Manifest members</span>
-    </h2>
+
     <section id='webappmanifest-members'>
-      <h2>Members inherited from the Web Application Manifest</h2>
+      <h2>Web Application Manifest members</h2>
       <p>The [=MiniApp manifest=] uses the following essential [=application manifest=]'s members.</p>      
       <section>
         <h3><code>dir</code> member</h3>
@@ -550,10 +546,12 @@
           <dt><a href="https://w3c.github.io/miniapp-packaging/#dfn-auto" data-type="dfn" data-link-type="dfn"><code>"auto"</code></a> (default)</dt>
           <dd>No explicit directionality.</dd>
         </dl>
-        <p>This member will be processed according to the <a href="https://w3c.github.io/manifest/#dfn-process-the-dir-member" data-link-type="dfn">process the <code>dir</code> member</a> algorithm specified in [[APPMANIFEST]].</p>
-        <p class="note" title='Usage'>
+        <p>
           Value by default: <code>"auto"</code>.
-        </p>        
+        </p>
+        <p class="note" title="Processing the `dir` member">
+          When [=processing a MiniApp manifest=], the <a href="https://w3c.github.io/manifest/#dfn-process-the-dir-member" data-link-type="dfn">process the <code>dir</code> member</a> algorithm is used to process the <code>dir</code> member, according to the [[APPMANIFEST]] specification.
+        </p>
       </section>
       <section data-cite="IMAGE-RESOURCE HTML">
         <h3>
@@ -576,7 +574,9 @@
           <dt><a href="https://www.w3.org/TR/image-resource/#dfn-src" data-type="dfn" data-link-type="dfn"><code>src</code></a></dt>
           <dd>A <a data-link-type="dfn" data-type="dfn" href="https://url.spec.whatwg.org/#concept-url">URL</a> from where to obtain the image data.</dd>
         </dl>
-        <p>This member will be processed according to the <a href="https://w3c.github.io/manifest/#process-image-resources" data-link-type="dfn">process image resources</a> algorithm specified in [[APPMANIFEST]].</p>
+        <p class="note" title="Processing the `icons` member">
+          When [=processing a MiniApp manifest=], the <a href="https://w3c.github.io/manifest/#process-image-resources" data-link-type="dfn">process image resources</a> algorithm is used to process the <code>icons</code> member, according to the [[APPMANIFEST]] specification.
+        </p>        
       </section>      
       <section>
         <h3>
@@ -586,7 +586,9 @@
           The [=MiniApp manifest's=] <dfn><code>lang</code></dfn> member, while specifying the primary language of the <a>localizable members</a>, also specifies
           the primary language of the whole MiniApp. This member is a [=string=] in the form of a <a href="https://w3c.github.io/manifest/#dfn-language-tag" data-link-type="dfn">language tag</a>, a string that matches the production of a Language-Tag [[BCP47]], as defined in [[APPMANIFEST]].
         </p>
-        <p>This member will be processed according to the <a href="https://w3c.github.io/manifest/#dfn-process-the-lang-member" data-link-type="dfn">process the <code>lang</code> member</a> algorithm specified in [[APPMANIFEST]].</p>
+        <p class="note" title="Processing the `lang` member">
+          When [=processing a MiniApp manifest=], the <a href="https://w3c.github.io/manifest/#dfn-process-the-lang-member" data-link-type="dfn">process the <code>lang</code> member</a> algorithm is used to process the <code>lang</code> member, according to the [[APPMANIFEST]] specification.
+        </p>           
       </section>
       <section>
         <h3>
@@ -595,7 +597,9 @@
         <p>
           The [=MiniApp manifest's=] <dfn data-dfn-for="MiniApp manifest"><code>name</code></dfn> member is the descriptive name of the application. This is the name directly displayed to the user. It is used as the display name of MiniApp along with the desktop icon and in the context of MiniApp management. 
         </p>
-        <p>This member will be processed according to the <a href="https://w3c.github.io/manifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm specified in [[APPMANIFEST]].</p>
+        <p class="note" title="Processing the `name` member">
+          When [=processing a MiniApp manifest=], the <a href="https://w3c.github.io/manifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm is used to process the <code>name</code> member, according to the [[APPMANIFEST]] specification.
+        </p>
       </section>
       <section>
         <h3>
@@ -604,12 +608,14 @@
         <p>
           The [=MiniApp manifest's=] <dfn><code>short_name</code></dfn> member provides a concise and easy-to-read name for a MiniApp. It can be used when there is insufficient space to display the full MiniApp name provided in <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a>.
         </p>
-        <p>This member will be processed according to the <a href="https://w3c.github.io/manifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm specified in [[APPMANIFEST]].</p>
+        <p class="note" title="Processing the `short_name` member">
+          When [=processing a MiniApp manifest=], the <a href="https://w3c.github.io/manifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm is used to process the <code>short_name</code> member, according to the [[APPMANIFEST]] specification.
+        </p>        
       </section>
     </section>
 
     <section id='webappmanifest-app-info-members' data-cite='MANIFEST-APP-INFO'>
-      <h2>Member inherited from Application Information</h2>
+      <h2>Application Information members</h2>
       <p>
         The following member is defined in the Web App Manifest - Application Information specification [[MANIFEST-APP-INFO]].
       </p>
@@ -620,12 +626,21 @@
         <p>
           The [=MiniApp manifest's=] <dfn><code>description</code></dfn> member provides a textual description for the MiniApp representing the purpose of the web application in natural language, as defined in [[MANIFEST-APP-INFO]]
         </p>
-        <p>This member will be processed according to the <a href="https://w3c.github.io/manifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm specified in [[APPMANIFEST]].</p>        
+        <p class="note" title="Processing the `description` member">
+          When [=processing a MiniApp manifest=], the <a href="https://w3c.github.io/manifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm is used to process the <code>description</code> member, according to the [[APPMANIFEST]] specification.
+        </p>
+        <p>
+          To <dfn>process the <code>description</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If the type of |json|["description"] is not [=string=], return.</li>
+          <li>Set |manifest|["description"] to |json|["description"].</li>
+        </ol>
       </section>
     </section>
-    
+      
     <section id='supplementary-manifest-members' data-cite="MINIAPP-PACKAGING">
-      <h2>Supplementary manifest members</h2>
+      <h2>Supplementary members</h2>
       <p>
         The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of MiniApp.
       </p>
@@ -644,8 +659,15 @@
           name = ALPHA [*( ALPHA / DIGIT / "-" ) ( ALPHA / DIGIT)]
         </pre>
         <p class="note" title='Usage'>
-             One common practice is to use the reverse-domain-name-like convention (e.g., <code>org.example.miniapp</code>).
+              One common practice is to use the reverse-domain-name-like convention (e.g., <code>org.example.miniapp</code>).
         </p>
+        <p>
+          To <dfn>process the <code>app_id</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["app_id"] does not [=map/exist=], or if the type of |json|["app_id"] is not [=string=], return failure.</li>
+          <li>Set |manifest|["app_id"] to |json|["app_id"].</li>
+        </ol>        
       </section>
       <section>
         <h3>
@@ -657,6 +679,13 @@
         <p class="note" title='Usage'>
           The RECOMMENDED format for this member is <code>"X.Y.Z"</code>, where <code>X</code>, <code>Y</code>, and <code>Z</code> are non-negative integer values (e.g., <samp>"1.10.0"</samp>), as specified in <cite>Semantic Versioning</cite> [[SEMANTIC-VERSIONING]].
         </p>        
+        <p>
+          To <dfn>process the <code>min_platform_version</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["min_platform_version"] does not [=map/exist=], or if the type of |json|["min_platform_version"] is not [=string=], return failure.</li>
+          <li>Set |manifest|["min_platform_version"] to |json|["min_platform_version"].</li>
+        </ol>         
       </section>
       <section>
         <h3>
@@ -671,10 +700,10 @@
         <p>
           During the MiniApp development process, adding or deleting <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-page">MiniApp pages</a> is done by configuring the array. When configuring the [=page routes=], the file name extension MAY be omitted (e.g., <samp>/component/mypage</samp>).
         </p>
+        <p>
+          The first item in the <a><code>pages</code></a> array defines the homepage of a MiniApp.
+        </p>
         <div class="note" title="Usage">
-          <p>
-            The first item in the <a><code>pages</code></a> array defines the homepage of a MiniApp.
-          </p>
           <p>
             For compatibility with the Web platform, it is RECOMMENDED to use <a><code>pages</code></a> along with the Web application manifest's <a href="https://www.w3.org/TR/appmanifest/#start_url-member" data-link-type="dfn"><code>start_url</code></a> and <a href="https://www.w3.org/TR/appmanifest/#scope-member" data-link-type="dfn"><code>scope</code></a> members. These members will be set with the following values:
           </p>
@@ -683,21 +712,80 @@
             <li><a href="https://www.w3.org/TR/appmanifest/#scope-member" data-link-type="dfn">scope</a> SHOULD be set with the value <code>"."</code>.</li>
           </ul>
         </div>
+        <p>
+          To <dfn>process the <code>pages</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["pages"] does not [=map/exist=], or if the type of |json|["pages"] is not [=list=], return failure.</li>
+          <li>Let |pages| be a new [=list=].</li>
+          <li>[=list/For each=] |item:string| of |json|["pages"]:
+            <ol>
+              <li>If the type of |item| is not [=string=], return.</li>
+              <li>Let |url:URL| be the result of [=URL Parser|parsing=] |item|.</li>
+              <li>If |url| is failure, continue.</li>
+              <li>[=list/Append=] |pages| to |url|.</li>
+            </ol>
+          </li>
+          <li>Set |manifest|["pages"] to |pages|.</li>
+        </ol>        
       </section>      
       <section>
         <h3>
           <span><code>req_permissions</code> member</span>
         </h3>
         <p>
-            The [=MiniApp manifest's=] <dfn><code>req_permissions</code></dfn> member is an [=array=] of [=MiniApp permission resources=] objects.
+            The optional [=MiniApp manifest's=] <dfn><code>req_permissions</code></dfn> member is an [=array=] of [=MiniApp permission resources=] objects.
         </p> 
         <p> 
           Each <a>MiniApp permission resource</a> declares a request for using a concrete system feature (e.g., access to device's location, user contacts, sensors, and camera) required for the proper execution of the MiniApp.
         </p>
         <p>
+          To <dfn>process the <code>req_permissions</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["req_permissions"] does not [=map/exist=], or if the type of |json|["req_permissions"] is not [=list=], return.</li>
+          <li>Let |permissions:list| be a new [=list=].</li>
+          <li>[=list/For each=] |item:object| of |json|["req_permissions"]:
+            <ol>
+              <li>If the type of |item| is not [=object=], return failure.</li>
+              <li>Let |permission| be an [=ordered map=].</li>
+              <li><a>Process the permission resource's <code>name</code> member</a> passing |item| and |permission|.</li>
+              <li><a>Process the permission resource's <code>reason</code> member</a> passing |item| and |permission|.</li>
+              <li>[=list/Append=] |permission| to |permissions|.</li>
+            </ol>
+          </li>
+          <li>Set |manifest|["req_permissions"] to |permissions|.</li>
+        </ol>        
+        <p class="note" title="Protection of user's privacy">
           User agents will ask for the user's consent to protect their privacy during access to these specific features. This information in the <a><code>req_permissions</code></a> member may be used by app stores or hosting platforms to filter MiniApps according to the user's preferences, privacy policy, or device capabilities. 
         </p>
       </section>      
+      <section>
+        <h3>
+          <span><code>version_code</code> member</span>
+        </h3>
+        <p>
+          The [=MiniApp manifest's=] <dfn><code>version_code</code></dfn> member is a non-negative integer [=number=] that represents the version of a MiniApp. It is mainly used for enhancing the maintainability and security of MiniApp (e.g., compatibility among incremental versions). The <a><code>version_code</code></a> member aims at supporting the development and deployment process, and it is not usually displayed to the end-user.
+        </p>
+        <p>
+          Value by default: <code>1</code>.
+        </p>
+        <div class="note" title='Usage'>
+          <p>
+            The value of this member is usually incremented according to the version iteration process.
+          </p>
+        </div>
+        <p>
+          To <dfn>process the <code>version_code</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["version_name"] does not [=map/exist=], or if the type of |json|["version_code"] is not [=number=], return failure.</li>
+          <li>Let |version:number| be a [=number=], initially 1.</li>
+          <li>If |json|["version_code"] is greater than 0, then: <br/>
+            Set |version| to |json|["version_code"].</li>
+          <li>Set |manifest|["version_code"] to |version|.</li>
+        </ol>        
+      </section>
       <section>
         <h3>
           <span><code>version_name</code> member</span>
@@ -708,35 +796,26 @@
         <p class="note" title='Usage'>
           The RECOMMENDED format for this member is <code>X.Y.Z</code>, where <code>X</code>, <code>Y</code>, and <code>Z</code> are non-negative integer values (e.g., <samp>1.10.0</samp>), as specified in <cite>Semantic Versioning</cite> [[SEMANTIC-VERSIONING]].
         </p>
-      </section>
-      <section>
-        <h3>
-          <span><code>version_code</code> member</span>
-        </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn><code>version_code</code></dfn> member is a non-negative integer [=number=] that represents the version of a MiniApp. It is mainly used for enhancing the maintainability and security of MiniApp (e.g., compatibility among incremental versions). The <a><code>version_code</code></a> member aims at supporting the development and deployment process, and it is not usually displayed to the end-user.
+          To <dfn>process the <code>version_name</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
         </p>
-        <div class="note" title='Usage'>
-          <p>
-            The value of this member is usually incremented according to the version iteration process.
-          </p>
-          <p>
-            Value by default: <code>1</code>.
-          </p>
-        </div>
+        <ol class="algorithm">
+          <li>If |json|["version_name"] does not [=map/exist=], or if the type of |json|["version_name"] is not [=string=], return failure.</li>
+          <li>Set |manifest|["version_name"] to |json|["version_name"].</li>
+        </ol>
       </section>
       <section>
         <h3>
           <span><code>widgets</code> member</span>
         </h3>
         <p>
-            The [=MiniApp manifest's=] <dfn><code>widgets</code></dfn> member defines a set of widgets that are a part of a MiniApp.
+            The optional [=MiniApp manifest's=] <dfn><code>widgets</code></dfn> member is an [=array=] of [=MiniApp widget resources=] that are a part of a MiniApp.
         </p>
         <p>
             A <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> MAY include <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-page">MiniApp pages</a> and Widgets concurrently.
         </p> 
         <p>
-           A widget, as part of a MiniApp, adopt some of the members of the [=MiniApp manifest=], including:
+            A widget, as part of a MiniApp, adopt some of the members of the [=MiniApp manifest=], including:
         </p> 
         <ul>
           <li><a><code>dir</code></a>;</li>
@@ -749,25 +828,83 @@
           <li><a><code>version_code</code></a></li>
         </ul>
         <p>
-          However, a widget also has its exclusive fields as defined in the <a>MiniApp widget resource</a>.</p>
+          However, a widget also has its exclusive fields as defined in the <a>MiniApp widget resource</a>.
         </p>
+        <p>
+          To <dfn>process the <code>widgets</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["widgets"] does not [=map/exist=], or if the type of |json|["widgets"] is not [=list=], return.</li>
+          <li>Let |widgets:list| be a new empty [=list=].</li>
+          <li>[=list/For each=] |item:object| of |json|["widgets"]:
+            <ol>
+              <li>If the type of |item| is not [=object=], return failure.</li>
+              <li>Let |widget| be an [=ordered map=].</li>
+              <li><a>Process the widget's <code>name</code> member</a> passing |item| and |widget|.</li>
+              <li><a>Process the widget's <code>path</code> member</a> passing |item| and |widget|.</li>
+              <li><a>Process the widget's <code>min_platform_version</code> member</a> passing |item|, |manifest|, and |widget|.</li>
+              <li>If |widget|["name"] does not [=map/exist=], or if |item|["path"] does not [=map/exist=], return failure.</li>              
+              <li>[=list/Append=] |widget| to |widgets|.</li>
+            </ol>
+          </li>
+          <li>Set |manifest|["widgets"] to |widgets|.</li>
+        </ol>        
       </section>      
       <section>
         <h3>
           <span><code>window</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn><code>window</code></dfn> member contains a <a>MiniApp window resource</a> [=object=] to describe the look and feel of the MiniApp frame, including the styles of the status bar, navigation bar, title, background colors, among other visual configuration elements.
+          The optional [=MiniApp manifest's=] <dfn><code>window</code></dfn> member contains a <a>MiniApp window resource</a> [=object=] to describe the look and feel of the MiniApp frame, including the styles of the status bar, navigation bar, title, background colors, among other visual configuration elements.
         </p>
         <p>
             The <a><code>window</code></a> object members inherit the text direction and language configuration from the <a><code>dir</code></a> and <a><code>lang</code></a> members at the root of the [=MiniApp manifest=].
         </p>
+        <p>
+          To <dfn>process the <code>window</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["window"] does not [=map/exist=], or if the type of |json|["window"] is not [=object=], return.</li>
+          <li>Let |window:ordered map| be a new [=ordered map=] «[ "auto_design_width" → false, "background_color" → "#ffffff", "background_text_style" → "dark", "design_width" → 750, "enable_pull_down_refresh" → false, "fullscreen" → "false", "navigation_bar_background_color" → "#000000", "navigation_bar_text_style" → "white", "navigation_bar_title_text" → "default", "on_reach_bottom_distance" → 50, "orientation" → "portrait" ]».</li>
+          <li><a>Process the window's <code>auto_design_width</code> member</a> passing |json|["window"] and |window|.</li>
+          <li><a href="https://w3c.github.io/manifest/#dfn-process-a-color-member" data-link-type="dfn">Process a color member</a> passing |json|["window"], |window| and "background_color".</li>
+          <li><a>Process the window's <code>design_width</code> member</a> passing |json|["window"] and |window|.</li>
+          <li><a>Process the window's <code>enable_pull_down_refresh</code> member</a> passing |json|["window"] and |window|.</li>
+          <li><a>Process the window's <code>fullscreen</code> member</a> passing |json|["window"] and |window|.</li>
+          <li><a href="https://w3c.github.io/manifest/#dfn-process-a-color-member" data-link-type="dfn">Process a color member</a> passing |json|["window"], |window| and "navigation_bar_background_color".</li>
+          <li><a>Process the window's <code>navigation_bar_text_style</code> member</a> passing |json|["window"] and |window|.</li>
+          <li><a>Process the window's <code>navigation_bar_title_text</code> member</a> passing |json|["window"] and |window|.</li>
+          <li><a>Process the window's <code>on_reach_bottom_distance</code> member</a> passing |json|["window"] and |window|.</li>
+          <li><a>Process the window's <code>orientation</code> member</a> passing |json|["window"] and |window|.</li>
+          <li><a>Process the window's <code>auto_design_width</code> member</a> passing |json|["window"] and |window|.</li>
+          <li>Set |manifest|["window"] to |window|.</li>
+        </ol>             
       </section>
     </section>
-  </section> 
+    <section id="processing" data-cite="APPMANIFEST">
+      <h3>Processing the manifest</h3>
+      <p>
+        The MiniApp manifest, as an extension of the [=Application manifest=], provides a supplementary algorithm to be processed at the <a href="https://www.w3.org/TR/appmanifest/#dfn-extension-point">extension point</a> of the <a href="https://www.w3.org/TR/appmanifest/#dfn-processing-a-manifest" data-link-type="dfn">processing a manifest</a> algorithm defined in [[APPMANIFEST]].
+      </p>
+      <p>
+        To <dfn data-lt="processing a MiniApp manifest">process a MiniApp manifest</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li><a>Process the <code>app_id</code> member</a> passing |json| and |manifest|.</li>
+        <li><a>Process the <code>description</code> member</a> passing |json| and |manifest|.</li>
+        <li><a>Process the <code>min_platform_version</code> member</a> passing |json| and |manifest|.</li>
+        <li><a>Process the <code>pages</code> member</a> passing |json| and |manifest|.</li>
+        <li><a>Process the <code>req_permissions</code> member</a> passing |json| and |manifest|.</li>
+        <li><a>Process the <code>version_code</code> member</a> passing |json| and |manifest|.</li>
+        <li><a>Process the <code>version_name</code> member</a> passing |json| and |manifest|.</li>
+        <li><a>Process the <code>widgets</code> member</a> passing |json| and |manifest|.</li>
+        <li><a>Process the <code>window</code> member</a> passing |json| and |manifest|.</li>
+      </ol>      
+    </section>
+  </section>
 
-  <section id="sec-permission-resource-members">
-    <h2>MiniApp permission resource members</h2>
+  <section id="sec-permission-resources">
+    <h2>MiniApp permission resources</h2>
     <p>
       A <dfn data-lt="permission resource|MiniApp permission resources|MiniApp permission resource's">MiniApp permission resource</dfn> is an [=object=] that describes a request for using a concrete system feature (e.g., access to device's location, user contacts, sensors, and camera) required for the proper execution of a MiniApp.
     </p>
@@ -777,17 +914,30 @@
     <section>
       <h3><code>name</code> member</h3>
       <p>
-        The [=MiniApp permission resource's=] <dfn data-dfn-for="MiniApp permission resource"><code>name</code></dfn> member is a [=string=] that indicates the name of the feature requested.</span>
+        The [=MiniApp permission resource's=] <dfn data-dfn-for="MiniApp permission resource"><code>name</code></dfn> member is a [=string=] that indicates the name of the feature requested.
       </p>
+      <p>
+        To <dfn>process the permission resource's <code>name</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |permission:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li>If |json|["name"] does not [=map/exist=], or<br/> 
+            if the type of |json|["name"] is not [=string=], or if |json|["name"] is the empty string, return failure.</li>
+        <li>Set |permission|["name"] to |json|["name"].</li>
+      </ol>          
     </section>
     <section>
       <h3><code>reason</code> member</h3>
       <p>
-        The optional [=MiniApp permission resource's=] <dfn><code>reason</code></dfn> member is a [=string=] that indicates the reason given to request the feature specified in the <a data-link-type="dfn" data-link-for="MiniApp permission resource"><code>name</code></a> attribute.</span>
+        The optional [=MiniApp permission resource's=] <dfn><code>reason</code></dfn> member is a [=string=] that indicates the reason given to request the feature specified in the <a data-link-type="dfn" data-link-for="MiniApp permission resource"><code>name</code></a> attribute.
       </p>
-      <div class="ednote">
-        To add example
-      </div>
+      <p>
+        To <dfn>process the permission resource's <code>reason</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |permission:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li>If |json|["reason"] does not [=map/exist=], or<br/> 
+          if the type of |json|["reason"] is not [=string=], or if |json|["reason"] is the empty string, return.</li>
+        <li>Set |permission|["reason"] to |json|["reason"].</li>
+      </ol>           
     </section>
   </section>
 
@@ -804,23 +954,46 @@
       <p>
         The [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource"><code>name</code></dfn> member is a [=string=] that indicates the title of a widget.
       </p>
+      <p>
+        To <dfn>process the widget's <code>name</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |widget:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li>If |json|["name"] does not [=map/exist=], or if the type of |json|["name"] is not [=string=], return failure.</li>
+        <li>Set |widget|["name"] to |json|["name"].</li>
+      </ol>      
     </section>
     <section>
       <h3><code>path</code> member</h3>
       <p>
         The [=MiniApp widget resource's=] <dfn>path</dfn> member is a [=relative-url string=] that defines the corresponding  [=page route=] of a widget, represented as in the <a><code>pages</code></a> array.
       </p>
+      <p>
+        To <dfn>process the widget's <code>path</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |widget:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li>If |json|["path"] does not [=map/exist=], or if the type of |json|["path"] is not [=string=], return failure.</li>
+        <li>Let |url:URL| be the result of [=URL Parser|parsing=] |json|["path"].</li>
+        <li>If |url| is failure, return failure.</li>
+        <li>Set |widget|["path"] to |url|.</li>
+      </ol>
     </section>
     <section>
       <h3><code>min_platform_version</code> member</h3>
       <p>
-        The optional [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource"><code>min_platform_version</code></dfn> member indicates the minimum platform version supported for a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-widget">MiniApp widget</a>.
+        The optional [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource"><code>min_platform_version</code></dfn> member is a [=string=] that indicates the minimum platform version supported for a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-widget">MiniApp widget</a>.
       </p>
-      <div class="note" title='Usage'>
-        <p>
-          Since Widget APIs and MiniApp APIs may differ, the declaration of the minimum version of the platform may be different. Thus, if the widgets member omits <a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>min_platform_version</code></a> explicitly, the user agent will consider the same requirement as the specified in the <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>min_platform_version</code></a> member at the root of the [=manifest=].
+      <p class="note" title='Usage'>
+        Since Widget APIs and MiniApp APIs may differ, the declaration of the minimum version of the platform may be different. Thus, if the widgets member omits <a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>min_platform_version</code></a> explicitly, the user agent will consider the same requirement as the specified in the <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>min_platform_version</code></a> member at the root of the [=manifest=].
         </p>
-      </div>
+      </p>
+      <p>
+        To <dfn>process the widget's <code>min_platform_version</code> member</dfn>, given [=object=] |json:JSON|, [=ordered map=] |widget:ordered map| and [=ordered map=] |manifest:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li>Set |widget|["min_platform_version"] to |manifest|["min_platform_version"].</li>        
+        <li>If |json|["min_platform_version"] does not [=map/exist=], or if the type of |json|["min_platform_version"] is not [=string=], return.</li>
+        <li>Set |widget|["min_platform_version"] to |json|["min_platform_version"].</li>
+      </ol>      
     </section>
   </section>
 
@@ -837,83 +1010,122 @@
       <p>
         The <dfn><code>auto_design_width</code></dfn> member is a [=boolean=] that indicates whether the <a><code>design_width</code></a> of the page is auto-calculated by the user agent. When <a><code>auto_design_width</code></a> is <code>true</code>, the value of <a><code>design_width</code></a> is ignored. In this case, the system's baseline width is automatically determined according to the pixel density of the screen.
       </p>
-      <p class="note" title='Usage'>
+      <p>
         Value by default: <code>false</code>.
       </p>
+      <p>
+        To <dfn>process the window's <code>auto_design_width</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |window:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li>If |json|["auto_design_width"] does not [=map/exist=], or if the type of |json|["auto_design_width"] is not [=boolean=], return.</li>
+        <li>Set |window|["auto_design_width"] to |json|["auto_design_width"].</li>
+      </ol>       
     </section>
     <section data-cite="CSS-COLOR-4 CSS-SYNTAX-3 APPMANIFEST">
       <h3><code>background_color</code> member</h3>
       <p>
         The <dfn data-dfn-for="MiniApp window resource"><code>background_color</code></dfn> member is a [=string=] that specifies the background color of the window that contains a MiniApp.
       </p>
-      <div class="note" title='Usage'>
-        <p>
-          This member supports [=sRGB=] colors, and it is equivalent to the application manifest's <a href="https://www.w3.org/TR/appmanifest/#dfn-background_color" data-link-type="dfn"><code>background_color</code></a>.
-        </p>
-        <p>
-          Value by default: <code>"#ffffff"</code>.
-        </p>
-      </div>
+      <p>
+        This member supports [=sRGB=] colors, and it is equivalent to the application manifest's <a href="https://www.w3.org/TR/appmanifest/#dfn-background_color" data-link-type="dfn"><code>background_color</code></a>.
+      </p>
+      <p>
+        Value by default: <code>"#ffffff"</code>.
+      </p>
+      <p class="note" title="Processing the `background_color` member">
+        When [=processing a MiniApp manifest=], the <a href="https://w3c.github.io/manifest/#dfn-process-a-color-member" data-link-type="dfn">process a color member</a> algorithm is used to process the window's <code>background_color</code> member, according to the [[APPMANIFEST]] specification.
+      </p>      
     </section>
     <section data-cite="CSS-COLOR-4 MEDIAQUERIES">
       <h3><code>background_text_style</code> member</h3>
       <p>
         <span>The <dfn><code>background_text_style</code></dfn> member is a [=string=] that specifies the background text style, indicating a light or dark color theme.</span>
       </p>
-      <div class="note" title='Usage'>
-        <p>
-          This member supports <a data-xref-type="css-descriptor" data-xref-for="@media">prefers-color-scheme</a> with the <code>"light"</code> or <code>"dark"</code> values.
-        </p>
-        <p>
-          Value by default: <code>"dark"</code>.
-        </p>
-      </div>
+      <p>
+        This member supports <a data-xref-type="css-descriptor" data-xref-for="@media">prefers-color-scheme</a> and MUST contain one of the following <dfn>background text style values</dfn>:  
+      </p>
+      <dl>
+        <dt><dfn><code>"light"</code></dfn></dt>
+        <dd>For light style.</dd>
+        <dt><dfn><code>"dark"</code></dfn> (default)</dt>
+        <dd>For dark style.</dd>
+      </dl>      
+      <p>
+        To <dfn>process the window's <code>background_text_style</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |window:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li>If |json|["background_text_style"] does not [=map/exist=], or<br/> 
+          if the type of |json|["background_text_style"] is not [=string=], or<br/>
+          if |json|["background_text_style"] doesn't match one of the [=background text style values=], return.</li>
+        <li>Set |window|["background_text_style"] to |json|["background_text_style"].</li>
+      </ol>
     </section>
     <section>
       <h3><code>design_width</code> member</h3>
       <p>
         The <dfn><code>design_width</code></dfn> member is a [=number=] that indicates the baseline width of the page design in <a data-cite="css-values">pixel unit</a>. It is  used for visually adjusting the page components.
       </p>
-      <div class="note" title='Usage'>
-        <p>
-          The value is a non-negative integer.
-        </p>           
-        <p>
-          Value by default: <code>750</code>.
-        </p>
-      </div>
+      <p>
+        The value is a non-negative integer and the value by default is <code>750</code>.
+      </p>
+      <p>
+        To <dfn>process the window's <code>design_width</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |window:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li>If |json|["design_width"] does not [=map/exist=], or<br/>
+          if the type of |json|["design_width"] is not [=number=], or <br/>
+          if if the type of |json|["design_width"] is less than 0, return.</li>
+        <li>Set |window|["design_width"] to |json|["design_width"].</li>
+      </ol>
     </section>
     <section>
       <h3><code>enable_pull_down_refresh</code> member</h3>
       <p>
         The <dfn><code>enable_pull_down_refresh</code></dfn> member is a [=boolean=] that specifies if the <code>pull-to-refresh</code> event is enabled during the interaction with the MiniApp.
       </p>
-      <p class="note" title='Usage'>
+      <p>
         Value by default: <code>false</code>.
       </p>
+      <p>
+        To <dfn>process the window's <code>enable_pull_down_refresh</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |window:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li>If |json|["enable_pull_down_refresh"] does not [=map/exist=], <br/>
+          or if the type of |json|["enable_pull_down_refresh"] is not [=boolean=], return.</li>
+        <li>Set |window|["enable_pull_down_refresh"] to |json|["enable_pull_down_refresh"].</li>
+      </ol>      
     </section>    
     <section>
       <h3><code>fullscreen</code> member</h3>
       <p>
         The <dfn><code>fullscreen</code></dfn> member is a [=boolean=] that indicates if the MiniApp is shown in full-screen display mode.
       </p>
-      <div class="note" title='Usage'>
-        <p>When this member takes the <code>true</code> value, it is equivalent to the <a href="https://www.w3.org/TR/appmanifest/#dfn-fullscreen" data-link-type="dfn"><code>fullscreen</code> value on the application manifest's <a href="https://www.w3.org/TR/appmanifest/#dfn-display" data-link-type="dfn"><code>display</code></a> member. When it takes <code>false</code> as value, it is equivalent to <a href="https://www.w3.org/TR/appmanifest/#dfn-minimal-ui" data-link-type="dfn"><code>minimal-ui</code></a>.
+      <p class="note" title='Usage'>
+        When this member takes the <code>true</code> value, it is equivalent to the <a href="https://www.w3.org/TR/appmanifest/#dfn-fullscreen" data-link-type="dfn"><code>fullscreen</code> value on the application manifest's <a href="https://www.w3.org/TR/appmanifest/#dfn-display" data-link-type="dfn"><code>display</code></a> member. When it takes <code>false</code> as value, it is equivalent to <a href="https://www.w3.org/TR/appmanifest/#dfn-minimal-ui" data-link-type="dfn"><code>minimal-ui</code></a>.
       </p>
-        <p>
-          Value by default: <code>false</code>.
-        </p>
-      </div>
+      <p>
+        Value by default: <code>false</code>.
+      </p>
+      <p>
+        To <dfn>process the window's <code>fullscreen</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |window:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li>If |json|["fullscreen"] does not [=map/exist=], <br/>
+            or if the type of |json|["fullscreen"] is not [=boolean=], return.</li>
+        <li>Set |window|["fullscreen"] to |json|["fullscreen"].</li>
+      </ol>
     </section>
     <section data-cite="CSS-COLOR-4 CSS-SYNTAX-3">
       <h3><code>navigation_bar_background_color</code> member</h3>
       <p>
         <span>The <dfn><code>navigation_bar_background_color</code></dfn> member is a [=string=] that specifies the color of the background of the navigation bar of the MiniApp.</span>
       </p>
-      <div class="note" title='Usage'>
-        <p>This member supports [=sRGB=] colors.</p>
-        <p>Value by default: <code>"#000000"</code>.</p>
-      </div>
+      <p>This member supports [=sRGB=] colors.</p>
+      <p>Value by default: <code>"#000000"</code>.</p>
+      <p>This member is processed according to the  specified in [[APPMANIFEST]].</p>
+      <p class="note" title="Processing the `navigation_bar_background_color` member">
+        When [=processing a MiniApp manifest=], the <a href="https://w3c.github.io/manifest/#dfn-process-a-color-member" data-link-type="dfn">process a color member</a> algorithm is used to process the window's <code>navigation_bar_background_color</code> member, according to the [[APPMANIFEST]] specification.
+      </p>
     </section>
     <section>
       <h3><code>navigation_bar_text_style</code> member</h3>
@@ -921,23 +1133,37 @@
         <span>The <dfn><code>navigation_bar_text_style</code></dfn> member is a [=string=] that indicates the text color of the navigation bar title.</span>
       </p>
       <p>
-        This member MUST contain one of the following values: 
+        This member MUST contain one of the following <dfn>text style values</dfn>:  
       </p>
       <dl>
-        <dt><dfn><code>"white"</code></dfn></dt>
+        <dt><dfn><code>"white"</code></dfn> (default)</dt>
         <dd>For white text color.</dd>
         <dt><dfn><code>"black"</code></dfn></dt>
         <dd>For black text color.</dd>
       </dl>
-      <p class="note" title='Usage'>
-       Value by default: <a><code>"white"</code></a>.
+      <p>
+        To <dfn>process the window's <code>navigation_bar_text_style</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |window:ordered map|:
       </p>
+      <ol class="algorithm">
+        <li>If |json|["navigation_bar_text_style"] does not [=map/exist=], or<br/> 
+         if the type of |json|["navigation_bar_text_style"] is not [=string=], or<br/> 
+         if |json|["navigation_bar_text_style"] doesn't match one of the [=text style values=], return.</li>
+        <li>Set |window|["navigation_bar_text_style"] to |json|["navigation_bar_text_style"].</li>
+      </ol>      
     </section>
     <section>
       <h3><code>navigation_bar_title_text</code> member</h3>
       <p>
         The <dfn><code>navigation_bar_title_text</code></dfn> member is a [=string=] that specifies the title of the navigation bar of the MiniApp.
       </p>
+      <p>
+        To <dfn>process the window's <code>navigation_bar_title_text</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |window:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li>If |json|["navigation_bar_title_text"] does not [=map/exist=], or<br/> 
+         if the type of |json|["navigation_bar_title_text"] is not [=string=], return.</li>
+        <li>Set |window|["navigation_bar_title_text"] to |json|["navigation_bar_title_text"].</li>
+      </ol>      
     </section>
     <section>
       <h3><code>navigation_style</code> member</h3>
@@ -945,33 +1171,44 @@
         The <dfn><code>navigation_style</code></dfn> member is a [=string=] that specifies the style of the navigation bar.
       </p>
       <p>
-        This member MUST contain one of the following values: 
+        This member MUST contain one of the following <dfn>navigation style values</dfn>: 
       </p>
       <dl>
-        <dt><dfn><code>"default"</code></dfn></dt>
+        <dt><dfn><code>"default"</code></dfn> (default)</dt>
         <dd>For applying the style by default.</dd>
         <dt><dfn><code>"custom"</code></dfn></dt>
         <dd>For applying a customized navigation bar.</dd>
-      </dl>       
-      <div class="note" title='Usage'>
-        <p>
-          The capsule button at the right corner is not customizable.
-        </p>
-        <p>
-          Value by default: <a><code>"default"</code></a>.
-        </p>
-      </div>
+      </dl>
+      <p>
+        To <dfn>process the window's <code>navigation_style</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |window:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li>If |json|["navigation_style"] does not [=map/exist=], or<br/> 
+            if the type of |json|["navigation_style"] is not [=string=], or<br/>
+            if |json|["navigation_style"] doesn't match one of the [=navigation style values=], return.</li>
+        <li>Set |window|["navigation_style"] to |json|["navigation_style"].</li>
+      </ol>
+      <p class="note" title='Usage'>
+        The capsule button at the right corner is not customizable.
+      </p>      
     </section>
     <section>
       <h3><code>on_reach_bottom_distance</code> member</h3>
       <p>
         The <dfn><code>on_reach_bottom_distance</code></dfn> member is a [=number=] that defines the vertical offset from the bottom of the window required to trigger a page pull-up event. Values for this member are non-negative integers expressed in <a data-cite="css-values">pixel unit</a>.
       </p>
-      <p class="note">
-        <span>
-          Value by default: <code>50</code>.
-        </span>
+      <p>
+        Value by default: <code>50</code>.
       </p>
+      <p>
+        To <dfn>process the window's <code>on_reach_bottom_distance</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |window:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li>If |json|["on_reach_bottom_distance"] does not [=map/exist=], or<br/> 
+          if the type of |json|["on_reach_bottom_distance"] is not [=number=], or <br/>
+          if if the type of |json|["on_reach_bottom_distance"] is less than 0, return.</li>
+        <li>Set |window|["on_reach_bottom_distance"] to |json|["on_reach_bottom_distance"].</li>
+      </ol>      
     </section>
     <section>
       <h3><code>orientation</code> member</h3>
@@ -979,16 +1216,23 @@
         The <dfn><code>orientation</code></dfn> member is a [=string=] that specifies the configuration of the screen orientation for the MiniApp. 
       </p>
       <p>
-        This member supports the values: <code>"portrait"</code> and <code>"landscape"</code> defined in {{OrientationLockType}} [[SCREEN-ORIENTATION]].
+        This member supports the <dfn>orientation values</dfn>: <code>"portrait"</code> and <code>"landscape"</code> defined in {{OrientationLockType}} [[SCREEN-ORIENTATION]].
       </P>
-      <div class="note" title='Usage'>
-        <p>
-          This member is equivalent to the application manifest's <a href="https://www.w3.org/TR/appmanifest/#dfn-orientation" data-link-type="dfn"><code>orientation</code></a>.
-        </p>
-        <p>
-          Value by default: <code>"portrait"</code>.
-        </p>
-      </div>
+      <p class="note" title='Usage'>
+        This member is equivalent to the application manifest's <a href="https://www.w3.org/TR/appmanifest/#dfn-orientation" data-link-type="dfn"><code>orientation</code></a>.
+      </p>
+      <p>
+        Value by default: <code>"portrait"</code>.
+      </p>
+      <p>
+        To <dfn>process the window's <code>orientation</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |window:ordered map|:
+      </p>
+      <ol class="algorithm">
+        <li>If |json|["orientation"] does not [=map/exist=], or<br/>
+            if the type of |json|["orientation"] is not [=string=], or<br/>
+            if |json|["orientation"] doesn't match one of the [=orientation values=], return.</li>
+        <li>Set |window|["orientation"] to |json|["orientation"].</li>
+      </ol>
       <div class="issue" data-number="8"></div>
     </section>
   </section>
@@ -1052,12 +1296,14 @@
     </section>
 </section>
 
-  <section class="appendix" id="conformance">
-    <p>
-      This specification uses the Augmented Backus-Naur Form (ABNF) notation of [[!RFC5234]].
-    </p>
-  </section>
-
+<section class="appendix" id="conformance">
+  <p>
+    This specification uses the Augmented Backus-Naur Form (ABNF) as defined in [[!RFC5234]].
+  </p>
+  <p>
+      The MiniApp Manifest specification depends on the Infra Standard [[INFRA]] to describe algorithms.
+  </p>      
+</section>
 
 <section>
     <h2 id="sec-json-schema">
