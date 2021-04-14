@@ -529,6 +529,61 @@
       </p>
     </section>
 
+    <section class='informative' id="sec-example">
+      <h2>Example</h2>
+      <p>
+        The following code represents a [=MiniApp manifest=] example:   
+      </p>
+
+      <pre class="example json" title="Manifest document">
+        {
+          "dir": "ltr",
+          "lang": "en-US",
+          "app_id": "org.example.miniapp",
+          "name": "MiniApp Demo",
+          "short_name": "MiniApp",
+          "version_name": "1.0.1",
+          "version_code": 11,
+          "description": "A Simple MiniApp Demo",
+          "icons": [
+            {
+              "src": "common/icons/icon.png",
+              "sizes": "48x48"
+            }
+          ],
+          "min_platform_version": "1.0.0",
+          "pages": [
+            "pages/index/index",
+            "pages/detail/detail"
+          ],
+          "window": {
+            "navigation_bar_text_style": "black",
+            "navigation_bar_title_text": "My MiniApp",
+            "navigation_bar_background_color": "#f8f8f8",
+            "background_color": "#ffffff",
+            "fullscreen": false
+          },
+          "widgets": [
+            {
+              "name": "widget",
+              "path": "widgets/index/index",
+              "min_platform_version": "2.0.0"
+            }
+          ],
+          "req_permissions": [
+            {
+              "name": "system.permission.LOCATION",
+              "reason": "To show user's position on the map"
+            },
+            {
+              "name": "system.permission.CAMERA",
+              "reason": "To scan a QR code"
+            }
+          ]
+        }
+      </pre>
+    </section>
+
     <section id='webappmanifest-members'>
       <h2>Web Application Manifest members</h2>
       <p>The [=MiniApp manifest=] uses the following essential [=application manifest=]'s members.</p>      
@@ -546,9 +601,6 @@
           <dt><a href="https://w3c.github.io/miniapp-packaging/#dfn-auto" data-type="dfn" data-link-type="dfn"><code>"auto"</code></a> (default)</dt>
           <dd>No explicit directionality.</dd>
         </dl>
-        <p>
-          Value by default: <code>"auto"</code>.
-        </p>
         <p class="note" title="Processing the `dir` member">
           When [=processing a MiniApp manifest=], the <a href="https://w3c.github.io/manifest/#dfn-process-the-dir-member" data-link-type="dfn">process the <code>dir</code> member</a> algorithm is used to process the <code>dir</code> member, according to the [[APPMANIFEST]] specification.
         </p>
@@ -1070,8 +1122,7 @@
       </p>
       <ol class="algorithm">
         <li>If |json|["design_width"] does not [=map/exist=], or<br/>
-          if the type of |json|["design_width"] is not [=number=], or <br/>
-          if if the type of |json|["design_width"] is less than 0, return.</li>
+          if the type of |json|["design_width"] is not [=number=], or if the type of |json|["design_width"] is less than 0, return.</li>
         <li>Set |window|["design_width"] to |json|["design_width"].</li>
       </ol>
     </section>
@@ -1291,82 +1342,31 @@
           The user agent SHOULD provide the end-user with transparent metadata about a MiniApp (i.e., <a><code>app_id</code></a>, <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a>, <a><code>short_name</code></a>, <a>icons</a>, <a><code>version_name</code></a>, <a><code>description</code></a>), offering users enough information, allowing them to make a conscious decision about its usage. This practice could also help to identify spoofing MiniApps.
         </p>
     </section>
-</section>
-
-<section class="appendix" id="conformance">
-  <p>
-    This specification uses the Augmented Backus-Naur Form (ABNF) as defined in [[!RFC5234]].
-  </p>
-  <p>
-      The MiniApp Manifest specification depends on the Infra Standard [[INFRA]] to describe algorithms.
-  </p>      
-</section>
-
-<section>
-    <h2 id="sec-json-schema">
-        <span>JSON Schema</span>
-    </h2>
-    <p>
-      Developers interested in validating the MiniApp manifest document can use the JSON Schema defined at <a href="https://w3c.github.io/miniapp-manifest/manifest_schema.json">https://w3c.github.io/miniapp-manifest/manifest_schema.json</a>.
-    </p>
-</section>
-
-  <section class='informative'>
-    <h2>Example</h2>
-    <pre class="example json">
-      {
-        "dir": "ltr",
-        "lang": "en-US",
-        "app_id": "org.example.miniapp",
-        "name": "MiniApp Demo",
-        "short_name": "MiniApp",
-        "version_name": "1.0.0",
-        "version_code": 1,
-        "description": "A Simple MiniApp Demo",
-        "icons": [
-          {
-            "src": "common/icons/icon.png",
-            "sizes": "48x48"
-          }
-        ],
-        "min_platform_version": "1.0.0",
-        "pages": [
-          "pages/index/index",
-          "pages/detail/detail"
-        ],
-        "window": {
-          "navigation_bar_text_style": "black",
-          "navigation_bar_title_text": "Demo",
-          "navigation_bar_background_color": "#f8f8f8",
-          "background_color": "#ffffff",
-          "fullscreen": false
-        },
-        "widgets": [
-          {
-            "name": "widget",
-            "path": "widgets/index/index",
-            "min_platform_version": "1.0.0"
-          }
-        ],
-        "req_permissions": [
-          {
-            "name": "system.permission.LOCATION",
-            "reason": "To show user's position on the map"
-          },
-          {
-            "name": "system.permission.CAMERA",
-            "reason": "To scan a QR code"
-          }
-        ]
-      }
-    </pre>
   </section>
 
-  <section class="appendix">
-    <h2>Acknowledgements</h2>
+  <section class="appendix" id="conformance">
     <p>
-      This document refers to <a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>, <a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/">Baidu MiniApp</a>, <a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">WeChat MiniApp</a>, <a href="https://opendocs.alipay.com/mini/framework/app-json">Alipay MiniApp</a>, <a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">ByteDance MiniApp</a>, <a href="https://doc.quickapp.cn/framework/manifest.html">Quick App Specification</a>, <a href="https://w3c.github.io/miniapp-widget/req/">MiniApp Widget Requirements</a>, <a href="https://w3c.github.io/miniapp-lifecycle/">MiniApp Lifecycle Specification</a>, <a href="https://w3c.github.io/miniapp-addressing/">MiniApp Addressing</a>, and <a href="https://semver.org/">Semantic Versioning</a>.
+      This specification uses the Augmented Backus-Naur Form (ABNF) as defined in [[!RFC5234]].
     </p>
+    <p>
+        The MiniApp Manifest specification depends on the Infra Standard [[INFRA]] to describe algorithms.
+    </p>      
+  </section>
+
+  <section>
+      <h2 id="sec-json-schema">
+          <span>JSON Schema</span>
+      </h2>
+      <p>
+        Developers interested in validating the MiniApp manifest document can use the JSON Schema defined at <a href="https://w3c.github.io/miniapp-manifest/manifest_schema.json">https://w3c.github.io/miniapp-manifest/manifest_schema.json</a>.
+      </p>
+  </section>
+
+  <section class="appendix informative">
+    <h2>Acknowledgements</h2>
+    <div class="ednote">
+      To include contributors here!
+    </div>
   </section>
 
   <section class="appendix informative">
@@ -1374,7 +1374,7 @@
       <span>Extensibility</span>
     </h2>
     <p>
-      This specification is based on the Web App Manifest <a href="https://www.w3.org/TR/appmanifest/#extensibility">extensibility principle</a>. 
+      This specification is based on the [=Web Application manifest=] <a href="https://www.w3.org/TR/appmanifest/#extensibility">extensibility principle</a>. 
     </p>
     <p>
       Although proprietary extensions are undesirable, they may be included as a manifest extension. In this case, it is RECOMMENDED to use vendor prefixes for the new members.
