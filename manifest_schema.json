@@ -24,7 +24,6 @@
     "pages"
   ],
   "properties": {
-    // Inherited from [[APPMANIFEST]]
     "dir": {
       "description": "The base direction of the manifest.",
       "type": "string",
@@ -73,12 +72,10 @@
       "description": "A short version of the name of the MiniApp.",
       "type": "string"
     },
-    // Inherited from MANIFEST-APP-INFO
     "description": {
       "description": "A textual description for the MiniApp representing the purpose of the web application in natural language.",
       "type": "string"
     },
-    // Exclusive for MiniApps
     "app_id": {
       "type": "string",
       "description": "A string that identifies the MiniApp univocally.",
