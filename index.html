@@ -596,7 +596,7 @@
         <p>
           The [=MiniApp manifest's=] <dfn><code>dir</code></dfn> member, while specifying the base direction of the <a>localizable members</a> of the [=manifest=], also specifies
           the default base text direction of the whole MiniApp.</p> 
-        <p>The <a><code>dir</code></a> member's value can be set to one of the <a href="https://www.w3.org/TR/appmanifest/#dfn-text-direction-value">text-direction values</a> as specified in [[APPMANIFEST]]. The text-direction values are the following:</p>
+        <p>The <a><code>dir</code></a> member's value can be set to one of the <a href="https://www.w3.org/TR/appmanifest/#dfn-text-direction-values">text-direction values</a> as specified in [[APPMANIFEST]]. The text-direction values are the following:</p>
         <dl>
           <dt><a href="https://www.w3.org/TR/appmanifest/#dfn-ltr" data-type="dfn" data-link-type="dfn"><code>"ltr"</code></a></dt>
           <dd>Left-to-right text.</dd>
@@ -640,7 +640,7 @@
         </h3>
         <p>
           The [=MiniApp manifest's=] <dfn><code>lang</code></dfn> member, while specifying the primary language of the <a>localizable members</a>, also specifies
-          the primary language of the whole MiniApp. This member is a [=string=] in the form of a <a href="https://w3c.github.io/manifest/#dfn-language-tag" data-link-type="dfn">language tag</a>, a string that matches the production of a Language-Tag [[BCP47]], as defined in [[APPMANIFEST]].
+          the primary language of the whole MiniApp. This member is a [=string=] in the form of a <a href="https://www.w3.org/TR/appmanifest/#dfn-language-tag" data-link-type="dfn">language tag</a>, a string that matches the production of a <code>Language-Tag</code> [[BCP47]], as defined in [[APPMANIFEST]].
         </p>
         <p class="note" title="Processing the `lang` member">
           When [=processing a MiniApp manifest=], the <a href="https://www.w3.org/TR/appmanifest/#dfn-process-the-lang-member" data-link-type="dfn">process the <code>lang</code> member</a> algorithm is used to process the <code>lang</code> member, according to the [[APPMANIFEST]] specification.
@@ -654,7 +654,7 @@
           The [=MiniApp manifest's=] <dfn data-dfn-for="MiniApp manifest"><code>name</code></dfn> member is the descriptive name of the application. This is the name directly displayed to the user. It is used as the display name of MiniApp along with the desktop icon and in the context of MiniApp management. 
         </p>
         <p class="note" title="Processing the `name` member">
-          When [=processing a MiniApp manifest=], the <a href="https://w3c.github.io/manifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm is used to process the <code>name</code> member, according to the [[APPMANIFEST]] specification.
+          When [=processing a MiniApp manifest=], the <a href="https://www.w3.org/TR/appmanifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm is used to process the <code>name</code> member, according to the [[APPMANIFEST]] specification.
         </p>
       </section>
       <section>
@@ -665,7 +665,7 @@
           The [=MiniApp manifest's=] <dfn><code>short_name</code></dfn> member provides a concise and easy-to-read name for a MiniApp. It can be used when there is insufficient space to display the full MiniApp name provided in <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a>.
         </p>
         <p class="note" title="Processing the `short_name` member">
-          When [=processing a MiniApp manifest=], the <a href="https://w3c.github.io/manifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm is used to process the <code>short_name</code> member, according to the [[APPMANIFEST]] specification.
+          When [=processing a MiniApp manifest=], the <a href="https://www.w3.org/TR/appmanifest/#dfn-process-a-text-member" data-link-type="dfn">process a text member</a> algorithm is used to process the <code>short_name</code> member, according to the [[APPMANIFEST]] specification.
         </p>        
       </section>
     </section>
@@ -920,7 +920,7 @@
           <li>If |json|["window"] does not [=map/exist=], or if the type of |json|["window"] is not [=object=], return.</li>
           <li>Let |window:ordered map| be a new [=ordered map=] «[ "auto_design_width" → false, "background_color" → "#ffffff", "background_text_style" → "dark", "design_width" → 750, "enable_pull_down_refresh" → false, "fullscreen" → "false", "navigation_bar_background_color" → "#000000", "navigation_bar_text_style" → "white", "navigation_bar_title_text" → "default", "on_reach_bottom_distance" → 50, "orientation" → "portrait" ]».</li>
           <li><a>Process the window's <code>auto_design_width</code> member</a> passing |json|["window"] and |window|.</li>
-          <li><a href="https://w3c.github.io/manifest/#dfn-process-a-color-member" data-link-type="dfn">Process a color member</a> passing |json|["window"], |window| and "background_color".</li>
+          <li><a href="https://www.w3.org/TR/appmanifest/#dfn-process-a-color-member" data-link-type="dfn">Process a color member</a> passing |json|["window"], |window| and "background_color".</li>
           <li><a>Process the window's <code>design_width</code> member</a> passing |json|["window"] and |window|.</li>
           <li><a>Process the window's <code>enable_pull_down_refresh</code> member</a> passing |json|["window"] and |window|.</li>
           <li><a>Process the window's <code>fullscreen</code> member</a> passing |json|["window"] and |window|.</li>
@@ -1086,7 +1086,7 @@
         Value by default: <code>"#ffffff"</code>.
       </p>
       <p class="note" title="Processing the `background_color` member">
-        When [=processing a MiniApp manifest=], the <a href="https://w3c.github.io/manifest/#dfn-process-a-color-member" data-link-type="dfn">process a color member</a> algorithm is used to process the window's <code>background_color</code> member, according to the [[APPMANIFEST]] specification.
+        When [=processing a MiniApp manifest=], the <a href="https://www.w3.org/TR/appmanifest/#dfn-process-a-color-member" data-link-type="dfn">process a color member</a> algorithm is used to process the window's <code>background_color</code> member, according to the [[APPMANIFEST]] specification.
       </p>      
     </section>
     <section data-cite="CSS-COLOR-4 MEDIAQUERIES-5">
@@ -1176,7 +1176,7 @@
       <p>Value by default: <code>"#000000"</code>.</p>
       <p>This member is processed according to the  specified in [[APPMANIFEST]].</p>
       <p class="note" title="Processing the `navigation_bar_background_color` member">
-        When [=processing a MiniApp manifest=], the <a href="https://w3c.github.io/manifest/#dfn-process-a-color-member" data-link-type="dfn">process a color member</a> algorithm is used to process the window's <code>navigation_bar_background_color</code> member, according to the [[APPMANIFEST]] specification.
+        When [=processing a MiniApp manifest=], the <a href="https://www.w3.org/TR/appmanifest/#dfn-process-a-color-member" data-link-type="dfn">process a color member</a> algorithm is used to process the window's <code>navigation_bar_background_color</code> member, according to the [[APPMANIFEST]] specification.
       </p>
     </section>
     <section>
@@ -1292,7 +1292,7 @@
   <section id="sec-localizable-members">
     <h2>Localizable members</h2>
     <p>
-        A <dfn data-lt="localizable members">localizable member</dfn> is a [=manifest=] member whose content may be adapted to specific linguistic, geographical, and cultural aspects. These localizable members share the <a href="https://w3c.github.io/manifest/#dfn-language-tag" data-link-type="dfn">language tag</a> (<a><code>lang</code></a>) and display direction (<a><code>dir</code></a>) defined at manifest's root.
+        A <dfn data-lt="localizable members">localizable member</dfn> is a [=manifest=] member whose content may be adapted to specific linguistic, geographical, and cultural aspects. These localizable members share the <a href="https://www.w3.org/TR/appmanifest/#dfn-language-tag" data-link-type="dfn">language tag</a> (<a><code>lang</code></a>) and display direction (<a><code>dir</code></a>) defined at manifest's root.
     </p>
     <p>
       The following members are [=localizable members=]:
