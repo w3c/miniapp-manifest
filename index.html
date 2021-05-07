@@ -832,9 +832,8 @@
           To <dfn>process the <code>version_code</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
         </p>
         <ol class="algorithm">
-          <li>If |json|["version_name"] does not [=map/exist=], or if the type of |json|["version_code"] is not [=number=], return failure.</li>
           <li>Let |version:number| be a [=number=], initially 1.</li>
-          <li>If |json|["version_code"] is greater than 0, then: <br/>
+          <li>If |json|["version_name"] [=map/exists=], and if the type of |json|["version_code"] is [=number=], and if |json|["version_code"] is greater than 0, then: <br/>
             Set |version| to |json|["version_code"].</li>
           <li>Set |manifest|["version_code"] to |version|.</li>
         </ol>        
