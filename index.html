@@ -775,7 +775,7 @@
             <ol>
               <li>If the type of |item| is not [=string=], return.</li>
               <li>Let |url:URL| be the result of [=URL Parser|parsing=] |item|.</li>
-              <li>If |url| is failure, continue.</li>
+              <li>If |url| is failure, [=iteration/continue=].</li>
               <li>[=list/Append=] |pages| to |url|.</li>
             </ol>
           </li>
@@ -890,12 +890,12 @@
           <li>Let |widgets:list| be a new empty [=list=].</li>
           <li>[=list/For each=] |item:object| of |json|["widgets"]:
             <ol>
-              <li>If the type of |item| is not [=object=], continue.</li>
+              <li>If the type of |item| is not [=object=], [=iteration/continue=].</li>
               <li>Let |widget:ordered map| be an [=ordered map=].</li>
               <li><a>Process the widget's <code>name</code> member</a> passing |item| and |widget|.</li>
               <li><a>Process the widget's <code>path</code> member</a> passing |item| and |widget|.</li>
               <li><a>Process the widget's <code>min_platform_version</code> member</a> passing |item|, |manifest|, and |widget|.</li>
-              <li>If |widget|["name"] does not [=map/exist=], or if |item|["path"] does not [=map/exist=], continue.</li>              
+              <li>If |widget|["name"] does not [=map/exist=], or if |item|["path"] does not [=map/exist=], [=iteration/continue=].</li>              
               <li>[=list/Append=] |widget| to |widgets|.</li>
             </ol>
           </li>
