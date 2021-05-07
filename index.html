@@ -718,7 +718,7 @@
           To <dfn>process the <code>app_id</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
         </p>
         <ol class="algorithm">
-          <li>If |json|["app_id"] does not [=map/exist=], or if the type of |json|["app_id"] is not [=string=], return failure.</li>
+          <li>If |json|["app_id"] does not [=map/exist=], or if the type of |json|["app_id"] is not [=string=], return.</li>
           <li>Set |manifest|["app_id"] to |json|["app_id"].</li>
         </ol>        
       </section>
@@ -736,7 +736,7 @@
           To <dfn>process the <code>min_platform_version</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
         </p>
         <ol class="algorithm">
-          <li>If |json|["min_platform_version"] does not [=map/exist=], or if the type of |json|["min_platform_version"] is not [=string=], return failure.</li>
+          <li>If |json|["min_platform_version"] does not [=map/exist=], or if the type of |json|["min_platform_version"] is not [=string=], return.</li>
           <li>Set |manifest|["min_platform_version"] to |json|["min_platform_version"].</li>
         </ol>         
       </section>
@@ -769,7 +769,7 @@
           To <dfn>process the <code>pages</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
         </p>
         <ol class="algorithm">
-          <li>If |json|["pages"] does not [=map/exist=], or if the type of |json|["pages"] is not [=list=], return failure.</li>
+          <li>If |json|["pages"] does not [=map/exist=], or if the type of |json|["pages"] is not [=list=], return.</li>
           <li>Let |pages| be a new [=list=].</li>
           <li>[=list/For each=] |item:string| of |json|["pages"]:
             <ol>
@@ -800,9 +800,10 @@
           <li>Let |permissions:list| be a new [=list=].</li>
           <li>[=list/For each=] |item:object| of |json|["req_permissions"]:
             <ol>
-              <li>If the type of |item| is not [=object=], return failure.</li>
+              <li>If the type of |item| is not [=object=], [=iteration/continue=].</li>
               <li>Let |permission:ordered map| be an [=ordered map=].</li>
               <li><a>Process the permission resource's <code>name</code> member</a> passing |item| and |permission|.</li>
+              <li>If |permission|["name"] does not [=map/exist=], [=iteration/continue=].</li>
               <li><a>Process the permission resource's <code>reason</code> member</a> passing |item| and |permission|.</li>
               <li>[=list/Append=] |permission| to |permissions|.</li>
             </ol>
@@ -852,7 +853,7 @@
           To <dfn>process the <code>version_name</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
         </p>
         <ol class="algorithm">
-          <li>If |json|["version_name"] does not [=map/exist=], or if the type of |json|["version_name"] is not [=string=], return failure.</li>
+          <li>If |json|["version_name"] does not [=map/exist=], or if the type of |json|["version_name"] is not [=string=], return.</li>
           <li>Set |manifest|["version_name"] to |json|["version_name"].</li>
         </ol>
       </section>
@@ -867,7 +868,7 @@
             A <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> MAY include <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-page">MiniApp pages</a> and Widgets concurrently.
         </p> 
         <p>
-            A widget, as part of a MiniApp, adopt some of the members of the [=MiniApp manifest=], including:
+            A widget, as part of a MiniApp, applies some of the members of the [=MiniApp manifest=], including:
         </p> 
         <ul>
           <li><a><code>dir</code></a>;</li>
@@ -895,7 +896,7 @@
               <li><a>Process the widget's <code>name</code> member</a> passing |item| and |widget|.</li>
               <li><a>Process the widget's <code>path</code> member</a> passing |item| and |widget|.</li>
               <li><a>Process the widget's <code>min_platform_version</code> member</a> passing |item|, |manifest|, and |widget|.</li>
-              <li>If |widget|["name"] does not [=map/exist=], or if |item|["path"] does not [=map/exist=], [=iteration/continue=].</li>              
+              <li>If |widget|["name"] does not [=map/exist=], or if |item|["path"] does not [=map/exist=], [=iteration/continue=].</li>
               <li>[=list/Append=] |widget| to |widgets|.</li>
             </ol>
           </li>
@@ -942,13 +943,23 @@
         To <dfn data-lt="processing a MiniApp manifest">process a MiniApp manifest</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
       </p>
       <ol class="algorithm">
+        <li>If |manifest|["name"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
+        <li>If |manifest|["icons"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
+        <li>Let |icons:ordered map| be |manifest|["icons"].</li>
+        <li>If |icons|["src"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
+        <li>If |manifest|["icons"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>        
         <li><a>Process the <code>app_id</code> member</a> passing |json| and |manifest|.</li>
+        <li>If |manifest|["app_id"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
         <li><a>Process the <code>description</code> member</a> passing |json| and |manifest|.</li>
         <li><a>Process the <code>min_platform_version</code> member</a> passing |json| and |manifest|.</li>
+        <li>If |manifest|["min_platform_version"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
         <li><a>Process the <code>pages</code> member</a> passing |json| and |manifest|.</li>
+        <li>If |manifest|["pages"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
         <li><a>Process the <code>req_permissions</code> member</a> passing |json| and |manifest|.</li>
         <li><a>Process the <code>version_code</code> member</a> passing |json| and |manifest|.</li>
+        <li>If |manifest|["version_code"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
         <li><a>Process the <code>version_name</code> member</a> passing |json| and |manifest|.</li>
+        <li>If |manifest|["version_name"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>        
         <li><a>Process the <code>widgets</code> member</a> passing |json| and |manifest|.</li>
         <li><a>Process the <code>window</code> member</a> passing |json| and |manifest|.</li>
       </ol>      
@@ -973,7 +984,7 @@
       </p>
       <ol class="algorithm">
         <li>If |json|["name"] does not [=map/exist=], or<br/> 
-            if the type of |json|["name"] is not [=string=], or if |json|["name"] is the empty string, return failure.</li>
+            if the type of |json|["name"] is not [=string=], or if |json|["name"] is the empty string, return.</li>
         <li>Set |permission|["name"] to |json|["name"].</li>
       </ol>          
     </section>
