@@ -891,12 +891,12 @@
           <li>Let |widgets:list| be a new empty [=list=].</li>
           <li>[=list/For each=] |item:object| of |json|["widgets"]:
             <ol>
-              <li>If the type of |item| is not [=object=], return failure.</li>
+              <li>If the type of |item| is not [=object=], return.</li>
               <li>Let |widget| be an [=ordered map=].</li>
               <li><a>Process the widget's <code>name</code> member</a> passing |item| and |widget|.</li>
               <li><a>Process the widget's <code>path</code> member</a> passing |item| and |widget|.</li>
               <li><a>Process the widget's <code>min_platform_version</code> member</a> passing |item|, |manifest|, and |widget|.</li>
-              <li>If |widget|["name"] does not [=map/exist=], or if |item|["path"] does not [=map/exist=], return failure.</li>              
+              <li>If |widget|["name"] does not [=map/exist=], or if |item|["path"] does not [=map/exist=], return.</li>              
               <li>[=list/Append=] |widget| to |widgets|.</li>
             </ol>
           </li>
