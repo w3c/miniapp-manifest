@@ -801,7 +801,7 @@
           <li>[=list/For each=] |item:object| of |json|["req_permissions"]:
             <ol>
               <li>If the type of |item| is not [=object=], return failure.</li>
-              <li>Let |permission| be an [=ordered map=].</li>
+              <li>Let |permission:ordered map| be an [=ordered map=].</li>
               <li><a>Process the permission resource's <code>name</code> member</a> passing |item| and |permission|.</li>
               <li><a>Process the permission resource's <code>reason</code> member</a> passing |item| and |permission|.</li>
               <li>[=list/Append=] |permission| to |permissions|.</li>
@@ -890,12 +890,12 @@
           <li>Let |widgets:list| be a new empty [=list=].</li>
           <li>[=list/For each=] |item:object| of |json|["widgets"]:
             <ol>
-              <li>If the type of |item| is not [=object=], return.</li>
-              <li>Let |widget| be an [=ordered map=].</li>
+              <li>If the type of |item| is not [=object=], continue.</li>
+              <li>Let |widget:ordered map| be an [=ordered map=].</li>
               <li><a>Process the widget's <code>name</code> member</a> passing |item| and |widget|.</li>
               <li><a>Process the widget's <code>path</code> member</a> passing |item| and |widget|.</li>
               <li><a>Process the widget's <code>min_platform_version</code> member</a> passing |item|, |manifest|, and |widget|.</li>
-              <li>If |widget|["name"] does not [=map/exist=], or if |item|["path"] does not [=map/exist=], return.</li>              
+              <li>If |widget|["name"] does not [=map/exist=], or if |item|["path"] does not [=map/exist=], continue.</li>              
               <li>[=list/Append=] |widget| to |widgets|.</li>
             </ol>
           </li>
@@ -1010,7 +1010,7 @@
         To <dfn>process the widget's <code>name</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |widget:ordered map|:
       </p>
       <ol class="algorithm">
-        <li>If |json|["name"] does not [=map/exist=], or if the type of |json|["name"] is not [=string=], return failure.</li>
+        <li>If |json|["name"] does not [=map/exist=], or if the type of |json|["name"] is not [=string=], return.</li>
         <li>Set |widget|["name"] to |json|["name"].</li>
       </ol>      
     </section>
@@ -1023,9 +1023,9 @@
         To <dfn>process the widget's <code>path</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |widget:ordered map|:
       </p>
       <ol class="algorithm">
-        <li>If |json|["path"] does not [=map/exist=], or if the type of |json|["path"] is not [=string=], return failure.</li>
+        <li>If |json|["path"] does not [=map/exist=], or if the type of |json|["path"] is not [=string=], return.</li>
         <li>Let |url:URL| be the result of [=URL Parser|parsing=] |json|["path"].</li>
-        <li>If |url| is failure, return failure.</li>
+        <li>If |url| is failure, return.</li>
         <li>Set |widget|["path"] to |url|.</li>
       </ol>
     </section>
