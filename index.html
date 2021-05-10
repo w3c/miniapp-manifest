@@ -941,7 +941,7 @@
         The MiniApp manifest, as an extension of the [=Application manifest=], provides a supplementary algorithm to be processed at the <a href="https://www.w3.org/TR/appmanifest/#dfn-extension-point">extension point</a> of the <a href="https://www.w3.org/TR/appmanifest/#dfn-processing-a-manifest" data-link-type="dfn">processing a manifest</a> algorithm defined in [[APPMANIFEST]].
       </p>
       <p>
-        To <dfn data-lt="processing a MiniApp manifest">process a MiniApp manifest</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+        To <dfn data-lt="processing a MiniApp manifest">process a MiniApp manifest</dfn> at the extension point, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
       </p>
       <ol class="algorithm">
         <li>If |manifest|["name"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
