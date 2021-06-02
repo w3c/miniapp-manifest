@@ -799,7 +799,7 @@
           <span><code>platform_version</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn><code>platform_version</code></dfn> member contains a <a>MiniApp platform version resource</a> [=object=] to represent the <dfn><code>min_platform_version</code></dfn>, <dfn><code>target_platform_version</code></dfn>, and <dfn><code>release_type</code></dfn>.
+          The [=MiniApp manifest's=] <dfn><code>platform_version</code></dfn> member contains a <a>MiniApp platform version resource</a> [=object=] to represent the <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>min_platform_version</code></a>, <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>target_platform_version</code></a>, and <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>release_type</code></a>.
         </p>
 
 
@@ -1061,7 +1061,7 @@
       <h3><code>release_type</code> member</h3>
 
         <p>
-          The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>release_type</code></dfn> member is a [=string=] that Indicates the release type of the target API version required for running the application. The value can be CanaryN, BetaN, or Release. N represents a positive integer. (e.g., <code>"Beta1"</code>).
+          The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>release_type</code></dfn> member is a [=string=] that indicates the release type of the target API version required for running the application. The value can be CanaryN, BetaN, or Release. N represents a positive integer. (e.g., <code>"Beta1"</code>).
         </p>
        
         <p>
@@ -1205,7 +1205,7 @@
         The optional [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource"><code>min_platform_version</code></dfn> member is a [=string=] that indicates the minimum platform version supported for a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-widget">MiniApp widget</a>.
       </p>
       <p class="note" title='Usage'>
-        Since Widget APIs and MiniApp APIs may differ, the declaration of the minimum version of the platform may be different. Thus, if the widgets member omits <a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>min_platform_version</code></a> explicitly, the user agent will consider the same requirement as the specified in the <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>min_platform_version</code></a> member at the root of the [=manifest=].
+        Since Widget APIs and MiniApp APIs may differ, the declaration of the minimum version of the platform may be different. Thus, if the widgets member omits <a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>min_platform_version</code></a> explicitly, the user agent will consider the same requirement as the specified in the <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>min_platform_version</code></a> member in the <a><code>platform_version</code></a> object.
         </p>
       </p>
       <p>
