@@ -100,7 +100,7 @@ The following table mainly describes the comparison between the manifest attribu
 :---    |:--        |:---
 dir	    |   dir     |	Same
 lang    |	lang    |	Same
-appID	|-          |	MiniApp only
+app_id	|-          |	MiniApp only
 name	|name       |	Same
 short_name	|short_name|	Same
 description	|description|	Same
