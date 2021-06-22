@@ -306,7 +306,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a><code>color_mode</code></a></th>
+            <th scope="row"><a><code>color_scheme</code></a></th>
             <td> [=string=] </td>
             <td>No</td>
             <td>
@@ -600,7 +600,7 @@
               "reason": "To scan a QR code"
             }
           ]，
-          "color_mode": "light",
+          "color_scheme": "light",
           "device_type": [
              "phone",
              "tv",
@@ -957,17 +957,17 @@
       </section>
       <section>
         <h3>
-          <span><code>color_mode</code> member</span>
+          <span><code>color_scheme</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn><code>color_mode</code></dfn> member indicates the color mode of the MiniApp. It provides three modes to be selected, <code>dark</code>, <code>light</code>, and <code>auto</code>. That can help users to switch between them according to their habits. When it is set to <code>auto</code>, the MiniApp's theme color automatically adapts to the system theme color.
+          The [=MiniApp manifest's=] <dfn><code>color_scheme</code></dfn> member indicates the default color scheme of the MiniApp. It provides three modes to be selected, "dark", "light", and "auto". The light and dark themes correspond to the corresponding theme colors and images in the CSS file. That can help users to switch between them according to their habits. When it is set to "auto", the MiniApp's theme color automatically adapts to the system theme color.
         </p>
         <p>
-          To <dfn>process the <code>color_mode</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+          To <dfn>process the <code>color_scheme</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
         </p>
         <ol class="algorithm">
-          <li>If |json|["color_mode"] does not [=map/exist=], or if the type of |json|["color_mode"] is not [=string=], return.</li>
-          <li>Set |manifest|["color_mode"] to |json|["color_mode"].</li>
+          <li>If |json|["color_scheme"] does not [=map/exist=], or if the type of |json|["color_scheme"] is not [=string=], return.</li>
+          <li>Set |manifest|["color_scheme"] to |json|["color_scheme"].</li>
         </ol>
       </section>
       <section>
@@ -975,7 +975,7 @@
           <span><code>device_type</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn><code>device_type</code></dfn> member is an array of strings that indicates the type of devices on which the MiniApp can run. The value can be phone (smartphones), tablet (tablets), tv (smart TVs), car (head units), wearable (wearables), iot (IoT devices).
+          The [=MiniApp manifest's=] <dfn><code>device_type</code></dfn> member is an array of strings that indicates the type of devices on which the MiniApp can run. It is used for device match checking, for example, the platform can check its own type, and if the components, styles, or APIs being called match the device type specified by the attribute. If this check finds any unmatched instances, the platform sends a notification to the developers. The value of this attribute can be flexibly defined to support existing and future devices. For example, it can be set to "smartphones", "tablet", "tv", "car", "wearable", "iot".
         </p>
         <p>
           To <dfn>process the <code>device_type</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
@@ -1011,7 +1011,7 @@
         <li><a>Process the <code>version_name</code> member</a> passing |json| and |manifest|.</li>
         <li><a>Process the <code>widgets</code> member</a> passing |json| and |manifest|.</li>
         <li><a>Process the <code>window</code> member</a> passing |json| and |manifest|.</li>
-        <li><a>Process the <code>color_mode</code> member</a> passing |json| and |manifest|.</li>	
+        <li><a>Process the <code>color_scheme</code> member</a> passing |json| and |manifest|.</li>	
         <li><a>Process the <code>device_type</code> member</a> passing |json| and |manifest|.</li>			
       </ol>      
     </section>
