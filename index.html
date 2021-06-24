@@ -36,7 +36,7 @@
     </style>
 
     <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
-    <!-- <script defer src="https://w3c.github.io/miniapp/specs/script.js"></script> -->
+<!-- <script defer src="https://w3c.github.io/miniapp/specs/script.js"></script> -->
 
     <script class="remove">
         var respecConfig = {
@@ -94,12 +94,13 @@
                   href: "https://w3c.github.io/miniapp-packaging/"
               },
             },
-            a11y: true,            
+            a11y: true,
+            xref: "web-platform",
         };
     </script>
 </head>
 
-<body data-cite="APPMANIFEST MINIAPP-PACKAGING MANIFEST-APP-INFO INFRA URL HTML">
+<body data-cite="APPMANIFEST MINIAPP-PACKAGING MANIFEST-APP-INFO INFRA URL HTML WEBIDL">
   <section id='abstract'>
     <p>
       This specification is a registry of supplementary members for the <a href="https://www.w3.org/TR/appmanifest/">Web Application Manifest</a> and the <a href="https://www.w3.org/TR/manifest-app-info/">Web App Manifest - Application Information</a> specifications that provide additional metadata to an application manifest to describe <a href="https://w3c.github.io/miniapp-packaging/#dfn-miniapp" data-link-type="dfn">MiniApps</a>. This JSON-based manifest file enables developers to set up basic information, window style, page route, and other information of a MiniApp. The manifest also includes information about the window style like the navigation bar, title, window background color, page routing information, and the widgets that are part of a MiniApp.
@@ -134,13 +135,11 @@
           <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a>
         </li>
         <li>
-          <a><code>version_name</code></a>
+          <a><code>version</code></a>
         </li>  
+
         <li>
-          <a><code>version_code</code></a>
-        </li>
-        <li>
-          <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>min_platform_version</code></a>
+          <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>platform_version</code></a>
         </li>
         <li>
           <a><code>pages</code></a>
@@ -253,11 +252,11 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a data-link-for="MiniApp manifest" data-link-type="dfn"><code>min_platform_version</code></a></th>
-            <td> [=string=] </td>
-            <td>Yes</td>
+            <th scope="row"><a data-link-for="MiniApp manifest" data-link-type="dfn"><code>platform_version</code></a></th>
+            <td> <a>platform version resource</a> </td>
+			<td>Yes</td>
             <td>
-              <span>Minimum platform version supported</span>
+              <span>Platform version supported</span>
             </td>
           </tr>
           <tr>
@@ -291,21 +290,14 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a><code>version_code</code></a></th>
-            <td> [=string=] </td>
+            <th scope="row"><a><code>version</code></a></th>
+            <td> <a>version resource</a> </td>
             <td>Yes</td>
             <td>
-              <span>Version code</span>
+              <span>MiniApp Version</span>
             </td>
           </tr>          
-          <tr>
-            <th scope="row"><a><code>version_name</code></a></th>
-            <td> [=string=] </td>
-            <td>Yes</td>
-            <td>
-              <span>Version name</span>
-            </td>
-          </tr>
+
           <tr>
             <th scope="row"><a><code>widgets</code></a></th>
             <td> <a>widget resource</a> [=array=] </td>
@@ -363,6 +355,47 @@
       </table>
 
       <table class="members">
+        <caption>Members of [=platform version resource=] objects<br/>(<a><code>platform_version</code></a> object)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Member</th>
+            <th scope="col">Type</th>
+            <th scope="col">Required</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>min_code</code></a></th>
+            <td> [=number=]  </td>
+            <td>Yes</td>
+            <td>
+                <span>Indicates the minimum platform version required for running the MiniApp. </span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>target_code</code></a></th>
+            <td> [=string=] </td>
+            <td>No</td>
+            <td>
+              <span>Indicates the target platform version required for running the application. </span>
+            </td>
+          </tr>
+		  
+          <tr>
+            <th scope="row"><a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>release_type</code></a></th>
+            <td> [=string=] </td>
+            <td>No</td>
+            <td>
+              <span>Indicates the release type of the target platform version required for running the application. For example, it can be CanaryN, BetaN, or Release. N represents a positive integer. In these examples, 1) Canary: indicates a restrictedly released version. 2) Beta: indicates a publicly released beta version. 3)Release: indicates a publicly released official version. </span>
+            </td>
+          </tr>		  
+        </tbody>
+      </table>
+
+
+
+      <table class="members">
         <caption>Members of [=permission resource=] objects<br/>(<a><code>req_permissions</code></a> array)</caption>
         <thead>
           <tr>
@@ -389,6 +422,36 @@
                 <span>Reason to request the permission</span>
             </td>
           </tr>          
+        </tbody>
+      </table>
+
+      <table class="members">
+        <caption>Members of [=version resource=] objects<br/>(<a><code>version</code></a> object)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Member</th>
+            <th scope="col">Type</th>
+            <th scope="col">Required</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><a data-link-for="MiniApp version resource" data-link-type="dfn"><code>code</code></a></th>
+            <td> [=number=]  </td>
+            <td>Yes</td>
+            <td>
+                <span>Version code</span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><a data-link-for="MiniApp version resource" data-link-type="dfn"><code>name</code></a></th>
+            <td> [=string=] </td>
+            <td>Yes</td>
+            <td>
+              <span>Version Name</span>
+            </td>
+          </tr>
         </tbody>
       </table>
 
@@ -420,8 +483,8 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>min_platform_version</code></a></th>
-            <td> [=string=] </td>
+            <th scope="row"><a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>min_code</code></a></th>
+            <td> [=number=] </td>
             <td>No</td>
             <td>
               <span>Minimum platform version supported</span>
@@ -540,6 +603,9 @@
         </tbody>
       </table>
 
+
+
+
       <p class="note">
       Other [=application manifest=] members such as <a href="https://www.w3.org/TR/appmanifest/#scope-member"><code>scope</code></a>,
         <a href="https://www.w3.org/TR/appmanifest/#theme_color-member"><code>theme_color</code></a>,
@@ -562,8 +628,10 @@
           "app_id": "org.example.miniapp",
           "name": "MiniApp Demo",
           "short_name": "MiniApp",
-          "version_name": "1.0.1",
-          "version_code": 11,
+          "version": {
+            "name": "1.0.1",
+            "code": 11
+          },
           "description": "A Simple MiniApp Demo",
           "icons": [
             {
@@ -571,7 +639,11 @@
               "sizes": "48x48"
             }
           ],
-          "min_platform_version": "1.0.0",
+          "platform_version":{
+            "min_code": "1",
+            "target_code": "2",
+            "release_type": "Beta1"			
+          },
           "pages": [
             "pages/index/index",
             "pages/detail/detail"
@@ -587,7 +659,7 @@
             {
               "name": "widget",
               "path": "widgets/index/index",
-              "min_platform_version": "2.0.0"
+              "min_code": "2"
             }
           ],
           "req_permissions": [
@@ -740,10 +812,11 @@
           To <dfn>process the <code>app_id</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
         </p>
         <ol class="algorithm">
-          <li>If |json|["app_id"] does not [=map/exist=], or if the type of |json|["app_id"] is not [=string=], return failure.</li>
+          <li>If |json|["app_id"] does not [=map/exist=], or if the type of |json|["app_id"] is not [=string=], return.</li>
           <li>Set |manifest|["app_id"] to |json|["app_id"].</li>
         </ol>        
       </section>
+	  
       <section>
         <h3>
           <span><code>color_scheme</code> member</span>
@@ -805,22 +878,25 @@
       </section>  	    
       <section>
         <h3>
-          <span><code>min_platform_version</code> member</span>
+          <span><code>platform_version</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn data-dfn-for="MiniApp manifest"><code>min_platform_version</code></dfn> member is a [=string=] that indicates the minimum supported version of the MiniApp user agent's platform to ensure the regular operation of a MiniApp (e.g., <code>"1.0.0"</code>).
+          The [=MiniApp manifest's=] <dfn><code>platform_version</code></dfn> member contains a <a>MiniApp platform version resource</a> [=object=] to represent the <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>min_code</code></a>, <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>target_code</code></a>, and <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>release_type</code></a>.
         </p>
-        <p class="note" title='Usage'>
-          The RECOMMENDED format for this member is <code>"X.Y.Z"</code>, where <code>X</code>, <code>Y</code>, and <code>Z</code> are non-negative integer values (e.g., <samp>"1.10.0"</samp>), as specified in <cite>Semantic Versioning</cite> [[SEMANTIC-VERSIONING]].
-        </p>        
         <p>
-          To <dfn>process the <code>min_platform_version</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+          To <dfn>process the <code>platform_version</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
         </p>
         <ol class="algorithm">
-          <li>If |json|["min_platform_version"] does not [=map/exist=], or if the type of |json|["min_platform_version"] is not [=string=], return failure.</li>
-          <li>Set |manifest|["min_platform_version"] to |json|["min_platform_version"].</li>
-        </ol>         
+          <li>If |json|["platform_version"] does not [=map/exist=], or if the type of |json|["platform_version"] is not [=object=], return.</li>
+          <li>Let |platform_version:ordered map| be a new [=ordered map=].</li>
+          <li><a>Process the platform version's <code>min_code</code> member</a> passing |json|["platform_version"] and |platform_version|.</li>
+          <li><a>Process the platform version's <code>target_code</code> member</a> passing |json|["platform_version"] and |platform_version|.</li>         
+          <li><a>Process the platform version's <code>release_type</code> member</a> passing |json|["platform_version"] and |platform_version|.</li> 
+          <li>If |platform_version|["min_code"] does not [=map/exist=], return failure.</li>  		  
+		      <li>Set |manifest|["platform_version"] to |platform_version|.</li>
+        </ol>
       </section>
+	
       <section>
         <h3>
           <span><code>pages</code> member</span>
@@ -850,13 +926,13 @@
           To <dfn>process the <code>pages</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
         </p>
         <ol class="algorithm">
-          <li>If |json|["pages"] does not [=map/exist=], or if the type of |json|["pages"] is not [=list=], return failure.</li>
+          <li>If |json|["pages"] does not [=map/exist=], or if the type of |json|["pages"] is not [=list=], return.</li>
           <li>Let |pages| be a new [=list=].</li>
           <li>[=list/For each=] |item:string| of |json|["pages"]:
             <ol>
               <li>If the type of |item| is not [=string=], return.</li>
               <li>Let |url:URL| be the result of [=URL Parser|parsing=] |item|.</li>
-              <li>If |url| is failure, continue.</li>
+              <li>If |url| is failure, [=iteration/continue=].</li>
               <li>[=list/Append=] |pages| to |url|.</li>
             </ol>
           </li>
@@ -881,9 +957,10 @@
           <li>Let |permissions:list| be a new [=list=].</li>
           <li>[=list/For each=] |item:object| of |json|["req_permissions"]:
             <ol>
-              <li>If the type of |item| is not [=object=], return failure.</li>
-              <li>Let |permission| be an [=ordered map=].</li>
+              <li>If the type of |item| is not [=object=], [=iteration/continue=].</li>
+              <li>Let |permission:ordered map| be an [=ordered map=].</li>
               <li><a>Process the permission resource's <code>name</code> member</a> passing |item| and |permission|.</li>
+              <li>If |permission|["name"] does not [=map/exist=], [=iteration/continue=].</li>
               <li><a>Process the permission resource's <code>reason</code> member</a> passing |item| and |permission|.</li>
               <li>[=list/Append=] |permission| to |permissions|.</li>
             </ol>
@@ -893,51 +970,28 @@
         <p class="note" title="Protection of user's privacy">
           User agents will ask for the user's consent to protect their privacy during access to these specific features. This information in the <a><code>req_permissions</code></a> member may be used by app stores or hosting platforms to filter MiniApps according to the user's preferences, privacy policy, or device capabilities. 
         </p>
-      </section>      
+      </section> 
+
       <section>
         <h3>
-          <span><code>version_code</code> member</span>
+          <span><code>version</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn><code>version_code</code></dfn> member is a non-negative integer [=number=] that represents the version of a MiniApp. It is mainly used for enhancing the maintainability and security of MiniApp (e.g., compatibility among incremental versions). The <a><code>version_code</code></a> member aims at supporting the development and deployment process, and it is not usually displayed to the end-user.
+          The [=MiniApp manifest's=] <dfn><code>version</code></dfn> member contains a <a>MiniApp version resource</a> [=object=] to represent the <dfn><code>code</code></dfn> and <dfn><code>name</code></dfn>.
         </p>
         <p>
-          Value by default: <code>1</code>.
-        </p>
-        <div class="note" title='Usage'>
-          <p>
-            The value of this member is usually incremented according to the version iteration process.
-          </p>
-        </div>
-        <p>
-          To <dfn>process the <code>version_code</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+          To <dfn>process the <code>version</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
         </p>
         <ol class="algorithm">
-          <li>If |json|["version_name"] does not [=map/exist=], or if the type of |json|["version_code"] is not [=number=], return failure.</li>
-          <li>Let |version:number| be a [=number=], initially 1.</li>
-          <li>If |json|["version_code"] is greater than 0, then: <br/>
-            Set |version| to |json|["version_code"].</li>
-          <li>Set |manifest|["version_code"] to |version|.</li>
-        </ol>        
+          <li>If |json|["version"] does not [=map/exist=], or if the type of |json|["version"] is not [=object=], return.</li>
+          <li>Let |version:ordered map| be a new [=ordered map=].</li>
+          <li><a>Process the version's <code>code</code> member</a> passing |json|["version"] and |version|.</li>
+          <li><a>Process the version's <code>name</code> member</a> passing |json|["version"] and |version|.</li>          
+    		  <li>Set |manifest|["version"] to |version|.</li>
+        </ol>             
       </section>
-      <section>
-        <h3>
-          <span><code>version_name</code> member</span>
-        </h3>
-        <p>
-          The [=MiniApp manifest's=] <dfn><code>version_name</code></dfn> member is a [=string=] mainly used for describing information on the version of a MiniApp, playing an essential role in version control, MiniApp application, and platform compatibility. It is usually considered as the version that is shown publicly and displayed to the user.
-        </p>
-        <p class="note" title='Usage'>
-          The RECOMMENDED format for this member is <code>X.Y.Z</code>, where <code>X</code>, <code>Y</code>, and <code>Z</code> are non-negative integer values (e.g., <samp>1.10.0</samp>), as specified in <cite>Semantic Versioning</cite> [[SEMANTIC-VERSIONING]].
-        </p>
-        <p>
-          To <dfn>process the <code>version_name</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
-        </p>
-        <ol class="algorithm">
-          <li>If |json|["version_name"] does not [=map/exist=], or if the type of |json|["version_name"] is not [=string=], return failure.</li>
-          <li>Set |manifest|["version_name"] to |json|["version_name"].</li>
-        </ol>
-      </section>
+	  
+
       <section>
         <h3>
           <span><code>widgets</code> member</span>
@@ -949,7 +1003,7 @@
             A <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> MAY include <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-page">MiniApp pages</a> and Widgets concurrently.
         </p> 
         <p>
-            A widget, as part of a MiniApp, adopt some of the members of the [=MiniApp manifest=], including:
+            A widget, as part of a MiniApp, applies some of the members of the [=MiniApp manifest=], including:
         </p> 
         <ul>
           <li><a><code>dir</code></a>;</li>
@@ -958,8 +1012,7 @@
           <li><a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a>;</li>
           <li><a><code>short_name</code></a>;</li>
           <li><a><code>icons</code></a>;</li>
-          <li><a><code>version_name</code></a>; and</li>
-          <li><a><code>version_code</code></a></li>
+          <li><a><code>version</code></a></li>
         </ul>
         <p>
           However, a widget also has its exclusive fields as defined in the <a>MiniApp widget resource</a>.
@@ -972,12 +1025,12 @@
           <li>Let |widgets:list| be a new empty [=list=].</li>
           <li>[=list/For each=] |item:object| of |json|["widgets"]:
             <ol>
-              <li>If the type of |item| is not [=object=], return failure.</li>
-              <li>Let |widget| be an [=ordered map=].</li>
+              <li>If the type of |item| is not [=object=], [=iteration/continue=].</li>
+              <li>Let |widget:ordered map| be an [=ordered map=].</li>
               <li><a>Process the widget's <code>name</code> member</a> passing |item| and |widget|.</li>
               <li><a>Process the widget's <code>path</code> member</a> passing |item| and |widget|.</li>
-              <li><a>Process the widget's <code>min_platform_version</code> member</a> passing |item|, |manifest|, and |widget|.</li>
-              <li>If |widget|["name"] does not [=map/exist=], or if |item|["path"] does not [=map/exist=], return failure.</li>              
+              <li><a>Process the widget's <code>min_code</code> member</a> passing |item|, |manifest|, and |widget|.</li>
+              <li>If |widget|["name"] does not [=map/exist=], or if |item|["path"] does not [=map/exist=], [=iteration/continue=].</li>              
               <li>[=list/Append=] |widget| to |widgets|.</li>
             </ol>
           </li>
@@ -1018,24 +1071,81 @@
     <section id="processing" data-cite="APPMANIFEST">
       <h3>Processing the manifest</h3>
       <p>
-        The MiniApp manifest, as an extension of the [=Application manifest=], provides a supplementary algorithm to be processed at the <a href="https://www.w3.org/TR/appmanifest/#dfn-extension-point">extension point</a> of the <a href="https://www.w3.org/TR/appmanifest/#dfn-processing-a-manifest" data-link-type="dfn">processing a manifest</a> algorithm defined in [[APPMANIFEST]].
+        The MiniApp manifest, as an extension of the [=Application manifest=], provides a supplementary algorithm to be processed at the <a href="https://www.w3.org/TR/appmanifest/#dfn-extension-point" data-link-type="dfn">extension point</a> of the <a href="https://www.w3.org/TR/appmanifest/#dfn-processing-a-manifest" data-link-type="dfn">processing a manifest</a> algorithm defined in [[APPMANIFEST]]. Thus, the user agent starts by processing the [=Application manifest=]'s members and, at the extension point, continues with processing the MiniApp manifest members using the following algorithm.     
       </p>
       <p>
-        To <dfn data-lt="processing a MiniApp manifest">process a MiniApp manifest</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+        To <dfn data-lt="processing a MiniApp manifest">process a MiniApp manifest</dfn> at the extension point, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
       </p>
       <ol class="algorithm">
+        <li>If |manifest|["name"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
+        <li>If |manifest|["icons"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
+        <li>Let |icons:ordered map| be |manifest|["icons"].</li>
+        <li>If |icons|["src"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
+        <li>If |manifest|["icons"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>        
         <li><a>Process the <code>app_id</code> member</a> passing |json| and |manifest|.</li>
+        <li>If |manifest|["app_id"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
         <li><a>Process the <code>color_scheme</code> member</a> passing |json| and |manifest|.</li>	
         <li><a>Process the <code>description</code> member</a> passing |json| and |manifest|.</li>
         <li><a>Process the <code>device_type</code> member</a> passing |json| and |manifest|.</li>			
-        <li><a>Process the <code>min_platform_version</code> member</a> passing |json| and |manifest|.</li>
         <li><a>Process the <code>pages</code> member</a> passing |json| and |manifest|.</li>
+        <li>If |manifest|["pages"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
+        <li><a>Process the <code>platform_version</code> member</a> passing |json| and |manifest|.</li>
+        <li>If |manifest|["platform_version"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
         <li><a>Process the <code>req_permissions</code> member</a> passing |json| and |manifest|.</li>
-        <li><a>Process the <code>version_code</code> member</a> passing |json| and |manifest|.</li>
-        <li><a>Process the <code>version_name</code> member</a> passing |json| and |manifest|.</li>
+        <li><a>Process the <code>version</code> member</a> passing |json| and |manifest|.</li>
+        <li>If |manifest|["version"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
         <li><a>Process the <code>widgets</code> member</a> passing |json| and |manifest|.</li>
         <li><a>Process the <code>window</code> member</a> passing |json| and |manifest|.</li>
       </ol>      
+    </section>
+  </section>
+
+  <section id="sec-platform-version-resources">
+    <h2>MiniApp platform version resources</h2>
+    <p>
+      A <dfn data-lt="platform version resource|MiniApp platform version resources|MiniApp platform version resource's">MiniApp platform version resource</dfn> is an [=object=] that indicates the minimum and target platform versions to be used by the MiniApp.
+    </p>
+    <p>
+      The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of a [=platform version resource=].
+    </p>
+    <section>
+      <h3><code>min_code</code> member</h3>
+        <p>
+          The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>min_code</code></dfn> member is a non-negative integer [=number=] that indicates the minimum supported version of the MiniApp user agent's platform to ensure the regular operation of a MiniApp.
+        </p>      
+        <p>
+          To <dfn>process the platform version's <code>min_code</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |platform_version:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["min_code"] does not [=map/exist=], or if the type of |json|["min_code"] is not [=number=], return failure.</li>
+          <li>Set |platform_version|["min_code"] to |json|["min_code"].</li>
+        </ol>                 
+    </section>
+    <section>
+      <h3><code>target_code</code> member</h3>
+        <p>
+          The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>target_code</code></dfn> member is a non-negative integer [=number=] that indicates the target supported version of the MiniApp user agent's platform to ensure the regular operation of a MiniApp.
+        </p>
+        <p>
+          To <dfn>process the platform version's <code>target_code</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |platform_version:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["target_code"] does not [=map/exist=], or if the type of |json|["target_code"] is not [=number=], return.</li>
+          <li>Set |platform_version|["target_code"] to |json|["target_code"].</li>
+        </ol>                 
+    </section>
+    <section>
+      <h3><code>release_type</code> member</h3>
+        <p>
+          The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>release_type</code></dfn> member is a [=string=] that indicates the release type of the MiniApp user agent's target platform version that is required for running the application. For example, the value can be set to CanaryN, BetaN, or Release. N represents a positive integer, such as <code>"Beta1"</code>.
+        </p>
+        <p>
+          To <dfn>process the platform version's <code>release_type</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |platform_version:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["release_type"] does not [=map/exist=], or if the type of |json|["release_type"] is not [=string=], return.</li>
+          <li>Set |platform_version|["release_type"] to |json|["release_type"].</li>
+        </ol>                 
     </section>
   </section>
 
@@ -1057,7 +1167,7 @@
       </p>
       <ol class="algorithm">
         <li>If |json|["name"] does not [=map/exist=], or<br/> 
-            if the type of |json|["name"] is not [=string=], or if |json|["name"] is the empty string, return failure.</li>
+            if the type of |json|["name"] is not [=string=], or if |json|["name"] is the empty string, return.</li>
         <li>Set |permission|["name"] to |json|["name"].</li>
       </ol>          
     </section>
@@ -1077,6 +1187,50 @@
     </section>
   </section>
 
+
+
+  <section id="sec-version-resources">
+    <h2>MiniApp version resources</h2>
+    <p>
+      A <dfn data-lt="version resource|MiniApp version resources|MiniApp version resource's">MiniApp version resource</dfn> is an [=object=] that describes the version code and version name of a MiniApp.
+    </p>
+    <p>
+      The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of a [=version resource=].
+    </p>
+    <section>
+      <h3><code>code</code> member</h3>
+      <p>
+        The [=MiniApp version resource's=] <dfn data-dfn-for="MiniApp version resource"><code>code</code></dfn> member is a non-negative integer [=number=] that represents the version of a MiniApp. It is mainly used for enhancing the maintainability and security of MiniApp (e.g., compatibility among incremental versions). The <a><code>code</code></a> member aims at supporting the development and deployment process, and it is not usually displayed to the end-user.
+      </p>
+      <p>
+        To <dfn>process the version's <code>code</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |version:ordered map|:
+      </p>
+        <ol class="algorithm">
+          <li>If |json|["code"] does not [=map/exist=], or if the type of |json|["code"] is not [=number=], return failure.</li>
+          <li>Let |version:number| be a [=number=], initially 1.</li>
+          <li>If |json|["code"] is greater than 0, then: <br/>
+            Set |version| to |json|["code"].</li>
+          <li>Set |version|["code"] to |version|.</li>
+        </ol>           
+    </section>
+    <section>
+      <h3><code>name</code> member</h3>
+      <p>
+        The [=MiniApp version resource's=] <dfn data-dfn-for="MiniApp version resource"><code>name</code></dfn> member is a [=string=] mainly used for describing information on the version of a MiniApp, playing an essential role in version control, MiniApp application, and platform compatibility. It is usually considered as the version that is shown publicly and displayed to the user.
+        </p>
+        <p class="note" title='Usage'>
+          The RECOMMENDED format for this member is <code>X.Y.Z</code>, where <code>X</code>, <code>Y</code>, and <code>Z</code> are non-negative integer values (e.g., <samp>1.10.0</samp>), as specified in <cite>Semantic Versioning</cite> [[SEMANTIC-VERSIONING]].
+        </p>
+        <p>
+          To <dfn>process the version's <code>name</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |version:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["name"] does not [=map/exist=], or if the type of |json|["name"] is not [=string=], return failure.</li>
+          <li>Set |version|["name"] to |json|["name"].</li>
+        </ol>           
+    </section>	
+  </section>
+
   <section id="sec-widget-resource-members">
     <h2>MiniApp widget resource members</h2>
     <p>
@@ -1094,7 +1248,7 @@
         To <dfn>process the widget's <code>name</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |widget:ordered map|:
       </p>
       <ol class="algorithm">
-        <li>If |json|["name"] does not [=map/exist=], or if the type of |json|["name"] is not [=string=], return failure.</li>
+        <li>If |json|["name"] does not [=map/exist=], or if the type of |json|["name"] is not [=string=], return.</li>
         <li>Set |widget|["name"] to |json|["name"].</li>
       </ol>      
     </section>
@@ -1107,28 +1261,28 @@
         To <dfn>process the widget's <code>path</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |widget:ordered map|:
       </p>
       <ol class="algorithm">
-        <li>If |json|["path"] does not [=map/exist=], or if the type of |json|["path"] is not [=string=], return failure.</li>
+        <li>If |json|["path"] does not [=map/exist=], or if the type of |json|["path"] is not [=string=], return.</li>
         <li>Let |url:URL| be the result of [=URL Parser|parsing=] |json|["path"].</li>
-        <li>If |url| is failure, return failure.</li>
+        <li>If |url| is failure, return.</li>
         <li>Set |widget|["path"] to |url|.</li>
       </ol>
     </section>
     <section>
-      <h3><code>min_platform_version</code> member</h3>
+      <h3><code>min_code</code> member</h3>
       <p>
-        The optional [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource"><code>min_platform_version</code></dfn> member is a [=string=] that indicates the minimum platform version supported for a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-widget">MiniApp widget</a>.
+        The optional [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource"><code>min_code</code></dfn> member is a [=number=] that indicates the minimum platform version supported for a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-widget">MiniApp widget</a>.
       </p>
       <p class="note" title='Usage'>
-        Since Widget APIs and MiniApp APIs may differ, the declaration of the minimum version of the platform may be different. Thus, if the widgets member omits <a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>min_platform_version</code></a> explicitly, the user agent will consider the same requirement as the specified in the <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>min_platform_version</code></a> member at the root of the [=manifest=].
+        Since Widget APIs and MiniApp APIs may differ, the declaration of the minimum version of the platform may be different. Thus, if the widgets member omits <a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>min_code</code></a> explicitly, the user agent will consider the same requirement as the specified in the <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>min_code</code></a> member in the <a><code>platform_version</code></a> object.
         </p>
       </p>
       <p>
-        To <dfn>process the widget's <code>min_platform_version</code> member</dfn>, given [=object=] |json:JSON|, [=ordered map=] |widget:ordered map| and [=ordered map=] |manifest:ordered map|:
+        To <dfn>process the widget's <code>min_code</code> member</dfn>, given [=object=] |json:JSON|, [=ordered map=] |widget:ordered map| and [=ordered map=] |manifest:ordered map|:
       </p>
       <ol class="algorithm">
-        <li>Set |widget|["min_platform_version"] to |manifest|["min_platform_version"].</li>        
-        <li>If |json|["min_platform_version"] does not [=map/exist=], or if the type of |json|["min_platform_version"] is not [=string=], return.</li>
-        <li>Set |widget|["min_platform_version"] to |json|["min_platform_version"].</li>
+        <li>Set |widget|["min_code"] to |manifest|["min_code"].</li>        
+        <li>If |json|["min_code"] does not [=map/exist=], or if the type of |json|["min_code"] is not [=string=], return.</li>
+        <li>Set |widget|["min_code"] to |json|["min_code"].</li>
       </ol>      
     </section>
   </section>
@@ -1426,7 +1580,7 @@
     <section>
         <h2>Transparency</h2>
         <p>
-          The user agent SHOULD provide the end-user with transparent metadata about a MiniApp (i.e., <a><code>app_id</code></a>, <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a>, <a><code>short_name</code></a>, <a>icons</a>, <a><code>version_name</code></a>, <a><code>description</code></a>), offering users enough information, allowing them to make a conscious decision about its usage. This practice could also help to identify spoofing MiniApps.
+          The user agent SHOULD provide the end-user with transparent metadata about a MiniApp (i.e., <a><code>app_id</code></a>, <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a>, <a><code>short_name</code></a>, <a>icons</a>, <a><code>name</code></a>, <a><code>description</code></a>), offering users enough information, allowing them to make a conscious decision about its usage. This practice could also help to identify spoofing MiniApps.
         </p>
     </section>
   </section>
