@@ -1025,7 +1025,7 @@
     <p>
       The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of a [=platform version resource=].
     </p>
-    <section>
+    <section id="version-min-code">
       <h3><code>min_code</code> member</h3>
         <p>
           The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>min_code</code></dfn> member is a non-negative integer [=number=] that indicates the minimum supported version of the MiniApp user agent's platform to ensure the regular operation of a MiniApp.
@@ -1074,7 +1074,7 @@
     <p>
       The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of a [=permission resource=].
     </p>
-    <section>
+    <section id="permission-name">
       <h3><code>name</code> member</h3>
       <p>
         The [=MiniApp permission resource's=] <dfn data-dfn-for="MiniApp permission resource"><code>name</code></dfn> member is a [=string=] that indicates the name of the feature requested.
@@ -1130,7 +1130,7 @@
           <li>Set |version|["code"] to |version|.</li>
         </ol>           
     </section>
-    <section>
+    <section id="version-name">
       <h3><code>name</code> member</h3>
       <p>
         The [=MiniApp version resource's=] <dfn data-dfn-for="MiniApp version resource"><code>name</code></dfn> member is a [=string=] mainly used for describing information on the version of a MiniApp, playing an essential role in version control, MiniApp application, and platform compatibility. It is usually considered as the version that is shown publicly and displayed to the user.
@@ -1156,7 +1156,7 @@
     <p>
       The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of a [=widget resource=].
     </p>      
-    <section>
+    <section id="widget-name">
       <h2><code>name</code> member</h2>
       <p>
         The [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource"><code>name</code></dfn> member is a [=string=] that indicates the title of a widget.
@@ -1184,7 +1184,7 @@
         <li>Set |widget|["path"] to |url|.</li>
       </ol>
     </section>
-    <section>
+    <section id="widget-min-code">
       <h3><code>min_code</code> member</h3>
       <p>
         The optional [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource"><code>min_code</code></dfn> member is a [=number=] that indicates the minimum platform version supported for a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-widget">MiniApp widget</a>.
