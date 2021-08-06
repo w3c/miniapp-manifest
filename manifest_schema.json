@@ -18,9 +18,8 @@
     "app_id",
     "name",
     "icons",
-    "version_name",
-    "version_code",
-    "min_platform_version",
+    "version",
+    "platform_version",
     "pages"
   ],
   "properties": {
@@ -81,22 +80,56 @@
       "description": "A string that identifies the MiniApp univocally.",
       "example": "org.example.miniapp"
     },
-    "version_name": {
-      "description": "A string that identifies the version of a MiniApp in a user-friendly way.",
+    "color_scheme": {
       "type": "string",
-      "example": "1.0.0"
+      "description": "A string that indicates the preferred color scheme of the MiniApp.",
+      "example": "dark"
+    },	
+    "device_type": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "An array of strings that indicates the type of devices on which the MiniApp is intended to run. "
     },
-    "version_code": {
-      "description": "A non-negative integer that identifies the version of a MiniApp.",
-      "type": "integer",
-      "default": 1,
-      "min": 1
-    },
-    "min_platform_version": {
-      "$ref": "#/definitions/TypeVersionString",
-      "description": "A string with the minimum supported version of the required platform that can ensure normal operation of MiniApp.",
-      "example": "1.0.0"
-    },
+    "version": {
+	    "type": "object",
+      "required": ["code", "name"],  
+      "properties": {
+        "code": {
+          "description": "A non-negative integer that identifies the version of a MiniApp.",
+          "type": "integer",
+          "default": 1,
+          "min": 1
+	    	},
+        "name": {
+           "description": "A string that identifies the version of a MiniApp in a user-friendly way.",
+           "type": "string",
+           "example": "1.0.0"
+		    }		
+	  }	  
+	},
+    "platform_version": {
+	    "type": "object",
+      "required": ["min_code"],  
+      "properties": {
+        "min_code": {
+          "description": "A non-negative integer that identifies the minimum platform version required for running the MiniApp.",
+          "type": "integer",
+          "example": "1"
+	     	},
+        "target_code": {
+           "description": "A non-negative integer number that indicates the target supported version of the MiniApp user agent's platform to ensure the regular operation of a MiniApp.",
+           "type": "interger",
+           "example": "2"
+	      },
+        "release_type": {
+          "description": "A string that indicates the release type of the target platform version required for running the application. For example, it can be CanaryN, BetaN, or Release. N represents a positive integer. In these examples, 1) Canary: indicates a restrictedly released version. 2) Beta: indicates a publicly released beta version. 3)Release: indicates a publicly released official version.",
+          "type": "string",
+          "example": "Beta1"
+		    }		
+	  }	  
+	},	
     "pages": {
       "type": "array",
       "items": {
