@@ -119,12 +119,12 @@
           "example": "1"
 	     	},
         "target_code": {
-           "description": "A non-negative integer number that indicates the target supported version of the MiniApp user agent's platform to ensure the regular operation of a MiniApp.",
+           "description": "A non-negative integer number that indicates the target supported version of the MiniApp user agent's platform.",
            "type": "interger",
            "example": "2"
 	      },
         "release_type": {
-          "description": "A string that indicates the release type of the target platform version required for running the application. For example, it can be CanaryN, BetaN, or Release. N represents a positive integer. In these examples, 1) Canary: indicates a restrictedly released version. 2) Beta: indicates a publicly released beta version. 3)Release: indicates a publicly released official version.",
+          "description": "A string that indicates the release type of the target platform version required for running the application. ",
           "type": "string",
           "example": "Beta1"
 		    }		
