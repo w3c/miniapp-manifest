@@ -874,16 +874,16 @@
           <span><code>pages</code> member</span>
         </h3>
         <p>
-            The [=MiniApp manifest's=] <dfn><code>pages</code></dfn> member is a [=list=] of [=relative-url string=] used for specifying the collection of pages that are part of a MiniApp. Each item in the array represents a [=page route=].
+            The [=MiniApp manifest's=] <dfn><code>pages</code></dfn> member is a [=list=] of [=relative-url string=] used for specifying the collection of pages that are part of a MiniApp. Each item in the [=list=] represents a [=page route=].
         </p> 
         <p>
           A <dfn data-lt="page route|page routes">MiniApp page route</dfn> is the relative path and filename of a MiniApp Page.
         </p> 
         <p>
-          During the MiniApp development process, adding or deleting <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-page">MiniApp pages</a> is done by configuring the array. When configuring the [=page routes=], the file name extension MAY be omitted (e.g., <samp>/component/mypage</samp>).
+          During the MiniApp development process, adding or deleting <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-page">MiniApp pages</a> is done by configuring the list of references. When configuring the [=page routes=], the file name extension MAY be omitted (e.g., <samp>/component/mypage</samp>).
         </p>
         <p>
-          The first item in the <a><code>pages</code></a> array defines the homepage of a MiniApp.
+          The first item in the <a><code>pages</code></a> [=list=] defines the homepage of a MiniApp.
         </p>
         <div class="note" title="Usage">
           <p>
@@ -1250,7 +1250,7 @@
     <section>
       <h3><code>path</code> member</h3>
       <p>
-        The [=MiniApp widget resource's=] <dfn>path</dfn> member is a [=relative-url string=] that defines the corresponding  [=page route=] of a widget, represented as in the <a><code>pages</code></a> array.
+        The [=MiniApp widget resource's=] <dfn>path</dfn> member is a [=relative-url string=] that defines the corresponding  [=page route=] of a widget, represented as in the <a><code>pages</code></a> [=list=].
       </p>
       <p>
         To <dfn>process the widget's <code>path</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |widget:ordered map|:
