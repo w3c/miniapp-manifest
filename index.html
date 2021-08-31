@@ -103,7 +103,7 @@
 <body data-cite="APPMANIFEST MINIAPP-PACKAGING MANIFEST-APP-INFO INFRA URL HTML WEBIDL">
   <section id='abstract'>
     <p>
-      This specification is a registry of supplementary members for the <a href="https://www.w3.org/TR/appmanifest/">Web Application Manifest</a> and the <a href="https://www.w3.org/TR/manifest-app-info/">Web App Manifest - Application Information</a> specifications that provide additional metadata to an application manifest to describe <a href="https://w3c.github.io/miniapp-packaging/#dfn-miniapp" data-link-type="dfn">MiniApps</a>. This JSON-based manifest file enables developers to set up basic information, window style, page route, and other information of a MiniApp. The manifest also includes information about the window style like the navigation bar, title, window background color, page routing information, and the widgets that are part of a MiniApp.
+      This specification is a registry of supplementary members for the <a href="https://www.w3.org/TR/appmanifest/">Web Application Manifest</a> and the <a href="https://www.w3.org/TR/manifest-app-info/">Web App Manifest - Application Information</a> specifications that provide additional metadata to an application manifest to describe <a href="https://w3c.github.io/miniapp-packaging/#dfn-miniapp" data-link-type="dfn">MiniApps</a>. This JSON-based manifest file enables developers to set up basic information of a MiniApp, like identification, human-readable description, versioning data, and styling information. The MiniApp manifest also configures the routing of the pages and widgets that are part of a MiniApp.
     </p>
   </section>
 
@@ -135,18 +135,17 @@
           <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a>
         </li>
         <li>
-          <a><code>version</code></a>
-        </li>  
-
+          <a><code>pages</code></a>
+        </li>
         <li>
           <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>platform_version</code></a>
         </li>
         <li>
-          <a><code>pages</code></a>
-        </li>
+          <a><code>version</code></a>
+        </li>  
       </ul>
       <p>
-          Each [=image resource=] [=ordered map=] within the [=MiniApp manifest's=] <a><code>icons</code></a> member MUST contain:
+          Each [=image resource=] object within the [=MiniApp manifest's=] <a><code>icons</code></a> member MUST contain:
       </p>
       <ul>
         <li>
@@ -154,7 +153,7 @@
         </li>
       </ul>
       <p>
-        A [=MiniApp manifest=] MAY contain a <a><code>widgets</code></a> member at its root. This member MUST contain a [=list=] of <a>MiniApp widget resources</a>. Each [=MiniApp widget resource=] [=ordered map=] MUST contain the following members:
+        A [=MiniApp manifest=] MAY contain a <a><code>widgets</code></a> member at its root. This member MUST contain an array ([=list=]) of <a>MiniApp widget resources</a>. Each [=MiniApp widget resource=] object MUST contain the following members:
       </p>
       <ul>
         <li>
@@ -165,14 +164,14 @@
         </li>
       </ul>
       <p>
-        A [=MiniApp manifest=] MAY contain a <a><code>req_permissions</code></a> member at its root. This member MUST contain a [=list=] of <a>MiniApp permission resources</a>. Each [=MiniApp permission resource=] [=ordered map=] MUST contain the following member:
+        A [=MiniApp manifest=] MAY contain a <a><code>req_permissions</code></a> member at its root. This member MUST contain an array ([=list=]) of <a>MiniApp permission resources</a>. Each [=MiniApp permission resource=] object MUST contain the following member:
       </p>
       <ul>
         <li>
          <a data-link-for="MiniApp permission resource" data-link-type="dfn"><code>name</code></a>
         </li>
       </ul>
-      <p>The presence of other members in a [=MiniApp manifest=] is optional, but vendor-specific extensions MAY modify this.</p>   
+      <p>MiniApp user agents may implement vendor-specific extensions of the [=manifest=], supporting optional members.</p>   
     </section>
 
     <section data-cite="IMAGE-RESOURCE">
@@ -217,7 +216,7 @@
           </tr>
           <tr>
             <th scope="row"><a><code>device_type</code></a></th>
-            <td> [=array=] </td>
+            <td> [=list=] </td>
             <td>No</td>
             <td>
               <span>Supporting devices</span>
@@ -849,7 +848,7 @@
           <span><code>device_type</code> member</span>
         </h3>
         <p>
-          The optional [=MiniApp manifest's=] <dfn><code>device_type</code></dfn> member is an [=array=] of [=strings=] that indicates the type of devices on which the MiniApp is intended to run. The values of this member inform user agents if the MiniApp has been designed to properly run on specific platforms like smartphones, smart TVs, car head units, wearables, and other devices.
+          The optional [=MiniApp manifest's=] <dfn><code>device_type</code></dfn> member is a [=list=] of [=strings=] that indicates the type of devices on which the MiniApp is intended to run. The values of this member inform user agents if the MiniApp has been designed to properly run on specific platforms like smartphones, smart TVs, car head units, wearables, and other devices.
         </p>
         <p>
           This member is used for device compatibility verification during the initialization process. By checking its value, the user agent decides if the MiniApp is suitable to be run on the platform in terms of compatibility of UI components, CSS support, and APIs. MiniApp user agents decide how to implement the platform's behavior if the verification process fails (e.g., stopping the initialization phase and refusing the installation or installing the MiniApp but rejecting the execution). 
