@@ -815,7 +815,7 @@
           <span><code>color_scheme</code> member</span>
         </h3>
         <p>
-          The optional [=MiniApp manifest's=] <dfn><code>color_scheme</code></dfn> member is a [=string=] that indicates the preferred color scheme of the MiniApp, overriding other configuration members of the <a>window resource</a> object, including <a data-link-for="MiniApp window resource" data-link-type="dfn"><code>background_color</code></a>, <a><code>background_text_style</code></a>, <a><code>navigation_bar_text_style</code></a>, and <a><code>navigation_bar_title_text</code></a>.
+          The optional [=MiniApp manifest's=] <dfn><code>color_scheme</code></dfn> member is a [=string=] that indicates the preferred color scheme of a MiniApp, overriding other configuration members of the <a>window resource</a> object, including <a data-link-for="MiniApp window resource" data-link-type="dfn"><code>background_color</code></a>, <a><code>background_text_style</code></a>, <a><code>navigation_bar_text_style</code></a>, and <a><code>navigation_bar_title_text</code></a>.
         </p>
         <p>
           This member MUST contain one of the following <dfn>color scheme values</dfn>:  
@@ -832,11 +832,11 @@
           MiniApp user agents MAY implement pre-defined styling resources, such as background colors, cover images, and icons for each color scheme. Also, developers MAY define customized stylesheets for each mode, using the <a data-xref-type="css-descriptor" data-xref-for="@media">prefers-color-scheme</a> CSS media feature [[MEDIAQUERIES-5]].
         </p>
         <p>
-          To <dfn>process the <code>color_scheme</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+          To <dfn>process the <code>color_scheme</code> member</dfn>, given [=ordered map=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
         </p>
         <ol class="algorithm">
           <li>If |json|["color_scheme"] does not [=map/exist=],<br>
-            or if the type of |json|["color_scheme"] is not [=string=], <br>
+            or if |json|["color_scheme"] is not a [=string=], <br>
             or if |json|["color_scheme"] doesn't match one of the [=color scheme values=], return.</li>
           <li>Set |manifest|["color_scheme"] to |json|["color_scheme"].</li>
         </ol>
@@ -855,14 +855,14 @@
          The list of possible values of the member is not specified in this document, enabling flexibility in the implementation and considering any device and use case. Some of the common values are: <code>smartphone</code>, <code>tablet</code>, <code>tv</code>, <code>car</code>, <code>wearable</code>, and <code>iot</code>.
         </p>
         <p>
-          To <dfn>process the <code>device_type</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+          To <dfn>process the <code>device_type</code> member</dfn>, given [=ordered map=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
         </p>
         <ol class="algorithm">
-          <li>If |json|["device_type"] does not [=map/exist=], or if the type of |json|["device_type"] is not [=list=], return.</li>
+          <li>If |json|["device_type"] does not [=map/exist=], or if |json|["device_type"] is not a [=list=], return.</li>
           <li>Let |device_type:list| be a new empty [=list=].</li>
           <li>[=list/For each=] |item:string| of |json|["device_type"]:
             <ol>
-              <li>If the type of |item| is not [=string=], return.</li>             
+              <li>If |item| is not a [=string=], return.</li>             
               <li>[=list/Append=] |item| to |device_type|.</li>
             </ol>
           </li>
@@ -916,7 +916,7 @@
           <span><code>platform_version</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <dfn><code>platform_version</code></dfn> member contains a <a>MiniApp platform version resource</a> [=ordered map=] to represent the <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>min_code</code></a>, <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>target_code</code></a>, and <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>release_type</code></a>.
+          The [=MiniApp manifest's=] <dfn><code>platform_version</code></dfn> member contains a <a>MiniApp platform version resource</a> [=ordered map=] for describing the minimum requirements and intended platform version to run a MiniApp, including <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>min_code</code></a>, <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>target_code</code></a>, and <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>release_type</code></a>.
         </p>
         <p>
           To <dfn>process the <code>platform_version</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |manifest:ordered map|:
@@ -939,7 +939,7 @@
             The optional [=MiniApp manifest's=] <dfn><code>req_permissions</code></dfn> member is a [=list=] of [=MiniApp permission resources=] [=ordered map=].
         </p> 
         <p> 
-          Each <a>MiniApp permission resource</a> declares a request for using a concrete system feature (e.g., access to device's location, user contacts, sensors, and camera) required for the proper execution of the MiniApp.
+          Each <a>MiniApp permission resource</a> declares a request for using a concrete system feature (e.g., access to device's location, user contacts, sensors, and camera) required for the proper execution of a MiniApp.
         </p>
         <p>
           To <dfn>process the <code>req_permissions</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |manifest:ordered map|:
@@ -1034,7 +1034,7 @@
           <span><code>window</code> member</span>
         </h3>
         <p>
-          The optional [=MiniApp manifest's=] <dfn><code>window</code></dfn> member contains a <a>MiniApp window resource</a> [=ordered map=] to describe the look and feel of the MiniApp frame, including the styles of the status bar, navigation bar, title, background colors, among other visual configuration elements.
+          The optional [=MiniApp manifest's=] <dfn><code>window</code></dfn> member contains a <a>MiniApp window resource</a> [=ordered map=] to describe the look and feel of a MiniApp frame, including the styles of the status bar, navigation bar, title, background colors, among other visual configuration elements.
         </p>
         <p>
             The <a><code>window</code></a> object members inherit the text direction and language configuration from the <a><code>dir</code></a> and <a><code>lang</code></a> members at the root of the [=MiniApp manifest=].
@@ -1116,7 +1116,7 @@
     <section>
       <h3><code>release_type</code> member</h3>
         <p>
-          The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>release_type</code></dfn> member is a [=string=] that indicates the release type of the MiniApp user agent's target platform version that is required for running the application. For example, the value can be set to CanaryN, BetaN, or Release. N represents a positive integer, such as <code>"Beta1"</code>.
+          The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>release_type</code></dfn> member is a [=string=] that indicates the release type of the MiniApp user agent's target platform version that is required for running an application. For example, the value can be set to CanaryN, BetaN, or Release. N represents a positive integer, such as <code>"Beta1"</code>.
         </p>
         <p>
           To <dfn>process the platform version's <code>release_type</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |platform_version:ordered map|:
@@ -1285,7 +1285,7 @@
       A <dfn data-lt="window resource|MiniApp window resources|MiniApp window resource's">MiniApp window resource</dfn> is an [=ordered map=] that defines and configures the window that contains a MiniApp.
     </p>
     <p>
-      The following members are defined under the scope of the [=MiniApp manifest=], enabling the description of the MiniApp [=window resource=].
+      The following members are defined under the scope of the [=MiniApp manifest=], enabling the description of a MiniApp [=window resource=].
     </p>
     <section>
       <h3><code>auto_design_width</code> member</h3>
@@ -1399,7 +1399,7 @@
     <section data-cite="CSS-COLOR-4 CSS-SYNTAX-3">
       <h3><code>navigation_bar_background_color</code> member</h3>
       <p>
-        <span>The <dfn><code>navigation_bar_background_color</code></dfn> member is a [=string=] that specifies the color of the background of the navigation bar of the MiniApp.</span>
+        <span>The <dfn><code>navigation_bar_background_color</code></dfn> member is a [=string=] that specifies the color of the background of the navigation bar of a MiniApp.</span>
       </p>
       <p>This member supports [=sRGB=] colors.</p>
       <p>Value by default: <code>"#000000"</code>.</p>
@@ -1435,7 +1435,7 @@
     <section>
       <h3><code>navigation_bar_title_text</code> member</h3>
       <p>
-        The <dfn><code>navigation_bar_title_text</code></dfn> member is a [=string=] that specifies the title of the navigation bar of the MiniApp.
+        The <dfn><code>navigation_bar_title_text</code></dfn> member is a [=string=] that specifies the title of the navigation bar of a MiniApp.
       </p>
       <p>
         To <dfn>process the window's <code>navigation_bar_title_text</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |window:ordered map|:
@@ -1538,7 +1538,7 @@
   <section>
     <h2>Dependencies</h2>
     <p>
-      As a crucial part of a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a>, the <code>manifest.json</code> file describes several important aspects of the MiniApp by referring to the <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> resources in different file types, such as the page scripts and visual configuration files in the <code>pages</code> directory and the images in the <code>common</code> directory. Details are specified in [[MINIAPP-PACKAGING]].
+      As a crucial part of a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a>, the <code>manifest.json</code> file describes several important aspects of a MiniApp by referring to the <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> resources in different file types, such as the page scripts and visual configuration files in the <code>pages</code> directory and the images in the <code>common</code> directory. Details are specified in [[MINIAPP-PACKAGING]].
     </p>
     <p>
       The regular operation of a MiniApp relies on the proper configuration in the [=manifest=] and the <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> availability of resources. Such dependency needs to be checked during both the development phase and deployment phase.
