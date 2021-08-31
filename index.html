@@ -1116,8 +1116,11 @@
     <section>
       <h3><code>release_type</code> member</h3>
         <p>
-          The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>release_type</code></dfn> member is a [=string=] that indicates the release type of the MiniApp user agent's target platform version that is required for running an application. For example, the value can be set to CanaryN, BetaN, or Release. N represents a positive integer, such as <code>"Beta1"</code>.
+          The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>release_type</code></dfn> member is a [=string=] that indicates the release type of the MiniApp user agent's target platform version that is required for running an application.
         </p>
+        <p class="note" title='Usage'>
+           MiniApp vendors may recommend specific versioning schemes and values for this member (e.g., <code>CanaryN</code>, <code>BetaN</code>, or <code>Release</code>, where N represents a positive integer, such as <samp>Beta1</samp>).
+        </p>        
         <p>
           To <dfn>process the platform version's <code>release_type</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |platform_version:ordered map|:
         </p>
