@@ -335,7 +335,7 @@
             <td> [=string=] </td>
             <td>No</td>
             <td>
-              <span>Resolution sizes of a icon</span>
+              <span>Resolution sizes of an icon</span>
             </td>
           </tr>
           <tr>
@@ -343,7 +343,7 @@
             <td> [=string=] </td>
             <td>Yes</td>
             <td>
-              <span>Source of a icon</span>
+              <span>Source of an icon</span>
             </td>
           </tr>
         </tbody>
@@ -441,7 +441,7 @@
             <td> [=string=] </td>
             <td>Yes</td>
             <td>
-              <span>Version Name</span>
+              <span>Version name</span>
             </td>
           </tr>
         </tbody>
@@ -627,31 +627,32 @@
           "description": "A Simple MiniApp Demo",
           "icons": [
             {
+              "label": "Red lightning",
               "src": "common/icons/icon.png",
               "sizes": "48x48"
             }
           ],
           "platform_version":{
             "min_code": "1",
-            "target_code": "2",
-            "release_type": "Beta1"			
+            "release_type": "Beta1",
+            "target_code": "2"
           },
           "pages": [
             "pages/index/index",
             "pages/detail/detail"
           ],
           "window": {
+            "background_color": "#ffffff",
+            "fullscreen": false,            
             "navigation_bar_text_style": "black",
             "navigation_bar_title_text": "My MiniApp",
-            "navigation_bar_background_color": "#f8f8f8",
-            "background_color": "#ffffff",
-            "fullscreen": false
+            "navigation_bar_background_color": "#f8f8f8"
           },
           "widgets": [
             {
               "name": "widget",
-              "path": "widgets/index/index",
-              "min_code": "2"
+              "min_code": "2",
+              "path": "widgets/index/index"
             }
           ],
           "req_permissions": [
