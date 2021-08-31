@@ -200,6 +200,14 @@
             </td>
           </tr>
           <tr>
+            <th scope="row"><a><code>color_scheme</code></a></th>
+            <td> [=string=] </td>
+            <td>No</td>
+            <td>
+              <span>Color scheme</span>
+            </td>
+          </tr>		
+          <tr>
             <th scope="row"><a><code>description</code></a></th>
             <td> [=string=] </td>
             <td>No</td>
@@ -207,6 +215,14 @@
               <span>Description</span>
             </td>
           </tr>
+          <tr>
+            <th scope="row"><a><code>device_type</code></a></th>
+            <td> [=array=] </td>
+            <td>No</td>
+            <td>
+              <span>Supporting devices</span>
+            </td>
+          </tr> 		
           <tr>
             <th scope="row"><a><code>dir</code></a></th>
             <td> [=string=] </td>
@@ -651,7 +667,13 @@
               "name": "system.permission.CAMERA",
               "reason": "To scan a QR code"
             }
-          ]
+          ]，
+          "color_scheme": "light",
+          "device_type": [
+             "phone",
+             "tv",
+             "car"
+          ]		  
         }
       </pre>
     </section>
@@ -791,6 +813,65 @@
         </ol>        
       </section>
 	  
+      <section>
+        <h3>
+          <span><code>color_scheme</code> member</span>
+        </h3>
+        <p>
+          The optional [=MiniApp manifest's=] <dfn><code>color_scheme</code></dfn> member is a [=string=] that indicates the preferred color scheme of the MiniApp, overriding other configuration members of the <a>window resource</a> object, including <a data-link-for="MiniApp window resource" data-link-type="dfn"><code>background_color</code></a>, <a><code>background_text_style</code></a>, <a><code>navigation_bar_text_style</code></a>, and <a><code>navigation_bar_title_text</code></a>.
+        </p>
+        <p>
+          This member MUST contain one of the following <dfn>color scheme values</dfn>:  
+        </p>
+        <dl>
+          <dt><dfn data-dfn-for="color_scheme"><code>"auto"</code></dfn></dt>
+          <dd>The theme color is adapted to the system theme color.</dd>
+          <dt><dfn data-dfn-for="color_scheme"><code>"light"</code></dfn></dt>
+          <dd>For a light color scheme.</dd>
+          <dt><dfn data-dfn-for="color_scheme"><code>"dark"</code></dfn></dt>
+          <dd>For a dark color scheme.</dd>
+        </dl>
+        <p class="note" title='Usage' data-cite="MEDIAQUERIES-5">
+          MiniApp user agents MAY implement pre-defined styling resources, such as background colors, cover images, and icons for each color scheme. Also, developers MAY define customized stylesheets for each mode, using the <a data-xref-type="css-descriptor" data-xref-for="@media">prefers-color-scheme</a> CSS media feature [[MEDIAQUERIES-5]].
+        </p>
+        <p>
+          To <dfn>process the <code>color_scheme</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["color_scheme"] does not [=map/exist=],<br>
+            or if the type of |json|["color_scheme"] is not [=string=], <br>
+            or if |json|["color_scheme"] doesn't match one of the [=color scheme values=], return.</li>
+          <li>Set |manifest|["color_scheme"] to |json|["color_scheme"].</li>
+        </ol>
+      </section>
+      <section>
+        <h3>
+          <span><code>device_type</code> member</span>
+        </h3>
+        <p>
+          The optional [=MiniApp manifest's=] <dfn><code>device_type</code></dfn> member is an [=array=] of [=strings=] that indicates the type of devices on which the MiniApp is intended to run. The values of this member inform user agents if the MiniApp has been designed to properly run on specific platforms like smartphones, smart TVs, car head units, wearables, and other devices.
+        </p>
+        <p>
+          This member is used for device compatibility verification during the initialization process. By checking its value, the user agent decides if the MiniApp is suitable to be run on the platform in terms of compatibility of UI components, CSS support, and APIs. MiniApp user agents decide how to implement the platform's behavior if the verification process fails (e.g., stopping the initialization phase and refusing the installation or installing the MiniApp but rejecting the execution). 
+        </p>
+        <p class="note" title='Usage'>
+         The list of possible values of the member is not specified in this document, enabling flexibility in the implementation and considering any device and use case. Some of the common values are: <code>smartphone</code>, <code>tablet</code>, <code>tv</code>, <code>car</code>, <code>wearable</code>, and <code>iot</code>.
+        </p>
+        <p>
+          To <dfn>process the <code>device_type</code> member</dfn>, given [=object=] |json:JSON| and [=ordered map=] |manifest:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["device_type"] does not [=map/exist=], or if the type of |json|["device_type"] is not [=list=], return.</li>
+          <li>Let |device_type:list| be a new empty [=list=].</li>
+          <li>[=list/For each=] |item:string| of |json|["device_type"]:
+            <ol>
+              <li>If the type of |item| is not [=string=], return.</li>             
+              <li>[=list/Append=] |item| to |device_type|.</li>
+            </ol>
+          </li>
+          <li>Set |manifest|["device_type"] to |device_type|.</li>
+        </ol>        
+      </section>  	    
       <section>
         <h3>
           <span><code>platform_version</code> member</span>
@@ -999,11 +1080,13 @@
         <li>If |manifest|["icons"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>        
         <li><a>Process the <code>app_id</code> member</a> passing |json| and |manifest|.</li>
         <li>If |manifest|["app_id"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
+        <li><a>Process the <code>color_scheme</code> member</a> passing |json| and |manifest|.</li>	
         <li><a>Process the <code>description</code> member</a> passing |json| and |manifest|.</li>
-        <li><a>Process the <code>platform_version</code> member</a> passing |json| and |manifest|.</li>
-        <li>If |manifest|["platform_version"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
+        <li><a>Process the <code>device_type</code> member</a> passing |json| and |manifest|.</li>			
         <li><a>Process the <code>pages</code> member</a> passing |json| and |manifest|.</li>
         <li>If |manifest|["pages"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
+        <li><a>Process the <code>platform_version</code> member</a> passing |json| and |manifest|.</li>
+        <li>If |manifest|["platform_version"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
         <li><a>Process the <code>req_permissions</code> member</a> passing |json| and |manifest|.</li>
         <li><a>Process the <code>version</code> member</a> passing |json| and |manifest|.</li>
         <li>If |manifest|["version"] does not [=map/exist=], [=exception/throw=] a {{TypeError}}.</li>
