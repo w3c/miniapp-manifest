@@ -247,14 +247,6 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a data-link-for="MiniApp manifest" data-link-type="dfn"><code>platform_version</code></a></th>
-            <td> <a>platform version resource</a> </td>
-			<td>Yes</td>
-            <td>
-              <span>Platform version supported</span>
-            </td>
-          </tr>
-          <tr>
             <th scope="row"><a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a></th>
             <td> [=string=] </td>
             <td>Yes</td>
@@ -268,6 +260,14 @@
             <td>Yes</td>
             <td>
               <span>Page routing information</span>
+            </td>
+          </tr>          
+          <tr>
+            <th scope="row"><a data-link-for="MiniApp manifest" data-link-type="dfn"><code>platform_version</code></a></th>
+            <td> <a>platform version resource</a> </td>
+			      <td>Yes</td>
+            <td>
+              <span>Platform version supported</span>
             </td>
           </tr>
           <tr>
@@ -369,22 +369,21 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>target_code</code></a></th>
-            <td> [=string=] </td>
-            <td>No</td>
-            <td>
-              <span>Indicates the target platform version required for running the application. </span>
-            </td>
-          </tr>
-		  
-          <tr>
             <th scope="row"><a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>release_type</code></a></th>
             <td> [=string=] </td>
             <td>No</td>
             <td>
               <span>Indicates the release type of the target platform version required for running the application. For example, it can be CanaryN, BetaN, or Release. N represents a positive integer. In these examples, 1) Canary: indicates a restrictedly released version. 2) Beta: indicates a publicly released beta version. 3)Release: indicates a publicly released official version. </span>
             </td>
-          </tr>		  
+          </tr>          
+          <tr>
+            <th scope="row"><a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>target_code</code></a></th>
+            <td> [=string=] </td>
+            <td>No</td>
+            <td>
+              <span>Indicates the target platform version required for running the application. </span>
+            </td>
+          </tr>	  
         </tbody>
       </table>
 
@@ -462,6 +461,14 @@
         </thead>
         <tbody>
           <tr>
+            <th scope="row"><a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>min_code</code></a></th>
+            <td> number </td>
+            <td>No</td>
+            <td>
+              <span>Minimum platform version supported</span>
+            </td>
+          </tr>
+          <tr>
             <th scope="row"><a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>name</code></a></th>
             <td> [=string=] </td>
             <td>Yes</td>
@@ -475,14 +482,6 @@
             <td>Yes</td>
             <td>
               <span>Widget path</span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"><a data-link-for="MiniApp widget resource" data-link-type="dfn"><code>min_code</code></a></th>
-            <td> number </td>
-            <td>No</td>
-            <td>
-              <span>Minimum platform version supported</span>
             </td>
           </tr>
         </tbody>
@@ -870,28 +869,7 @@
           </li>
           <li>Set |manifest|["device_type"] to |device_type|.</li>
         </ol>        
-      </section>  	    
-      <section>
-        <h3>
-          <span><code>platform_version</code> member</span>
-        </h3>
-        <p>
-          The [=MiniApp manifest's=] <dfn><code>platform_version</code></dfn> member contains a <a>MiniApp platform version resource</a> [=ordered map=] to represent the <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>min_code</code></a>, <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>target_code</code></a>, and <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>release_type</code></a>.
-        </p>
-        <p>
-          To <dfn>process the <code>platform_version</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |manifest:ordered map|:
-        </p>
-        <ol class="algorithm">
-          <li>If |json|["platform_version"] does not [=map/exist=], or if |json|["platform_version"] is not an [=ordered map=], return.</li>
-          <li>Let |platform_version:ordered map| be a new [=ordered map=].</li>
-          <li><a>Process the platform version's <code>min_code</code> member</a> passing |json|["platform_version"] and |platform_version|.</li>
-          <li><a>Process the platform version's <code>target_code</code> member</a> passing |json|["platform_version"] and |platform_version|.</li>         
-          <li><a>Process the platform version's <code>release_type</code> member</a> passing |json|["platform_version"] and |platform_version|.</li> 
-          <li>If |platform_version|["min_code"] does not [=map/exist=], return failure.</li>  		  
-		      <li>Set |manifest|["platform_version"] to |platform_version|.</li>
-        </ol>
       </section>
-	
       <section>
         <h3>
           <span><code>pages</code> member</span>
@@ -933,6 +911,26 @@
           </li>
           <li>Set |manifest|["pages"] to |pages|.</li>
         </ol>        
+      </section>
+      <section>
+        <h3>
+          <span><code>platform_version</code> member</span>
+        </h3>
+        <p>
+          The [=MiniApp manifest's=] <dfn><code>platform_version</code></dfn> member contains a <a>MiniApp platform version resource</a> [=ordered map=] to represent the <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>min_code</code></a>, <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>target_code</code></a>, and <a data-link-for="MiniApp platform version resource" data-link-type="dfn"><code>release_type</code></a>.
+        </p>
+        <p>
+          To <dfn>process the <code>platform_version</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |manifest:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["platform_version"] does not [=map/exist=], or if |json|["platform_version"] is not an [=ordered map=], return.</li>
+          <li>Let |platform_version:ordered map| be a new [=ordered map=].</li>
+          <li><a>Process the platform version's <code>min_code</code> member</a> passing |json|["platform_version"] and |platform_version|.</li>
+          <li><a>Process the platform version's <code>target_code</code> member</a> passing |json|["platform_version"] and |platform_version|.</li>         
+          <li><a>Process the platform version's <code>release_type</code> member</a> passing |json|["platform_version"] and |platform_version|.</li> 
+          <li>If |platform_version|["min_code"] does not [=map/exist=], return failure.</li>  		  
+		      <li>Set |manifest|["platform_version"] to |platform_version|.</li>
+        </ol>
       </section>      
       <section>
         <h3>
@@ -1117,19 +1115,6 @@
         </ol>                 
     </section>
     <section>
-      <h3><code>target_code</code> member</h3>
-        <p>
-          The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>target_code</code></dfn> member is a non-negative integer number that indicates the target supported version of the MiniApp user agent's platform to ensure the regular operation of a MiniApp.
-        </p>
-        <p>
-          To <dfn>process the platform version's <code>target_code</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |platform_version:ordered map|:
-        </p>
-        <ol class="algorithm">
-          <li>If |json|["target_code"] does not [=map/exist=], or if |json|["target_code"] is not a number, return.</li>
-          <li>Set |platform_version|["target_code"] to |json|["target_code"].</li>
-        </ol>                 
-    </section>
-    <section>
       <h3><code>release_type</code> member</h3>
         <p>
           The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>release_type</code></dfn> member is a [=string=] that indicates the release type of the MiniApp user agent's target platform version that is required for running the application. For example, the value can be set to CanaryN, BetaN, or Release. N represents a positive integer, such as <code>"Beta1"</code>.
@@ -1140,6 +1125,19 @@
         <ol class="algorithm">
           <li>If |json|["release_type"] does not [=map/exist=], or if |json|["release_type"] is not a [=string=], return.</li>
           <li>Set |platform_version|["release_type"] to |json|["release_type"].</li>
+        </ol>                 
+    </section>    
+    <section>
+      <h3><code>target_code</code> member</h3>
+        <p>
+          The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>target_code</code></dfn> member is a non-negative integer number that indicates the target supported version of the MiniApp user agent's platform to ensure the regular operation of a MiniApp.
+        </p>
+        <p>
+          To <dfn>process the platform version's <code>target_code</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |platform_version:ordered map|:
+        </p>
+        <ol class="algorithm">
+          <li>If |json|["target_code"] does not [=map/exist=], or if |json|["target_code"] is not a number, return.</li>
+          <li>Set |platform_version|["target_code"] to |json|["target_code"].</li>
         </ol>                 
     </section>
   </section>
