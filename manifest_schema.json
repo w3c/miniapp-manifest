@@ -16,25 +16,31 @@
   "type": "object",
   "required": [
     "app_id",
-    "name",
     "icons",
-    "version",
+    "name",
+    "pages",
     "platform_version",
-    "pages"
+    "version"
   ],
   "properties": {
     "dir": {
       "description": "The base direction of the manifest.",
       "type": "string",
-      "enum": [ "ltr", "rtl", "auto" ],
+      "enum": [
+        "ltr",
+        "rtl",
+        "auto"
+      ],
       "default": "auto"
-    },      
+    },
     "icons": {
-      "description": "An array of icon objects that can serve as iconic representations of MiniApps.",      
+      "description": "An array of icon objects that can serve as iconic representations of MiniApps.",
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["src"],
+        "required": [
+          "src"
+        ],
         "properties": {
           "sizes": {
             "description": "A string consisting of an unordered set of unique space-separated tokens which are ASCII case-insensitive that represents the dimensions of an image for visual media.",
@@ -44,7 +50,9 @@
                 "pattern": "^[0-9 x]+$"
               },
               {
-                "enum": [ "any" ]
+                "enum": [
+                  "any"
+                ]
               }
             ]
           },
@@ -61,7 +69,7 @@
     },
     "lang": {
       "type": "string",
-      "description": "The value of lang here takes the value of Language-Tag defined in the [BCP47]."
+      "description": "Primary language of the MiniApp. The value of lang here takes the value of Language-Tag defined in the [BCP47]."
     },
     "name": {
       "description": "The name of the MiniApp.",
@@ -83,158 +91,185 @@
     "color_scheme": {
       "type": "string",
       "description": "A string that indicates the preferred color scheme of the MiniApp.",
+      "enum": [
+        "dark",
+        "light",
+        "auto"
+      ],
       "example": "dark"
-    },	
+    },
     "device_type": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "An array of strings that indicates the type of devices on which the MiniApp is intended to run. "
+      "description": "An array of strings that indicates the type of devices on which the MiniApp is intended to run. ",
+      "example": "car"
     },
     "version": {
-	    "type": "object",
-      "required": ["code", "name"],  
+      "type": "object",
+      "required": [
+        "code",
+        "name"
+      ],
       "properties": {
         "code": {
           "description": "A non-negative integer that identifies the version of a MiniApp.",
           "type": "integer",
           "default": 1,
           "min": 1
-	    	},
+        },
         "name": {
-           "description": "A string that identifies the version of a MiniApp in a user-friendly way.",
-           "type": "string",
-           "example": "1.0.0"
-		    }		
-	  }	  
-	},
-    "platform_version": {
-	    "type": "object",
-      "required": ["min_code"],  
-      "properties": {
-        "min_code": {
-          "description": "A non-negative integer that identifies the minimum platform version required for running the MiniApp.",
-          "type": "integer",
-          "example": "1"
-	     	},
-        "target_code": {
-           "description": "A non-negative integer number that indicates the target supported version of the MiniApp user agent's platform.",
-           "type": "interger",
-           "example": "2"
-	      },
-        "release_type": {
-          "description": "A string that indicates the release type of the target platform version required for running the application. ",
+          "description": "A string that identifies the version of a MiniApp in a user-friendly way.",
           "type": "string",
-          "example": "Beta1"
-		    }		
-	  }	  
-	},	
-    "pages": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/TypePathString"
+          "example": "1.0.0"
+        }
       },
-      "description": "An array of path strings used for specifying which pages are included in MiniApp. Each item in the array represents a page route."
-    },
-    "req_permissions": {
-      "type": "array",
-      "items": {
+      "platform_version": {
         "type": "object",
-        "required": ["name"],
+        "required": [
+          "min_code"
+        ],
         "properties": {
-          "name": {
-            "type": "string"
+          "min_code": {
+            "description": "A non-negative integer that identifies the minimum platform version required for running the MiniApp.",
+            "type": "integer",
+            "example": 1
           },
-          "reason": {
-            "type": "string"
+          "target_code": {
+            "description": "A non-negative integer number that indicates the target supported version of the MiniApp user agent's platform.",
+            "type": "integer",
+            "example": 2
+          },
+          "release_type": {
+            "description": "A string that indicates the release type of the target platform version required for running the application. ",
+            "type": "string",
+            "example": "Beta1"
           }
         }
-      }
-    },
-    "widgets": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["name", "path"],
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "path": {
-            "$ref": "#/definitions/TypePathString"
-          },
-          "min_platform_version": {
-            "$ref": "#/definitions/TypeVersionString",
-            "description": "If not set, it's identical to the MiniApp platform version by default."
+      },
+      "pages": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/TypePathString"
+        },
+        "description": "An array of path strings used for specifying which pages are included in MiniApp. Each item in the array represents a page route."
+      },
+      "req_permissions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
           }
         }
-      }
-    },
-    "window": {
-      "type": "object",
-      "properties": {
-        "auto_design_width": {
-          "description": "Enables/disables auto-calculation of page's design_width",
-          "type": "boolean",
-          "default": false
-        },        
-        "background_color": {
-          "description": "String with the Window background color represented in sRGB format.",
-          "default": "#ffffff"
-        },
-        "background_text_style": {
-          "description": "Background text style (dark or light).",
-          "enum": ["dark", "light"],
-          "default": "dark"
-        },
-        "design_width": {
-          "description": "A non-negative integer specifying the width of the baseline page design (in pixels).",
-          "type": "integer",
-          "default": 750,
-          "min": 0
-        },        
-        "enable_pull_down_refresh": {
-          "description": "Enables/disables the pull-to-refresh event.",
-          "type": "boolean",
-          "default": false
-        },
-        "fullscreen": {
-          "description": "Enables/disables the full screen display.",
-          "type": "boolean",
-          "default": false
-        },
-        "navigation_bar_background_color": {
-          "description": "Navigation bar background color in sRGB format",
-          "default": "#000000"
-        },
-        "navigation_bar_text_style": {
-          "description": "Text style of the navigation bar (white or black).",
-          "enum": ["white", "black"],
-          "default": "white"
-        },
-        "navigation_bar_title_text": {
-          "description": "String with the title of the navigation bar.",
-          "type": "string"
-        },
-        "navigation_style": {
-          "description": "String with the style of the navigation bar.",
-          "enum": ["default", "custom"],
-          "default": "default"
-        },
-        "on_reach_bottom_distance": {
-          "description": "Integer that indicates the distance for pull-up bottom event triggering (in pixels).",
-          "type": "integer",
-          "default": 50,
-          "min": 0
-        },
-        "orientation": {
-          "description": "String that indicates the screen orientation configuration (portrait, landscape).",
-          "enum": ["portrait", "landscape"],
-          "default": "portrait"
+      },
+      "widgets": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "name",
+            "path"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "path": {
+              "$ref": "#/definitions/TypePathString"
+            },
+            "min_platform_version": {
+              "$ref": "#/definitions/TypeVersionString",
+              "description": "If not set, it's identical to the MiniApp platform version by default."
+            }
+          }
+        }
+      },
+      "window": {
+        "type": "object",
+        "properties": {
+          "auto_design_width": {
+            "description": "Enables/disables auto-calculation of page's design_width",
+            "type": "boolean",
+            "default": false
+          },
+          "background_color": {
+            "description": "String with the Window background color represented in sRGB format.",
+            "default": "#ffffff"
+          },
+          "background_text_style": {
+            "description": "Background text style (dark or light).",
+            "enum": [
+              "dark",
+              "light"
+            ],
+            "default": "dark"
+          },
+          "design_width": {
+            "description": "A non-negative integer specifying the width of the baseline page design (in pixels).",
+            "type": "integer",
+            "default": 750,
+            "min": 0
+          },
+          "enable_pull_down_refresh": {
+            "description": "Enables/disables the pull-to-refresh event.",
+            "type": "boolean",
+            "default": false
+          },
+          "fullscreen": {
+            "description": "Enables/disables the full screen display.",
+            "type": "boolean",
+            "default": false
+          },
+          "navigation_bar_background_color": {
+            "description": "Navigation bar background color in sRGB format",
+            "default": "#000000"
+          },
+          "navigation_bar_text_style": {
+            "description": "Text style of the navigation bar (white or black).",
+            "enum": [
+              "white",
+              "black"
+            ],
+            "default": "white"
+          },
+          "navigation_bar_title_text": {
+            "description": "String with the title of the navigation bar.",
+            "type": "string"
+          },
+          "navigation_style": {
+            "description": "String with the style of the navigation bar.",
+            "enum": [
+              "default",
+              "custom"
+            ],
+            "default": "default"
+          },
+          "on_reach_bottom_distance": {
+            "description": "Integer that indicates the distance for pull-up bottom event triggering (in pixels).",
+            "type": "integer",
+            "default": 50,
+            "min": 0
+          },
+          "orientation": {
+            "description": "String that indicates the screen orientation configuration (portrait, landscape).",
+            "enum": [
+              "portrait",
+              "landscape"
+            ],
+            "default": "portrait"
+          }
         }
       }
     }
   }
 }
-
