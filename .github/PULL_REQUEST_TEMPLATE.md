@@ -1,5 +1,9 @@
 Closes #???
 
+The following tasks have been completed:
+
+* [ ] Confirmed there are no ReSpec errors.
+
 This change (choose at least one, delete ones that don't apply):
 
 * Breaks existing normative behavior (please add label "breaking")
