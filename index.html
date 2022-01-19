@@ -1569,7 +1569,7 @@
       The manifest data helps platforms to configure and process applications properly. The information exposed by the document is public, so third-party agents (e.g., app marketplaces and repositories) may use the manifest information to maintain app versions, classify, and list them.
     </p>
     <p>
-      As the manifest is a JSON document and will commonly be encoded using [[UNICODE]], the security considerations described in [[JSON] and [[UNICODE-SECURITY]] apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#sec-json-schema">JSON Schema</a> to impose their implementation-specific limits on the member names, types, and value ranges (e.g., to guard against memory overflow, or to meet platform-specific limitations).
+      As the manifest is a JSON document and will commonly be encoded using [[UNICODE]], the security considerations described in [[JSON]] and [[UNICODE-SECURITY]] apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#sec-json-schema">JSON Schema</a> to impose their implementation-specific limits on the member names, types, and value ranges (e.g., to guard against memory overflow, or to meet platform-specific limitations).
     </p>
     <p> 
       The integrity of the MiniApp resources, including the manifest, is protected by a cryptographic hash mechanism as part of the whole <a data-link-type="dfn" href="https://www.w3.org/TR/miniapp-packaging/#dfn-package">MiniApp Package</a>, as detailed in [[MINIAPP-PACKAGING]].
