@@ -1054,6 +1054,7 @@
           <li><a href="https://www.w3.org/TR/appmanifest/#dfn-process-a-color-member" data-link-type="dfn">Process a color member</a> passing |json|["window"], |window| and "navigation_bar_background_color".</li>
           <li><a>Process the window's <code>navigation_bar_text_style</code> member</a> passing |json|["window"] and |window|.</li>
           <li><a>Process the window's <code>navigation_bar_title_text</code> member</a> passing |json|["window"] and |window|.</li>
+          <li><a>Process the window's <code>navigation_style</code> member</a> passing |json|["window"] and |window|.</li>
           <li><a>Process the window's <code>on_reach_bottom_distance</code> member</a> passing |json|["window"] and |window|.</li>
           <li><a>Process the window's <code>orientation</code> member</a> passing |json|["window"] and |window|.</li>
           <li><a>Process the window's <code>auto_design_width</code> member</a> passing |json|["window"] and |window|.</li>
@@ -1415,15 +1416,15 @@
     <section>
       <h3><code>navigation_bar_text_style</code> member</h3>
       <p>
-        <span>The <dfn><code>navigation_bar_text_style</code></dfn> member is a [=string=] that indicates the text color of the navigation bar title.</span>
+        <span>The <dfn><code>navigation_bar_text_style</code></dfn> member is a [=string=] that indicates the text color of the navigation bar title (i.e., "[=text style values/`white`=]" or "[=text style values/`black`=]").</span>
       </p>
       <p>
         This member MUST contain one of the following <dfn>text style values</dfn>:  
       </p>
       <dl>
-        <dt>"<dfn data-dfn-for="text style values">white</dfn>" (default)</dt>
+        <dt>"<dfn data-dfn-for="text style values"><code>white</code></dfn>" (default)</dt>
         <dd>For white text color.</dd>
-        <dt>"<dfn data-dfn-for="text style values">black</dfn>" </dt>
+        <dt>"<dfn data-dfn-for="text style values"><code>black</code></dfn>"</dt>
         <dd>For black text color.</dd>
       </dl>
       <p>
@@ -1453,15 +1454,15 @@
     <section>
       <h3><code>navigation_style</code> member</h3>
       <p>
-        The <dfn><code>navigation_style</code></dfn> member is a [=string=] that specifies the style of the navigation bar.
+        The <dfn><code>navigation_style</code></dfn> member is a [=string=] that specifies the style of the navigation bar (i.e., "[=navigation style values/`default`=]" or "[=navigation style values/`custom`=]").
       </p>
       <p>
         This member MUST contain one of the following <dfn>navigation style values</dfn>: 
       </p>
       <dl>
-        <dt>"<dfn data-dfn-for="navigation style values">default</dfn>" (default)</dt>
+        <dt>"<dfn data-dfn-for="navigation style values"><code>default</code></dfn>" (default)</dt>
         <dd>For applying the style by default.</dd>
-        <dt>"<dfn data-dfn-for="navigation style values">custom</dfn>"</dt>
+        <dt>"<dfn data-dfn-for="navigation style values"><code>custom</code></dfn>"</dt>
         <dd>For applying a customized navigation bar.</dd>
       </dl>
       <p>
