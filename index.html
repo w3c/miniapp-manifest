@@ -1588,10 +1588,10 @@
     </p>
     <div class="issue">
       <p>
-        Still to define the security policy to fetch icon images described in the manifest. The Web App Manifest <a href="https://www.w3.org/TR/appmanifest/#content-security-policy">is based</a> on the `img-src` directive [[CSP3]], associated with the manifest's owner `Document`. However, this solution is not enough for the MiniApp manifest since the manifest does not always have HTTP headers associated. 
+        Still to define the security policy to fetch icon images described in the manifest. The Web App Manifest <a href="https://www.w3.org/TR/appmanifest/#content-security-policy">is based</a> on the `img-src` directive [[CSP3]], associated with the manifest's owner `Document`. However, this solution is not valid for the MiniApp manifest since the manifest does not always have HTTP headers associated. 
       </p>
       <p>
-        What happens when `file:`, `data:`, or `blob:` URLs are passed? 
+        What happens when `file:`, `data:`, `javascript:`, or `blob:` URLs are passed? 
       </p>
     </div>
   </section>
