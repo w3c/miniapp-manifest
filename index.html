@@ -1583,6 +1583,18 @@
          Additionally, the <a><code>req_permissions</code></a> member provides a specific means to control the access the local software, hardware, and data resources on the user's device. User's consent should be asked when it comes to privacy-related or high-level privileged resources.
         </p>
     </section>
+
+    <section>
+        <h2>Integrity</h2>
+        <p> The integrity of the manifest document is protected by a cryptographic hash mechanism as part of the whole <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a>, as detailed in [[MINIAPP-PACKAGING]]. </p>
+    </section>
+
+    <section>
+        <h2>Transparency</h2>
+        <p>
+          The user agent SHOULD provide the end-user with transparent metadata about a MiniApp (i.e., <a><code>app_id</code></a>, <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a>, <a><code>short_name</code></a>, <a>icons</a>, <a><code>name</code></a>, <a><code>description</code></a>), offering users enough information, allowing them to make a conscious decision about its usage. This practice could also help to identify spoofing MiniApps.
+        </p>
+    </section>
   </section>
 
   <section class="appendix" id="conformance">
