@@ -1586,17 +1586,6 @@
     <p>
       The manifest specifies the features that could be requested during the operation of a MiniApp, involving access to sensors and communication with other devices, both via network connections and via direct connection to the device (e.g., via Bluetooth, NFC, or USB). The declaration does not imply the access and use of the feature. However, user agents MUST implement mechanisms to guarantee the correct usage of services and APIs and address the potential vulnerabilities in each concrete feature.
     </p>
-    <div class="issue">
-      <p>
-        Still to define the security policy to fetch icon images described in the manifest. The Web App Manifest <a href="https://www.w3.org/TR/appmanifest/#content-security-policy">is based</a> on the `img-src` directive [[CSP3]], associated with the manifest's owner `Document`. However, this solution is not valid for the MiniApp manifest because it does not have HTTP headers associated.
-      </p>
-      <p>
-        Should we define a new MiniApp manifest member to indicate the Content Security Policy (CSP) to control the resources that a MiniApp can fetch or execute? This should be also explained in the Security Considerations of the Packaging specification.
-      </p>
-      <p>
-        What happens when `file:`, `data:`, `javascript:`, or `blob:` URLs are passed? 
-      </p>
-    </div>
   </section>
 
   <section>
