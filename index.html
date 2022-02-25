@@ -1559,6 +1559,9 @@
       User agents must ensure that the user interface is perceivable and operable, so they should take special consideration when processing the members that affect the user agent interface and the rendered content, like with the setup of color schemes and themes (i.e., <a><code>color_scheme</code></a>, <a data-link-for="MiniApp window resource" data-link-type="dfn"><code>background_color</code></a>, <a><code>background_text_style</code></a>, <a><code>navigation_bar_background_color</code></a>, <a><code>navigation_bar_background_color</code></a>, <a><code>navigation_bar_text_style</code></a>, and <a><code>navigation_style</code></a>) and other configuration settings like <a><code>orientation</code></a>, <a><code>fullscreen</code></a>, <a><code>enable_pull_down_refresh</code></a>, and <a><code>on_reach_bottom_distance</code></a>.
     </p>
     <p>
+      The manifest's <a><code>window</code></a> member defines the appearance of the MiniApp, including the look and feel of the navigation bar and other features that modify the user agent's native UI, like <a><code>fullscreen</code></a> or <a><code>orientation</code></a>. User agents must offer intuitive mechanisms to close the apps, reverting the changes that affected the native UI. 
+    </p>    
+    <p>
       User agents interpreting this manifest should help users orient within and control windows and viewports. They should also provide alternative views addressing the different usage scenarios through the advanced use of the `device_type` member and extending the manifest with vendor-specific members to enhance accessibility. Thus, MiniApp user agents and platforms should provide mechanisms for configuring user stylesheets, themes and customize the display and interaction with the application, complying with the applicable specifications and conventions, in particular the [[[UAAG20]]].
     </p>
   </section>
@@ -1585,7 +1588,7 @@
     </p>
     <p>
       The manifest specifies the features that could be requested during the operation of a MiniApp, involving access to sensors and communication with other devices, both via network connections and via direct connection to the device (e.g., via Bluetooth, NFC, or USB). The declaration does not imply the access and use of the feature. However, user agents MUST implement mechanisms to guarantee the correct usage of services and APIs and address the potential vulnerabilities in each concrete feature.
-    </p>
+    </p>    
   </section>
 
   <section>
@@ -1607,9 +1610,6 @@
     </p>
     <p>
       User agents SHOULD provide a mechanism to remove an installed MiniApp.  It is RECOMMENDED that at the time of removal, the user agent also presents the user with an opportunity to revoke other persistent data and settings associated with the application, such as permissions and persistent storage.
-    </p>
-    <p>
-      The manifest's <a><code>window</code></a> member defines the appearance of the MiniApp, including the look and feel of the navigation bar and other features that modify the user agent's native UI, like <a><code>fullscreen</code></a> or <a><code>orientation</code></a>. User agents must offer intuitive mechanisms to close the apps, reverting the changes that affected the native UI. 
     </p>
   </section>
 
