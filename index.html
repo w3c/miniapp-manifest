@@ -117,7 +117,7 @@
   <section>
     <h2>MiniApp Manifest</h2>
     <p>
-      A <dfn data-export="" data-lt="MiniApp manifest's|manifest|MiniApp manifests">MiniApp manifest</dfn> is a [[JSON]] document that extends and profiles the Web App Manifest [[APPMANIFEST]] and the Web App Manifest - Application Information [[MANIFEST-APP-INFO]], to describe metadata associated with a MiniApp.
+      A <dfn data-export="" data-lt="MiniApp manifest's|manifest">MiniApp manifest</dfn> is a [[JSON]] document that extends and profiles the Web App Manifest [[APPMANIFEST]] and the Web App Manifest - Application Information [[MANIFEST-APP-INFO]], to describe metadata associated with a MiniApp.
     </p>
     <section id="manifest-conformance" data-cite="IMAGE-RESOURCE">
       <h3>Conformance</h3>
@@ -685,11 +685,11 @@
           the default base text direction of the whole MiniApp.</p> 
         <p>The <code>[=dir=]</code> member's value can be set to one of the <a href="https://www.w3.org/TR/appmanifest/#dfn-text-directions">text-directions</a> as specified in [[APPMANIFEST]]. The text-direction values are the following:</p>
         <dl>
-          <dt><a href="https://www.w3.org/TR/appmanifest/#dfn-ltr" data-type="dfn" data-link-type="dfn"><code>"ltr"</code></a></dt>
+          <dt>"<code><a href="https://www.w3.org/TR/appmanifest/#dfn-ltr" data-type="dfn" data-link-type="dfn">ltr</a></code>"</dt>
           <dd>Left-to-right text.</dd>
-          <dt><a href="https://www.w3.org/TR/appmanifest/#dfn-rtl" data-type="dfn" data-link-type="dfn"><code>"rtl"</code></a></dt>
+          <dt>"<code><a href="https://www.w3.org/TR/appmanifest/#dfn-rtl" data-type="dfn" data-link-type="dfn"><code>rtl</a></code>"</dt>
           <dd>Right-to-left text.</dd>
-          <dt><a href="https://www.w3.org/TR/appmanifest/#dfn-auto" data-type="dfn" data-link-type="dfn"><code>"auto"</code></a> (default)</dt>
+          <dt>"<code><a href="https://www.w3.org/TR/appmanifest/#dfn-auto" data-type="dfn" data-link-type="dfn"><code>auto</a></code>" (default)</dt>
           <dd>No explicit directionality.</dd>
         </dl>
         <p class="note" title="Processing the `dir` member">
@@ -706,15 +706,15 @@
         <p>As specified in [[IMAGE-RESOURCE]], an [=image resource=] consists of:</p>
         <dl>
         <dt>
-          <dt><a href="https://www.w3.org/TR/image-resource/#dfn-label" data-link-type="dfn"><code>label</code></a></dt>
+          <dt><code><a href="https://www.w3.org/TR/image-resource/#dfn-label" data-link-type="dfn">label</a></code></dt>
           <dd>
             An optional [=string=] representing the accessible name of the image.
           </dd>
-          <dt><a href="https://www.w3.org/TR/image-resource/#dfn-sizes" data-type="dfn" data-link-type="dfn"><code>sizes</code></a></dt>
+          <dt><code><a href="https://www.w3.org/TR/image-resource/#dfn-sizes" data-type="dfn" data-link-type="dfn">sizes</a></code></dt>
           <dd>
             An optional [=string=] representing the sizes of the image, expressed using the same syntax as [^link^]'s [^link/sizes^] attribute.
           </dd>
-          <dt><a href="https://www.w3.org/TR/image-resource/#dfn-src" data-type="dfn" data-link-type="dfn"><code>src</code></a></dt>
+          <dt><code><a href="https://www.w3.org/TR/image-resource/#dfn-src" data-type="dfn" data-link-type="dfn">src</a></code></dt>
           <dd>A <a data-link-type="dfn" data-type="dfn" href="https://url.spec.whatwg.org/#concept-url">URL</a> from where to obtain the image data.</dd>
         </dl>
         <p class="note" title="Processing the `icons` member">
@@ -885,13 +885,13 @@
         <p>
           The first item in the <code>[=pages=]</code> [=list=] defines the homepage or entry point of a MiniApp.
         </p>
-        <div class="note" title="Usage">
+        <div class="note" title="Usage" data-cite="APPMANIFEST">
           <p>
-            For compatibility with the Web platform, it is RECOMMENDED to use <code>[=pages=]</code> along with the Web application manifest's <a href="https://www.w3.org/TR/appmanifest/#start_url-member" data-link-type="dfn"><code>start_url</code></a> and <a href="https://www.w3.org/TR/appmanifest/#scope-member" data-link-type="dfn"><code>scope</code></a> members. These members will be set with the following values:
+            For compatibility with the Web platform, it is RECOMMENDED to use <code>[=pages=]</code> along with the Web application manifest's <code>[=manifest/start_url=]</code> and <code>[=manifest/scope=]</code> members. These members will be set with the following values:
           </p>
           <ul>
-            <li><a href="https://www.w3.org/TR/appmanifest/#start_url-member" data-link-type="dfn">start_url</a> SHOULD be set with the same value of the first item in the <code>[=pages=]</code> member; and</li>
-            <li><a href="https://www.w3.org/TR/appmanifest/#scope-member" data-link-type="dfn">scope</a> SHOULD be set with the value <code>"."</code>.</li>
+            <li><code>[=manifest/start_url=]</code> SHOULD be set with the same value of the first item in the <code>[=pages=]</code> member; and</li>
+            <li><code>[=manifest/scope=]</code> SHOULD be set with the value "<code>.</code>".</li>
           </ul>
         </div>
         <p>
@@ -1105,7 +1105,7 @@
     <section id="version-min-code">
       <h3><code>min_code</code> member</h3>
         <p>
-          The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>min_code</code></dfn> member is a non-negative integer number that indicates the minimum supported version of the MiniApp user agent's platform to ensure the regular operation of a MiniApp.
+          The [=MiniApp platform version resource's=] <code><dfn data-dfn-for="MiniApp platform version resource">min_code</dfn></code> member is a non-negative integer number that indicates the minimum supported version of the MiniApp user agent's platform to ensure the regular operation of a MiniApp.
         </p>      
         <p>
           To <dfn>process the platform version's <code>min_code</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |platform_version:ordered map|:
@@ -1118,7 +1118,7 @@
     <section>
       <h3><code>release_type</code> member</h3>
         <p>
-          The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>release_type</code></dfn> member is a [=string=] that indicates the release type of the MiniApp user agent's target platform version that is required for running an application.
+          The [=MiniApp platform version resource's=] <code><dfn data-dfn-for="MiniApp platform version resource">release_type</dfn></code> member is a [=string=] that indicates the release type of the MiniApp user agent's target platform version that is required for running an application.
         </p>
         <p class="note" title='Usage'>
            MiniApp vendors may recommend specific versioning schemes and values for this member (e.g., <code>CanaryN</code>, <code>BetaN</code>, or <code>Release</code>, where N represents a positive integer, such as <samp>Beta1</samp>).
@@ -1134,7 +1134,7 @@
     <section>
       <h3><code>target_code</code> member</h3>
         <p>
-          The [=MiniApp platform version resource's=] <dfn data-dfn-for="MiniApp platform version resource"><code>target_code</code></dfn> member is a non-negative integer number that indicates the target supported version of the MiniApp user agent's platform to ensure the regular operation of a MiniApp.
+          The [=MiniApp platform version resource's=] <code><dfn data-dfn-for="MiniApp platform version resource">target_code</dfn></code> member is a non-negative integer number that indicates the target supported version of the MiniApp user agent's platform to ensure the regular operation of a MiniApp.
         </p>
         <p>
           To <dfn>process the platform version's <code>target_code</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |platform_version:ordered map|:
@@ -1149,7 +1149,7 @@
   <section id="sec-permission-resources">
     <h2>MiniApp permission resources</h2>
     <p>
-      A <dfn data-lt="permission resource|MiniApp permission resources|MiniApp permission resource's">MiniApp permission resource</dfn> is an [=ordered map=] that describes a request for using a concrete system feature (e.g., access to device's location, user contacts, sensors, and camera) required for the proper execution of a MiniApp.
+      A <dfn data-lt="permission resource|MiniApp permission resource's">MiniApp permission resource</dfn> is an [=ordered map=] that describes a request for using a concrete system feature (e.g., access to device's location, user contacts, sensors, and camera) required for the proper execution of a MiniApp.
     </p>
     <p>
       The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of a [=permission resource=].
@@ -1157,7 +1157,7 @@
     <section id="permission-name">
       <h3><code>name</code> member</h3>
       <p>
-        The [=MiniApp permission resource's=] <dfn data-dfn-for="MiniApp permission resource"><code>name</code></dfn> member is a [=string=] that indicates the name of the feature requested.
+        The [=MiniApp permission resource's=] <code><dfn data-dfn-for="MiniApp permission resource">name</dfn></code> member is a [=string=] that indicates the name of the feature requested.
       </p>
       <p>
         To <dfn>process the permission resource's <code>name</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |permission:ordered map|:
@@ -1171,7 +1171,7 @@
     <section>
       <h3><code>reason</code> member</h3>
       <p>
-        The optional [=MiniApp permission resource's=] <code><dfn>reason</dfn></code> member is a [=string=] that indicates the reason given to request the feature specified in the <a data-link-type="dfn" data-link-for="MiniApp permission resource"><code>name</code></a> attribute.
+        The optional [=MiniApp permission resource's=] <code><dfn>reason</dfn></code> member is a [=string=] that indicates the reason given to request the feature specified in the <code>[MiniApp permission resource/name=]</code> attribute.
       </p>
       <p>
         To <dfn>process the permission resource's <code>reason</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |permission:ordered map|:
@@ -1189,7 +1189,7 @@
   <section id="sec-version-resources">
     <h2>MiniApp version resources</h2>
     <p>
-      A <dfn data-lt="version resource|MiniApp version resources|MiniApp version resource's">MiniApp version resource</dfn> is an [=ordered map=] that describes the version code and version name of a MiniApp.
+      A <dfn data-lt="version resource|MiniApp version resource's">MiniApp version resource</dfn> is an [=ordered map=] that describes the version code and version name of a MiniApp.
     </p>
     <p>
       The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of a [=version resource=].
@@ -1197,7 +1197,7 @@
     <section>
       <h3><code>code</code> member</h3>
       <p>
-        The [=MiniApp version resource's=] <dfn data-dfn-for="MiniApp version resource"><code>code</code></dfn> member is a non-negative integer number that represents the version of a MiniApp. It is mainly used for enhancing the maintainability and security of MiniApp (e.g., compatibility among incremental versions). The <code>[=code=]</code> member aims at supporting the development and deployment process, and it is not usually displayed to the end-user.
+        The [=MiniApp version resource's=] <code><dfn data-dfn-for="MiniApp version resource">code</dfn></code> member is a non-negative integer number that represents the version of a MiniApp. It is mainly used for enhancing the maintainability and security of MiniApp (e.g., compatibility among incremental versions). The <code>[=code=]</code> member aims at supporting the development and deployment process, and it is not usually displayed to the end-user.
       </p>
       <p>
         To <dfn>process the version's <code>code</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |version:ordered map|:
@@ -1231,7 +1231,7 @@
   <section id="sec-widget-resource-members">
     <h2>MiniApp widget resource members</h2>
     <p>
-      A <dfn data-lt="widget resources|MiniApp widget resources|MiniApp widget resource's">MiniApp widget resource</dfn> is an [=ordered map=] that defines and configures a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-widget">widget</a> that is part of a MiniApp.
+      A <dfn data-lt="widget resources|MiniApp widget resource's">MiniApp widget resource</dfn> is an [=ordered map=] that defines and configures a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-widget">widget</a> that is part of a MiniApp.
     </p>
     <p>
       The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of a [=widget resource=].
@@ -1239,7 +1239,7 @@
     <section id="widget-name">
       <h2><code>name</code> member</h2>
       <p>
-        The [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource"><code>name</code></dfn> member is a [=string=] that indicates the title of a widget.
+        The [=MiniApp widget resource's=] <code><dfn data-dfn-for="MiniApp widget resource">name</dfn></code> member is a [=string=] that indicates the title of a widget.
       </p>
       <p>
         To <dfn>process the widget's <code>name</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |widget:ordered map|:
@@ -1267,7 +1267,7 @@
     <section id="widget-min-code">
       <h3><code>min_code</code> member</h3>
       <p>
-        The optional [=MiniApp widget resource's=] <dfn data-dfn-for="MiniApp widget resource"><code>min_code</code></dfn> member is a number that indicates the minimum platform version supported for a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-widget">MiniApp widget</a>.
+        The optional [=MiniApp widget resource's=] <code><dfn data-dfn-for="MiniApp widget resource">min_code</dfn></code> member is a number that indicates the minimum platform version supported for a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-widget">MiniApp widget</a>.
       </p>
       <p class="note" title='Usage'>
         Since Widget APIs and MiniApp APIs may differ, the declaration of the minimum version of the platform may be different. Thus, if the widgets member omits <code>[=MiniApp widget resource/min_code=]</code> explicitly, the user agent will consider the same requirement as the specified in the <code>[=MiniApp platform version resource/min_code=]</code> member in the <code>[=platform_version=]</code> object.
@@ -1287,7 +1287,7 @@
   <section id="sec-window-resource-members">
     <h2>MiniApp window resource members</h2>
     <p>
-      A <dfn data-lt="window resource|MiniApp window resources|MiniApp window resource's">MiniApp window resource</dfn> is an [=ordered map=] that defines and configures the window that contains a MiniApp.
+      A <dfn data-lt="window resource|MiniApp window resource's">MiniApp window resource</dfn> is an [=ordered map=] that defines and configures the window that contains a MiniApp.
     </p>
     <p>
       The following members are defined under the scope of the [=MiniApp manifest=], enabling the description of a MiniApp [=window resource=].
@@ -1332,9 +1332,9 @@
         This member supports the values of <a data-xref-type="css-descriptor" data-xref-for="@media">prefers-color-scheme</a> and MUST contain one of the following <dfn>background text style values</dfn>:  
       </p>
       <dl>
-        <dt>"<dfn data-dfn-for="background text style values"><code>light</code></dfn>"</dt>
+        <dt>"<code><dfn data-dfn-for="background text style values">light</dfn></code>"</dt>
         <dd>For light style.</dd>
-        <dt>"<dfn data-dfn-for="background text style values"><code>dark</code></dfn>" (default)</dt>
+        <dt>"<code><dfn data-dfn-for="background text style values">dark</dfn></code>" (default)</dt>
         <dd>For dark style.</dd>
       </dl>      
       <p>
@@ -1386,8 +1386,8 @@
       <p>
         The <code><dfn>fullscreen</dfn></code> member is a [=boolean=] that indicates if the MiniApp is shown in full-screen display mode.
       </p>
-      <p class="note" title='Usage'>
-        When this member takes the <code>true</code> value, it is equivalent to the <a href="https://www.w3.org/TR/appmanifest/#dfn-fullscreen" data-link-type="dfn"><code>fullscreen</code> value on the application manifest's <a href="https://www.w3.org/TR/appmanifest/#dfn-display" data-link-type="dfn"><code>display</code></a> member. When it takes <code>false</code> as value, it is equivalent to <a href="https://www.w3.org/TR/appmanifest/#dfn-minimal-ui" data-link-type="dfn"><code>minimal-ui</code></a>.
+      <p class="note" title='Usage' data-cite='MEDIAQUERIES'>
+        When this member takes the <code>true</code> value, it is equivalent to the <code>[=manifest/fullscreen=]</code> value on the application manifest's <code>[=manifest/display=]</code> member. When it takes <code>false</code> as value, it is equivalent to <code>[=display mode/minimal-ui=]</code>.
       </p>
       <p>
         Value by default: <code>false</code>.
@@ -1422,9 +1422,9 @@
         This member MUST contain one of the following <dfn>text style values</dfn>:  
       </p>
       <dl>
-        <dt>"<dfn data-dfn-for="text style values"><code>white</code></dfn>" (default)</dt>
+        <dt>"<code><dfn data-dfn-for="text style values">white</dfn></code>" (default)</dt>
         <dd>For white text color.</dd>
-        <dt>"<dfn data-dfn-for="text style values"><code>black</code></dfn>"</dt>
+        <dt>"<code><dfn data-dfn-for="text style values">black</dfn></code>"</dt>
         <dd>For black text color.</dd>
       </dl>
       <p>
@@ -1460,9 +1460,9 @@
         This member MUST contain one of the following <dfn>navigation style values</dfn>: 
       </p>
       <dl>
-        <dt>"<dfn data-dfn-for="navigation style values"><code>default</code></dfn>" (default)</dt>
+        <dt>"<code><dfn data-dfn-for="navigation style values">default</dfn></code>" (default)</dt>
         <dd>For applying the style by default.</dd>
-        <dt>"<dfn data-dfn-for="navigation style values"><code>custom</code></dfn>"</dt>
+        <dt>"<code><dfn data-dfn-for="navigation style values">custom</dfn></code>"</dt>
         <dd>For applying a customized navigation bar.</dd>
       </dl>
       <p>
@@ -1480,8 +1480,8 @@
     </section>
     <section>
       <h3><code>on_reach_bottom_distance</code> member</h3>
-      <p>
-        The <code><dfn>on_reach_bottom_distance</dfn></code> member is a number that defines the vertical offset from the bottom of the window required to trigger a page pull-up event. Values for this member are non-negative integers expressed in <a data-cite="css-values">pixel unit</a>.
+      <p data-cite="css-values">
+        The <code><dfn>on_reach_bottom_distance</dfn></code> member is a number that defines the vertical offset from the bottom of the window required to trigger a page pull-up event. Values for this member are non-negative integers expressed in [=pixel unit=].
       </p>
       <p>
         Value by default: <code>50</code>.
@@ -1505,7 +1505,7 @@
         This member supports the <dfn>orientation values</dfn>: <code>"portrait"</code> and <code>"landscape"</code> defined in {{OrientationLockType}} [[SCREEN-ORIENTATION]].
       </P>
       <p class="note" title='Usage'>
-        This member is equivalent to the application manifest's <a href="https://www.w3.org/TR/appmanifest/#dfn-orientation" data-link-type="dfn"><code>orientation</code></a>.
+        This member is equivalent to the application manifest's <code>[=manifest/orientation=]</code>.
       </p>
       <p>
         Value by default: <code>"portrait"</code>.
@@ -1555,7 +1555,7 @@
       This document specifies a set of metadata, enabling developers and publishers to describe and configure the behavior and appearance of MiniApps. Some manifest attributes, like `color_scheme` and the `window` resource members, aim user agents to generate customized user interfaces to enable interaction between the user and the MiniApp.
     </p>
     <p>
-      The <code>[=icons=]</code> member allows developers to describe the visual and iconic representation of a MiniApp in the platform and operating system. Here, the platform should adequately communicate with the platform accessibility services to represent the images, also using the alternative textual descriptions (e.g., <code>[=icon=]</code>'s <a href="https://www.w3.org/TR/image-resource/#dfn-label" data-link-type="dfn"><code>label</code></a>, <code>[=MiniApp manifest/name</code></a> and <code>[=short_name=]</code>) to enhance accessibility (i.e., icons in the home screen of the device, listing in app directories, and app configuration).
+      The <code>[=icons=]</code> member allows developers to describe the visual and iconic representation of a MiniApp in the platform and operating system. Here, the platform should adequately communicate with the platform accessibility services to represent the images, also using the alternative textual descriptions (e.g., <code>[=icon=]</code>'s <code><a href="https://www.w3.org/TR/image-resource/#dfn-label" data-link-type="dfn">label</a></code>, <code>[=MiniApp manifest/name=]</code> and <code>[=short_name=]</code>) to enhance accessibility (i.e., icons in the home screen of the device, listing in app directories, and app configuration).
     </p>
     <p>
       User agents must ensure that the user interface is perceivable and operable, so they should take special consideration when processing the members that affect the user agent interface and the rendered content, like with the setup of color schemes and themes (i.e., <code>[=color_scheme=]</code>, <code>[=MiniApp window resource/background_color=]</code>, <code>[=background_text_style=]</code>, <code>[=navigation_bar_background_color=]</code>, <code>[=navigation_bar_background_color=]</code>, <code>[=navigation_bar_text_style=]</code>, and <code>[=navigation_style=]</code>) and other configuration settings like <code>[=orientation=]</code>, <code>[=fullscreen=]</code>, <code>[=enable_pull_down_refresh=]</code>, and <code>[=on_reach_bottom_distance=]</code>.
@@ -1602,13 +1602,13 @@
       The MiniApp manifest does not motivate collecting, using, or disclosing personal data. However, MiniApp user agents MUST control the access to sensitive device's services and features that could contribute to fingerprinting. User's behavioral patterns in permission management, along with the device's specific constraints (i.e., MiniApps for automotive, IoT, and SmartTVs), could allow users to be fingerprinted. For this reason, MiniApp user agents MUST control the access to the device's resources and preserve the sandboxed environment, protecting the access to sensitive resources, such as device sensors, external software, and personal data, with no disclosure of user's preferences. 
     </p> 
     <p>
-      Through the manifest's <a><code>req_permissions</code></a> member, developers declare the requirements of a MiniApp to access privacy-related sensitive and high-level privileged resources. This member allows the platform to understand the specific restricted resources the MiniApp may request (<a data-link-for="MiniApp permission resource" data-link-type="dfn"><code>name</code></a> member), informing the user about the potential consequences and granting (or keeping blocked) access to these resources. Developers SHOULD use the <a><code>reason</code></a> member to state the clear and easy-to-understand rationale for requesting these advanced resources. 
+      Through the manifest's <a><code>req_permissions</code></a> member, developers declare the requirements of a MiniApp to access privacy-related sensitive and high-level privileged resources. This member allows the platform to understand the specific restricted resources the MiniApp may request (<code>[=MiniApp permission resource/name=]</code> member), informing the user about the potential consequences and granting (or keeping blocked) access to these resources. Developers SHOULD use the <a><code>reason</code></a> member to state the clear and easy-to-understand rationale for requesting these advanced resources. 
     </p>
     <p>
       User agents MUST manage the user's preferences, including the explicit permissions the user shall grant to use sensitive system's features (e.g., geolocation and device's sensors). The user agent SHOULD implement mechanisms to remember their preferences, and the end-user SHALL explicitly decide if this information is stored across sessions. No other information related to the manifest should persist across sessions.
     </p>
     <p>
-      As in Web applications, MiniApps can be installed using UI dialogs. In the installation process, the user agent SHOULD display clear information about the app (i.e., <a><code>app_id</code></a>, <a data-link-for="MiniApp manifest" data-link-type="dfn"><code>name</code></a>, <a><code>short_name</code></a>, <a>icons</a>, <a><code>description</code></a>). This transparent information allows end-users to make a conscious decision before installing it.
+      As in Web applications, MiniApps can be installed using UI dialogs. In the installation process, the user agent SHOULD display clear information about the app (i.e., <code>[=app_id=]</code>, <code>[=MiniApp manifest/name=]</code>, <code>[=short_name=]</code>, <code>[=icons=]</code>, <code>[=description=]</code>). This transparent information allows end-users to make a conscious decision before installing it.
     </p>
     <p>
       User agents SHOULD provide a mechanism to remove an installed MiniApp. It is RECOMMENDED that at the time of removal, the user agent also presents the user with an opportunity to revoke other persistent data and settings associated with the application, such as permissions and persistent storage.
