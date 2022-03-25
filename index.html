@@ -85,14 +85,6 @@
                 title: 'Semantic Versioning',
                 href: 'https://semver.org/'
               },
-              "MINIAPP-LIFECYCLE": {
-                  title: "MiniApp Lifecycle",
-                  href: "https://w3c.github.io/miniapp-lifecycle/"
-              },
-              "MINIAPP-PACKAGING": {
-                  title: "MiniApp Packaging",
-                  href: "https://w3c.github.io/miniapp-packaging/"
-              },
             },
             a11y: true,
             xref: "web-platform",
@@ -103,7 +95,7 @@
 <body data-cite="APPMANIFEST MINIAPP-PACKAGING MANIFEST-APP-INFO INFRA URL HTML WEBIDL">
   <section id='abstract'>
     <p>
-      This specification is a registry of supplementary members for the <a href="https://www.w3.org/TR/appmanifest/">Web Application Manifest</a> and the <a href="https://www.w3.org/TR/manifest-app-info/">Web App Manifest - Application Information</a> specifications that provide additional metadata to an application manifest to describe <a href="https://w3c.github.io/miniapp-packaging/#dfn-miniapp" data-link-type="dfn">MiniApps</a>. This JSON-based manifest file enables developers to set up basic information of a MiniApp, like identification, human-readable description, versioning data, and styling information. The MiniApp manifest also configures the routing of the pages and widgets that are part of a MiniApp.
+      This specification is a registry of supplementary members for the <a href="https://www.w3.org/TR/appmanifest/">Web Application Manifest</a> and the <a href="https://www.w3.org/TR/manifest-app-info/">Web App Manifest - Application Information</a> specifications that provide additional metadata to an application manifest to describe [=MiniApps=]. This JSON-based manifest file enables developers to set up basic information of a MiniApp, like identification, human-readable description, versioning data, and styling information. The MiniApp manifest also configures the routing of the pages and widgets that are part of a MiniApp.
     </p>
   </section>
 
@@ -880,7 +872,7 @@
             The [=MiniApp manifest's=] <code><dfn data-export="">pages</dfn></code> member is a [=list=] of [=relative-url string=] used for specifying the collection of pages that are part of a MiniApp. Each item in the [=list=] represents a page identified by its [=page route=].
         </p> 
         <p>
-          A <dfn data-lt="route|page route|page routes">MiniApp page route</dfn> is the relative path and filename of a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-page">MiniApp page</a>. When configuring the [=page routes=], developers MAY omit the extension of the file that defines the main component of the <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-page">page</a> (e.g., <samp>pages/mypage</samp> or <samp>pages/mypage.html</samp>).
+          A <dfn data-lt="route|page route|page routes">MiniApp page route</dfn> is the relative path and filename of a <a data-link-type="dfn" href="https://www.w3.org/TR/miniapp-packaging/#dfn-page">MiniApp page</a>. When configuring the [=page routes=], developers MAY omit the extension of the file that defines the main component of the <a data-link-type="dfn" href="https://www.w3.org/TR/miniapp-packaging/#dfn-page">page</a> (e.g., <samp>pages/mypage</samp> or <samp>pages/mypage.html</samp>).
         </p>
         <p>
           The first item in the <code>[=pages=]</code> [=list=] defines the homepage or entry point of a MiniApp.
@@ -992,7 +984,7 @@
             The optional [=MiniApp manifest's=] <code><dfn>widgets</dfn></code> member is a [=list=] of [=MiniApp widget resources=] that are a part of a MiniApp.
         </p>
         <p>
-            A <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> MAY include <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-page">MiniApp pages</a> and Widgets concurrently.
+            A <a data-link-type="dfn" href="https://www.w3.org/TR/miniapp-packaging/#dfn-package">MiniApp Package</a> MAY include <a data-link-type="dfn" href="https://www.w3.org/TR/miniapp-packaging/#dfn-page">MiniApp pages</a> and Widgets concurrently.
         </p> 
         <p>
             A widget, as part of a MiniApp, applies some of the members of the [=MiniApp manifest=], including:
@@ -1231,7 +1223,7 @@
   <section id="sec-widget-resource-members">
     <h2>MiniApp widget resource members</h2>
     <p>
-      A <dfn data-lt="widget resources|MiniApp widget resource's">MiniApp widget resource</dfn> is an [=ordered map=] that defines and configures a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-widget">widget</a> that is part of a MiniApp.
+      A <dfn data-lt="widget resources|MiniApp widget resource's">MiniApp widget resource</dfn> is an [=ordered map=] that defines and configures a <a data-link-type="dfn" href="https://www.w3.org/TR/miniapp-packaging/#dfn-widget">widget</a> that is part of a MiniApp.
     </p>
     <p>
       The following members are defined under the scope of the [=MiniApp manifest=], addressing specific aspects of a [=widget resource=].
@@ -1267,7 +1259,7 @@
     <section id="widget-min-code">
       <h3><code>min_code</code> member</h3>
       <p>
-        The optional [=MiniApp widget resource's=] <code><dfn data-dfn-for="MiniApp widget resource">min_code</dfn></code> member is a number that indicates the minimum platform version supported for a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-widget">MiniApp widget</a>.
+        The optional [=MiniApp widget resource's=] <code><dfn data-dfn-for="MiniApp widget resource">min_code</dfn></code> member is a number that indicates the minimum platform version supported for a <a data-link-type="dfn" href="https://www.w3.org/TR/miniapp-packaging/#dfn-widget">MiniApp widget</a>.
       </p>
       <p class="note" title='Usage'>
         Since Widget APIs and MiniApp APIs may differ, the declaration of the minimum version of the platform may be different. Thus, if the widgets member omits <code>[=MiniApp widget resource/min_code=]</code> explicitly, the user agent will consider the same requirement as the specified in the <code>[=MiniApp platform version resource/min_code=]</code> member in the <code>[=platform_version=]</code> object.
@@ -1542,10 +1534,10 @@
   <section>
     <h2>Dependencies</h2>
     <p>
-      As a crucial part of a <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a>, the <code>manifest.json</code> file describes several important aspects of a MiniApp by referring to the <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> resources in different file types, such as the page scripts and visual configuration files in the <code>pages</code> directory and the images in the <code>common</code> directory. Details are specified in [[MINIAPP-PACKAGING]].
+      As a crucial part of a <a data-link-type="dfn" href="https://www.w3.org/TR/miniapp-packaging/#dfn-package">MiniApp Package</a>, the <code>manifest.json</code> file describes several important aspects of a MiniApp by referring to the <a data-link-type="dfn" href="https://www.w3.org/TR/miniapp-packaging/#dfn-package">MiniApp Package</a> resources in different file types, such as the page scripts and visual configuration files in the <code>pages</code> directory and the images in the <code>common</code> directory. Details are specified in [[MINIAPP-PACKAGING]].
     </p>
     <p>
-      The regular operation of a MiniApp relies on the proper configuration in the [=manifest=] and the <a data-link-type="dfn" href="https://w3c.github.io/miniapp-packaging/#dfn-package">MiniApp Package</a> availability of resources. Such dependency needs to be checked during both the development phase and deployment phase.
+      The regular operation of a MiniApp relies on the proper configuration in the [=manifest=] and the <a data-link-type="dfn" href="https://www.w3.org/TR/miniapp-packaging/#dfn-package">MiniApp Package</a> availability of resources. Such dependency needs to be checked during both the development phase and deployment phase.
     </p>
   </section>
 
@@ -1629,14 +1621,14 @@
           <span>JSON Schema</span>
       </h2>
       <p>
-        Developers interested in validating the MiniApp manifest document can use the JSON Schema defined at <a href="https://w3c.github.io/miniapp-manifest/manifest_schema.json">https://w3c.github.io/miniapp-manifest/manifest_schema.json</a>.
+        Developers interested in validating the MiniApp manifest document can use the JSON Schema defined at <a href="https://www.w3.org/TR/miniapp-manifest/manifest_schema.json">https://www.w3.org/TR/miniapp-manifest/manifest_schema.json</a>.
       </p>
       <aside class="note" title="MiniApp Manifest JSON Schema">
         <details>
           <summary>
             Click to load the schema.
           </summary>
-          <pre class="json" data-include= "https://w3c.github.io/miniapp-manifest/manifest_schema.json"></pre>
+          <pre class="json" data-include= "https://www.w3.org/TR/miniapp-manifest/manifest_schema.json"></pre>
         </details>
       </aside>
   </section>
