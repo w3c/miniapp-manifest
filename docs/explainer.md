@@ -12,29 +12,29 @@ Shouren Lan, Zhiqiang Yu, Xiaofeng Zhang, Yongjing Zhang
 
 MiniApp Manifest defines a JSON-based profile file that provides developers with a centralized place to set up essential information associated with a MiniApp ([What is MiniApp?](https://w3c.github.io/miniapp/white-paper/#what-is-miniapp)).
 
-The information described in a MiniApp Manifest, includes metadata about the app, like app identifiers, denomination, human-readable description, versioning data, and styling information. The MiniApp manifest also configures the routing of the pages and widgets that are part of a MiniApp, and other data associated to their running environment, tools and distribution.
+The information described in a MiniApp Manifest includes metadata about the app, like app identifiers, denomination, human-readable description, versioning data, and styling information. The MiniApp manifest also configures the routing of the pages and widgets that are part of a MiniApp and other data associated with their running environment, tools, and distribution.
 
 ### Why should we care?
 
-The MiniApp Manifest includes information that describe and configure the app, providing developers, publishers and third parties with advanced  metadata and setup information useful in the different stages of the app, from development and distribution to the installation and execution. 
+The MiniApp Manifest includes information that describes and configures the app, providing developers, publishers, and third parties with advanced  metadata and setup information, useful in the different stages of the app, from development and distribution to installation and execution. 
 
-Members of the manifest include human-readable descriptions (`name`, `description`, `icons`, and `short_name`), version management attributes (`app_id`, `version` and `platform_version`), look-and-feel configuration (`background_color`, `fullscreen`, `orientation`, `color_scheme`, among others), permission requirements (`req_permissions`), routing and widgets configuration (`pages`, `widgets`).
+Members of the manifest include human-readable descriptions (`name`, `description`, `icons`, and `short_name`), version management attributes (`app_id`, `version`, and `platform_version`), look-and-feel configuration (`background_color`, `fullscreen`, `orientation`, `color_scheme`, among others), permission requirements (`req_permissions`), routing and widgets configuration (`pages`, `widgets`).
 
 ## 2. Manifest Design
 
-The MiniApp Manifest is defined as a registry of supplementary members for the <a href="https://www.w3.org/TR/appmanifest/">Web Application Manifest</a> and the <a href="https://www.w3.org/TR/manifest-app-info/">Web App Manifest - Application Information</a> specifications. These  additional metadata aims at describing the particularities of MiniApps to fulfill the design requirements of the [MiniApp Packaging](https://www.w3.org/TR/miniapp-packaging/), [MiniApp Widget Requirements](https://www.w3.org/TR/miniapp-widget-req/), and [MiniApp Addressing](https://www.w3.org/TR/miniapp-addressing/) specifications. 
+The MiniApp Manifest is defined as a registry of supplementary members for the <a href="https://www.w3.org/TR/appmanifest/">Web Application Manifest</a> and the <a href="https://www.w3.org/TR/manifest-app-info/">Web App Manifest - Application Information</a> specifications. The additional metadata aims at describing the particularities of MiniApps to fulfill the design requirements of the [MiniApp Packaging](https://www.w3.org/TR/miniapp-packaging/), [MiniApp Widget Requirements](https://www.w3.org/TR/miniapp-widget-req/), and [MiniApp Addressing](https://www.w3.org/TR/miniapp-addressing/) specifications. 
 
 ### Key Considerations
 
 #### Why is the basic metadata needed?
 
-* __Home-screen display__: Developers and publishers may present the title and the icon of an app after the installation (shortcut on the home-screen) through `name` and `icons`.
+* __Home-screen display__: Developers and publishers may present the title and app's icon after the installation (shortcut on the home-screen) through `name` and `icons`.
 * __Publication in marketplaces__: Publishers may list and display complete information about an app in a marketplace or directory (`app_id`, `name`, `icons`, `description`, and `short_name`).
 * __Locales__: Developers may indicate the languages ​​and writing directions to meet their localization requirements (`lang` and `dir`).
-* __Version management__: Developers include app versioning data to inform about the evolution of the application and device compatibility through `version` (with `code`, and `name`). This would help in the process of distribution and safely execution in the right platform.
+* __Version management__: Developers include app versioning data to inform about the evolution of the application and device compatibility through `version` (with `code` and `name`). This versioning metadata would help in the process of distribution and safe execution.
 * __Permission statement__: Developers should declare the necessary permissions to use the device's powerful features required in runtime (e.g.,  geolocation, storage, and camera usage) through `req_permissions`. They may also include descriptive texts to clarify the purpose of the request (`reason`).
 * __Look-and-feel and User Experience__: Developers may declare information about the styles and viewport configuration (`window`, `background_color`, `design_width`, `orientation`, `fullscreen`, `auto_design_width`, `background_text_style`, `design_width member`), specific configuration for the in-app navigation (`navigation_bar_background_color`, `navigation_bar_text_style`, `navigation_bar_text_style`, `navigation_bar_title_text`, `navigation_style`), and other setup options for maximizing the user experience (`enable_pull_down_refresh`, `on_reach_bottom_distance`). Developers may also offer the possibility to use the predefined `color_scheme` of the platform (`light` and `dark`). 
-* __MiniApp Platform__: Developers may define concrete features and setups to specific platforms (members `platform_version`, `min_code`, `release_type` and `target_code`) and the type of device (automotive, smartphone, wearable, etc. in the `device_type` member). 
+* __MiniApp Platform__: Developers may define concrete features and setups to specific platforms (members `platform_version`, `min_code`, `release_type`, and `target_code`) and the type of device (e.g., automotive, smartphone, wearable in the `device_type` member). 
 
 #### Why are `pages` and `window` members needed?
 
@@ -43,7 +43,7 @@ The MiniApp Manifest is defined as a registry of supplementary members for the <
 
 #### Why is `widgets` member needed?
 
-A [Widget](https://www.w3.org/TR/miniapp-widget-req/) is a special form of MiniApp page that can be embedded within other applications or environments (i.e., device desktop). Using widgets, users can directly display and interact with the app in different scenarios. The `widgets` member allow users to describe the pages that are part of the MiniApp that can be presented as widgets, including `name` (title of the widget), `path` (path to the corresponding page or component) and `min_code` (minimum platform version required). 
+A [Widget](https://www.w3.org/TR/miniapp-widget-req/) is a particular form of MiniApp page that can be embedded within other applications or environments (i.e., device desktop). The `widgets` member allows users to describe the pages that are part of the MiniApp that can be presented as widgets, including `name` (title of the widget), `path` (path to the corresponding page or component), and `min_code` (minimum platform version required). Using widgets, users can directly display and interact with the app in different scenarios.  
 
 ## 3. Sample
 
@@ -102,22 +102,22 @@ The MiniApp Manifest will be gradually updated and supplemented according to the
 
 ## 4. Extension of the Web App Manifest
 
-The MiniApp manifest is developed in the way that it covers the most common practices in the  target ecosystems like 'Mini Program' [[1]](https://smartprogram.baidu.com/developer/index.html)[[2]](https://open.alipay.com/channel/miniIndex.htm)[[3]](https://mp.weixin.qq.com/cgi-bin/wx) and [Quick App](https://www.quickapp.cn/), while trying to be aligned (compatible) as much as possible with other existing and future web standards. In this sense, the MiniApp Manifest follows the recommendations of the <a href="https://w3ctag.github.io/design-principles/#extend-manifests">Web Platform Design Principles</a> to extend the <a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a>. Therefore, this specification extends the Web App Manifest though a defined[extension point](https://www.w3.org/TR/appmanifest/#extensibility), reusing members like `name`, `short_name`, `icons`, `dir`, and `lang`. 
+The MiniApp manifest is developed in the way that it covers the most common practices in the  target ecosystems like 'Mini Program' [[1]](https://smartprogram.baidu.com/developer/index.html)[[2]](https://open.alipay.com/channel/miniIndex.htm)[[3]](https://mp.weixin.qq.com/cgi-bin/wx) and [Quick App](https://www.quickapp.cn/), while trying to be aligned (compatible) as much as possible with other existing and future web standards. In this sense, the MiniApp Manifest follows the recommendations of the <a href="https://w3ctag.github.io/design-principles/#extend-manifests">Web Platform Design Principles</a> to extend the <a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a>. Therefore, this specification extends the Web App Manifest through a defined[extension point](https://www.w3.org/TR/appmanifest/#extensibility), reusing members like `name`, `short_name`, `icons`, `dir`, and `lang`. 
 
-A detailed comparison between the Web App Manifest and the MiniApp Manifest is presented in the [Appendix A](#a-miniapp-manifest-comparison-with-web-app-manifest).
+A detailed comparison between the Web App Manifest and the MiniApp Manifest is presented in [Appendix A](#a-miniapp-manifest-comparison-with-web-app-manifest).
 
 On the other hand, MiniApp manifest has different assumptions on the hosting platforms and the form of application from those of Web App Manifest, so there are aspects that are not matched:
 
-1. **Platform difference:** MiniApp needs to cover the cases that the application hosting platforms are not based on the web/browser, such as a native OS or a hosting application running on top of the OS. The software architecture is more like a native application rather than a web application (although it leverages some web technologies). Therefore, a MiniApp manifest needs to manage the compatibility more strictly between its application version and the platform version than that in the web environment. Member attributes such as `device_type`, the `version` object (with the members`code` and `name`), and `platform_version` object (with `min_code`, `release_type` and `target_code`) are specified for that purpose, but are not necessary for a web application. And strict permission management by the `req_permissions` attribute is also needed to control the access to local resources (sensitive data and powerful functions) via the hosting platform.
+1. **Platform difference:** MiniApp needs to cover the cases in that the application hosting platforms are not based on the web/browser, such as a native OS or a hosting application running on top of the OS. The software architecture is more like a native application than a web application (although it leverages some web technologies). Therefore, a MiniApp manifest needs to manage compatibility more strictly between versions of the application and platform than in the web environment. Member attributes such as `device_type`, the `version` object (with the `code` and `name` members), and `platform_version` object (with `min_code`, `release_type`, and `target_code`) are specified for that purpose. However, they are not necessary for a web application. Moreover, strict permission management by the `req_permissions` attribute is also needed to control the access to local resources (sensitive data and powerful functions) via the hosting platform.
 
-2. **Application form difference:** A MiniApp typically consists of a set of pages and/or widgets. A MiniApp page/widget is similar to a web page in the sense of developing techniques (e.g., JS, CSS), but is different in many other ways like the life-cycle, the layout, components and system APIs. More importantly, these pages/widgets are organically composed views/activities of the MiniApp rather than independent web pages. The MiniApp manifest needs to provide means to organize and configure them into a common look and feel (e.g. navigation bar, scrolling behavior, width adaptation) by the attributes like `window`, `pages` and `widgets`. Moreover, web app manifests are deployed in an HTML page using a `link` element, but MiniApp manifests are included within a MiniApp [package](https://www.w3.org/TR/miniapp-packaging/), and does not depend on HTML binding.
+2. **Application form difference:** A MiniApp typically consists of pages and/or widgets. A MiniApp page/widget is similar to a web page in developing techniques (e.g., JS, CSS) but is different in many other ways like the life-cycle, the layout, components, and system APIs. More importantly, these pages/widgets are organically composed views/activities of the MiniApp rather than independent web pages. The MiniApp manifest needs to provide means to organize and configure them into a common look and feel (e.g., navigation bar, scrolling behavior, width adaptation) by the attributes like `window`, `pages`, and `widgets`. Moreover, web app manifests are deployed in an HTML page using a `link` element, but MiniApp manifests are included within a MiniApp [package](https://www.w3.org/TR/miniapp-packaging/) and do not depend on HTML binding.
 
-As both work are still under development, it is worth further evaluating the possibilities of alignment from each side. From MiniApp perspective, further study could be investigating the usability of some unmapped member attributes (such as `categories`, `screenshots`) of Web App Manifest in the context of MiniApp.
+As both works are still under development, it is worth further evaluating the possibilities of alignment from each side. From the MiniApp perspective, further study could be investigating the usability of some unmapped member attributes (such as `categories`, `screenshots`) of Web App Manifest in the context of MiniApp.
 
 
 ## A. MiniApp Manifest comparison with Web App Manifest
 
-The following table mainly describes the comparison between the manifest attributes in MiniApp and Web App. "-" in the table means that there is no such attribute in the corresponding manifest.
+The following table mainly compares between the manifest attributes in MiniApp and Web App. The "-" character in the table indicates the absence of such attribute in the corresponding manifest.
 
 [MiniApp Manifest](https://www.w3.org/TR/miniapp-manifest/) | [Web App Manifest](https://www.w3.org/TR/appmanifest/) + [Application Information](https://www.w3.org/TR/manifest-app-info/) |	Comparison 
 :---    |:--        |:---
@@ -149,9 +149,9 @@ The following table mainly describes the comparison between the manifest attribu
 
 ## References & acknowledgements
 
-In the process of writing the MiniApp Manifest specification, many people have given valuable comments, thank you all.
+In the process of writing the MiniApp Manifest specification, many people have given valuable comments. Thank you all.
 
-The following name list will be continuously updated, in the order of alphabetical.
+The following name list will be continuously updated in the alphabetical order.
 
 * Chun Wang
 * Changjun Yang
