@@ -10,7 +10,7 @@ Shouren Lan, Zhiqiang Yu, Xiaofeng Zhang, Yongjing Zhang
 
 ### What is this?
 
-MiniApp Manifest defines a JSON-based profile file that provides developers with a centralized place to set up essential information associated with a MiniApp ([What is MiniApp?](https://w3c.github.io/miniapp/white-paper/#what-is-miniapp)).
+MiniApp Manifest defines a JSON-based profile file that provides developers with a centralized place to set up essential information associated with a MiniApp ([What is MiniApp?](https://w3c.github.io/miniapp-white-paper/#what-is-miniapp)).
 
 The information described in a MiniApp Manifest includes metadata about the app, like app identifiers, denomination, human-readable description, versioning data, and styling information. The MiniApp manifest also configures the routing of the pages and widgets that are part of a MiniApp and other data associated with their running environment, tools, and distribution.
 
