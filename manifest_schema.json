@@ -85,7 +85,7 @@
     },
     "app_id": {
       "type": "string",
-      "description": "A string that identifies the MiniApp univocally.",
+      "description": "A case sensitive string that identifies the MiniApp univocally.",
       "example": "org.example.miniapp"
     },
     "color_scheme": {
