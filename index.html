@@ -787,10 +787,10 @@
           <span><code>app_id</code> member</span>
         </h3>
         <p>
-          The [=MiniApp manifest's=] <code><dfn>app_id</dfn></code> member is a [=string=] that identifies the MiniApp uniquely. This member is mainly used for package management, and it supports the update and release process of MiniApp versioning.
+          The [=MiniApp manifest's=] <code><dfn>app_id</dfn></code> member <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#string-is">is</a> a [=string=] that identifies the MiniApp uniquely. This member is mainly used for package management, supporting the update and release process of MiniApp versioning.
         </p>
         <p>
-          The value of <code>[=app_id=]</code> is RECOMMENDED <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#string-is">to be</a> a [=string=] defined by the following rule:
+          The value of <code>[=app_id=]</code> is defined by the following rule:
         </p>
         <pre class="abnf">
           appIdRule = name *("." name)
