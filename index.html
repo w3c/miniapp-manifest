@@ -790,7 +790,7 @@
           The [=MiniApp manifest's=] <code><dfn>app_id</dfn></code> member is a case-sensitive [=string=] that identifies the MiniApp uniquely. This member is mainly used for package management, supporting the update and release process of MiniApp versioning.
         </p>
         <p>
-          The value of <code>[=app_id=]</code> SHOULD be defined by the following rule:
+          Although the value of <code>[=app_id=]</code> can be any [=string=], it SHOULD be defined by the following rule:
         </p>
         <pre class="abnf">
           appIdRule = name *("." name)
