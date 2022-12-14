@@ -786,19 +786,21 @@
         <h3>
           <span><code>app_id</code> member</span>
         </h3>
+        <p data-cite="i18n-glossary">
+          The [=MiniApp manifest's=] <code><dfn>app_id</dfn></code> member is a [=string=] that identifies the MiniApp uniquely. This member is mainly used for package management, supporting the update and release process of MiniApp versioning.
+        </p> 
         <p>
-          The [=MiniApp manifest's=] <code><dfn>app_id</dfn></code> member is a case-sensitive [=string=] that identifies the MiniApp uniquely. This member is mainly used for package management, supporting the update and release process of MiniApp versioning.
+          The value of <code>[=app_id=]</code> is both case-sensitive and sensitive to different ways of encoding characters in Unicode. Consequently, two <code>[=app_id=]</code> values are equal only if they are encoded as the same sequence of <a href="https://www.w3.org/TR/i18n-glossary/#def_unicode_code_point" data-link-type="dfn">code points</a>.
         </p>
-        <p>
-          Although the value of <code>[=app_id=]</code> can be any [=string=], it SHOULD be defined by the following rule:
-        </p>
-        <pre class="abnf">
-          appIdRule = name *("." name)
-          name = ALPHA [*( ALPHA / DIGIT / "-" ) ( ALPHA / DIGIT)]
-        </pre>
-        <p class="note" title='Usage'>
-              One common practice is to use the reverse-domain-name-like convention (e.g., <code>org.example.miniapp</code>).
-        </p>
+        <div class="note" title='Usage'>
+          <p>
+              One common practice for MiniApps is to use the reverse-domain-name-like convention used by the <a href="https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html">Java package naming convention</a> (e.g., <code>org.example.miniapp</code>) under the following rule:
+          </p>
+          <pre class="abnf">
+            appIdRule = name *("." name)
+            name = ALPHA [*( ALPHA / DIGIT / "-" ) ( ALPHA / DIGIT)]
+          </pre>              
+        </div>
         <p>
           To <dfn>process the <code>app_id</code> member</dfn>, given [=ordered map=] |json:ordered map| and [=ordered map=] |manifest:ordered map|:
         </p>
