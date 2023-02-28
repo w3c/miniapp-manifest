@@ -877,7 +877,7 @@
             The [=MiniApp manifest's=] <code><dfn data-export="">pages</dfn></code> member is a [=list=] of [=relative-url string=] used for specifying the collection of pages that are part of a MiniApp. Each item in the [=list=] represents a page identified by its [=page route=].
         </p> 
         <p>
-          A <dfn data-lt="route|page route|page routes">MiniApp page route</dfn> is the relative path and filename of a <a data-link-type="dfn" href="https://www.w3.org/TR/miniapp-packaging/#dfn-page">MiniApp page</a>. When configuring the [=page routes=], developers MAY omit the extension of the file that defines the main component of the <a data-link-type="dfn" href="https://www.w3.org/TR/miniapp-packaging/#dfn-page">page</a> (e.g., <samp>pages/mypage</samp> or <samp>pages/mypage.html</samp>).
+          A <dfn data-lt="route|page route|page routes" id="dfn-page-route" data-export="">MiniApp page route</dfn> is the relative path and filename of a <a data-link-type="dfn" href="https://www.w3.org/TR/miniapp-packaging/#dfn-page">MiniApp page</a>. When configuring the [=page routes=], developers MAY omit the extension of the file that defines the main component of the <a data-link-type="dfn" href="https://www.w3.org/TR/miniapp-packaging/#dfn-page">page</a> (e.g., <samp>pages/mypage</samp> or <samp>pages/mypage.html</samp>).
         </p>
         <p>
           The first item in the <code>[=pages=]</code> [=list=] defines the homepage or entry point of a MiniApp.
@@ -1062,7 +1062,7 @@
     <section id="processing" data-cite="APPMANIFEST">
       <h3>Processing the manifest</h3>
       <p>
-        The MiniApp manifest, as an extension of the [=Application manifest=], provides a supplementary algorithm to be processed at the <a href="https://www.w3.org/TR/appmanifest/#dfn-extension-point" data-link-type="dfn">extension point</a> of the <a href="https://www.w3.org/TR/appmanifest/#dfn-processing-a-manifest" data-link-type="dfn">processing a manifest</a> algorithm defined in [[APPMANIFEST]]. Thus, the user agent starts by processing the [=Application manifest=]'s members and, at the extension point, continues with processing the MiniApp manifest members using the following algorithm.     
+        The MiniApp manifest, as an extension of the [=Application manifest=], provides a supplementary algorithm to be processed at the extension point of the <a href="https://www.w3.org/TR/appmanifest/#dfn-processing-a-manifest" data-link-type="dfn">processing a manifest</a> algorithm defined in [[APPMANIFEST]]. Thus, the user agent starts by processing the [=Application manifest=]'s members and, at the extension point, continues with processing the MiniApp manifest members using the following algorithm.     
       </p>
       <p>
         To <dfn data-lt="processing a MiniApp manifest">process a MiniApp manifest</dfn> at the extension point, given [=ordered map=] |json:ordered map| and [=ordered map=] |manifest:ordered map|:
@@ -1383,7 +1383,7 @@
       <p>
         The <code><dfn>fullscreen</dfn></code> member is a [=boolean=] that indicates if the MiniApp is shown in full-screen display mode.
       </p>
-      <p class="note" title='Usage' data-cite='MEDIAQUERIES'>
+      <p class="note" title='Usage' data-cite='MEDIAQUERIES-5'>
         When this member takes the <code>true</code> value, it is equivalent to the <code>[=manifest/fullscreen=]</code> value on the application manifest's <code>[=manifest/display=]</code> member. When it takes <code>false</code> as value, it is equivalent to <code>[=display mode/minimal-ui=]</code>.
       </p>
       <p>
