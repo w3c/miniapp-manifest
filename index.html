@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="color-scheme" content="light dark" />
+
     <title>MiniApp Manifest</title>
     <link rel="stylesheet" href="./local.css" />
 
@@ -11,7 +13,6 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
-
     table.members {
       border: 1px #f0f0f0 solid;
       margin-bottom: 1em;
@@ -21,18 +22,27 @@
     table.members td:nth-child(1) {
       width: 11rem;  
     }
-
-    table.members th:nth-child(2),
-    table.members td:nth-child(2) {
-      width: 5rem;  
-    }
     table.members thead tr,
     table.members tr:nth-child(even) {
       background-color: #f0f0f0;
     }
+    table.members th:nth-child(2),
+    table.members td:nth-child(2) {
+      width: 5rem;  
+    }
     td, th {
       padding:2px 15px;
     }
+    @media (prefers-color-scheme: dark) {
+      table.members {
+        border: 1px #1a1a1a solid;
+      }
+      table.members thead tr,
+      table.members tr:nth-child(even) {
+        background-color: #1a1a1a;
+      }
+    }
+
     </style>
 
     <script defer class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
